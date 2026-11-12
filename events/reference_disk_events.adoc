@@ -1,0 +1,67 @@
+---
+permalink: events/reference_disk_events.html 
+sidebar: sidebar 
+keywords: disks, events, impact area, availability 
+summary: 磁碟事件提供有關磁碟狀態的資訊，以便您監控潛力問題。事件按影響區域分組，包括事件和陷阱名稱、影響層級、來源類型和嚴重性。 
+---
+= 了解 Active IQ Unified Manager 中的磁碟事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+磁碟事件提供有關磁碟狀態的資訊，以便您監控潛力問題。事件按影響區域分組，包括事件和陷阱名稱、影響層級、來源類型和嚴重性。
+
+
+
+[[impact-area-availability]]
+== 影響區域：可用度
+
+|===
+| 事件名稱（陷阱名稱） | 影響層級 | 來源類型 | 嚴重程度 
+
+
+ a| 
+Flash 磁碟 - 備用區塊幾乎已用完（ocumEvtClusterFlashDiskFewerSpareBlockError）
+ a| 
+風險
+ a| 
+叢集
+ a| 
+錯誤
+
+
+
+ a| 
+Flash 磁碟 - 無備用區塊（ocumEvtClusterFlashDiskNoSpareBlockCritical）
+ a| 
+事件
+ a| 
+叢集
+ a| 
+關鍵
+
+
+
+ a| 
+部分未指派的磁碟（ocumEvtClusterUnassignedDisksSome）
+ a| 
+風險
+ a| 
+叢集
+ a| 
+警告
+
+
+
+ a| 
+部分磁碟故障（ocumEvtDisksSomeFailed）
+ a| 
+事件
+ a| 
+叢集
+ a| 
+關鍵
+
+|===

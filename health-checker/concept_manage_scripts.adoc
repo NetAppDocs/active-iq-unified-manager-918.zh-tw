@@ -1,0 +1,16 @@
+---
+permalink: health-checker/concept_manage_scripts.html 
+sidebar: sidebar 
+keywords: manage, scripts 
+summary: 您可以使用指令碼自動修改或更新 Unified Manager 中的多個儲存設備物件。該指令碼與警報關聯。當事件觸發警報時，指令碼將會執行。您可以上傳自訂指令碼，並在產生警報時測試其執行情況。 
+---
+= 在 Active IQ Unified Manager 中管理指令碼
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用指令碼自動修改或更新 Unified Manager 中的多個儲存設備物件。該指令碼與警報關聯。當事件觸發警報時，指令碼將會執行。您可以上傳自訂指令碼，並在產生警報時測試其執行情況。
+
+預設情況下，上傳指令碼到 Unified Manager 並執行指令碼的功能已啟用。如果出於安全性原因，您的組織不希望允許此功能，您可以從 *儲存設備管理* > *功能設定* 中停用此功能。

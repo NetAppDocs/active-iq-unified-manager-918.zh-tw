@@ -1,0 +1,50 @@
+---
+permalink: config/task_enable_remote_logging_of_audit_logs.html 
+sidebar: sidebar 
+keywords: enable, remote, logging, audit, logs 
+summary: 您可以在「設定稽核日誌」對話方塊中選取「啟用遠端記錄」核取方塊來啟用遠端稽核記錄。您可以使用此功能將稽核日誌傳輸到遠端 Syslog 伺服器。這可讓您在有空間限制時管理稽核日誌。 
+---
+= 在 Active IQ Unified Manager 中啟用稽核日誌的遠端記錄
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在「設定稽核日誌」對話方塊中選取 *啟用遠端記錄* 核取方塊來啟用遠端稽核記錄。您可以使用此功能將稽核日誌傳輸到遠端 Syslog 伺服器。這可讓您在有空間限制時管理稽核日誌。
+
+遠端記錄稽核日誌可在 Active IQ Unified Manager 伺服器上的稽核日誌檔案被篡改時提供防篡改備份。
+
+.步驟
+. 在 *設定稽核日誌* 對話方塊中，選取 *啟用遠端記錄* 核取方塊。
++
+顯示用於設定遠端記錄的其他欄位。
+
+. 輸入要連線的遠端伺服器的*主機名稱*和*連接埠*。
+. 在 *伺服器 CA 憑證* 欄位中，按一下 *瀏覽* 以選擇目標伺服器的公開憑證。
++
+憑證應以 `.pem`格式上傳。此憑證應從目標 Syslog 伺服器取得，且不應過期。憑證應包含所選的 "`hostname`" 作為 `SubjectAltName`（SAN）屬性的一部分。
+
+. 請輸入下列欄位的值：*CHARSET*、*CONNECTION TIMEOUT*、*RECONNECTION DELAY*。
++
+這些欄位的值應以毫秒為單位。
+
+. 請在 *FORMAT* 和 *PROTOCOL* 欄位中選擇所需的 Syslog 格式和 TLS 傳輸協定版本。
+. 如果目標 Syslog 伺服器需要以憑證為基礎的驗證，請選取 *啟用用戶端身分驗證* 核取方塊。
++
+您需要在儲存稽核記錄組態之前下載用戶端身分驗證憑證並將其上傳到 Syslog 伺服器，否則連線將失敗。根據 Syslog 伺服器的類型，您可能需要建立用戶端身分驗證憑證的雜湊值。
+
++
+範例：syslog-ng 需要使用命令 `openssl x509 -noout -hash -in cert.pem`建立憑證的<hash>，然後您應將用戶端身分驗證憑證以符號連結的方式連結至以<hash> .0 命名的檔案。
+
+. 點擊 *儲存* 以設定與伺服器的連線並啟用遠端記錄。
++
+您將被重新導向至稽核日誌頁面。
+
++
+[NOTE]
+====
+*連線逾時* 值會影響組態。如果組態回應時間超過定義的值，則可能會因連線錯誤而導致組態故障。若要成功建立連線，請增加 *連線逾時* 值，然後重試組態。
+
+====
+

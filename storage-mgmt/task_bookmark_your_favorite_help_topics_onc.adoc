@@ -1,0 +1,19 @@
+---
+permalink: storage-mgmt/task_bookmark_your_favorite_help_topics_onc.html 
+sidebar: sidebar 
+keywords: bookmark, favorite, help topics 
+summary: 在「說明我的最愛」索引標籤中，您可以將常用的說明主題加入書籤。說明書籤可讓您快速存取最愛的主題。 
+---
+= 在 Active IQ Unified Manager 中收藏您最愛的說明主題
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在「說明我的最愛」索引標籤中，您可以將常用的說明主題加入書籤。說明書籤可讓您快速存取最愛的主題。
+
+.步驟
+. 導覽至您想要新增為我的最愛的說明主題。
+. 按一下 *我的最愛*，然後按一下 *新增*。
+

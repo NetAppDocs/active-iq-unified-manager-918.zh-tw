@@ -1,0 +1,26 @@
+---
+permalink: reporting/concept_customize_reports.html 
+sidebar: sidebar 
+keywords: customize, reports 
+summary: 您可以採用多種方式自訂檢視，從而建立包含管理 ONTAP 叢集所需所有資訊的報告。 
+---
+= 在 Active IQ Unified Manager 中自訂報告
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以採用多種方式自訂檢視，從而建立包含管理 ONTAP 叢集所需所有資訊的報告。
+
+首先使用預設庫存頁面或自訂檢視，然後透過新增或移除欄、變更欄順序、篩選資料，或按遞增或遞減順序對特定欄進行排序來進行自訂。
+
+從 Unified Manager 9.8 開始，您也可以下載 Excel 檢視，並使用進階功能進行自訂。完成後，上傳自訂的 Excel 檔案。如果您使用該檢視排程報告，系統將使用該自訂的 Excel 檔案產生可共享的強大報告。
+
+如需有關使用 Excel 自訂報告的詳細資訊，請參閱 _Microsoft Excel 報告範例_。
+
+[NOTE]
+====
+您必須擁有應用程式管理員或儲存管理員角色才能管理報告。
+
+====

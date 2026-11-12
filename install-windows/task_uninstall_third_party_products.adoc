@@ -1,0 +1,36 @@
+---
+permalink: install-windows/task_uninstall_third_party_products.html 
+sidebar: sidebar 
+keywords: MS Visual C, python, uninstall, uninstalling, 9.18 
+summary: 解除安裝第三方產品，包括 Python 和 Microsoft Visual C 2013 執行階段。 
+---
+= 在 Active IQ Unified Manager 中解除安裝第三方產品
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+升級 Unified Manager 後，您可以解除安裝協力廠商產品，例如 Python 或 Microsoft Visual C++ 2013。這是選用的。
+
+
+
+[[uninstall-python]]
+== 解除安裝 Python
+
+.步驟
+. 從 *控制台* 選擇 *程式集* > *程式和功能*。
+. 從程式列表中選擇 Python。
+. 選擇 *解除安裝此方案*。解除安裝除 3.13.3 版本之外的所有 Python 版本。確保保留 Python 版本 3.13.3。
+
+
+
+
+[[uninstall-microsoft-visual-c-2013]]
+== 解除安裝 Microsoft Visual C++ 2013
+
+.步驟
+. 從 *控制台* 選擇 *程式集* > *程式和功能*。
+. 從程式清單中選擇 *Microsoft Visual C++ 2013*。
+. 選擇 *解除安裝此方案*。
+

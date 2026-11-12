@@ -1,0 +1,35 @@
+---
+permalink: events/task_schedule_maintenance_window_to_disable_cluster_notifications.html 
+sidebar: sidebar 
+keywords: schedule, maintenance, window, disable, cluster, event, notifications 
+summary: 如果您有叢集的計畫性停機（例如，升級叢集或移動其中一個節點），則可以透過排程 Unified Manager 維護所需時間，來抑制通常在該時間範圍內產生的事件和警報。 
+---
+= 安排維護所需時間以停用 Active IQ Unified Manager 中的叢集事件通知
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您有叢集的計畫性停機（例如，升級叢集或移動其中一個節點），則可以透過排程 Unified Manager 維護所需時間，來抑制通常在該時間範圍內產生的事件和警報。
+
+.開始之前
+您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+在維護所需時間期間，與該叢集上所有物件相關的事件仍會產生，但不會出現在事件頁面中，也不會針對這些事件傳送任何警報或其他類型的通知。
+
+您為維護所需時間輸入的時間是以 Unified Manager 伺服器的時間為準。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存管理* > *叢集設定*。
+. 在叢集的「維護模式」列中，選擇滑桿按鈕並將其向右移動。
++
+日曆視窗隨即顯示。
+
+. 選擇維護所需時間的開始和結束日期與時間，然後按一下 *套用*。
++
+滑桿按鈕旁邊會顯示「已排程」字樣。
+
+
+
+當到達開始時間時，叢集將進入維護模式，並產生「物件維護所需時間已啟動」事件。

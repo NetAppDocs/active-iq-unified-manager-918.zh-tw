@@ -1,0 +1,19 @@
+---
+permalink: reporting/task_sort_data.html 
+sidebar: sidebar 
+keywords: sort, data 
+summary: 若要對結果進行排序，請按一下欄並指定遞增或遞減順序。對資料進行排序可優先顯示報告所需的資訊。 
+---
+= 在 Active IQ Unified Manager 中對資料進行排序
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要對結果進行排序，請按一下欄並指定遞增或遞減順序。對資料進行排序可優先顯示報告所需的資訊。
+
+.步驟
+. 按一下欄頂部可對結果進行排序，使最重要的資訊顯示在檢視頂部。
+. 為未儲存的檢視命名以儲存變更。
+

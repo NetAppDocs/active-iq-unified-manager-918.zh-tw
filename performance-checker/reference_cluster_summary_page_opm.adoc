@@ -1,0 +1,14 @@
+---
+permalink: performance-checker/reference_cluster_summary_page_opm.html 
+sidebar: sidebar 
+keywords: performance, cluster, summary page 
+summary: 「效能叢集總結」頁面提供叢集的作用中事件、IOPS 效能和 MB/s 效能的總結。此頁面還包括叢集中儲存設備物件的總數。 
+---
+= 請查看 Active IQ Unified Manager 中的「效能叢集摘要」頁面
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+「效能叢集總結」頁面提供叢集的作用中事件、IOPS 效能和 MB/s 效能的總結。此頁面還包括叢集中儲存設備物件的總數。

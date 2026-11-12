@@ -1,0 +1,25 @@
+---
+permalink: performance-checker/concept_manage_performance_using_perf_capacity_available_iops.html 
+sidebar: sidebar 
+keywords: managing, performance, performance, capacity, available, iops, information 
+summary: 效能容量指的是在不超出資源有效效能的前提下，您可以從資源中獲得的最大處理量。使用現有的效能計數器來看，效能容量是指在延遲成為問題之前，您可以從節點或彙總中獲得最大使用率的點。 
+---
+= 在 Active IQ Unified Manager 中管理效能容量和可用 IOPS
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+_效能容量_ 是指在不超出資源有效效能的前提下，您可以從資源中獲得的最大處理量。在使用現有效能計數器檢視時，效能容量是指在延遲成為問題之前，您可以從節點或彙總獲得最大使用率的點。
+
+Unified Manager 從每個叢集中的節點和彙總收集效能容量統計資料。_已使用效能容量_ 是指目前已使用的效能容量百分比，而 _可用效能容量_ 是指仍可用的效能容量百分比。
+
+效能容量剩餘量顯示的是資源剩餘可用百分比，而 _可用 IOPS_ 則表示在達到最大效能容量之前，資源還可以增加的 IOPS 數量。透過使用此指標，您可以確保能夠將預定 IOPS 數量的工作負載新增至資源。
+
+監控效能容量資訊有以下好處：
+
+* 協助進行工作流程配置和平衡。
+* 協助您防止節點過載或將其資源推至超出最佳點，進而減少故障排除的需求。
+* 幫助您更精確地確定哪裡可能需要額外儲存容量設備。
+

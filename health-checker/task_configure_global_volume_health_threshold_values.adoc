@@ -1,0 +1,36 @@
+---
+permalink: health-checker/task_configure_global_volume_health_threshold_values.html 
+sidebar: sidebar 
+keywords: configure, global, volume, health, threshold values 
+summary: 您可以為所有 Volume 設定全域健全狀況臨界值，以追蹤任何臨界值超出情況。系統會在健全狀況臨界值超出時產生相應的事件，您可以根據這些事件採取預防措施。您可以根據適用於所有受監控 Volume 的最佳實務做法臨界值設定來設定全域值。 
+---
+= 在 Active IQ Unified Manager 中設定全域 Volume 健全狀況臨界值
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以為所有 Volume 設定全域健全狀況臨界值，以追蹤任何臨界值超出情況。系統會在健全狀況臨界值超出時產生相應的事件，您可以根據這些事件採取預防措施。您可以根據適用於所有受監控 Volume 的最佳實務做法臨界值設定來設定全域值。
+
+.開始之前
+您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+大多數的臨界值選項都有預設值，以提供更好的監控。不過，您可以變更這些值，以符合您環境的需求。
+
+請注意，當在 Volume 上啟用 Autogrow 時，容量臨界值是否超出是根據 Autogrow 設定的最大 Volume 大小來判斷，而不是根據原始 Volume 大小。
+
+[NOTE]
+====
+1000 個 Snapshot 複本的預設值僅適用於 ONTAP 版本為 9.4 或更高版本的 FlexVol Volume，以及 ONTAP 版本為 9.8 或更高版本的 FlexGroup Volume。對於安裝舊版 ONTAP 軟體的叢集，每個 Volume 的最大 Snapshot 複本數為 250 個。對於這些舊版本， Unified Manager 會將此數字 1000（以及 1000 到 250 之間的任何數字）解釋為 250；這表示當 Snapshot 複本數達到 250 時，您將繼續收到事件。如果您希望將這些舊版本的臨界值設為小於 250，則必須在此處、「健全狀況：所有 Volume」檢視或「Volume / 健全狀況」詳細資料頁面中，將臨界值設為 250 或更低。
+
+====
+.步驟
+. 在左側導覽窗格中，按一下 *事件臨界值* > *Volume*。
+. 設定容量、Snapshot 複本、qtree 配額、Volume 增長和 inode 的適當臨界值。
+. 按一下 *Save* 。
+
+
+*相關資訊*
+
+link:../config/task_add_users.html["新增使用者"]

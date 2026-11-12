@@ -1,0 +1,74 @@
+---
+permalink: health-checker/task_retrieve_support_bundle_using_unix_or_linux_client.html 
+sidebar: sidebar 
+keywords: retrieve, support bundle, unix, linux, client 
+summary: '如果您是 UNIX 或 Linux 使用者，您可以使用 Linux 用戶端伺服器上的命令列介面 (CLI)，從您的 vApp 擷取支援套裝組合。您可以使用 SCP 或 SFTP 來擷取支援套裝組合。' 
+---
+= 使用 Active IQ Unified Manager 中的 UNIX 或 Linux 用戶端擷取支援套裝組合
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您是 UNIX 或 Linux 使用者，您可以使用 Linux 用戶端伺服器上的命令列介面 (CLI)，從您的 vApp 擷取支援套裝組合。您可以使用 SCP 或 SFTP 來擷取支援套裝組合。
+
+.開始之前
+您必須是維護使用者才能執行此工作。
+
+您必須使用維護主控台產生支援套裝組合，並備妥支援套裝組合名稱。
+
+.步驟
+. 使用 Linux 用戶端伺服器，透過 Telnet 或控制台存取 CLI。
+. 存取 /`support` 目錄。
+. 使用下列命令擷取支援套裝組合，並將其複製到本機目錄：
++
+[cols="2*"]
+|===
+| 如果您正在使用…… | 然後使用以下命令…… 
+
+
+ a| 
+SCP
+ a| 
+`scp <maintenance-user>@<vApp-name-or-ip>:/support/support_bundle_file_name.7z <destination-directory>`
+
+
+
+ a| 
+SFTP
+ a| 
+`sftp <maintenance-user>@<vApp-name-or-ip>:/support/support_bundle_file_name.7z <destination-directory>`
+
+|===
++
+當您使用維護主控台產生支援套裝組合時，系統會提供支援套裝組合的名稱給您。
+
+. 請輸入維護使用者密碼。
+
+
+
+
+[[examples]]
+== 範例
+
+以下範例使用 SCP 來擷取支援套裝組合：
+
+[listing]
+----
+
+        `$ scp admin@10.10.12.69:/support/support_bundle_20160216_145359.7z .`
+Password: `<maintenance_user_password>`
+support_bundle_20160216_145359.7z   100%  119MB  11.9MB/s   00:10
+----
+以下範例使用 SFTP 來擷取支援套裝組合：
+
+[listing]
+----
+
+        `$ sftp admin@10.10.12.69:/support/support_bundle_20160216_145359.7z .`
+Password: `<maintenance_user_password>`
+Connected to 10.228.212.69.
+Fetching /support/support_bundle_20130216_145359.7z to ./support_bundle_20130216_145359.7z
+/support/support_bundle_20160216_145359.7z
+----

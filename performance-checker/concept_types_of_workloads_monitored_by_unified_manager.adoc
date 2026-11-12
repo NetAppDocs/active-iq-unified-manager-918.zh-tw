@@ -1,0 +1,53 @@
+---
+permalink: performance-checker/concept_types_of_workloads_monitored_by_unified_manager.html 
+sidebar: sidebar 
+keywords: types, workloads, monitored, unified manager 
+summary: 使用 Unified Manager 監控兩種工作負載類型的效能，即使用者定義工作負載和系統定義工作負載。 
+---
+= 使用 Active IQ Unified Manager 監控工作負載類型
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 Unified Manager 來監控兩種類型工作負載的效能：使用者定義和系統定義。
+
+* *_使用者自訂工作負載_*
++
+從應用程式到叢集的 I/O 處理量。這些是涉及讀取與寫入要求的程序。Volume、LUN、NFS 共享、SMB/CIFS 共用區和工作負載都是使用者定義的工作負載。
+
++
+[NOTE]
+====
+Unified Manager 僅監控叢集上的工作負載活動。它不監控應用程式、用戶端或應用程式與叢集之間的路徑。
+
+====
++
+如果工作負載符合下列一個或多個條件，則 Unified Manager 無法對其進行監控：
+
++
+** 這是一個唯讀模式下的資料保護（DP）複本。（DP Volume 會受到監控，以偵測使用者產生的流量。）
+** 這是一個離線資料 Clone。
+** 它是 MetroCluster 組態中的鏡射 Volume。
+
+
+* *_系統定義的工作負載_*
++
+與儲存效率、資料複寫和系統健全狀況相關的內部流程，包括：
+
++
+** 儲存效率，例如重複資料刪除
+** 磁碟健全狀況，包括 RAID 重建、磁碟清理等
+** 資料複寫，例如 SnapMirror 副本
+** 管理活動
+** 檔案系統健全狀況，包括各種 WAFL 活動
+** 檔案系統掃描器，例如 WAFL 掃描
+** 複製卸載，例如從 VMware 主機卸載的儲存效率作業
+** 系統健全狀況，例如 Volume 遷移、資料壓縮等
+** 未監控的 Volume
+
+
+
+
+只有當系統定義工作負載所使用的叢集元件處於爭用狀態時，才會在 GUI 中顯示這些工作負載的效能資料。例如，您無法透過搜尋系統定義工作負載的名稱，在 GUI 中檢視其效能資料。

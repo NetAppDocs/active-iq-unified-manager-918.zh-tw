@@ -1,0 +1,25 @@
+---
+permalink: data-protection/concept_what_resource_pools_are.html 
+sidebar: sidebar 
+keywords: resource pools 
+summary: 資源池是由儲存管理員使用 Unified Manager 建立的彙總群組，用於提供配置給合作夥伴應用程式以進行備份管理。 
+---
+= 了解 Active IQ Unified Manager 中的資源池
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+資源池是由儲存管理員使用 Unified Manager 建立的彙總群組，用於提供配置給合作夥伴應用程式以進行備份管理。
+
+您可以根據效能、成本、實體位置或可用度等屬性，將資源組成資源池。透過將相關資源分組到一個資源池，您可以將該資源池視為單一單位來進行監控和配置。這簡化了這些資源的管理，並讓儲存設備的使用更靈活且更有效率。
+
+在次要儲存設備配置期間，Unified Manager 使用下列標準來決定資源池中最適合進行保護的彙總：
+
+* 該彙總是一個資料 Aggregate（不是根 Aggregate），並且是線上的。
+* 彙總位於目的地叢集節點上，該節點的 ONTAP 版本與來源叢集的主版本相同或更高。
+* 此彙總在資源池的所有彙總中擁有最大的可用空間。
+* 在配置目的地 Volume 之後，彙總空間處於為彙總定義的接近滿與接近超額分配臨界值之內（全域或本機臨界值，以適用者為準）。
+* 目的地節點上的 FlexVol Volume 數量不得超過平台限制。
+

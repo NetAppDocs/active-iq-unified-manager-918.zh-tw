@@ -1,0 +1,20 @@
+---
+permalink: install-vapp/concept_introduction_to_unified_manager.html 
+sidebar: sidebar 
+keywords: introduction, active iq unified manager 
+summary: Active IQ Unified Manager（原名 OnCommand Unified Manager）可讓您透過單一介面監控與管理 ONTAP 儲存設備系統的健全狀況與效能。您可以將 Unified Manager 部署在 Linux 伺服器、Windows 伺服器上，或以虛擬應用裝置部署在 VMware 主機上。 
+---
+= 了解 Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Active IQ Unified Manager（原名 OnCommand Unified Manager）可讓您透過單一介面監控與管理 ONTAP 儲存設備系統的健全狀況與效能。您可以將 Unified Manager 部署在 Linux 伺服器、Windows 伺服器上，或以虛擬應用裝置部署在 VMware 主機上。
+
+完成安裝並新增要管理的叢集後，Unified Manager 會提供圖形介面，顯示受監控儲存設備系統的容量、可用度、保護和效能狀態。
+
+*相關資訊*
+
+https://mysupport.netapp.com/matrix["NetApp 互通性矩陣工具"]

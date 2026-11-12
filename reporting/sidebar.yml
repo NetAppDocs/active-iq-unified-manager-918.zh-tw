@@ -1,0 +1,148 @@
+---
+section: reporting
+title: 產生自訂報告
+entries:
+- title: Unified Manager 報告
+  entries:
+  - title: 了解 Unified Manager 報告
+    url: "/reporting/concept_unified_manager_reporting.html"
+  - title: 用於產生報告的存取點
+    entries:
+    - title: 探索存取報告功能的方法
+      url: "/reporting/concept_report_access_points.html"
+    - title: Unified Manager 資料庫可用於自訂報告
+      url: "/reporting/concept_unified_manager_databases_accessible_for_reporting.html"
+    - title: 可用於報告的 Unified Manager REST API
+      url: "/reporting/generaltask_um_rest_apis_that_can_be_used_for_reporting.html"
+  - title: 了解報告
+    url: "/reporting/concept_understand_reports.html"
+  - title: 了解檢視和報告的關係
+    url: "/reporting/concept_understand_view_and_reports_relationship.html"
+  - title: 報告類型
+    url: "/reporting/reference_types_of_reports.html"
+  - title: 報告限制
+    url: "/reporting/reference_reporting_limitations.html"
+- title: 處理報告
+  entries:
+  - title: 報告工作流程
+    url: "/reporting/concept_report_work_flow.html"
+  - title: 報告快速啟動
+    url: "/reporting/task_report_quick_start.html"
+  - title: 搜尋排程報告
+    url: "/reporting/task_search_for_scheduled_report.html"
+  - title: 自訂報告
+    entries:
+    - title: 了解關於自訂報告
+      url: "/reporting/concept_customize_reports.html"
+    - title: 自訂欄
+      url: "/reporting/task_customize_columns.html"
+    - title: 篩選資料
+      url: "/reporting/task_filter_data.html"
+    - title: 排序資料
+      url: "/reporting/task_sort_data.html"
+    - title: 使用搜尋功能來縮小您的檢視
+      url: "/reporting/task_search_to_refine_view.html"
+    - title: 使用 Excel 自訂報告
+      url: "/reporting/task_use_excel_to_customize_your_report.html"
+  - title: 下載報告
+    url: "/reporting/task_download_reports.html"
+- title: 排程報告
+  entries:
+  - title: 了解排程報告
+    url: "/reporting/concept_schedule_reports.html"
+  - title: 排程報告
+    entries:
+    - title: 建立報告排程
+      url: "/reporting/task_schedule_report.html"
+    - title: 排程匯入的 .rptdesign 報告
+      url: "/reporting/task_schedule_an_imported_report.html"
+  - title: 管理報告排程
+    entries:
+    - title: 檢視、編輯與刪除報告排程
+      url: "/reporting/task_manage_report_schedules.html"
+    - title: 編輯排程的報告
+      url: "/reporting/task_edit_scheduled_reports.html"
+    - title: 刪除排程的報告
+      url: "/reporting/task_delete_scheduled_reports.html"
+- title: 自訂報告範例
+  entries:
+  - title: 了解範例自訂報告
+    url: "/reporting/concept_sample_custom_reports.html"
+  - title: 自訂叢集儲存設備報告
+    entries:
+    - title: 建立報告以依叢集型號檢視容量
+      url: "/reporting/task_create_report_to_view_capacity_by_cluster_model.html"
+    - title: 建立報告以識別未分配 LUN 容量最多的叢集
+      url: "/reporting/task_create_report_to_identify_clusters_with_unallocated_capacity.html"
+    - title: 建立報告以檢視可用容量最大的 HA 對
+      url: "/reporting/task_create_report_to_view_ha_pairs_with_most_available_capacity.html"
+    - title: 建立報告以檢視執行舊版 ONTAP 的節點
+      url: "/reporting/task_create_report_view_nodes_running_older_versions_of_ontap.html"
+  - title: 自訂彙總容量報告
+    entries:
+    - title: 建立報告以檢視達到滿載的彙總
+      url: "/reporting/task_create_report_to_view_aggregates_reaching_full_capacity.html"
+    - title: 建立報告以檢視幾乎已滿的彙總
+      url: "/reporting/task_create_report_to_view_aggregates_that_are_nearly_full.html"
+    - title: 建立報告以檢視超額分配的彙總
+      url: "/reporting/task_create_report_to_view_aggregates_that_are_overcommitted.html"
+  - title: 自訂 Volume 容量報告
+    entries:
+    - title: 建立報告以識別接近滿容量且已關閉 Snapshot 自動刪除功能的 Volume
+      url: "/reporting/task_create_report_to_identify_volumes_nearing_full_capacity.html"
+    - title: 建立一份報告，以識別已停用資源隨需配置的 Volume 所佔用的空間
+      url: "/reporting/task_create_report_to_identify_space_with_thin_provisioning_disabled.html"
+    - title: 建立報告以識別 FabricPool 彙總上應將資料移至雲端分層的 Volume
+      url: "/reporting/task_create_report_volumes_that_should_move_data_to_cloud_tier.html"
+  - title: 自訂 Qtree 容量報告
+    entries:
+    - title: 建立報告以檢視幾乎已滿的 qtree
+      url: "/reporting/task_create_report_to_view_qtrees_that_are_nearly_full.html"
+  - title: 自訂 NFS 共享報告
+    entries:
+    - title: 了解如何自訂 NFS 共享報告
+      url: "/reporting/concept_customize_nfs_share_reports.html"
+    - title: 建立一份報告，檢視裝載路徑不可存取的 Volume
+      url: "/reporting/task_create_report_to_view_volumes_with_an_inaccessible_junction_path.html"
+    - title: 建立一份報告，以檢視使用預設匯出原則的 Volume
+      url: "/reporting/task_create_report_to_view_volumes_with_default_export_policy.html"
+  - title: 自訂儲存設備 VM 報告
+    entries:
+    - title: 了解如何自訂儲存設備 VM 報告
+      url: "/reporting/concept_customize_svm_reports.html"
+    - title: 建立一份報告，檢視達到最大 Volume 限制的儲存設備虛擬機器
+      url: "/reporting/task_create_report_to_view_svms_reaching_maximum_volume_limit.html"
+    - title: 建立一份報告以檢視已停止的儲存設備虛擬機
+      url: "/reporting/task_create_report_to_view_stopped_svms.html"
+  - title: 自訂 Volume 關係報告
+    entries:
+    - title: 了解關於自訂 Volume 關係報告
+      url: "/reporting/concept_customize_volume_relationship_reports.html"
+    - title: 建立一份報告，按故障來源對 Volume 關係進行分組
+      url: "/reporting/task_create_report_volume_relationships_source_of_failure.html"
+    - title: 建立報告以依問題將 Volume 關係分組
+      url: "/reporting/task_create_report_to_group_volume_relationships_by_issue.html"
+    - title: 建立報告以檢視特定時間間隔的 Volume 傳輸趨勢
+      url: "/reporting/task_create_report_to_view_volumes_at_specific_time_intervals.html"
+    - title: 建立報告以檢視 Volume 傳輸失敗或成功情況
+      url: "/reporting/task_create_report_to_view_failed_or_successful_volume_transfers.html"
+    - title: 建立報告以根據傳輸大小檢視 Volume 傳輸
+      url: "/reporting/task_create_report_to_view_volume_transfers_based_on_transfer_size.html"
+    - title: 建立報告以檢視按日分組的 Volume 傳輸
+      url: "/reporting/task_create_report_to_view_volume_transfers_grouped_by_day.html"
+  - title: 自訂 Volume 效能報告
+    entries:
+    - title: 建立報告以檢視在未啟用 FabricPool 的彙總上包含大量冷資料的 Volume
+      url: "/reporting/task_create_report_for_volumes_with_high_amount_of_cold_data.html"
+- title: 範例 Microsoft Excel 報告
+  entries:
+  - title: 了解 Microsoft Excel 報告範例
+    url: "/reporting/concept_sample_microsoft_excel_reports.html"
+  - title: 建立報告以顯示彙總容量表格和圖表
+    url: "/reporting/task_create_report_to_view_capacity.html"
+  - title: 建立報告以顯示彙總總容量與可用容量的比較圖表
+    url: "/reporting/task_create_report_to_view_aggregate_capacity_charts.html"
+  - title: 建立報告以檢視可用 Volume 容量圖表
+    url: "/reporting/task_create_report_to_view_available_volume_capacity_charts.html"
+  - title: 建立報告以檢視具有最多可用 IOPS 的彙總
+    url: "/reporting/task_create_report_to_view_aggregates_with_most_available_iops.html"

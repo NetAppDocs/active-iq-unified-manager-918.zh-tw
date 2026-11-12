@@ -1,0 +1,28 @@
+---
+permalink: performance-checker/concept_unified_manager_performance_monitoring_features.html 
+sidebar: sidebar 
+keywords: unified manager, performance, monitoring, features 
+summary: Unified Manager 收集並分析執行 ONTAP 軟體的系統的效能統計資料。它使用動態效能臨界值和使用者定義的效能臨界值來監控多個叢集元件的各種效能計數器。 
+---
+= 探索 Active IQ Unified Manager 的效能監控功能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager 收集並分析執行 ONTAP 軟體的系統的效能統計資料。它使用動態效能臨界值和使用者定義的效能臨界值來監控多個叢集元件的各種效能計數器。
+
+高回應時間（延遲）表示儲存物件（例如 Volume）的執行速度比正常情況慢。此問題也表示使用該 Volume 的用戶端應用程式效能已下降。Unified Manager 可識別效能問題所在的儲存設備元件，並提供建議行動清單，供您採取以解決效能問題。
+
+Unified Manager 包含以下功能：
+
+* 監控與分析執行 ONTAP 軟體之系統的工作負載效能統計資料。
+* 追蹤叢集、節點、彙總、連接埠、SVM、Volume、LUN、NVMe 命名空間和網路介面（LIF）的效能計數器。
+* 顯示詳細的圖表，繪製工作負載活動隨時間的變化；包括 IOPS（操作數）、MB/s（處理量）、延遲（回應時間）、使用率、效能容量和快取比率。
+* 可讓您建立使用者定義的效能臨界值原則，當超出臨界值時觸發事件並傳送電子郵件警示。
+* 使用系統定義的臨界值和動態效能臨界值來了解您的工作負載活動，以識別效能問題並向您發出警示。
+* 識別套用至您 Volume 和 LUN 的服務品質（QoS）原則與效能服務等級原則（PSL）。
+* 明確指出發生爭用的叢集元件。
+* 識別過度使用叢集元件的工作負載，以及效能受到活動增加影響的工作負載。
+

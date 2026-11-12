@@ -1,0 +1,23 @@
+---
+permalink: config/concept_add_disk_space_to_um_database_directory.html 
+sidebar: sidebar 
+keywords: add, disk, space, unified manager, database, directory 
+summary: Unified Manager 資料庫目錄包含從 ONTAP 系統收集的所有健全狀況和效能資料。在某些情況下，您可能需要增加資料庫目錄的大小。 
+---
+= 為 Active IQ Unified Manager 資料庫目錄新增磁碟空間
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager 資料庫目錄包含從 ONTAP 系統收集的所有健全狀況和效能資料。在某些情況下，您可能需要增加資料庫目錄的大小。
+
+例如，如果 Unified Manager 從大量叢集（每個叢集包含多個節點）收集資料，則資料庫目錄可能會被填滿。當資料庫目錄已滿 90% 時，您將收到警告事件；當目錄已滿 95% 時，您將收到關鍵事件。
+
+[NOTE]
+====
+在目錄達到 95% 滿之後，不會從叢集中收集其他資料。
+
+====
+根據 Unified Manager 是在 VMware ESXi 伺服器、Red Hat 伺服器或 Microsoft Windows 伺服器上執行，為資料目錄新增容量所需的步驟有所不同。

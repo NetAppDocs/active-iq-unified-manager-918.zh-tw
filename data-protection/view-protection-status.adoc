@@ -1,0 +1,102 @@
+---
+permalink: data-protection/view-protection-status.html 
+sidebar: sidebar 
+keywords: volume relationship, protection status, dashboard protection card, protection widget, lag, relationship health, healthy relationship, lag threshold, relationship event, source cluster, snapmirror, snapshot 
+summary: 資料保護頁面呈現資料中心內所有受保護 Volume 的資料保護詳細資料的全面檢視。 
+---
+= 在 Active IQ Unified Manager 中查看 Volume 保護狀態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+資料保護頁面提供單一叢集中所有受保護 Volume 或資料中心中所有叢集的資料保護詳細資料的全面檢視。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儀表板*。
+. 根據您要檢視所有受監控叢集的資料保護狀態還是單一叢集的資料保護狀態，請選擇 *所有叢集* 或從下拉式選單中選擇單一叢集。
+. 按一下「資料保護」面板頂端的右箭頭。畫面將顯示 *資料保護* 頁面。
+
+
+根據您在資料中心選擇的是單一叢集或所有叢集，此頁面會顯示受 Snapshot 複本或 SnapMirror 原則保護的 Volume 的資料保護狀態，並顯示未受保護的 Volume 數量。
+
+從 *個別叢集* 清單中選取叢集，即可顯示該叢集中受保護 Volume 的 Snapshot 快照技術保護與 SnapMirror 關係狀態。
+
+按一下此頁面上的事件即可進入事件詳細資料頁面。您可以按一下 *檢視全部* 連結，在事件管理清單頁面檢視所有作用中保護事件。您可以將滑鼠懸停來檢視相應的計數和圖例。您可以按一下：
+
+* 未受保護的 Volume 和受 Snapshot 複本保護的 Volume 的長條圖，可前往 Volume 頁面並檢視詳細資料。
+* 所有關係的長條圖會前往「關係」頁面，其中的詳細資訊會依來源叢集進行篩選。
+
+
+
+
+[[view-protection-status-of-volumes-protected-by-snapshot-copies]]
+== 檢視受 Snapshot 複本保護的 Volume 的保護狀態
+
+*Snapshot 複本總覽*：受 Snapshot 複本保護的 Volume 總覽，例如：
+
+* 受 Snapshot 複本保護與未受保護的 Volume 總數。
+* 使用或超過 Snapshot 複本保留空間的 Volume 總數。
+
+
+*Snapshot 複本分析* 詳細說明了以下資訊：
+
+* Snapshot 複本的個別事件，包括過去 24 小時內引發的事件。
+* 受 Snapshot 複本保護和未受 Snapshot 複本保護的 Volume 詳細圖表。
+* 使用、未使用和超出保留 Snapshot 複本容量的 Volume。
+* 依據其 Snapshot 複本數量區分的 Volume 計數細目。
+
+
+
+
+[[points-to-note-for-snapshot-copies]]
+=== Snapshot 複本的附註事項
+
+* 計算受 Snapshot 複本保護的 Volume 時，來源和目的地 Volume 都要考慮在內。
+* 傳回的 Snapshot 複本數量僅針對線上且可用的 Volume。
+* Snapshot 複本數量的圖表範圍是動態的。它是根據所選叢集中存在的 Snapshot 快照技術數量而產生。
+* 若要將 Volume 視為受保護，應啟用該 Volume 的 Snapshot 複本排程。
+* Snapshot 複本的保留空間值對於檢視已使用的磁碟空間量，或計算刪除一個或多個 Snapshot 複本後可回收的空間非常重要。
+
+
+
+
+[[view-protection-status-for-snapmirror-relationships]]
+== 檢視 SnapMirror 關係的保護狀態
+
+*SnapMirror 總覽*：受 SnapMirror 原則保護的 Volume 總覽，例如：
+
+* 受相應 SnapMirror 原則保護的 Volume 數量，例如 Volume SnapMirror 關係、儲存設備 VM 災難恢復（SVM-DR）及其組合。
+* 根據延遲狀態，發生恢復點目標（RPO）延遲的 SnapMirror 關係總數。
+
+
+*SnapMirror 分析* 詳細介紹了以下資訊：
+
+* 針對 SnapMirror 關係產生的個別事件，包括過去 24 小時內產生的事件
+* 受每種 SnapMirror 原則類型保護的 Volume 數量。
+* 受 SnapMirror 關係類型（例如非同步鏡像、非同步保險庫、非同步 MirrorVault、StricxtSync、SnapMirror 作用中同步一致性群組和同步）保護的關係數量。
+* 健康關係和不健康關係的數量。
+* Volume 關係計數細分。您可以按 RPO 延遲時間和狀態切換圖表。
+* 非託管關係的延遲臨界值。您可以按一下設定圖示（image:../media/Settings.PNG["延遲臨界值設定圖示"]）來設定延遲臨界值設定。如需詳細資訊，請參閱 link:../health-checker/task_configure_lag_threshold_settings_for_unmanaged_protection.html["設定非託管保護關係的延遲臨界值"]。
+
+
+
+
+[[points-to-note-for-snapmirror-relationships]]
+=== SnapMirror 關係的注意事項
+
+* 統計 SnapMirror 關係時，會計算已啟用讀取與寫入的來源 Volume。目的地與根目錄 Volume 不予考慮。
+* 對於 SnapMirror 關係，會顯示來源叢集的事件。
+* SnapMirror 關係計數包括來源和目的地位於相同或不同叢集上的 Volume 數量。
+* 資料複寫中恢復點目標延遲的延遲持續時間是以 SnapMirror 關係為基礎。狀態會根據所設定的關係臨界值，分類為 `ok`、 `warning`或 `error`。您可以查看狀態，以判斷參數是否如預期般運作，或是否需要處理任何問題。
+* 如果一個 Volume 有多個 SnapMirror 關係，則每種關係類型都會被計入 RPO 延遲。
+* 如果來源和目的地之間的資料複寫出現問題，例如關係斷開，則 Volume 關係被認為是不健康的。
+
+
+
+
+[[view-clusters-protected-by-metrocluster-configuration]]
+== 檢視受 MetroCluster 組態保護的叢集
+
+*資料保護* 頁面上的 *MetroCluster 保護* 面板會顯示您站台中透過 FC 或 IP 組態受 MetroCluster 保護或未受保護的叢集數量。按一下此面板上的長條圖會將您帶往叢集頁面，其中的叢集詳細資料會根據受保護或未受保護的叢集進行篩選。如需監控 MetroCluster 組態的相關資訊，請參閱 link:../storage-mgmt/task_monitor_metrocluster_configurations.html["監控 MetroCluster 組態"]。

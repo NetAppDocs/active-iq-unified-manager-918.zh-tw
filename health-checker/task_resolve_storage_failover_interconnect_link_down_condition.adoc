@@ -1,0 +1,55 @@
+---
+permalink: health-checker/task_resolve_storage_failover_interconnect_link_down_condition.html 
+sidebar: sidebar 
+keywords: scan, resolve, storage, failover, interconnect link, conditions 
+summary: 此工作流程範例展示如何掃描、評估和解決儲存設備故障轉移互連連結故障問題。在這個場景中，您是一位系統管理員，使用 Unified Manager 在節點上啟動 ONTAP 版本升級之前掃描儲存設備故障轉移風險。 
+---
+= 在 Active IQ Unified Manager 中掃描並解決儲存設備故障轉移互連連結中斷狀況
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此工作流程範例展示如何掃描、評估和解決儲存設備故障轉移互連連結故障問題。在這個場景中，您是一位系統管理員，使用 Unified Manager 在節點上啟動 ONTAP 版本升級之前掃描儲存設備故障轉移風險。
+
+.開始之前
+您必須擁有操作員、應用程式管理員或儲存管理員角色。
+
+如果在不中斷升級嘗試期間，HA 配對節點之間的儲存設備故障轉移互連發生故障，則升級失敗。因此，通常的做法是系統管理員在升級開始前，監控並確認目標叢集節點上的儲存設備故障轉移可靠性。
+
+.步驟
+. 在左側導覽窗格中，按一下 *事件管理*。
+. 在 *事件管理* 清單頁面中，選擇 *作用中的可用度事件*。
+. 在 *事件管理* 清單頁面頂部的 *名稱* 欄位中，按一下 image:../media/filtericon_um60.png["欄篩選器圖示"] 並在文字方塊中輸入 `*failover`，以將顯示的事件限制為與儲存設備容錯移轉相關的事件。
++
+顯示所有與儲存設備故障轉移條件相關的歷史事件。
+
++
+在這種情況下， Unified Manager 會在其可用度事件區段中顯示事件「 \`Storage Failover Interconnect One or More Links Down\` 」。
+
+. 如果 *事件管理* 清單頁面上顯示了一個或多個與儲存設備容錯移轉相關的事件，請執行下列步驟：
++
+.. 點擊事件標題連結，即可顯示該事件的詳細資訊。
++
+在本例中，您按一下事件標題「`Storage Failover Interconnect One or More Links Down`」。
+
++
+顯示該事件的事件詳細資料頁面。
+
+.. 在事件詳細資料頁面上，您可以執行下列一或多項任務：
++
+*** 審查「原因」欄位中的錯誤訊息並評估問題。
+*** 將事件指派給系統管理員。
+*** 確認事件。
+
+
+
+
+
+
+*相關資訊*
+
+link:../events/reference_event_details_page.html["事件詳情頁面"]
+
+link:../config/reference_unified_manager_roles_and_capabilities.html["Unified Manager 使用者角色和功能"]

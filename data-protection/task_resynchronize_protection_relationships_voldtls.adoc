@@ -1,0 +1,53 @@
+---
+permalink: data-protection/task_resynchronize_protection_relationships_voldtls.html 
+sidebar: sidebar 
+keywords: resynchronize, protection, relationships, volume, health details page 
+summary: 您可以重新同步已中斷且目的地已設為讀寫的 SnapMirror 或 SnapVault 關係上的資料，使來源上的資料與目的地上的資料相符。當來源 Volume 上所需的通用 Snapshot 複本被刪除，導致 SnapMirror 或 SnapVault 更新失敗時，您也可能需要重新同步。 
+---
+= 在 Active IQ Unified Manager 的「磁碟區/運作狀況」詳細資料頁面中重新同步保護關係
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以重新同步已中斷且目的地已設為讀寫的 SnapMirror 或 SnapVault 關係上的資料，使來源上的資料與目的地上的資料相符。當來源 Volume 上所需的通用 Snapshot 複本被刪除，導致 SnapMirror 或 SnapVault 更新失敗時，您也可能需要重新同步。
+
+.開始之前
+* 您必須擁有應用程式系統管理員或儲存系統管理員角色。
+* 您必須已設定 OnCommand Workflow Automation。
+
+
+.步驟
+. 在 *Volume / 運行狀況* 詳細資料頁面的 *保護* 索引標籤中，找到拓撲中要重新同步的保護關係，然後以滑鼠右鍵按一下它。
+. 從選單中選擇 *重新同步*。
++
+或者，從 *動作* 功能表中，選擇 *關係* > *重新同步* ，以重新同步您目前正在檢視詳細資料的關係。
+
++
+顯示「重新同步」對話方塊。
+
+. 在 *Resynchronization Options* 索引標籤中，選取傳輸優先順序和最大傳輸率。
+. 按一下 *來源 Snapshot 複本*；然後在 *Snapshot 複本* 欄中，按一下 *預設*。
++
+此時將顯示「選擇來源 Snapshot 複本」對話方塊。
+
+. 如果您要指定現有的 Snapshot 複本而不是傳輸預設的 Snapshot 複本，請按一下 *現有 Snapshot 複本*，然後從清單中選擇 Snapshot 複本。
+. 按一下 *提交*。
++
+您將返回「重新同步」對話方塊。
+
+. 如果您選擇了多個來源進行重新同步，請針對您要指定現有 Snapshot 複本的下一個來源，按一下 *預設*。
+. 按一下 *提交* 以開始重新同步作業。
++
+重新同步作業已啟動，您將返回 Volume / 運行狀況詳細資料頁面，頁面頂部會顯示作業連結。
+
+. *選用：*在 *Volume / 健全狀況詳細資料* 頁面上按一下 *檢視工作*，以追蹤每個重新同步工作的狀態。
++
+顯示篩選後的工作清單。
+
+. *選用：* 按一下瀏覽器上的 *返回* 箭頭，返回 *Volume / 健康狀況* 詳細資料頁面。
++
+當所有作業工作成功完成時，重新同步作業即完成。
+
+

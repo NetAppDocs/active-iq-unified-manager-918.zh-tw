@@ -1,0 +1,28 @@
+---
+permalink: install-vapp/task_remove_unified_manager_vapp.html 
+sidebar: sidebar 
+keywords: remove unified manager 
+summary: 您可以透過移除已安裝 Unified Manager 軟體的虛擬機器 （VM） 來解除安裝 Unified Manager。 
+---
+= 移除 Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以透過移除已安裝 Unified Manager 軟體的虛擬機器 （VM） 來解除安裝 Unified Manager。
+
+.開始之前
+* 您應該擁有存取 VMware vCenter 伺服器和 vSphere Web 用戶端的憑證。
+* Unified Manager 伺服器與 Workflow Automation 伺服器之間的任何作用中連線都應關閉。
+* 在移除虛擬機器（VM）之前，應先從 Unified Manager 伺服器中移除所有叢集（資料來源）。
+
+
+.步驟
+. 使用 Unified Manager 維護主控台驗證 Unified Manager 伺服器沒有與外部資料供應商的作用中連線。
+. 在 vSphere 用戶端中，點選 *首頁* > *清單* > *虛擬機器和範本*。
+. 選取您要移除的 VM，然後按一下 *摘要* 索引標籤。
+. 如果虛擬機器正在執行，請點選 *電源* > *關閉客體*。
+. 在您要移除的 VM 上按一下滑鼠右鍵，然後按一下 *從磁碟刪除*。
+

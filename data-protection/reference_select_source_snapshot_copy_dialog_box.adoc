@@ -1,0 +1,187 @@
+---
+permalink: data-protection/reference_select_source_snapshot_copy_dialog_box.html 
+sidebar: sidebar 
+keywords: select, source, snapshot, copy, dialog box 
+summary: 您可以使用「選取來源 Snapshot 複本」對話方塊來選取特定的 Snapshot 複本，以便在保護關係之間傳輸資料，或者您可以選取預設行為，該行為會根據您是初始化、更新還是重新同步關係，以及關係是 SnapMirror 還是 SnapVault 而有所不同。 
+---
+= 在 Active IQ Unified Manager 中使用「選擇來源 Snapshot 快照技術副本」對話方塊
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用「選取來源 Snapshot 複本」對話方塊來選取特定的 Snapshot 複本，以便在保護關係之間傳輸資料，或者您可以選取預設行為，該行為會根據您是初始化、更新還是重新同步關係，以及關係是 SnapMirror 還是 SnapVault 而有所不同。
+
+
+
+[[default]]
+== 預設
+
+允許您選擇預設行為，以決定哪一個 Snapshot 複本用於 SnapVault 與 SnapMirror 關係的初始化、更新與重新同步傳輸。
+
+如果您正在執行 SnapVault 傳輸，則每項操作的預設行為如下：
+
+[cols="3*"]
+|===
+| 操作 | 當來源為讀寫時的預設 SnapVault 行為 | 當來源為資料保護（DP）時的預設 SnapVault 行為 
+
+
+ a| 
+初始化
+ a| 
+建立一個新的 Snapshot 複本並將其傳輸。
+ a| 
+傳輸上次匯出的 Snapshot 複本。
+
+
+
+ a| 
+更新
+ a| 
+僅傳輸已標記的 Snapshot 複本，如原則中所指定。
+ a| 
+傳輸上次匯出的 Snapshot 複本。
+
+
+
+ a| 
+重新同步
+ a| 
+傳輸在最新的共通 Snapshot 複本之後所建立的所有已標記的 Snapshot 複本。
+ a| 
+傳輸最新的已標記 Snapshot 複本。
+
+|===
+如果您正在執行 SnapMirror 傳輸，各項作業的預設行為如下：
+
+[cols="3*"]
+|===
+| 操作 | 預設 SnapMirror 行為 | 當關係是 SnapMirror 到 SnapMirror 級聯中的第二跳時的預設 SnapMirror 行為 
+
+
+ a| 
+初始化
+ a| 
+建立一個新的 Snapshot 複本，並將其與在此新 Snapshot 複本之前建立的所有 Snapshot 複本一起傳輸。
+ a| 
+從來源傳輸所有 Snapshot 複本。
+
+
+
+ a| 
+更新
+ a| 
+建立一個新的 Snapshot 複本，並將其與在此新 Snapshot 複本之前建立的所有 Snapshot 複本一起傳輸。
+ a| 
+傳輸所有 Snapshot 複本。
+
+
+
+ a| 
+重新同步
+ a| 
+建立新的 Snapshot 複本，然後從來源傳輸所有 Snapshot 複本。
+ a| 
+將次要 Volume 中的所有 Snapshot 複本傳輸到第三 Volume，並刪除在建立最新的共同 Snapshot 複本之後新增的任何資料。
+
+|===
+
+
+[[existing-snapshot-copy]]
+== 現有 Snapshot 複本
+
+如果該操作允許選擇 Snapshot 複本，則可以從清單中選擇現有的 Snapshot 複本。
+
+* *Snapshot 複本*
++
+顯示現有的 Snapshot 複本，您可以從中選擇以進行傳輸。
+
+* *建立日期*
++
+顯示 Snapshot 複本的建立日期和時間。Snapshot 複本會從最新到最舊列出，最新的位於清單頂部。
+
+
+
+如果您正在執行 SnapVault 傳輸，並且想要選擇現有的 Snapshot 複本從來源傳輸到目的地，則每個操作的行為如下：
+
+[cols="3*"]
+|===
+| 操作 | SnapVault 指定 Snapshot 複本時的行為 | SnapVault 在級聯中指定 Snapshot 複本時的行為 
+
+
+ a| 
+初始化
+ a| 
+傳輸指定的 Snapshot 複本。
+ a| 
+資料保護 Volume 不支援來源 Snapshot 複本選擇。
+
+
+
+ a| 
+更新
+ a| 
+傳輸指定的 Snapshot 複本。
+ a| 
+資料保護 Volume 不支援來源 Snapshot 複本選擇。
+
+
+
+ a| 
+重新同步
+ a| 
+傳輸選定的 Snapshot 複本。
+ a| 
+資料保護 Volume 不支援來源 Snapshot 複本選擇。
+
+|===
+如果您正在執行 SnapMirror 傳輸，並且想要選擇現有的 Snapshot 複本從來源傳輸到目的地，則每個操作的行為如下：
+
+[cols="3*"]
+|===
+| 操作 | SnapMirror 指定 Snapshot 複本時的行為 | SnapMirror 在級聯中指定 Snapshot 複本時的行為 
+
+
+ a| 
+初始化
+ a| 
+將來源上的所有 Snapshot 複本傳輸至指定的 Snapshot 複本。
+ a| 
+資料保護 Volume 不支援來源 Snapshot 複本選擇。
+
+
+
+ a| 
+更新
+ a| 
+將來源上的所有 Snapshot 複本傳輸至指定的 Snapshot 複本。
+ a| 
+資料保護 Volume 不支援來源 Snapshot 複本選擇。
+
+
+
+ a| 
+重新同步
+ a| 
+將來源中的所有 Snapshot 複本傳輸至選定的 Snapshot 複本，然後刪除在建立最新的共同 Snapshot 複本之後新增的任何資料。
+ a| 
+資料保護 Volume 不支援來源 Snapshot 複本選擇。
+
+|===
+
+
+[[command-buttons]]
+== 命令按鈕
+
+命令按鈕可讓您執行下列任務：
+
+* *提交*
++
+提交您的選擇並關閉「選擇來源 Snapshot 複本」對話方塊。
+
+* *取消*
++
+放棄您的選擇並關閉「選取來源 Snapshot 複本」對話方塊。
+
+

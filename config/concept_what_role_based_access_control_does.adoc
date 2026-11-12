@@ -1,0 +1,18 @@
+---
+permalink: config/concept_what_role_based_access_control_does.html 
+sidebar: sidebar 
+keywords: role-based, access, control 
+summary: 基於角色的存取控制（RBAC）允許系統管理員透過定義角色來管理使用者群組。如果您需要將特定功能的存取限制在選定的系統管理員，則必須為他們設定系統管理員帳戶。如果您希望限制系統管理員可以檢視的資訊以及可以執行的操作，則必須將角色套用到您建立的系統管理員帳戶。 
+---
+= 了解 Active IQ Unified Manager 中的角色型存取控制
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+RBAC（角色型存取控制）提供控制誰能存取 Active IQ Unified Manager 伺服器中各種功能與資源的能力。RBAC 可讓系統管理員透過定義角色來管理使用者群組。如果您需要將特定功能的存取權限限制在選定的系統管理員，則必須為他們設定系統管理員帳戶。如果您想要限制系統管理員可以檢視的資訊以及他們可以執行的作業，則必須將角色套用至您建立的系統管理員帳戶。
+
+管理伺服器使用 RBAC 進行使用者登入和角色權限。如果您尚未變更管理伺服器的管理使用者存取預設設定，則無需登入即可檢視這些設定。
+
+當您發起需要特定權限的操作時，管理伺服器會提示您登入。例如，若要建立系統管理員帳戶，您必須使用應用程式管理員帳戶存取來登入。

@@ -1,0 +1,20 @@
+---
+permalink: performance-checker/concept_analyze_events_from_dynamic_performance_thresholds.html 
+sidebar: sidebar 
+keywords: analyze, events, dynamic, performance, thresholds 
+summary: 動態臨界值產生的事件指出，與預期回應時間範圍相比，工作負載的實際回應時間（延遲）過高或過低。您可以使用「事件詳細資料」頁面分析效能事件，並在必要時採取修正行動，使效能恢復正常。 
+---
+= 分析 Active IQ Unified Manager 中動態效能閾值的事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+動態臨界值產生的事件指出，與預期回應時間範圍相比，工作負載的實際回應時間（延遲）過高或過低。您可以使用「事件詳細資料」頁面分析效能事件，並在必要時採取修正行動，使效能恢復正常。
+
+[NOTE]
+====
+Cloud Volumes ONTAP、ONTAP Edge 或 ONTAP Select 系統未啟用動態效能臨界值。
+
+====

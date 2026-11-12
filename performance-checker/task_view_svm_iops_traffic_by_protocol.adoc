@@ -1,0 +1,35 @@
+---
+permalink: performance-checker/task_view_svm_iops_traffic_by_protocol.html 
+sidebar: sidebar 
+keywords: view, svm, iops, traffic, protocol 
+summary: 您可以使用「效能 / SVM Explorer」頁面檢視 SVM 的詳細 IOPS 資訊。「IOPS - 總計」計數器圖表顯示 SVM 的總 IOPS 使用情況，而「IOPS - 細分」計數器圖表則有助於判斷讀取、寫入和其他 IOPS 對 SVM 的影響。 
+---
+= 在 Active IQ Unified Manager 中按協定檢視 SVM IOPS 流量
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用「效能 / SVM Explorer」頁面檢視 SVM 的詳細 IOPS 資訊。「IOPS - 總計」計數器圖表顯示 SVM 的總 IOPS 使用情況，而「IOPS - 細分」計數器圖表則有助於判斷讀取、寫入和其他 IOPS 對 SVM 的影響。
+
+此外，「IOPS - 協定」圖表詳細比較了 SVM 上使用的每種協定的 IOPS 流量。下列協定可供使用：
+
+* CIFS
+* NFS
+* FCP
+* iSCSI
+* NVMe-FC
+
+
+.步驟
+. 在所選 SVM 的 *效能/SVM Explorer* 頁面中，從 IOPS 圖表的下拉式選單中選擇 *協定*。
++
+顯示 IOPS - 協定圖表。
+
+. 若要檢視較大版本的圖表，請選擇 *縮放檢視*。
++
+顯示 IOPS 進階協定比較表。您可以透過取消選取或選取與協定相關聯的 image:../media/eye_icon.gif["眼睛圖示"] 來限制比較。
+
+. 若要檢視具體數值，請將游標移至任一圖表的圖表區域，即可看到彈出視窗。
+

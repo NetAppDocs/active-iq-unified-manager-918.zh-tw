@@ -1,0 +1,74 @@
+---
+permalink: config/task_set_up_authentication_services.html 
+sidebar: sidebar 
+keywords: set up, authentication, services 
+summary: 驗證服務允許在提供遠端使用者或遠端群組存取 Unified Manager 之前，先在驗證伺服器中對其進行驗證。您可以使用預先定義的驗證服務（例如 Active Directory 或 OpenLDAP）來驗證使用者，或是設定您自己的驗證機制。 
+---
+= 在 Active IQ Unified Manager 中設定驗證服務
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+驗證服務允許在提供遠端使用者或遠端群組存取 Unified Manager 之前，先在驗證伺服器中對其進行驗證。您可以使用預先定義的驗證服務（例如 Active Directory 或 OpenLDAP）來驗證使用者，或是設定您自己的驗證機制。
+
+.開始之前
+* 您必須已啟用遠端驗證。
+* 您必須擁有應用程式管理員角色。
+
+
+.步驟
+. 在左側導覽窗格中，按一下 *一般* > *遠端驗證*。
+. 請選擇以下驗證服務之一：
++
+[cols="2*"]
+|===
+| 如果您選擇…… | 然後這樣做…… 
+
+
+ a| 
+Active Directory
+ a| 
+.. 請輸入系統管理員名稱和密碼。
+.. 指定驗證伺服器的基本辨別名稱。
++
+例如，如果驗證伺服器的網域名稱為 +ou@domain.com+，則基本可分辨名稱為 *cn=ou,dc=domain,dc=com*。
+
+
+
+
+
+ a| 
+OpenLDAP
+ a| 
+.. 輸入連結專有名稱和連結密碼。
+.. 指定驗證伺服器的基本辨別名稱。
++
+例如，如果驗證伺服器的網域名稱為 +ou@domain.com+，則基本可分辨名稱為 *cn=ou,dc=domain,dc=com*。
+
+
+
+
+
+ a| 
+其他
+ a| 
+.. 輸入連結專有名稱和連結密碼。
+.. 指定驗證伺服器的基本辨別名稱。
++
+例如，如果驗證伺服器的網域名稱為 +ou@domain.com+，則基本可分辨名稱為 *cn=ou,dc=domain,dc=com*。
+
+.. 指定驗證伺服器支援的 LDAP 傳輸協定版本。
+.. 輸入使用者名稱、群組成員身分、使用者群組和成員屬性。
+
+
+|===
++
+[NOTE]
+====
+如果要修改驗證服務，必須先刪除所有現有的驗證伺服器，然後再新增新的驗證伺服器。
+
+====
+. 按一下 *Save* 。
+

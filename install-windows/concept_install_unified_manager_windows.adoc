@@ -1,0 +1,8 @@
+---
+permalink: install-windows/concept_install_unified_manager_windows.html 
+redirect: install-windows/task_install_unified_manager_on_windows.html 
+---
+= 
+:allow-uri-read: 
+
+

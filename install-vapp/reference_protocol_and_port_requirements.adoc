@@ -1,0 +1,302 @@
+---
+permalink: install-vapp/reference_protocol_and_port_requirements.html 
+sidebar: sidebar 
+keywords: unified manager, protocol, port, requirements, server, connections 
+summary: 所需的連接埠和協定可讓 Unified Manager 伺服器與代管儲存設備系統、伺服器和其他元件之間進行通訊。 
+---
+= 了解 Active IQ Unified Manager 的協定和連接埠需求
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+所需的連接埠和協定可讓 Unified Manager 伺服器與代管儲存設備系統、伺服器和其他元件之間進行通訊。
+
+
+
+[[connections-to-the-unified-manager-server]]
+== 與 Unified Manager 伺服器的連線
+
+在典型的安裝中，連接到 Unified Manager Web UI 時無需指定連接埠號碼，因為一律使用預設連接埠。例如，由於 Unified Manager 始終嘗試在其預設連接埠上執行，因此您可以輸入  `+https://<host>+` 而不是  `+https://<host>:443+`。
+
+Unified Manager 伺服器使用特定協定存取下列介面：
+
+[cols="4*"]
+|===
+| 介面 | 傳輸協定 | 連接埠 | 說明 
+
+
+ a| 
+Unified Manager Web 使用者介面
+ a| 
+HTTP
+ a| 
+80
+ a| 
+用於存取 Unified Manager web UI；自動重新導向至安全的連接埠 443。
+
+
+
+ a| 
+Unified Manager Web 使用者介面和使用 API 的程式
+ a| 
+HTTPS
+ a| 
+443
+ a| 
+用於安全地存取 Unified Manager Web UI 或進行 API 呼叫；API 呼叫只能使用 HTTPS 進行。
+
+
+
+ a| 
+維護主控台
+ a| 
+SSH/SFTP
+ a| 
+22
+ a| 
+用於存取維護主控台並擷取支援套件。
+
+
+
+ a| 
+Linux 命令列
+ a| 
+SSH/SFTP
+ a| 
+22
+ a| 
+用於存取 Red Hat Enterprise Linux 命令列並擷取支援套件。
+
+
+
+ a| 
+Syslog
+ a| 
+UDP
+ a| 
+514
+ a| 
+用於從 ONTAP 系統存取基於訂閱的 EMS 訊息，並根據這些訊息建立事件。
+
+
+
+ a| 
+REST
+ a| 
+HTTPS
+ a| 
+9443
+ a| 
+用於從經過驗證的 ONTAP 系統存取以 REST API 為基礎的即時 EMS 事件。
+
+
+
+ a| 
+MySQL 資料庫
+ a| 
+MySQL
+ a| 
+3306
+ a| 
+用於啟用 OnCommand Workflow Automation 和 OnCommand API Services 對 Unified Manager 的存取。
+
+
+
+ a| 
+AMQP QPID 代理人
+ a| 
+TCP/IP
+ a| 
+56072
+ a| 
+用於內部訊息通訊。
+
+
+
+ a| 
+AMQP QPID 代理人
+ a| 
+WebSocket 透過 TCP
+ a| 
+56080
+ a| 
+用於傾聽此連接埠，以接收來自 ONTAP（雲端代理程式）的訊息。
+
+
+
+ a| 
+AMQP QPID 代理人
+ a| 
+WebSocket 透過 TCP
+ a| 
+56443
+ a| 
+此連接埠用於傾聽來自 ONTAP（雲端代理程式）的訊息。透過此連接埠進行的通訊支援 TLS 或 SSL 加密。
+
+|===
+[NOTE]
+====
+在 VMware vSphere 系統上安裝 Unified Manager 時，MySQL 的預設連接埠 3306 僅限 localhost 使用。這不會影響任何升級情境，其中會保留先前的組態。您可以修改此組態，並透過使用維護主控台上的  `Control access to MySQL port 3306` 選項，將連線提供給其他主機。如需詳細資訊，請參閱 link:../config/reference_additional_menu_options.html["其他選單選項"]。您可以使用 Unified Manager 維護主控台來變更用於 HTTP 和 HTTPS 通訊的連接埠（連接埠 80 和 443）。如需詳細資訊，請參閱 link:../config/concept_maintenance_console_menu.html["維護主控台選單"]。
+
+====
+
+
+[[connections-from-the-unified-manager-server]]
+== 來自 Unified Manager 伺服器的連線
+
+您應該設定防火牆，開啟允許 Unified Manager 伺服器與代管儲存設備系統、伺服器和其他元件之間通訊的連接埠。如果連接埠未開啟，通訊將會失敗。
+
+根據您的環境，您可以選擇修改 Unified Manager 伺服器用於連線至特定目的地的連接埠和協定。
+
+Unified Manager 伺服器使用下列協定和連接埠連接到代管的儲存設備系統、伺服器和其他元件：
+
+[cols="4*"]
+|===
+| 目的地 | 傳輸協定 | 連接埠 | 說明 
+
+
+ a| 
+儲存系統
+ a| 
+HTTPS
+ a| 
+443/TCP
+ a| 
+用於監控和管理儲存設備系統。
+
+
+NOTE: 如果您使用此連接埠或任何其他連接埠連接至 VMware vCenter 伺服器或 ESXi 伺服器，請確保該連接埠可用，並且可以在安全的站台中連線。
+
+
+
+ a| 
+儲存系統
+ a| 
+NDMP
+ a| 
+10000/TCP
+ a| 
+用於某些 Snapshot 快照技術還原作業。
+
+
+
+ a| 
+AutoSupport 伺服器
+ a| 
+HTTPS
+ a| 
+443
+ a| 
+用於傳送 AutoSupport 資訊。需要存取網際網路才能執行此功能。
+
+
+
+ a| 
+驗證伺服器
+ a| 
+LDAP
+ a| 
+389
+ a| 
+用於提出驗證請求，以及使用者和群組查詢請求。
+
+
+
+ a| 
+LDAPS
+ a| 
+636
+ a| 
+用於安全的 LDAP 通訊。
+
+
+
+ a| 
+郵件伺服器
+ a| 
+SMTP
+ a| 
+25
+ a| 
+用於傳送警報通知電子郵件。
+
+
+
+ a| 
+SNMP 陷阱發送器
+ a| 
+SNMPv1 或 SNMPv3
+ a| 
+162/UDP
+ a| 
+用於傳送警報通知 SNMP 陷阱。
+
+
+
+ a| 
+外部資料供應商伺服器
+ a| 
+TCP
+ a| 
+2003
+ a| 
+用於將效能資料傳送給外部資料供應商，例如 Graphite。
+
+
+
+ a| 
+NTP 伺服器
+ a| 
+NTP
+ a| 
+123/UDP
+ a| 
+用於將 Unified Manager 伺服器上的時間與外部 NTP 時間伺服器同步。（僅限 VMware 系統）
+
+
+
+ a| 
+AMQP QPID 代理人
+ a| 
+TCP/IP
+ a| 
+56072
+ a| 
+用於內部訊息通訊。
+
+
+
+ a| 
+AMQP QPID 代理人
+ a| 
+WebSocket 透過 TCP
+ a| 
+56080
+ a| 
+用於傾聽此連接埠，以接收來自 ONTAP（雲端代理程式）的訊息。
+
+
+
+ a| 
+AMQP QPID 代理人
+ a| 
+WebSocket 透過 TCP
+ a| 
+56443
+ a| 
+此連接埠用於傾聽來自 ONTAP（雲端代理程式）的訊息。透過此連接埠進行的通訊支援 TLS 或 SSL 加密。
+
+
+
+ a| 
+Syslog
+ a| 
+UDP
+ a| 
+514
+ a| 
+由 Unified Manager 用來將稽核日誌傳送到遠端 syslog 伺服器。
+
+|===

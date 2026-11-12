@@ -1,0 +1,52 @@
+---
+section: install-vapp
+title: 在 VMware vSphere 系統上安裝 Unified Manager
+entries:
+- title: 了解 Active IQ Unified Manager
+  entries:
+  - title: Active IQ Unified Manager 簡介
+    url: "/install-vapp/concept_introduction_to_unified_manager.html"
+  - title: Unified Manager 伺服器的功能
+    url: "/install-vapp/concept_what_unified_manager_server_does.html"
+  - title: 了解 Unified Manager 的安裝順序
+    url: "/install-vapp/concept_overview_of_installation_sequence_um.html"
+- title: 安裝 Unified Manager 的需求
+  entries:
+  - title: 確保伺服器符合 Active IQ Unified Manager 的安裝需求
+    url: "/install-vapp/concept_requirements_for_installing_unified_manager.html"
+  - title: Unified Manager 的虛擬化基礎架構和硬體需求
+    url: "/install-vapp/concept_virtual_infrastructure_or_hardware_system_requirements.html"
+  - title: Unified Manager 的 VMware 軟體和安裝要求
+    url: "/install-vapp/reference_vmware_software_and_installation_requirements.html"
+  - title: Unified Manager 支援的瀏覽器
+    url: "/install-vapp/concept_browser_and_platform_requirements.html"
+  - title: Unified Manager 的協定和連接埠要求
+    url: "/install-vapp/reference_protocol_and_port_requirements.html"
+  - title: Unified Manager 安裝工作表
+    url: "/install-vapp/reference_complete_worksheet_um.html"
+- title: 在 VMware vSphere 上安裝、升級與移除 Unified Manager
+  entries:
+  - title: 了解 Unified Manager 部署流程
+    url: "/install-vapp/concept_overview_of_deployment_process.html"
+  - title: Unified Manager 虛擬應用裝置部署工作流程
+    entries:
+    - title: 部署 Active IQ Unified Manager
+      url: "/install-vapp/task_deploy_unified_manager_vapp.html"
+    - title: 下載 Unified Manager 安裝檔案
+      url: "/install-vapp/task_download_unified_manager_ova_file.html"
+    - title: 部署 Unified Manager 虛擬應用裝置
+      url: "/install-vapp/task_deploy_unified_manager_virtual_appliance_vapp.html"
+  - title: Unified Manager 虛擬應用裝置升級工作流程
+    entries:
+    - title: 升級 Active IQ Unified Manager
+      url: "/install-vapp/task_upgrade_unified_manager_vapp.html"
+    - title: Unified Manager 版本支援的升級途徑
+      url: "/include/upgrade-path.html"
+    - title: 下載 Unified Manager 升級檔案
+      url: "/install-vapp/task_download_unified_manager_iso_image_vapp.html"
+    - title: 升級 Unified Manager 虛擬應用裝置
+      url: "/install-vapp/task_upgrade_unified_manager_virtual_appliance_vapp.html"
+  - title: 重新啟動 Unified Manager 虛擬機器
+    url: "/install-vapp/task_restart_unified_manager_virtual_machine.html"
+  - title: 移除 Unified Manager
+    url: "/install-vapp/task_remove_unified_manager_vapp.html"

@@ -1,0 +1,29 @@
+---
+permalink: health-checker/task_delete_annotations.html 
+sidebar: sidebar 
+keywords: delete, annotations 
+summary: 不再需要自訂註釋及其值時，您可以將其刪除。 
+---
+= 在 Active IQ Unified Manager 中刪除註釋
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+不再需要自訂註釋及其值時，您可以將其刪除。
+
+.開始之前
+* 您必須擁有應用程式系統管理員或儲存系統管理員角色。
+* 註解值不得在其他註解或群組規則中使用。
+
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存設備管理* > *註解*。
+. 在 *註釋* 索引標籤中，選取您要刪除的註釋。
++
+顯示所選註釋的詳細資訊。
+
+. 按一下 *行動* > *刪除* 以刪除選取的註解及其值。
+. 在警告對話方塊中，按一下 *是* 以確認刪除。
+

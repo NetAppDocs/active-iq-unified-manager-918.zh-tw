@@ -1,0 +1,22 @@
+---
+permalink: performance-checker/concept_counter_charts_zoom_view.html 
+sidebar: sidebar 
+keywords: counter, charts, zoom, view 
+summary: 計數器圖表提供縮放檢視，使您能夠放大查看指定時間範圍內的效能詳細資料。這使您能夠以更高的精細度查看效能詳細資料和事件，這在疑難排解效能問題時非常有用。 
+---
+= 了解 Active IQ Unified Manager 中計數器圖表的縮放檢視
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+計數器圖表提供縮放檢視，使您能夠放大查看指定時間範圍內的效能詳細資料。這使您能夠以更高的精細度查看效能詳細資料和事件，這在疑難排解效能問題時非常有用。
+
+在縮放檢視中顯示時，某些細分圖表會提供比圖表不在縮放檢視中時所顯示的更多資訊。例如，IOPS、IOPS/TB 和 MBps 細分圖表的縮放檢視頁面會顯示 Volume 和 LUN 的 QoS 原則值（如果已在 ONTAP 中設定）。
+
+[NOTE]
+====
+對於系統定義的效能臨界值原則，從 *原則* 清單中僅提供 "`Node resources over-utilized`" 和 "`QoS throughput limit breached`" 原則。其他系統定義的臨界值原則目前無法使用。
+
+====

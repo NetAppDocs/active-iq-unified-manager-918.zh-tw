@@ -1,0 +1,45 @@
+---
+permalink: performance-checker/concept_performance_monitor_of_metrocluster_configurations.html 
+sidebar: sidebar 
+keywords: performance, monitor, metrocluster, throughput 
+summary: Unified Manager 可讓您監控 MetroCluster 組態中叢集之間的寫入處理量，以識別具有大量寫入處理量的工作負載。如果這些高效能工作負載導致本機叢集上的其他 Volume 發生高 I/O 回應時間，Unified Manager 會觸發效能事件來通知您。 
+---
+= 使用 Active IQ Unified Manager 監控 MetroCluster 效能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager 可讓您監控 MetroCluster 組態中叢集之間的寫入處理量，以識別具有大量寫入處理量的工作負載。
+
+如果這些高效能工作負載導致本機叢集上的其他 Volume 出現較高的 I/O 回應時間，Unified Manager 會觸發效能事件來通知您。
+
+
+NOTE: Unified Manager 將 MetroCluster 組態中的各個叢集視為獨立的叢集。它不會區分互為合作夥伴的叢集，也不會關聯各個叢集的寫入處理量。
+
+當 MetroCluster 組態中的本機叢集將其資料鏡射到其合作夥伴叢集時，資料會寫入 NVRAM，然後透過交換器間連結（ISL）傳送到遠端彙總。Unified Manager 會分析 NVRAM，以識別高寫入處理量過度使用 NVRAM、導致 NVRAM 發生爭用的工作負載。
+
+回應時間偏差超過效能臨界值的工作負載稱為 _受害者_，而寫入 NVRAM 處理量偏差高於正常水準並導致爭用的工作負載稱為 _霸凌者_。由於只有寫入要求會鏡射到合作夥伴叢集，因此 Unified Manager 不會分析讀取處理量。
+
+您可以從下列畫面分析對應 LUN 與 Volume 的工作負載，以檢視 MetroCluster 組態中任何叢集的處理量。您可以依叢集篩選結果。從左側導覽窗格：
+
+* *儲存設備 > 叢集 > 效能：所有叢集*檢視。請參閱
+* *儲存設備 > Volume > 效能：所有 Volume* 檢視。
+* *儲存設備 > LUN > 效能：所有 LUN* 檢視。
+* *工作負載分析 > 所有工作負載*
+
+
+*相關資訊*
+
+link:../performance-checker/reference_performance_event_analysis_and_notification.html["效能事件分析和通知"]
+
+link:../performance-checker/concept_performance_incident_analysis_for_metrocluster_configuration.html["MetroCluster 組態的效能事件分析"]
+
+link:../performance-checker/concept_roles_of_workloads_involved_in_performance_incident.html["效能事件中涉及的工作負載的角色"]
+
+link:../performance-checker/task_identify_victim_workloads_involved_in_performance_event.html["識別效能事件中涉及的受害工作負載"]
+
+link:../performance-checker/task_identify_bully_workloads_involved_in_performance_event.html["辨識效能事件中涉及的惡霸工作負載"]
+
+link:../performance-checker/task_identify_shark_workloads_involved_in_performance_event.html["識別效能事件中涉及的鯊魚工作負載"]

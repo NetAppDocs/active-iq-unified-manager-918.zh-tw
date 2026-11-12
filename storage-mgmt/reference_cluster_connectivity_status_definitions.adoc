@@ -1,0 +1,51 @@
+---
+permalink: storage-mgmt/reference_cluster_connectivity_status_definitions.html 
+sidebar: sidebar 
+keywords: cluster, connectivity, status, definitions 
+summary: 了解 MetroCluster 組態中叢集之間的連線狀態，例如最佳、受影響或已關閉。 
+---
+= 了解 Active IQ Unified Manager 中 MetroCluster over FC 組態的叢集連線
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在 MetroCluster 基於光纖通道 (FC) 的組態中，叢集間的連線狀態可能為以下狀態之一：最佳、受影響或中斷。了解連線狀態有助於您有效地管理 MetroCluster 組態。
+
+|===
+| 連線狀態 | 說明 | 顯示的圖示 
+
+
+ a| 
+最佳
+ a| 
+MetroCluster 組態中各叢集之間的連線正常。
+ a| 
+image:../media/metrocluster_connectivity_optimal.gif["MetroCluster 連線最佳圖示"]
+
+
+
+ a| 
+受影響
+ a| 
+一個或多個錯誤會影響容錯移轉的可用度；但是，MetroCluster 組態中的兩個叢集仍然處於運作狀態。例如，當 ISL 連結中斷、叢集間 IP 連結中斷或合作夥伴叢集無法存取時。
+ a| 
+image:../media/metrocluster_connectivity_impacted.gif["MetroCluster 連線受影響圖示"]
+
+
+
+ a| 
+停機
+ a| 
+MetroCluster 組態中叢集之間的連線中斷，原因可能是其中一個或兩個叢集發生故障，或叢集處於容錯移轉模式。例如，當合作夥伴叢集因災難而發生故障，或出於測試目的進行計劃內切換時。
+ a| 
+切換過程中出現錯誤：
+
+image::../media/metrocluster_connectivity_down.gif[MetroCluster 連線中斷圖示]
+
+切換成功：
+
+image::../media/metrocluster_connectivity_failover.gif[MetroCluster 連線容錯移轉圖示]
+
+|===

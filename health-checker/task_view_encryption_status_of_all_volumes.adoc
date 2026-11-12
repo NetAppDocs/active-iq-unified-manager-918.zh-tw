@@ -1,0 +1,31 @@
+---
+permalink: health-checker/task_view_encryption_status_of_all_volumes.html 
+sidebar: sidebar 
+keywords: view, encryption status, volumes 
+summary: 您可以檢視所有 Volume 及其目前加密狀態的清單，以便確定 Volume 上的資料是否得到充分保護，防止未經授權的使用者存取。 
+---
+= 在 Active IQ Unified Manager 中檢視所有 Volume 的加密狀態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以檢視所有 Volume 及其目前加密狀態的清單，以便確定 Volume 上的資料是否得到充分保護，防止未經授權的使用者存取。
+
+.開始之前
+您必須擁有操作員、應用程式管理員或儲存管理員角色。
+
+可應用於 Volume 的加密類型有：
+
+* 軟體 - 使用 NetApp Volume 加密（NVE）或 NetApp 彙總加密（NAE）軟體加密解決方案保護的 Volume。
+* 硬體 - 使用 NetApp 儲存加密（NSE）硬體加密保護的 Volume。
+* 軟體和硬體 - 受軟體和硬體加密雙重保護的 Volume。
+* 無 - 未加密的 Volume。
+
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存設備* > *Volume*。
+. 在「檢視」功能表中，選擇 *健全狀況* > *Volume 加密*
+. 在 *健全狀況：Volume 加密* 檢視中，依 *加密類型* 欄位排序，或使用篩選器來顯示具有特定加密類型的 Volume，或是未加密的 Volume（加密類型為 "`None`"）。
+

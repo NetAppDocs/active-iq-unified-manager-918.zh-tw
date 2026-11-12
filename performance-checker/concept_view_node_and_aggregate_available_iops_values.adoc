@@ -1,0 +1,25 @@
+---
+permalink: performance-checker/concept_view_node_and_aggregate_available_iops_values.html 
+sidebar: sidebar 
+keywords: view, node, aggregate, available, iops, values 
+summary: 您可以監控叢集中所有節點或所有彙總的可用 IOPS 值，也可以檢視單一節點或彙總的詳細資訊。 
+---
+= 在 Active IQ Unified Manager 中檢視節點和彙總的可用 IOPS 值
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以監控叢集中所有節點或所有彙總的可用 IOPS 值，也可以檢視單一節點或彙總的詳細資訊。
+
+可用 IOPS 值會顯示在「效能清單」頁面和「效能總管」頁面的節點和彙總圖表中。例如，在「節點/效能總管」頁面中檢視節點時，您可以從清單中選擇 "`可用 IOPS`" 計數器圖表，以便比較該節點與該節點上多個彙總的可用 IOPS 值。
+
+image::../media/available_iops_zoom.gif[使用者介面快照顯示如何在「節點/效能 Explorer」頁面中檢視節點，並從清單中選擇「可用 IOPS」。]
+
+監控可用 IOPS 計數器可讓您識別：
+
+* 具有最大可用 IOPS 值的節點或彙總，有助於判斷未來工作負載可部署的位置。
+* 可用 IOPS 值最小的節點或彙總，以識別您應針對未來潛力效能問題進行監控的資源。
+* 可用 IOPS 值較小的彙總上最繁忙的 Volume 和 LUN。
+

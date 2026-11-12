@@ -1,0 +1,26 @@
+---
+permalink: events/reference_add_script_dialog_box.html 
+sidebar: sidebar 
+keywords: add, script, dialog, box 
+summary: 「新增指令碼」對話方塊可讓您為 Unified Manager 新增指令碼。您可以使用指令碼設定警報，以便自動解決為儲存設備物件產生的事件。 
+---
+= 在 Active IQ Unified Manager 中新增指令碼對話方塊
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+「新增指令碼」對話方塊可讓您為 Unified Manager 新增指令碼。您可以使用指令碼設定警報，以便自動解決為儲存設備物件產生的事件。
+
+您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+* *選擇指令碼檔案*
++
+可讓您為警報選擇指令碼。
+
+* *說明*
++
+允許您為指令碼指定執行摘要。
+
+

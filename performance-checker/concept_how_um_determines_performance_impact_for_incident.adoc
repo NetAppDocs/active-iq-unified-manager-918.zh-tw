@@ -1,0 +1,20 @@
+---
+permalink: performance-checker/concept_how_um_determines_performance_impact_for_incident.html 
+sidebar: sidebar 
+keywords: unified manager, determines, performance, impact, event 
+summary: Unified Manager 會根據工作負載的活動、使用率、寫入處理量、叢集元件使用率或 I/O 延遲（回應時間）的偏差來決定對工作負載效能的影響層級。這些資訊決定了每個工作負載在事件中的角色，以及它們在事件詳細資料頁面上的排名。 
+---
+= 了解 Active IQ Unified Manager 如何決定事件的效能影響
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager 會根據工作負載的活動、使用率、寫入處理量、叢集元件使用率或 I/O 延遲（回應時間）的偏差來決定對工作負載效能的影響層級。這些資訊決定了每個工作負載在事件中的角色，以及它們在事件詳細資料頁面上的排名。
+
+Unified Manager 會將工作負載的最後分析值與預期值範圍（延遲預測）進行比較。最後分析值與預期值範圍之間的差異，可識別出效能受事件影響最大的工作負載。
+
+例如，假設一個叢集包含兩個工作負載：工作負載 A 和工作負載 B。工作負載 A 的延遲預測為每次操作 5-10 毫秒（ms/op），其實際延遲通常在 7 ms/op 左右。工作負載 B 的延遲預測為 10-20 ms/op，其實際延遲通常在 15 ms/op 左右。兩個工作負載都完全在其延遲預測範圍內。由於叢集上的資源爭用，兩個工作負載的延遲都增加到 40 ms/op，超過了動態效能臨界值（即延遲預測的上限），從而觸發了事件。工作負載 A 的延遲偏差（從預期值到超過效能臨界值的值）約為 33 ms/op，工作負載 B 的偏差約為 25 ms/op。兩個工作負載的延遲都飆升至 40 ms/op，但工作負載 A 的效能影響更大，因為它的延遲偏差更高，達到了 33 ms/op。
+
+在「事件詳細資料」頁面的「系統診斷」區段中，您可以依據叢集元件的活動、使用率或處理量偏差來排序工作負載。您也可以依據延遲來排序工作負載。當您選取排序選項時， Unified Manager 會分析自偵測到事件以來，活動、使用率、處理量或延遲與預期值的偏差，以決定工作負載的排序順序。對於延遲，紅點（image:../media/opm_incident_icon_png.gif["Performance Manager 警告圖示"]）表示受影響工作負載跨越了效能臨界值，以及隨後對延遲造成的影響。每個紅點表示較高層級的延遲偏差，這有助於您識別延遲受事件影響最大的受影響工作負載。

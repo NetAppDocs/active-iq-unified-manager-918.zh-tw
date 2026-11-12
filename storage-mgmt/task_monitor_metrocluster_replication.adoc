@@ -1,0 +1,56 @@
+---
+permalink: storage-mgmt/task_monitor_metrocluster_replication.html 
+sidebar: sidebar 
+keywords: monitor, metrocluster, replication 
+summary: 在鏡射資料時，您可以監控與診斷邏輯連線的整體健全狀況。您可以識別中斷叢集元件（例如彙總、節點和儲存虛擬機器）鏡射的問題或任何風險。 
+---
+= 在 Active IQ Unified Manager 中監控 MetroCluster 複寫
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在鏡射資料時，您可以監控與診斷邏輯連線的整體健全狀況。您可以識別中斷叢集元件（例如彙總、節點和儲存虛擬機器）鏡射的問題或任何風險。
+
+Unified Manager 使用系統健全狀況警報來監控 MetroCluster 組態中元件的狀態和連線性。
+
+.開始之前
+MetroCluster 組態中的本機叢集和遠端叢集都必須新增至 Unified Manager
+
+
+
+[[view-replication-for-metrocluster-over-ip-configurations]]
+== 檢視 MetroCluster 透過 IP 組態的複寫
+
+對於 MetroCluster over IP 組態，從 Unified Manager 左側導覽窗格的下列檢視中，受 MetroCluster over IP 保護的叢集，其資料複寫狀態會顯示在拓撲概覽檢視中：
+
+* *儲存設備* > *叢集* > *保護：MetroCluster* 檢視
+* *保護* > *關係* > *關係：MetroCluster* 檢視
+
+
+如需相關資訊，請參閱 link:../storage-mgmt/task_monitor_metrocluster_configurations.html#monitor-connectivity-issues-in-metrocluster-over-ip-configuration["監控 MetroCluster over IP 的連線問題"]。
+
+
+
+[[view-replication-for-metrocluster-over-fc-configurations]]
+== 檢視透過 FC 組態的 MetroCluster 複寫
+
+請依照下列步驟確定 MetroCluster 透過 FC 組態進行資料複寫時是否有任何問題。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存設備* > *叢集*。
++
+顯示受監控的叢集清單。
+
+. 在「健全狀況：所有叢集」檢視中，按一下要檢視 MetroCluster 複寫詳細資料的叢集名稱。在「叢集 / 健全狀況詳細資料」頁面上，按一下「MetroCluster 複寫」索引標籤。
++
+待複寫的 MetroCluster 組態拓撲會顯示在本機站台的對應叢集物件區域中，並包含資料鏡射所在之遠端站台的資訊。如果您將指標移至圖示上方，即可檢視有關所產生事件的詳細資訊。
+
+
+
+您可以使用「叢集 / 健全狀況詳細資料」頁面中顯示的資訊來解決任何複寫問題。如果您在 MetroCluster 組態中發現鏡射問題，則必須登入 System Manager 或存取 ONTAP CLI 來解決這些問題。
+
+*相關資訊*
+
+link:../health-checker/reference_health_cluster_details_page.html["叢集 / 健全狀況詳細資料頁面"]

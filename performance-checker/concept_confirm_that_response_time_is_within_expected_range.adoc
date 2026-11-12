@@ -1,0 +1,16 @@
+---
+permalink: performance-checker/concept_confirm_that_response_time_is_within_expected_range.html 
+sidebar: sidebar 
+keywords: confirm, latency, within, expected, range 
+summary: 當叢集元件發生爭用時，使用該元件的 Volume 工作負載的回應時間（延遲）可能會降低。您可以審查爭用元件上每個受影響工作負載的延遲，以確認其實際延遲是否在預期範圍內。您也可以按一下 Volume 名稱以檢視該 Volume 的歷史資料。 
+---
+= 確認 Active IQ Unified Manager 中的延遲在預期範圍內
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當叢集元件發生爭用時，使用該元件的 Volume 工作負載的回應時間（延遲）可能會降低。您可以審查爭用元件上每個受影響工作負載的延遲，以確認其實際延遲是否在預期範圍內。您也可以按一下 Volume 名稱以檢視該 Volume 的歷史資料。
+
+如果效能事件處於過時狀態，則參與該事件的每個受害者的延遲可能已恢復到預期範圍內。

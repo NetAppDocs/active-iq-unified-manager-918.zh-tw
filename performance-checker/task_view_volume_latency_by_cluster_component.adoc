@@ -1,0 +1,41 @@
+---
+permalink: performance-checker/task_view_volume_latency_by_cluster_component.html 
+sidebar: sidebar 
+keywords: view, volume, latency, cluster, component 
+summary: 您可以使用「 Volume 效能總管」頁面檢視 Volume 的詳細延遲資訊。「延遲 - 總計」計數器圖表顯示 Volume 的總延遲，「延遲 - 細目」計數器圖表有助於判斷讀取和寫入延遲對 Volume 的影響。 
+---
+= 在 Active IQ Unified Manager 中按叢集元件檢視 Volume 延遲
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用「 Volume 效能總管」頁面檢視 Volume 的詳細延遲資訊。「延遲 - 總計」計數器圖表顯示 Volume 的總延遲，「延遲 - 細目」計數器圖表有助於判斷讀取和寫入延遲對 Volume 的影響。
+
+此外，「延遲 - 叢集元件」圖表會顯示每個叢集元件延遲的詳細比較，以協助判斷每個元件對 Volume 總延遲的影響。會顯示下列叢集元件：
+
+* 網路
+* QoS 限制最大值
+* QoS 最低限制
+* 網路處理
+* 叢集互連
+* Data Processing
+* 彙總作業
+* Volume 啟動
+* MetroCluster 資源
+* 雲端延遲
+* 同步 SnapMirror
+
+
+.步驟
+. 在所選 Volume 的 *Volume 效能資源管理器* 頁面中，從「延遲」圖表中，從下拉式選單中選擇 *叢集元件*。
++
+顯示「延遲 - 叢集元件」圖表。
+
+. 若要檢視較大版本的圖表，請選擇 *縮放檢視*。
++
+此處會顯示叢集元件比較圖。您可以透過取消選取或選取與每個叢集元件相關聯的 image:../media/eye_icon.gif["眼睛圖示"] 來限制比較。
+
+. 若要檢視具體數值，請將游標移至圖表區域，即可看到彈出視窗。
+

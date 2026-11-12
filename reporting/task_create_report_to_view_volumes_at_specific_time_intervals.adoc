@@ -1,0 +1,41 @@
+---
+permalink: reporting/task_create_report_to_view_volumes_at_specific_time_intervals.html 
+sidebar: sidebar 
+keywords: create, report, view, volume, transfer, trends, specific, time intervals 
+summary: 您可以建立一份報告，顯示特定時間間隔內的 Volume 傳輸趨勢。 
+---
+= 在 Active IQ Unified Manager 中建立報告，以檢視不同時間間隔的 Volume 傳輸趨勢
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以建立一份報告，顯示特定時間間隔內的 Volume 傳輸趨勢。
+
+.開始之前
+* 您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+
+請依照下列步驟建立特定時間間隔的 Volume 的自訂檢視，然後排程為該檢視產生報告。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存設備* > *Volume*。
+. 在「檢視」功能表中，選擇 *關係* > *最近 1 個月傳輸狀態*。
+. 選取 *顯示/隱藏* 可移除報告中不需要的任何欄。
+. 將「傳輸持續時間」欄位拖曳到 "`操作結果`" 欄位附近。
+. 點選篩選圖示，新增下列篩選條件，然後點選 *套用篩選條件*：
++
+** 過去 7 天內的傳輸結束時間
+
+
+. 按一下 "`Transfer Duration`" 欄的頂端，依時間間隔對 Volume 進行排序。
+. 將檢視儲存為能反映檢視內容的特定名稱，例如 "`按持續時間區分的 Volume`"。
+. 在庫存頁面上點選 *排程報告* 按鈕。
+. 輸入報告排程的名稱，將頻率設為 *每週*，並填寫其他報告欄位，然後按一下該列末尾的勾號（image:../media/blue_check.gif[""]）。
++
+報告會立即作為測試傳送。之後，報告會產生並依指定的頻率透過電子郵件傳送給列出的收件者。
+
+
+
+根據報告中顯示的結果，您可以調查傳輸時間間隔。

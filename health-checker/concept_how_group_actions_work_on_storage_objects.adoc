@@ -1,0 +1,29 @@
+---
+permalink: health-checker/concept_how_group_actions_work_on_storage_objects.html 
+sidebar: sidebar 
+keywords: group actions, work, storage, objects 
+summary: 群組行動是對群組內所有儲存設備物件執行的操作。例如，您可以設定 Volume 臨界值群組行動，以同時變更群組內所有 Volume 的 Volume 臨界值。 
+---
+= 了解 Active IQ Unified Manager 中儲存設備物件的群組操作如何運作
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+群組行動是對群組內所有儲存設備物件執行的操作。例如，您可以設定 Volume 臨界值群組行動，以同時變更群組內所有 Volume 的 Volume 臨界值。
+
+群組支援獨特的群組行動類型。一個群組可以只包含一種 Volume 健全狀況臨界值群組行動類型。但是，如果可用，您也可以為相同群組設定其他類型的群組行動。群組行動的優先順序決定了該行動應用於儲存設備物件的順序。儲存設備物件的詳細資訊頁面會提供有關套用於該儲存設備物件的群組行動的資訊。
+
+
+
+[[example-of-unique-group-actions]]
+== 獨特的群組行動範例
+
+假設 Volume A 屬於群組 G1 和 G2，並且為這些群組設定了以下 Volume 健全狀況臨界值群組行動：
+
+* `Change_capacity_threshold` 等級為 1 的群組行動，用於設定 Volume 的容量
+* `Change_snapshot_copies` 等級為 2 的群組行動，用於設定 Volume 的 Snapshot 快照技術副本
+
+
+ `Change_capacity_threshold` 群組行動始終優先於  `Change_snapshot_copies` 群組行動，並套用於 Volume A。當 Unified Manager 完成一個監控週期後，將根據  `Change_capacity_threshold` 群組行動重新評估 Volume A 的健全狀況臨界值相關事件。您無法為 G1 或 G2 群組設定其他 Volume 臨界值類型的群組行動。

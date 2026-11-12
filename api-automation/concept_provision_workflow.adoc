@@ -1,0 +1,37 @@
+---
+permalink: api-automation/concept_provision_workflow.html 
+sidebar: sidebar 
+keywords: workflow, workload, management 
+summary: 使用 Active IQ Unified Manager ，您可以資源配置和修改儲存設備工作負載（ LUN 、 NFS 檔案共享和 CIFS 共用區）。資源配置包含多個步驟，從建立儲存虛擬機器（ SVM ）到對儲存設備工作負載套用效能服務等級和儲存效率原則。修改工作負載包含修改特定參數和啟用其額外功能的步驟。 
+---
+= 在 Active IQ Unified Manager 中配置和修改儲存設備工作負載
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用 Active IQ Unified Manager ，您可以資源配置和修改儲存設備工作負載（ LUN 、 NFS 檔案共享和 CIFS 共用區）。資源配置包含多個步驟，從建立儲存虛擬機器（ SVM ）到對儲存設備工作負載套用效能服務等級和儲存效率原則。修改工作負載包含修改特定參數和啟用其額外功能的步驟。
+
+說明下列工作流程：
+
+* 在 Unified Manager 上資源配置儲存虛擬機器（SVM）的工作流程。
++
+[NOTE]
+====
+在 Unified Manager 上資源配置 LUN 或檔案共享之前，必須執行此工作流程。
+
+====
+* 資源配置檔案共享。
+* 資源配置 LUN。
+* 修改 LUN 和檔案共享（以更新儲存設備工作負載的效能服務等級參數為例）。
+* 修改 NFS 檔案共享以支援 CIFS 協定
+* 修改工作負載以將 QoS 升級到 AQoS
+
+
+[NOTE]
+====
+對於每個資源配置工作流程（LUN 和檔案共享），請確保您已完成驗證叢集上 SVM 的工作流程。
+
+====
+在工作流程中使用每個 API 之前，您也必須讀取建議和限制。API 的相關詳細資訊可在相關概念和參考資料中列出的各個章節中找到。

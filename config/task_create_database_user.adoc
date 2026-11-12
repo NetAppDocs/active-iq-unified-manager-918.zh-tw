@@ -1,0 +1,47 @@
+---
+permalink: config/task_create_database_user.html 
+sidebar: sidebar 
+keywords: create, database, user 
+summary: 若要支援 Workflow Automation 與 Unified Manager 之間的連線，或存取資料庫檢視，您必須先在 Unified Manager Web UI 中建立具有 Integration Schema 或 Report Schema 角色的資料庫使用者。 
+---
+= 在 Active IQ Unified Manager 中建立資料庫使用者
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要支援 Workflow Automation 與 Unified Manager 之間的連線，或存取資料庫檢視，您必須先在 Unified Manager Web UI 中建立具有 Integration Schema 或 Report Schema 角色的資料庫使用者。
+
+.開始之前
+您必須擁有應用程式管理員角色。
+
+資料庫使用者提供與 Workflow Automation 的整合，並可存取報表專屬的資料庫檢視。資料庫使用者無法存取 Unified Manager Web UI 或維護主控台，也無法執行 API 呼叫。
+
+.步驟
+. 在左側導覽窗格中，按一下 *一般* > *使用者*。
+. 在使用者頁面中，按一下 *新增*。
+. 在「新增使用者」對話方塊中，在 *類型* 下拉清單中選擇 *資料庫使用者*。
+. 輸入資料庫使用者的名稱和密碼。
+. 在 *角色* 下拉清單中，選擇適當的角色。
++
+[cols="2*"]
+|===
+| 如果您是…… | 選擇此角色 
+
+
+ a| 
+將 Unified Manager 與 Workflow Automation 連接
+ a| 
+整合結構描述
+
+
+
+ a| 
+存取報表和其他資料庫視圖
+ a| 
+報表架構
+
+|===
+. 點擊 *Add* 。
+

@@ -1,0 +1,62 @@
+---
+permalink: data-protection/reference_create_resource_pool_dialog_box.html 
+sidebar: sidebar 
+keywords: create, resource pool, dialog box 
+summary: 您可以使用「建立資源池」對話方塊來命名和描述新的資源池，並將彙總新增至該資源池，以及從中刪除彙總。 
+---
+= 在 Active IQ Unified Manager 中使用「建立資源池」對話方塊
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用「建立資源池」對話方塊來命名和描述新的資源池，並將彙總新增至該資源池，以及從中刪除彙總。
+
+
+
+[[resource-pool-name]]
+== 資源池名稱
+
+您可以透過文字方塊新增以下資訊來建立資源池：
+
+允許您指定資源池名稱。
+
+
+
+[[description]]
+== 說明
+
+可讓您描述資源池。
+
+
+
+[[members]]
+== 成員
+
+顯示資源池的成員。您也可以新增和刪除成員。
+
+
+
+[[command-buttons]]
+== 命令按鈕
+
+命令按鈕可讓您執行下列任務：
+
+* *新增*
++
+開啟「彙總」對話方塊，以便您可以將特定叢集中的彙總新增至資源池。您可以新增來自不同叢集的彙總，但同一個彙總不能新增至多個資源池。
+
+* *移除*
++
+允許您從資源池移除選定的彙總。
+
+* *建立*
++
+建立資源池。只有在「資源池名稱」或「描述」欄位中輸入資訊後，此按鈕才會啟用。
+
+* *取消*
++
+放棄變更並關閉「建立資源池」對話方塊。
+
+

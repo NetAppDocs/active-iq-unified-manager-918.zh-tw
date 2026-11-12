@@ -1,0 +1,55 @@
+---
+permalink: health-checker/task_add_annotations_manually_to_individual_storage_objects.html 
+sidebar: sidebar 
+keywords: add, annotations, manually, individual, storage objects 
+summary: 您可以手動標註選定的 Volume、叢集和 SVM，而無需使用標註規則。您可以標註單一儲存設備物件或多個儲存設備物件，並指定標註所需的名稱-值對組合。 
+---
+= 在 Active IQ Unified Manager 中手動為個別儲存設備物件新增註釋
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以手動標註選定的 Volume、叢集和 SVM，而無需使用標註規則。您可以標註單一儲存設備物件或多個儲存設備物件，並指定標註所需的名稱-值對組合。
+
+.開始之前
+您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+.步驟
+. 導覽至您要加上附註的儲存設備物件：
++
+[cols="2*"]
+|===
+| 若要新增註解至…… | 這樣做…… 
+
+
+ a| 
+叢集
+ a| 
+.. 點選 *儲存設備* > *叢集*。
+.. 選取一個或多個叢集。
+
+
+
+
+ a| 
+磁碟區
+ a| 
+.. 按一下 *儲存設備* > *Volume*。
+.. 選取一個或多個 Volume。
+
+
+
+
+ a| 
+SVM
+ a| 
+.. 點選 *儲存設備* > *SVMs*。
+.. 選取一個或多個 SVM。
+
+
+|===
+. 按一下 *註釋* 並選擇名稱-值配對。
+. 點選 *套用*。
+

@@ -1,0 +1,37 @@
+---
+permalink: health-checker/task_determine_if_volume_is_offline_because_of_broken_disks.html 
+sidebar: sidebar 
+keywords: determine, volume, offline, broken disks, aggregate 
+summary: 您可以使用 Unified Manager Web UI 來確認或排除 Volume 離線是因為 RAID 磁碟問題導致其主機彙總離線的可能性。 
+---
+= 在 Active IQ Unified Manager 中確定 Volume 是否因磁碟損壞而離線
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 Unified Manager Web UI 來確認或排除 Volume 離線是因為 RAID 磁碟問題導致其主機彙總離線的可能性。
+
+.開始之前
+您必須擁有操作員、應用程式管理員或儲存管理員角色。
+
+若要確定 Volume 離線狀態是否由導致託管彙總離線的 RAID 磁碟問題所引起，請執行下列行動：
+
+.步驟
+. 在 *Volume / 健全狀況* 詳細資料頁面的 *相關裝置* 窗格中，找到並按一下顯示在「彙總」下方的超文字連結。
++
+「彙總 / 健全狀況詳細資料」頁面顯示託管彙總的線上或離線狀態。如果彙總狀態為線上，則 RAID 磁碟問題並非導致 Volume 離線的原因。
+
+. 如果彙總狀態為離線，則按一下 *磁碟資訊*，然後在 *磁碟資訊* 索引標籤上的 *事件* 清單中尋找損壞的磁碟事件。
+. 若要進一步確定損壞的磁碟，請按一下 *相關裝置* 窗格中「節點」下顯示的超文本連結。
++
+系統會顯示叢集 / 健全狀況詳細資料頁面。
+
+. 按一下 *磁碟* ，然後在 *篩選器* 窗格中選取 *損壞* ，列出所有處於損壞狀態的磁碟。
++
+如果損壞狀態的磁碟導致主機彙總處於離線狀態，則彙總的名稱將顯示在「受影響的彙總」欄位中。
+
+
+
+在確認 Volume 離線狀態是由 RAID 磁碟損壞和由此導致的主機彙總離線引起的之後，請聯絡相應的系統管理員或營運者手動更換損壞的磁碟，使彙總重新線上。

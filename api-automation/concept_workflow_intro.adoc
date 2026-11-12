@@ -1,0 +1,30 @@
+---
+permalink: api-automation/concept_workflow_intro.html 
+sidebar: sidebar 
+keywords: common, workflows, storage, management 
+summary: 常用工作流程為用戶端應用程式開發人員提供了範例，說明用戶端應用程式如何呼叫 Active IQ Unified Manager API 來執行常見的儲存管理功能。本節包含其中一些範例工作流程。 
+---
+= 了解 Active IQ Unified Manager 中儲存管理的常用 API 工作流程
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+常用工作流程為用戶端應用程式開發人員提供了範例，說明用戶端應用程式如何呼叫 Active IQ Unified Manager API 來執行常見的儲存管理功能。本節包含其中一些範例工作流程。
+
+工作流程描述了一些常用的儲存管理使用案例，並提供了可供參考的範例程式碼。每個任務都透過一個包含一個或多個 API 呼叫的工作流程進行描述。
+
+
+
+[[understand-the-api-calls-used-in-the-workflows]]
+== 了解工作流程中使用的 API 呼叫
+
+您可以從 Unified Manager 執行個體檢視線上文件頁面，其中包含每個 REST API 呼叫的詳細資訊。本文件不會重複線上文件的詳細資訊。本文件工作流程範例中使用的每個 API 呼叫僅包含您在文件頁面上找到該呼叫所需的資訊。找到特定 API 呼叫後，您可以審查該呼叫的完整詳細資訊，包括輸入參數、輸出格式、HTTP 狀態碼和要求處理類型。
+
+工作流程中每個 API 呼叫都包含下列資訊，以協助您在文件頁面上找到該呼叫：
+
+* 類別：文件頁面上的 API 呼叫會依功能相關區域或類別進行組織。若要尋找特定的 API 呼叫，請捲動至頁面底部，然後按一下適用的 API 類別。
+* HTTP 動詞（呼叫）：HTTP 動詞標識對資源執行的行動。每個 API 呼叫都透過單一 HTTP 動詞來執行。
+* 路徑：路徑決定了在執行呼叫時，行動所套用的特定資源。路徑字串會附加至核心 URL，以形成識別資源的完整 URL。
+

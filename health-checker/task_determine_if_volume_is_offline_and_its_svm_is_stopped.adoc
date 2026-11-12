@@ -1,0 +1,46 @@
+---
+permalink: health-checker/task_determine_if_volume_is_offline_and_its_svm_is_stopped.html 
+sidebar: sidebar 
+keywords: determine, volume, offline, svm, node 
+summary: 您可以使用 Unified Manager Web UI 來確認或排除 Volume 離線是否是因為託管該 SVM 根 Volume 的節點停機，導致其主機儲存設備虛擬機器（SVM）停止運作所造成。 
+---
+= 在 Active IQ Unified Manager 中判斷 Volume 是否因其 SVM 停止而離線
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 Unified Manager Web UI 來確認或排除 Volume 離線是否是因為託管該 SVM 根 Volume 的節點停機，導致其主機儲存設備虛擬機器（SVM）停止運作所造成。
+
+.開始之前
+您必須擁有操作員、應用程式管理員或儲存管理員角色。
+
+若要確定 Volume 離線狀態是否是由於其主機 SVM 停止運作（因為託管該 SVM 根 Volume 的節點已停機）所致，請執行下列行動：
+
+.步驟
+. 找到並點選離線 Volume 的 *Volume / 健全狀況* 詳細資料頁面的 *相關裝置* 窗格中 SVM 下方顯示的超文字連結。
++
+Storage VM / 健全狀況詳細資料頁面會顯示託管 SVM 的 "`running`" 或 "`stopped`" 狀態。如果 SVM 狀態為執行中，則 Volume 離線狀況並非由託管該 SVM 根 Volume 的節點停機所引起。
+
+. 如果 SVM 狀態為停止，則按一下 *檢視 SVM* 以進一步找出託管 SVM 停止的原因。
+. 在「*健全狀況：所有儲存虛擬機器*」檢視的 SVM 欄位標題上，按一下篩選符號 image:../media/filtericon_um60.png["欄篩選器圖示"]，然後輸入已停止的 SVM 名稱。
++
+該 SVM 的相關資訊如表格所示。
+
+. 在 *健全狀況：所有 Storage VM* 檢視中，按一下 image:../media/gridviewicon.gif["網格檢視圖示"]，然後選取 *根 Volume* 選項。
++
+Root Volume 欄位新增至 SVM 清單中，並顯示已停止 SVM 的根 Volume 的名稱。
+
+. 在「根 Volume」欄中，按一下根 Volume 的名稱，以顯示該 Volume 的 *Storage VM / 健全狀況* 詳細資料頁面。
++
+如果 SVM 根 Volume 的狀態為（線上），則原始 Volume 離線情況並非因為託管該 SVM 根 Volume 的節點停機所造成。
+
+. 如果 SVM 根 Volume 的狀態為（離線），請找到並按一下 SVM 根 Volume 的「Volume / 健全狀況」詳細資料頁面之「相關裝置」窗格中「彙總」下方顯示的超文字連結。
+. 在彙總的 *彙總 / 健全狀況* 詳細資料頁面的 *相關裝置* 窗格中，找到並按一下「節點」下顯示的超文字連結。
++
+「叢集 / 健全狀況詳細資料」頁面上的「節點」索引標籤會顯示 SVM 根 Volume 託管節點所屬之節點 HA 配對的狀態。顯示畫面會指出節點的狀態。
+
+
+
+在您確認 Volume 離線狀態是由該 Volume 的主機 SVM 離線狀態所引起，而該狀態本身是由代管該 SVM 根 Volume 的節點停機所引起之後，請聯絡適當的系統管理員或營運者，手動重新啟動停機的節點。

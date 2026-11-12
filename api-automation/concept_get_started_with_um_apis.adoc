@@ -1,0 +1,18 @@
+---
+permalink: api-automation/concept_get_started_with_um_apis.html 
+sidebar: sidebar 
+keywords: active iq, unified manager 
+summary: Active IQ Unified Manager 提供了一組 API，可透過 RESTful Web 服務介面管理支援的儲存設備系統上的儲存資源，以便進行任何第三方整合。 
+---
+= 開始使用 Active IQ Unified Manager REST API
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Active IQ Unified Manager 提供了一組 API，可透過 RESTful Web 服務介面管理支援的儲存設備系統上的儲存資源，以便進行任何第三方整合。
+
+在這些主題中，您將找到有關 Unified Manager API 的資訊、解決特定問題的範例工作流程，以及一些範例程式碼。利用這些資訊，您可以建立 NetApp 可管理性軟體解決方案的 RESTful 用戶端，以管理 NetApp 系統。這些 API 是基於表述性狀態轉移（REST）架構風格。所有四種 REST 操作：建立、讀取、更新和刪除（也稱為 CRUD）均受支援。
+
+請參閱 link:https://docs.netapp.com/us-en/netapp-automation/api/aiqum.html["Active IQ Unified Manager"^]，以取得有關 Active IQ Unified Manager REST API 優勢的其他資源和詳細資訊。

@@ -1,0 +1,53 @@
+---
+permalink: health-checker/task_define_schedule_for_snapshot_backups.html 
+sidebar: sidebar 
+keywords: define, backup, schedule, linux, windows, snapshot copy, copies 
+summary: 您可以使用 Unified Manager UI 來設定建立 Unified Manager Snapshot 複本的排程。 
+---
+= 在 Active IQ Unified Manager 中為 Linux 和 Windows 定義備份排程
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 Unified Manager UI 來設定建立 Unified Manager Snapshot 複本的排程。
+
+.開始之前
+* 您必須擁有操作員、應用程式管理員或儲存管理員角色。
+* 您必須已設定從維護主控台建立 Snapshot 複本的設定，以識別將建立快照的目的地。
+
+
+Snapshot 複本只需幾分鐘即可建立，且 Unified Manager 資料庫僅鎖定幾秒鐘。
+
+[NOTE]
+====
+在新叢集加入後的前 15 天內所做的備份可能不夠準確，無法取得歷史效能資料。
+
+====
+.步驟
+. 在左側導覽窗格中，按一下 *一般* > *資料庫備份*。
+. 在 *資料庫備份* 頁面中，按一下 *備份設定*。
+. 在 *保留計數* 欄位中輸入您要保留的 Snapshot 複本最大數量。
++
+保留計數的預設值為 10。Snapshot 複本的最大數量取決於叢集上 ONTAP 軟體的版本。您可以將此欄位留空，以實作與 ONTAP 版本無關的最大值。
+
+. 選擇 *排程每日* 或 *排程每週* 按鈕，然後指定排程詳細資料。
+. 點選 *套用*。
+
+
+系統會根據排程建立 Snapshot 複本。您可以在「資料庫備份」頁面查看可用的備份檔案。
+
+鑑於此 Volume 及其 Snapshot 複本的重要性，您可能需要為此 Volume 建立一到兩個警報，以便在發生以下任一情況時收到通知：
+
+* Volume 空間已滿 90%。請使用 *Volume 空間已滿* 事件設定警報。
++
+您可以使用 ONTAP System Manager 或 ONTAP CLI 為 Volume 新增容量，以防止 Unified Manager 資料庫空間不足。
+
+* Snapshot 複本數量接近達到最大數量。請使用 *過多 Snapshot 複本* 事件來設定警報。
++
+您可以使用 ONTAP System Manager 或 ONTAP CLI 刪除較舊的快照，以便始終有空間容納新的 Snapshot 複本。
+
+
+
+您可以在「警報設定」頁面設定警報。

@@ -1,0 +1,25 @@
+---
+permalink: health-checker/task_add_annotations_dynamically.html 
+sidebar: sidebar 
+keywords: add, annotations, dynamically 
+summary: 建立自訂註解時，Unified Manager 會使用規則將叢集、儲存設備虛擬機器（SVM）和 Volume 與註解動態關聯。這些規則會自動將註解指派給儲存設備物件。 
+---
+= 在 Active IQ Unified Manager 中動態新增註釋
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+建立自訂註解時，Unified Manager 會使用規則將叢集、儲存設備虛擬機器（SVM）和 Volume 與註解動態關聯。這些規則會自動將註解指派給儲存設備物件。
+
+.開始之前
+您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存設備管理* > *註解*。
+. 在 *註釋* 頁面中，點選 *新增註解*。
+. 在 *新增註解* 對話方塊中，輸入註解的名稱和執行摘要。
+. 選用：在 *註釋值* 區段中，按一下 *新增* 以將值新增至註釋。
+. 按一下 *Save* 。
+

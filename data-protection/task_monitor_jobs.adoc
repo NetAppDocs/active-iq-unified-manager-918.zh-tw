@@ -1,0 +1,29 @@
+---
+permalink: data-protection/task_monitor_jobs.html 
+sidebar: sidebar 
+keywords: monitor, jobs 
+summary: 您可以使用「作業」頁面來監控作業狀態，並檢視作業屬性，例如儲存設備服務類型、狀態、提交時間和完成時間，以確定作業是否已成功完成。 
+---
+= 在 Active IQ Unified Manager 中監控作業
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用「作業」頁面來監控作業狀態，並檢視作業屬性，例如儲存設備服務類型、狀態、提交時間和完成時間，以確定作業是否已成功完成。
+
+.開始之前
+您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+.步驟
+. 在左側導覽窗格中，按一下 *保護* > *作業*。
++
+隨即顯示「工作」頁面。
+
+. 檢視 *狀態* 欄，以確定目前正在執行的作業的狀態。
+. 按一下工作名稱以檢視該特定工作的詳細資料。
++
+隨即顯示工作詳細資料頁面。
+
+

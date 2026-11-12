@@ -1,0 +1,23 @@
+---
+permalink: reporting/task_customize_columns.html 
+sidebar: sidebar 
+keywords: customize, columns 
+summary: 使用「顯示/隱藏」選擇要在報告中使用的欄。拖曳庫存頁面上的欄即可重新排列。 
+---
+= 在 Active IQ Unified Manager 中自訂報告中的欄
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用 *顯示/隱藏* 選擇要在報告中使用的欄。拖曳庫存頁面上的欄即可重新排列它們。
+
+.步驟
+. 按一下 *顯示/隱藏* 以新增或移除欄。
++
+image::../media/show_hide_3.png[一張 UI 快照，顯示如何新增或移除欄。]
+
+. 在庫存頁面上，拖曳欄位以您希望在報告中顯示的順序重新排列它們。
+. 為未儲存的檢視命名以儲存變更。
+

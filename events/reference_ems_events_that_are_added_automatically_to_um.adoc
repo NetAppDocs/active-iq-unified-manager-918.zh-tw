@@ -1,0 +1,570 @@
+---
+permalink: events/reference_ems_events_that_are_added_automatically_to_um.html 
+sidebar: sidebar 
+keywords: ems events, added, automatically, unified manager 
+summary: 以下 ONTAP EMS 事件會自動加入到 Unified Manager。當在 Unified Manager 監控的任何叢集上觸發時，將會產生這些事件。 
+---
+= 自動新增至 Active IQ Unified Manager 的 EMS 事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+以下 ONTAP EMS 事件會自動加入到 Unified Manager。當在 Unified Manager 監控的任何叢集上觸發時，將會產生這些事件。
+
+在監控執行 ONTAP 9.5 或更高版本軟體的叢集時，可以使用下列 EMS 事件：
+
+|===
+| Unified Manager 事件名稱 | EMS 事件名稱 | 受影響的資源 | Unified Manager 嚴重性 
+
+
+ a| 
+彙總重新定位的雲端層存取被拒絕
+ a| 
+arl.netra.ca.check.failed
+ a| 
+彙總
+ a| 
+錯誤
+
+
+
+ a| 
+在儲存設備容錯移轉期間，彙總重新定位的雲端層存取被拒絕
+ a| 
+gb.netra.ca.check.failed
+ a| 
+彙總
+ a| 
+錯誤
+
+
+
+ a| 
+FabricPool 鏡像複製重新同步完成
+ a| 
+wafl.ca.resync.complete
+ a| 
+叢集
+ a| 
+錯誤
+
+
+
+ a| 
+FabricPool 空間幾乎已滿
+ a| 
+fabricpool.nearly.full
+ a| 
+叢集
+ a| 
+錯誤
+
+
+
+ a| 
+NVMe-oF 寬限期已開始
+ a| 
+nvmf.graceperiod.start
+ a| 
+叢集
+ a| 
+警告
+
+
+
+ a| 
+NVMe-oF 寬限期作用中
+ a| 
+nvmf.graceperiod.active
+ a| 
+叢集
+ a| 
+警告
+
+
+
+ a| 
+NVMe-oF 寬限期已過期
+ a| 
+nvmf.graceperiod.expired
+ a| 
+叢集
+ a| 
+警告
+
+
+
+ a| 
+LUN 已毀損
+ a| 
+lun.destroy
+ a| 
+LUN
+ a| 
+資訊
+
+
+
+ a| 
+AWS 雲端平台 MetaDataConnFail
+ a| 
+cloud.aws.metadataConnFail
+ a| 
+節點
+ a| 
+錯誤
+
+
+
+ a| 
+雲端 AWS IAMCredsExpired
+ a| 
+cloud.aws.iamCredsExpired
+ a| 
+節點
+ a| 
+錯誤
+
+
+
+ a| 
+雲端 AWS IAMCredsInvalid
+ a| 
+cloud.aws.iamCredsInvalid
+ a| 
+節點
+ a| 
+錯誤
+
+
+
+ a| 
+雲端 AWS IAMCredsNotFound
+ a| 
+cloud.aws.iamCredsNotFound
+ a| 
+節點
+ a| 
+錯誤
+
+
+
+ a| 
+雲端 AWS IAMCredsNotInitialized
+ a| 
+cloud.aws.iamNotInitialized
+ a| 
+節點
+ a| 
+資訊
+
+
+
+ a| 
+雲端 AWS IAMRoleInvalid
+ a| 
+cloud.aws.iamRoleInvalid
+ a| 
+節點
+ a| 
+錯誤
+
+
+
+ a| 
+雲端 AWS IAMRoleNotFound
+ a| 
+cloud.aws.iamRoleNotFound
+ a| 
+節點
+ a| 
+錯誤
+
+
+
+ a| 
+雲端層主機無法解析
+ a| 
+objstore.host.unresolvable
+ a| 
+節點
+ a| 
+錯誤
+
+
+
+ a| 
+雲端分層叢集間網路介面故障
+ a| 
+objstore.interclusterlifDown
+ a| 
+節點
+ a| 
+錯誤
+
+
+
+ a| 
+要求不符的雲端層簽章
+ a| 
+osc.signatureMismatch
+ a| 
+節點
+ a| 
+錯誤
+
+
+
+ a| 
+其中一個 NFSv4 集區已耗盡
+ a| 
+Nblade.nfsV4PoolExhaust
+ a| 
+節點
+ a| 
+關鍵
+
+
+
+ a| 
+QoS 監控記憶體容量已滿
+ a| 
+qos.monitor.memory.maxed
+ a| 
+節點
+ a| 
+錯誤
+
+
+
+ a| 
+QoS 監控記憶體容量減少
+ a| 
+qos.monitor.memory.abated
+ a| 
+節點
+ a| 
+資訊
+
+
+
+ a| 
+NVMeNS 毀損
+ a| 
+NVMeNS.destroy
+ a| 
+命名空間
+ a| 
+資訊
+
+
+
+ a| 
+NVMeNS 線上
+ a| 
+NVMeNS.offline
+ a| 
+命名空間
+ a| 
+資訊
+
+
+
+ a| 
+NVMeNS 離線
+ a| 
+NVMeNS.online
+ a| 
+命名空間
+ a| 
+資訊
+
+
+
+ a| 
+NVMeNS 空間不足
+ a| 
+NVMeNS.out.of.space
+ a| 
+命名空間
+ a| 
+警告
+
+
+
+ a| 
+同步複寫不同步
+ a| 
+sms.status.out.of.sync
+ a| 
+SnapMirror 關係
+ a| 
+警告
+
+
+
+ a| 
+同步複製已恢復
+ a| 
+sms.status.in.sync
+ a| 
+SnapMirror 關係
+ a| 
+資訊
+
+
+
+ a| 
+同步複製自動重新同步失敗
+ a| 
+sms.resync.attempt.failed
+ a| 
+SnapMirror 關係
+ a| 
+錯誤
+
+
+
+ a| 
+許多 CIFS 連線
+ a| 
+Nblade.cifsManyAuths
+ a| 
+SVM
+ a| 
+錯誤
+
+
+
+ a| 
+CIFS 連線數已超過上限
+ a| 
+Nblade.cifsMaxOpenSameFile
+ a| 
+SVM
+ a| 
+錯誤
+
+
+
+ a| 
+每個用戶的 CIFS 連線數已超過最大值
+ a| 
+Nblade.cifsMaxSessPerUsrConn
+ a| 
+SVM
+ a| 
+錯誤
+
+
+
+ a| 
+CIFS NetBIOS 名稱衝突
+ a| 
+Nblade.cifsNbNameConflict
+ a| 
+SVM
+ a| 
+錯誤
+
+
+
+ a| 
+嘗試連接不存在的 CIFS 共享
+ a| 
+Nblade.cifsNoPrivShare
+ a| 
+SVM
+ a| 
+關鍵
+
+
+
+ a| 
+CIFS 陰影複製作業失敗
+ a| 
+cifs.shadowcopy.failure
+ a| 
+SVM
+ a| 
+錯誤
+
+
+
+ a| 
+AV 伺服器發現病毒
+ a| 
+Nblade.vscanVirusDetected
+ a| 
+SVM
+ a| 
+錯誤
+
+
+
+ a| 
+沒有用於病毒掃描的 AV 伺服器連線
+ a| 
+Nblade.vscanNoScannerConn
+ a| 
+SVM
+ a| 
+關鍵
+
+
+
+ a| 
+未註冊任何 AV 伺服器
+ a| 
+Nblade.vscanNoRegdScanner
+ a| 
+SVM
+ a| 
+錯誤
+
+
+
+ a| 
+無回應的 AV 伺服器連線
+ a| 
+Nblade.vscanConnInactive
+ a| 
+SVM
+ a| 
+資訊
+
+
+
+ a| 
+AV 伺服器過於繁忙，無法接受新的掃描要求
+ a| 
+Nblade.vscanConnBackPressure
+ a| 
+SVM
+ a| 
+錯誤
+
+
+
+ a| 
+未經授權的使用者嘗試存取防毒伺服器
+ a| 
+Nblade.vscanBadUserPrivAccess
+ a| 
+SVM
+ a| 
+錯誤
+
+
+
+ a| 
+FlexGroup 成分區段發生空間問題
+ a| 
+flexgroup.constituents.have.space.issues
+ a| 
+磁碟區
+ a| 
+錯誤
+
+
+
+ a| 
+FlexGroup 組成部分空間狀態全部正常
+ a| 
+flexgroup.constituents.space.status.all.ok
+ a| 
+磁碟區
+ a| 
+資訊
+
+
+
+ a| 
+FlexGroup 成員有 Inode 問題
+ a| 
+flexgroup.constituents.have.inodes.issues
+ a| 
+磁碟區
+ a| 
+錯誤
+
+
+
+ a| 
+FlexGroup 組成 Inode 狀態全部正常
+ a| 
+flexgroup.constituents.inodes.status.all.ok
+ a| 
+磁碟區
+ a| 
+資訊
+
+
+
+ a| 
+磁碟區邏輯空間幾乎已滿
+ a| 
+monitor.vol.nearFull.inc.sav
+ a| 
+磁碟區
+ a| 
+警告
+
+
+
+ a| 
+磁碟區邏輯空間已滿
+ a| 
+monitor.vol.full.inc.sav
+ a| 
+磁碟區
+ a| 
+錯誤
+
+
+
+ a| 
+Volume 邏輯空間正常
+ a| 
+monitor.vol.one.ok.inc.sav
+ a| 
+磁碟區
+ a| 
+資訊
+
+
+
+ a| 
+WAFL 磁碟區 AutoSize 故障
+ a| 
+wafl.vol.autoSize.fail
+ a| 
+磁碟區
+ a| 
+錯誤
+
+
+
+ a| 
+WAFL 磁碟區 AutoSize 已完成
+ a| 
+wafl.vol.autoSize.done
+ a| 
+磁碟區
+ a| 
+資訊
+
+
+
+ a| 
+WAFL READDIR 檔案操作逾時
+ a| 
+wafl.readdir.expired
+ a| 
+磁碟區
+ a| 
+錯誤
+
+|===

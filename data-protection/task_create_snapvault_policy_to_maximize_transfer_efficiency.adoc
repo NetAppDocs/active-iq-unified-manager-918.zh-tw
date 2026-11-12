@@ -1,0 +1,35 @@
+---
+permalink: data-protection/task_create_snapvault_policy_to_maximize_transfer_efficiency.html 
+sidebar: sidebar 
+keywords: create, snapvault, policy,  maximize, transfer, efficiency 
+summary: 您可以建立新的 SnapVault 原則來設定 SnapVault 傳輸的優先順序。您可以使用原則來最大化保護關係中從主要到次要的傳輸效率。 
+---
+= 在 Active IQ Unified Manager 中建立 SnapVault 原則以最大化傳輸效率
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以建立新的 SnapVault 原則來設定 SnapVault 傳輸的優先順序。您可以使用原則來最大化保護關係中從主要到次要的傳輸效率。
+
+.開始之前
+* 您必須擁有應用程式系統管理員或儲存系統管理員角色。
+* 您必須已設定 Workflow Automation。
+* 您必須已在「設定保護」對話方塊中完成「目的地資訊」區域。
+
+
+.步驟
+. 在 *設定保護* 對話方塊的 *SnapVault* 標籤中，按一下 *關係設定* 區域中的 *建立原則* 連結。
++
+SnapVault 標籤頁已顯示。
+
+. 在 *原則名稱* 欄位中，輸入您要為原則指定的名稱。
+. 在 *傳輸優先順序* 欄位中，選擇您要指派給原則的傳輸優先順序。
+. *選用：*在 *備註* 欄位中，輸入原則的備註。
+. 在 *複寫標籤* 區域中，視需要新增或編輯複寫標籤。
+. 按一下 *Create* 。
++
+新原則會顯示在「建立原則」下拉清單中。
+
+

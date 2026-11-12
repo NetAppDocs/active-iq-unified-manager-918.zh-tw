@@ -1,0 +1,286 @@
+---
+section: health-checker
+title: 監控和管理叢集健全狀況
+entries:
+- title: Active IQ Unified Manager 健全狀況監控簡介
+  entries:
+  - title: 了解 Active IQ Unified Manager 的健全狀況監控
+    url: "/health-checker/concept_introduction_to_unified_manager_health_monitoring.html"
+  - title: Unified Manager 健全狀況監控功能
+    url: "/health-checker/concept_unified_manager_health_monitoring_features.html"
+  - title: Unified Manager 介面用於管理儲存系統健全狀況
+    url: "/health-checker/concept_um_interfaces_used_to_manage_storage_system_health.html"
+- title: 管理與監控叢集及叢集物件健全狀況
+  entries:
+  - title: 了解叢集監控
+    entries:
+    - title: 了解叢集監控
+      url: "/health-checker/concept_understand_cluster_monitoring.html"
+    - title: 了解節點根目錄 Volume
+      url: "/health-checker/concept_understand_node_root_volumes.html"
+    - title: 了解節點根目錄彙總的事件與臨界值
+      url: "/health-checker/concept_understand_capacity_events_and_thresholds_for_node.html"
+    - title: 瞭解法定人數與 epsilon
+      url: "/health-checker/concept_understand_quorum_and_epsilon.html"
+  - title: 檢視叢集清單與詳細資料
+    url: "/health-checker/task_view_cluster_list_and_details.html"
+  - title: 檢查 MetroCluster 組態中叢集的健全狀況
+    url: "/health-checker/task_check_health_of_clusters_in_metrocluster_configuration.html"
+  - title: 查看 All SAN Array 叢集的健全狀況與容量狀態
+    url: "/health-checker/task_view_health_and_capacity_status_of_all_san_array_clusters.html"
+  - title: 檢視節點清單與詳細資料
+    url: "/health-checker/task_view_node_list_and_details.html"
+  - title: 產生用於合約續約的硬體庫存報告
+    url: "/health-checker/task_generate_hardware_inventory_report_for_contract_renewal.html"
+  - title: 查看 Storage VM 清單與詳細資料
+    url: "/health-checker/task_view_svm_list_and_details.html"
+  - title: 檢視彙總清單與詳細資料
+    url: "/health-checker/task_view_aggregate_list_and_details.html"
+  - title: 檢視 FabricPool 容量資訊
+    url: "/health-checker/task_view_fabricpool_capacity_information.html"
+  - title: 檢視儲存資源池詳細資料
+    url: "/health-checker/task_view_storage_pool_details.html"
+  - title: 檢視 Volume 清單與詳細資料
+    url: "/health-checker/task_view_volume_list_and_details.html"
+  - title: 檢視 NFS 共用的詳細資料
+    url: "/health-checker/task_view_details_about_nfs_shares.html"
+  - title: 檢視有關 SMB 或 CIFS 共用的詳細資料
+    url: "/health-checker/task_view_details_about_cifs_shares.html"
+  - title: 檢視 Snapshot 複本清單
+    url: "/health-checker/task_view_list_of_snapshot_copies.html"
+  - title: 刪除 Snapshot 複本
+    url: "/health-checker/task_delete_snapshot_copies.html"
+  - title: 計算 Snapshot 複本的可回收空間
+    url: "/health-checker/task_calculate_reclaimable_space_for_snapshot_copies.html"
+  - title: 叢集物件視窗與對話方塊說明
+    url: "/health-checker/reference_description_of_cluster_object_windows_and_dialog_boxes.html"
+- title: 通用 Unified Manager 健全狀況工作流程與任務
+  entries:
+  - title: 了解常見的健全狀況工作流程和任務
+    url: "/health-checker/concept_common_unified_manager_administrative_workflows_and_tasks.html"
+  - title: 監控與疑難排解資料可用度
+    entries:
+    - title: 了解如何監控和疑難排解資料可用度
+      url: "/health-checker/concept_monitor_and_troubleshoot_data_availability.html"
+    - title: 掃描並解決儲存設備容錯移轉互連連結斷線情況
+      entries:
+      - title: 解決儲存設備容錯移轉互連連結中斷情況
+        url: "/health-checker/task_resolve_storage_failover_interconnect_link_down_condition.html"
+      - title: 針對儲存設備容錯移轉互連連結中斷執行修正行動
+        url: "/health-checker/task_perform_corrective_action_for_storage_failover_interconnect_links.html"
+    - title: 解決 Volume 離線問題
+      entries:
+      - title: 了解如何解決 Volume 離線問題
+        url: "/health-checker/task_resolve_volume_offline_issues.html"
+      - title: 了解如何針對 Volume 離線狀態執行診斷行動
+        url: "/health-checker/task_perform_diagnotstic_actions_for_volume_offline_conditions.html"
+      - title: 判斷 Volume 是否因其主機節點停機而離線
+        url: "/health-checker/task_determine_if_volume_offline_condition_is_by_down_cluster_node.html"
+      - title: 判斷 Volume 是否離線，以及其 SVM 是否因節點故障而停止運作
+        url: "/health-checker/task_determine_if_volume_is_offline_and_its_svm_is_stopped.html"
+      - title: 確定彙總中的 Volume 是否因磁碟損壞而離線
+        url: "/health-checker/task_determine_if_volume_is_offline_because_of_broken_disks.html"
+  - title: 解決容量問題
+    entries:
+    - title: 了解如何解決容量問題
+      url: "/health-checker/task_resolve_capacity_issues.html"
+    - title: 對已滿的 Volume 執行建議的補救措施
+      url: "/health-checker/task_perform_suggested_remedial_actions_for_full_volume.html"
+  - title: 管理健全狀況臨界值
+    entries:
+    - title: 什麼是儲存容量健全狀況臨界值
+      url: "/health-checker/concept_what_storage_capacity_health_thresholds_are.html"
+    - title: 設定全域健全狀況臨界值設定
+      entries:
+      - title: 了解如何設定全域健全狀況臨界值設定
+        url: "/health-checker/task_configure_global_health_threshold_settings.html"
+      - title: 設定全域彙總健全狀況臨界值
+        url: "/health-checker/task_configure_global_aggregate_health_threshold_values.html"
+      - title: 設定全域 Volume 健全狀況臨界值
+        url: "/health-checker/task_configure_global_volume_health_threshold_values.html"
+      - title: 設定全域 qtree 健全狀況臨界值
+        url: "/health-checker/task_configure_global_qtree_health_threshold_values.html"
+      - title: 設定非代管保護關係的延遲臨界值
+        url: "/health-checker/task_configure_lag_threshold_settings_for_unmanaged_protection.html"
+    - title: 編輯個別彙總健全狀況臨界值設定
+      url: "/health-checker/task_edit_individual_aggregate_health_threshold_settings.html"
+    - title: 編輯單一 Volume 健全狀況臨界值設定
+      url: "/health-checker/task_edit_individual_volume_health_threshold_settings.html"
+    - title: 編輯個別 qtree 健全狀況臨界值設定
+      url: "/health-checker/task_edit_individual_qtree_health_threshold_settings.html"
+  - title: 管理叢集安全性目標
+    entries:
+    - title: 了解如何管理叢集安全性目標
+      url: "/health-checker/concept_manage_cluster_security_objectives.html"
+    - title: 正在評估哪些安全性標準
+      entries:
+      - title: 了解 Unified Manager 如何評估安全性標準
+        url: "/health-checker/concept_what_security_criteria_is_being_evaluated.html"
+      - title: 叢集法規遵循類別
+        url: "/health-checker/reference_cluster_compliance_categories.html"
+      - title: SVM 法規遵循類別
+        url: "/health-checker/reference_svm_compliance_categories.html"
+      - title: Volume 法規遵循類別
+        url: "/health-checker/reference_volume_compliance_categories.html"
+    - title: 不符合法規是什麼意思
+      url: "/health-checker/concept_what_does_not_compliant_mean.html"
+    - title: 檢視叢集與儲存設備虛擬機器的詳細安全性狀態
+      url: "/health-checker/task_view_detailed_security_status_for_clusters_and_svms.html"
+    - title: 查看可能需要軟體或韌體更新的安全性事件
+      url: "/health-checker/task_view_security_events_that_require_software_or_firmware_updates.html"
+    - title: 查看所有叢集上使用者身分驗證的管理方式
+      url: "/health-checker/task_view_how_user_authentication_is_being_managed_on_all_clusters.html"
+    - title: 查看所有 Volume 的加密狀態
+      url: "/health-checker/task_view_encryption_status_of_all_volumes.html"
+    - title: 查看所有 Volume 和儲存設備虛擬機器的反勒索軟體狀態
+      url: "/health-checker/task_view_antiransomware_status_of_all_volumes_storage_vms.html"
+    - title: 查看所有作用中的安全性事件
+      url: "/health-checker/task_view_all_security_events.html"
+    - title: 新增安全性事件警報
+      url: "/health-checker/task_add_alerts_for_security_events.html"
+    - title: 停用特定安全性事件
+      url: "/health-checker/task_disable_specific_security_events.html"
+    - title: 安全性事件
+      url: "/health-checker/reference_security_events.html"
+  - title: 管理備份與恢復作業
+    entries:
+    - title: 了解備份與恢復作業
+      url: "/health-checker/concept_manage_backup_and_restore_operations.html"
+    - title: 虛擬應用裝置上的 Unified Manager 備份與恢復
+      url: "/health-checker/concept_backup_and_restore_on_virtual_appliance.html"
+    - title: 使用 MySQL 資料庫傾印進行備份與恢復
+      entries:
+      - title: 了解如何使用 MySQL 資料庫傾印進行備份與恢復
+        url: "/health-checker/concept_backup_and_restore_using_mysql_database_dump.html"
+      - title: 設定資料庫傾印備份的目的地與排程
+        url: "/health-checker/concept_configure_destination_and_schedule_for_database_dump_backups.html"
+      - title: 什麼是資料庫還原
+        url: "/health-checker/concept_what_database_restore_is.html"
+      - title: 在 Linux 系統上還原 MySQL 資料庫備份
+        url: "/health-checker/task_restore_mysql_db_on_linux.html"
+      - title: 在 Windows 上還原 MySQL 資料庫備份
+        url: "/health-checker/task_restore_mysql_database_backup_on_windows.html"
+    - title: 使用 NetApp Snapshot 快照技術進行備份與恢復
+      entries:
+      - title: 了解如何使用 NetApp 快照進行備份與恢復
+        url: "/health-checker/concept_backup_and_restore_using_netapp_snapshots.html"
+      - title: 在 Linux 上設定備份
+        url: "/health-checker/concept_configure_backup_for_linux.html"
+      - title: 在 Windows 上設定備份
+        url: "/health-checker/concept_configure_backup_for_windows.html"
+      - title: 從維護主控台設定透過 Snapshot 複本備份
+        url: "/health-checker/task_configure_netapp_snapshot_backup_from_maintenance_console.html"
+      - title: 為 Linux 和 Windows 定義備份排程
+        url: "/health-checker/task_define_schedule_for_snapshot_backups.html"
+      - title: 使用 Snapshot 複本還原 Unified Manager
+        url: "/health-checker/task_restore_snapshot_backup.html"
+      - title: 修改備份類型
+        url: "/health-checker/task_unconfigure_netapp_snapshot_backup.html"
+    - title: Unified Manager 的隨選備份
+      url: "/health-checker/concept_on_demand_backup_for_unified_manger.html"
+    - title: 將 Unified Manager 虛擬應用裝置遷移到 Linux 系統
+      url: "/health-checker/task_migrate_um_virtual_appliance_to_rhel_system.html"
+  - title: 管理指令碼
+    entries:
+    - title: 了解管理指令碼
+      url: "/health-checker/concept_manage_scripts.html"
+    - title: 指令碼如何與警報搭配運作
+      url: "/health-checker/concept_how_scripts_work_with_alerts.html"
+    - title: 新增指令碼
+      url: "/health-checker/task_add_scripts.html"
+    - title: 刪除指令碼
+      url: "/health-checker/task_delete_scripts.html"
+    - title: 測試指令碼執行
+      url: "/health-checker/task_test_script_execution.html"
+  - title: 管理和監控群組
+    entries:
+    - title: 了解群組
+      entries:
+      - title: 什麼是群組
+        url: "/health-checker/concept_what_group_is.html"
+      - title: 群組規則如何針對群組運作
+        url: "/health-checker/concept_how_group_rules_work_for_groups.html"
+      - title: 儲存設備物件上的群組操作如何運作
+        url: "/health-checker/concept_how_group_actions_work_on_storage_objects.html"
+    - title: 新增群組
+      url: "/health-checker/task_add_groups.html"
+    - title: 編輯群組
+      url: "/health-checker/task_edit_group_settings.html"
+    - title: 刪除群組
+      url: "/health-checker/task_delete_groups.html"
+    - title: 新增群組規則
+      url: "/health-checker/task_add_group_rules.html"
+    - title: 編輯群組規則
+      url: "/health-checker/task_edit_group_rules.html"
+    - title: 刪除群組規則
+      url: "/health-checker/task_delete_group_rules.html"
+    - title: 新增群組動作
+      url: "/health-checker/task_add_group_actions.html"
+    - title: 編輯群組動作
+      url: "/health-checker/task_edit_group_actions.html"
+    - title: 設定群組的 Volume 健全狀況臨界值
+      url: "/health-checker/task_configure_volume_health_thresholds_for_groups.html"
+    - title: 刪除群組操作
+      url: "/health-checker/task_delete_group_actions.html"
+    - title: 重新排序群組動作
+      url: "/health-checker/task_reorder_group_actions.html"
+  - title: 使用註解排定儲存設備物件事件的優先順序
+    entries:
+    - title: 進一步了解註釋
+      entries:
+      - title: 什麼是註解
+        url: "/health-checker/concept_what_annotations_are.html"
+      - title: Unified Manager 中的註解規則如何運作
+        url: "/health-checker/concept_how_annotation_rules_work_in_unified_manager.html"
+      - title: 預先定義註解值的說明
+        url: "/health-checker/reference_description_of_predefined_annotation_values.html"
+    - title: 動態新增註釋
+      url: "/health-checker/task_add_annotations_dynamically.html"
+    - title: 為註解新增值
+      url: "/health-checker/task_add_values_to_annotations.html"
+    - title: 刪除註釋
+      url: "/health-checker/task_delete_annotations.html"
+    - title: 檢視附註清單與詳細資料
+      url: "/health-checker/task_view_annotation_list_and_details.html"
+    - title: 從註解中刪除值
+      url: "/health-checker/task_delete_values_from_annotations.html"
+    - title: 建立註解規則
+      url: "/health-checker/task_create_annotation_rules.html"
+    - title: 手動為個別儲存設備物件新增註釋
+      url: "/health-checker/task_add_annotations_manually_to_individual_storage_objects.html"
+    - title: 編輯註釋規則
+      url: "/health-checker/task_edit_annotation_rules.html"
+    - title: 設定註解規則的條件
+      url: "/health-checker/task_configure_conditions_for_annotation_rules.html"
+    - title: 刪除註解規則
+      url: "/health-checker/task_delete_annotation_rules.html"
+    - title: 重新排序註釋規則
+      url: "/health-checker/task_reorder_annotation_rules.html"
+  - title: 透過 Web 使用者介面和維護主控台傳送支援套裝組合
+    entries:
+    - title: 了解如何發送支援套裝組合
+      url: "/health-checker/task_send_asup_to_technical_support.html"
+    - title: 將 AutoSupport 訊息和支援套裝組合傳送給技術支援
+      url: "/health-checker/reference_setup_autosupport_page.html"
+    - title: 存取維護主控台
+      url: "/health-checker/task_access_maintenance_console.html"
+    - title: 產生並上傳支援套裝組合
+      url: "/health-checker/task_generate_and_upload_support_bundle.html"
+    - title: 使用 Windows 用戶端檢索支援套裝組合
+      url: "/health-checker/task_retrieve_support_bundle_using_windows_client.html"
+    - title: 使用 UNIX 或 Linux 用戶端擷取支援套裝組合
+      url: "/health-checker/task_retrieve_support_bundle_using_unix_or_linux_client.html"
+    - title: 將支援套裝組合傳送給技術支援
+      url: "/health-checker/task_send_support_bundle_to_technical_support.html"
+  - title: 與多個工作流程相關的任務和資訊
+    entries:
+    - title: 叢集元件及其可能發生爭用的原因
+      url: "/health-checker/concept_cluster_components_and_why_they_can_be_in_contention.html"
+    - title: 磁碟區健全狀況詳細資料
+      url: "/health-checker/reference_health_volume_details_page.html"
+    - title: 儲存虛擬機器健全狀況詳情
+      url: "/health-checker/reference_health_svm_details_page.html"
+    - title: 叢集健全狀況詳細資料
+      url: "/health-checker/reference_health_cluster_details_page.html"
+    - title: 集合體健全狀況詳細資料
+      url: "/health-checker/reference_health_aggregate_details_page.html"

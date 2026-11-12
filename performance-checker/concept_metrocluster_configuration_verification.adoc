@@ -1,0 +1,30 @@
+---
+permalink: performance-checker/concept_metrocluster_configuration_verification.html 
+sidebar: sidebar 
+keywords: metrocluster, configuration, verification 
+summary: 確保 MetroCluster 組態設定正確，即可避免 MetroCluster 組態中鏡射工作負載發生效能問題。您也可以透過變更組態或升級軟體或硬體元件，來提升工作負載效能。 
+---
+= 在 Active IQ Unified Manager 中驗證 MetroCluster 組態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+確保 MetroCluster 組態設定正確，即可防止在 FC 與 IP 組態上的 MetroCluster 中，鏡射的工作負載發生效能問題。您也可以透過變更組態或升級軟體或硬體元件，來改善工作負載效能。
+
+請參閱 https://docs.netapp.com/us-en/ontap-metrocluster/index.html["MetroCluster 文件"]以取得在 MetroCluster 組態中設定叢集的指示，包括 Fibre Channel （FC） 交換器、纜線及交換器間連結 （ISL）。它也有助於您設定 MetroCluster 軟體，以便本機和遠端叢集可以與鏡射 Volume 資料進行通訊。如需 MetroCluster over IP 設定的特定資訊，請參閱 https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/index.html["安裝 MetroCluster IP 組態"]。
+
+您可以將您的 MetroCluster 組態與 https://docs.netapp.com/us-en/ontap-metrocluster/index.html["MetroCluster 文件"] 中的要求進行比較，以判斷變更或升級 MetroCluster 組態中的元件是否能改善工作負載效能。此比較可協助您回答下列問題：
+
+* 這些控制器是否適合您的工作負載？
+* 您是否需要將 ISL 套裝組合升級至更大的頻寬，以處理更多的處理量？
+* 您能否調整交換器上的緩衝區間信用值（BBC）來增加頻寬？
+* 如果您的工作負載對固態磁碟機（SSD）儲存設備的寫入處理量很高，您是否需要升級 FC 到 SAS 橋接器以容納這種處理量？
+
+
+*相關資訊*
+
+* 如需更換或升級 MetroCluster 元件的相關資訊，請參閱 https://docs.netapp.com/us-en/ontap-metrocluster/index.html["MetroCluster 文件"]。
+* 如需升級控制器的相關資訊，請參閱 https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/task_upgrade_controllers_in_a_four_node_fc_mcc_us_switchover_and_switchback_mcc_fc_4n_cu.html["在 MetroCluster FC 組態中使用切換與切回來升級控制器"]與 https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/task_upgrade_controllers_in_a_four_node_ip_mcc_us_switchover_and_switchback_mcc_ip.html["在 MetroCluster IP 組態中使用切換和切回來升級控制器"]
+

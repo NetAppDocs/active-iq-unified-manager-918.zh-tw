@@ -1,0 +1,97 @@
+---
+permalink: performance-checker/reference_what_objects_can_be_used_in_threshold_policies.html 
+sidebar: sidebar 
+keywords: objects, counters, combination, threshold, policies 
+summary: 只有部分效能計數器可以同時用於組合原則。當指定主要和次要效能計數器時，兩個效能計數器都必須超過其最大限制才會產生事件。 
+---
+= 了解 Active IQ Unified Manager 中的組合臨界值原則物件和計數器
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+只有部分效能計數器可以同時用於組合原則。當指定主要和次要效能計數器時，兩個效能計數器都必須超過其最大限制才會產生事件。
+
+|===
+| 主要儲存設備物件與計數器 | 次要儲存設備物件與計數器 
+
+
+ a| 
+Volume 延遲
+ a| 
+磁碟區 IOPS
+
+
+
+ a| 
+Volume MB/s
+
+
+
+ a| 
+彙總使用率
+
+
+
+ a| 
+彙總效能容量使用量
+
+
+
+ a| 
+節點使用率
+
+
+
+ a| 
+已使用的節點效能容量
+
+
+
+ a| 
+節點效能容量使用 - 接管
+
+
+
+ a| 
+LUN 延遲
+ a| 
+LUN IOPS
+
+
+
+ a| 
+LUN MB/s
+
+
+
+ a| 
+彙總使用率
+
+
+
+ a| 
+彙總效能容量使用量
+
+
+
+ a| 
+節點使用率
+
+
+
+ a| 
+已使用的節點效能容量
+
+
+
+ a| 
+節點效能容量使用 - 接管
+
+|===
+[NOTE]
+====
+當 Volume 組合原則套用於 FlexGroup Volume（而非 FlexVol Volume）時，只能選擇 "`Volume IOPS`" 和 "`Volume MB/s`" 屬性作為次要計數器。如果臨界值原則包含節點或彙總屬性，則該原則不會套用於 FlexGroup Volume，而且您會收到描述此情況的錯誤訊息。這是因為 FlexGroup Volume 可以存在於多個節點或彙總上。
+
+====

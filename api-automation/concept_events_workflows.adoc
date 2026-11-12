@@ -1,0 +1,43 @@
+---
+permalink: api-automation/concept_events_workflows.html 
+sidebar: sidebar 
+keywords: determine, issues, storage, objects, events 
+summary: 當資料中心中的儲存設備物件超過臨界值時，您會收到有關該事件的通知。利用此通知，您可以分析問題並使用事件 API 採取修正行動。 
+---
+= 使用 Active IQ Unified Manager 事件 API 確定儲存設備物件問題
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當資料中心中的儲存設備物件超過臨界值時，您會收到有關該事件的通知。利用此通知，您可以分析問題，並使用 `events` API 採取修正行動。
+
+此工作流程以 Volume 作為資源物件為例。您可以使用  `events` API 擷取與 Volume 相關的事件清單，分析該 Volume 的關鍵問題，然後採取修正行動來解決問題。
+
+image::../media/handling_event_related_issues_of_a_storage_object_flowchart.gif[流程圖展示了從事件清單到修正行動再到結束的 Volume 事件分析流程。]
+
+請依照這些步驟確定您的 Volume 存在的問題，然後再採取補救措施。
+
+.步驟
+. 分析資料中心 Volume 的關鍵 Active IQ Unified Manager 事件通知。
+. 使用 /management-server/events API 中的下列參數來查詢 Volume 的所有事件：
+`"*resource_type": "volume*"`
+`"*severity": "critical*"`
++
+[cols="3*"]
+|===
+| 類別 | HTTP 動詞 | 路徑 
+
+
+ a| 
+management-server
+ a| 
+取得
+ a| 
+/management-server/events
+
+|===
+. 檢視輸出結果並分析特定 Volume 中的問題。
+. 使用 Unified Manager REST API 或 Web UI 執行必要的行動來解決問題。
+

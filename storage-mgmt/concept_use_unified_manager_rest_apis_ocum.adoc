@@ -1,0 +1,18 @@
+---
+permalink: storage-mgmt/concept_use_unified_manager_rest_apis_ocum.html 
+sidebar: sidebar 
+keywords: use, unified manager, rest, apis 
+summary: Active IQ Unified Manager 提供 REST API，供您檢視有關監控和管理儲存環境的資訊。API 也允許根據原則資源配置和管理儲存設備物件。 
+---
+= 使用 Active IQ Unified Manager REST API
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Active IQ Unified Manager 提供 REST API，供您檢視有關監控和管理儲存環境的資訊。API 也允許根據原則資源配置和管理儲存設備物件。
+
+您也可以使用 Unified Manager 支援的 API 閘道在所有 ONTAP 代管的叢集上執行 ONTAP API。
+
+如需 Unified Manager REST API 的相關資訊，請參閱 link:../api-automation/concept_get_started_with_um_apis.html["Active IQ Unified Manager REST API 入門指南"]。

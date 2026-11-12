@@ -1,0 +1,88 @@
+---
+permalink: reporting/task_create_report_to_view_available_volume_capacity_charts.html 
+sidebar: sidebar 
+keywords: create, report, view, available, volume, capacity, charts 
+summary: 您可以建立一份報告，以 Excel 圖表分析可用的 Volume 容量。 
+---
+= 建立一份報告，以檢視 Active IQ Unified Manager 中的可用 Volume 容量圖表
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以建立一份報告，以 Excel 圖表分析可用的 Volume 容量。
+
+.開始之前
+* 您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+
+請使用下列步驟開啟 Health: All Volumes 檢視、以 Excel 格式下載該檢視、建立可用容量圖表、上傳自訂的 Excel 檔案，並排程最終報告。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存設備* > *Volume*。
+. 選擇 *報告* > *下載 Excel*。
++
+image::../media/download_excel_menu.png[一張 UI 快照，展示如何從報告中下載 excel。]
+
++
+根據您的瀏覽器，您可能需要按一下 *確定* 來儲存檔案。
+
+. 如有需要，請點選 *啟用編輯*。
+. 在 Excel 中開啟下載的檔案。
+. 在 `data`工作表中，選擇您要在 `Volume`和 `Available Data` % 欄中使用的資料。
+. 在 *插入* 功能表中，選擇 `3-D piechart.`
++
+此圖表顯示哪些 Volume 擁有最大的可用空間。此圖表顯示在資料表中。
+
++
+[NOTE]
+====
+根據您的網路組態，選擇整欄或過多資料列可能會導致圓餅圖難以閱讀。本範例使用 3-D 圓餅圖，但您可以使用任何圖表類型。請使用最能顯示您要擷取之資料的圖表。
+
+====
+. 將圖表標題命名為 *可用容量*。
+. 以滑鼠右鍵按一下圖表，然後選取 *移動圖表*。
+. 選擇 *新工作表*，並將工作表命名為 *儲存設備 Volume 圖表*。
++
+[NOTE]
+====
+請確認新工作表出現在資訊和資料工作表之後。
+
+====
++
+image::../media/move_chart.png[一張 UI 快照，展示如何命名新工作表。]
+
+. 選取圖表後，您可以使用 *設計* 和 *格式* 選單來自訂圖表的外觀。
+. 滿意後，儲存修改後的檔案。
+. 在 Unified Manager 中，選擇 *報告* > *上傳 Excel*。
++
+[NOTE]
+====
+請確保您目前所處的檢視與您下載 Excel 檔案時所處的檢視相同。
+
+====
+. 選擇您已修改的 Excel 檔案。
+. 按一下 *開啟*。
+. 按一下 *提交*。
++
+*報告* > *上傳 Excel* 選單項目旁邊會出現一個勾號。
+
++
+image::../media/upload_excel.png[一張使用者介面快照，展示如何將 Excel 檔案上傳到報告中。]
+
+. 點選 *排程報告*。
+. 按一下 *新增排程* 以在 *報告排程* 頁面新增一列，以便您可以定義新報告的排程特性。
+. 輸入報告排程的名稱並完成其他報告欄位，然後按一下列末尾的勾號（image:../media/blue_check.gif[""]）。
++
+[NOTE]
+====
+為報告選擇 *XLSX* 格式。
+
+====
++
+報告會立即作為測試傳送。之後，報告會產生並依指定的頻率透過電子郵件傳送給列出的收件者。
+
+
+
+根據報告中顯示的結果，您可能需要平衡 Volume 的負載。

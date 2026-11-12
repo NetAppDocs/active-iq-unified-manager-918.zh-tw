@@ -1,0 +1,49 @@
+---
+permalink: health-checker/reference_volume_compliance_categories.html 
+sidebar: sidebar 
+keywords: volume, encryption, compliance, categories 
+summary: 此表描述了 Unified Manager 評估的 Volume 加密參數，以確定 Volume 上的資料是否得到充分保護，防止未經授權的使用者存取。 
+---
+= 了解 Active IQ Unified Manager 中的 Volume 法規遵循類別
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此表描述了 Unified Manager 評估的 Volume 加密參數，以確定 Volume 上的資料是否得到充分保護，防止未經授權的使用者存取。
+
+請注意，Volume 加密參數不會影響叢集或儲存設備虛擬機器是否被視為符合法規。
+
+[cols="2*"]
+|===
+| 參數 | 說明 
+
+
+ a| 
+軟體加密
+ a| 
+顯示使用 NetApp Volume 加密 (NVE) 或 NetApp Aggregate 加密 (NAE) 軟體加密解決方案保護的 Volume 數量。
+
+
+
+ a| 
+硬體加密
+ a| 
+顯示使用 NetApp 儲存加密（NSE）硬體加密保護的 Volume 數量。
+
+
+
+ a| 
+軟體和硬體加密
+ a| 
+顯示受軟體和硬體加密雙重保護的 Volume 數量。
+
+
+
+ a| 
+未加密
+ a| 
+顯示未加密的 Volume 數量。
+
+|===

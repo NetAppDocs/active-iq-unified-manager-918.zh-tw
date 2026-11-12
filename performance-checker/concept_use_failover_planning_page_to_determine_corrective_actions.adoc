@@ -1,0 +1,16 @@
+---
+permalink: performance-checker/concept_use_failover_planning_page_to_determine_corrective_actions.html 
+sidebar: sidebar 
+keywords: node, failover, planning page, determine, corrective, actions 
+summary: 根據效能/節點容錯移轉規劃頁面中顯示的資訊，您可以採取行動，確保容錯移轉不會導致 HA 配對的效能下降到可接受的層級以下。 
+---
+= 從 Active IQ Unified Manager 的「效能/節點容錯移轉規劃」頁面決定修正措施
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+根據效能/節點容錯移轉規劃頁面中顯示的資訊，您可以採取行動，確保容錯移轉不會導致 HA 配對的效能下降到可接受的層級以下。
+
+例如，為了降低容錯移轉的預估效能影響，您可以將 HA 配對中某個節點的某些 Volume 或 LUN 移至叢集中的其他節點。這樣做可確保主節點在容錯移轉後能繼續交付可接受的效能。

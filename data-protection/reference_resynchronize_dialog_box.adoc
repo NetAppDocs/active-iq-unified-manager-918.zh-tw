@@ -1,0 +1,71 @@
+---
+permalink: data-protection/reference_resynchronize_dialog_box.html 
+sidebar: sidebar 
+keywords: resynchronize, dialog box 
+summary: 「重新同步」對話方塊可讓您重新同步 SnapMirror 或 SnapVault 關係上的資料，該關係先前已中斷，且目的地已成為讀寫 Volume。當來源 Volume 上所需的共同 Snapshot 複本被刪除，導致 SnapMirror 或 SnapVault 更新失敗時，您也可以重新同步。 
+---
+= 在 Active IQ Unified Manager 中使用重新同步對話方塊
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+「重新同步」對話方塊可讓您重新同步 SnapMirror 或 SnapVault 關係上的資料，該關係先前已中斷，且目的地已成為讀寫 Volume。當來源 Volume 上所需的共同 Snapshot 複本被刪除，導致 SnapMirror 或 SnapVault 更新失敗時，您也可以重新同步。
+
+
+
+[[resynchronization-options-tab]]
+== 重新同步選項索引標籤
+
+「重新同步選項」標籤可讓您設定要重新同步的保護關係的傳輸優先順序和最大傳輸率。
+
+* *傳輸優先權*
++
+執行傳輸的優先權。您可以選擇「正常」或「低」。指定正常傳輸優先權之原則的關係，會比指定低傳輸優先權之原則的關係先執行。
+
+* *最高傳輸率*
++
+指定叢集之間透過網路傳輸資料的最大速率。選取後，網路頻寬將限制為您指定的值。您可以輸入數值，然後選擇每秒千位元組（KBps）、每秒百萬位元組（MBps）、每秒十億位元組（GB/s）或 TBps。如果您選擇不使用最大傳輸率，則關係之間的基礎傳輸將不受限制。
+
+
+
+
+
+[[source-snapshot-copies-tab]]
+== 來源 Snapshot 複本索引標籤
+
+「來源 Snapshot 複本」索引標籤會顯示用於基礎傳輸之來源 Snapshot 複本的下列資訊：
+
+* *來源 Volume*
++
+顯示對應來源 Volume 的名稱。
+
+* *目的地 Volume*
++
+顯示所選目的地 Volume 的名稱。
+
+* *來源類型*
++
+顯示 Volume 類型：讀寫或資料保護。
+
+* *Snapshot 複本*
++
+顯示用於資料傳輸的 Snapshot 複本。按一下 Snapshot 複本值將顯示「選擇來源 Snapshot 複本」對話方塊，您可以在其中根據您的保護關係類型和您正在執行的作業，選擇用於傳輸的特定 Snapshot 複本。
+
+
+
+
+
+[[command-buttons]]
+== 命令按鈕
+
+* *提交*
++
+開始重新同步程序並關閉「重新同步」對話方塊。
+
+* *取消*
++
+取消您的選擇並關閉「重新同步」對話方塊。
+
+

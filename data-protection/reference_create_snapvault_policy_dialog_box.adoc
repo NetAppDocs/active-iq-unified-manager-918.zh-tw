@@ -1,0 +1,78 @@
+---
+permalink: data-protection/reference_create_snapvault_policy_dialog_box.html 
+sidebar: sidebar 
+keywords: create, snapvault, policy, dialog box 
+summary: 「建立 SnapVault 原則」對話方塊可讓您建立原則，以設定 SnapVault 傳輸的優先順序。您可以使用原則來最大化從主要 Volume 到次要 Volume 的傳輸效率。 
+---
+= 在 Active IQ Unified Manager 中使用「建立 SnapVault 原則」對話方塊
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+「建立 SnapVault 原則」對話方塊可讓您建立原則，以設定 SnapVault 傳輸的優先順序。您可以使用原則來最大化從主要 Volume 到次要 Volume 的傳輸效率。
+
+* *目的地叢集*
++
+您在「設定保護」對話方塊的 SnapVault 索引標籤中所選取的叢集名稱。
+
+* *目的地 SVM*
++
+您在「設定保護」對話方塊的 SnapVault 索引標籤中所選的 SVM 名稱。
+
+* *原則名稱*
++
+您為新原則提供的名稱。原則名稱可以包含 A 到 Z、a 到 z、0 到 9、句點（.）、連字號（-）和底線（_）。
+
+* *傳輸優先權*
++
+執行傳輸的優先權。您可以選擇「正常」或「低」。具有指定正常傳輸優先權之原則的傳輸關係，會先於具有指定低傳輸優先權之原則的傳輸關係執行。預設設定為「正常」。
+
+* *備註*
++
+這是一個選用欄位，您可以在其中新增最多 255 個字元的 SnapVault 原則備註。
+
+* *忽略存取時間*
++
+指定是否針對僅變更存取時間的檔案忽略遞增傳輸。
+
+* *複寫標籤*
++
+在表格中列出與 ONTAP 所選、在原則中具有特定複寫標籤的 Snapshot 複本相關聯的規則。此外，還提供下列資訊與行動：
+
++
+** 命令按鈕
++
+命令按鈕可讓您執行下列行動：
+
++
+*** 新增
++
+允許您建立 Snapshot 複本標籤和保留計數。
+
+*** 編輯保留計數
++
+允許您變更現有 Snapshot 複本標籤的保留計數。保留計數必須是介於 1 和 251 之間的數字。所有規則的保留計數總和不能超過 251。
+
+*** 刪除
++
+允許您刪除現有的 Snapshot 複本標籤。
+
+
+
+** Snapshot 複本標籤
++
+顯示 Snapshot 複本標籤。如果您選取一或多個具有相同本機 Snapshot 複本原則的 Volume，原則中每個標籤都會顯示一個項目。如果您選取多個具有兩個以上本機 Snapshot 複本原則的 Volume，表格將顯示所有原則中的所有標籤
+
+** 排程
++
+顯示與每個 Snapshot 複本標籤關聯的排程。如果一個標籤關聯了多個排程，則該標籤的排程將以逗號分隔的清單形式顯示。如果您選擇多個具有相同標籤但排程不同的 Volume，則排程將顯示 "`Various`"，以指出所選 Volume 關聯了多個排程。
+
+** 目的地保留計數
++
+顯示在 SnapVault 次要端保留且具有指定標籤的 Snapshot 複本數量。對於具有多個排程的標籤，保留計數會顯示每個標籤與排程配對的保留計數總和。如果您選取具有兩個或多個本機 Snapshot 複本原則的多個 Volume，則保留計數為空白。
+
+
+
+

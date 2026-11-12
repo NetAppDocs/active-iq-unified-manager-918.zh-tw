@@ -1,0 +1,26 @@
+---
+permalink: performance-checker/concept_verify_qos_policy_group.html 
+sidebar: sidebar 
+keywords: verify, volumes, qos, policy, group, unusually, high, activity 
+summary: '檢閱服務品質 (QoS) 原則群組中活動變化最大的工作負載，以判斷哪個工作負載導致該事件。' 
+---
+= 在 Active IQ Unified Manager 中分析 QoS 原則群組中的高活動磁碟區
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以審查服務品質 (QoS) 原則群組中活動變更最大的工作負載，以確定是否有多個工作負載導致了該事件。您也可以查看其他工作負載是否仍超出設定的處理量限制，或是否已還原到預期的活動範圍內。
+
+在「事件詳細資料」頁面的「系統診斷」區段中，您可以依活動的尖峰偏差對工作負載進行排序，將活動變化最大的工作負載顯示在表格頂部。這些工作負載可能是活動超出設定限制，並可能導致事件的 "`bullies`"。
+
+您可以導覽至每個 Volume 工作負載的「工作負載分析」頁面，審查其 IOPS 活動。如果工作負載有操作活動非常高的時期，則可能與該事件有關。您可以變更工作負載的原則群組設定，或將工作負載移至不同的原則群組。
+
+您可以使用 ONTAP System Manager 或 ONTAP CLI 指令來管理原則群組，如下所示：
+
+* 建立原則群組。
+* 在原則群組中新增或移除工作負載。
+* 在原則群組之間移動工作負載。
+* 更改原則群組的處理量限制。
+

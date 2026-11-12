@@ -1,0 +1,165 @@
+---
+permalink: install-linux/task_install_unified_manager_linux.html 
+sidebar: sidebar 
+keywords: install, unified manager 
+summary: 您可以在實體或虛擬的 Red Hat Enterprise Linux 平台上安裝 Unified Manager。 
+---
+= 在 Red Hat Enterprise Linux 上安裝 Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在實體或虛擬的 Red Hat Enterprise Linux 平台上安裝 Unified Manager。
+
+.開始之前
+* 您要安裝 Unified Manager 的系統必須符合系統和軟體要求。
++
+請參閱 link:concept_virtual_infrastructure_or_hardware_system_requirements.html["硬體系統要求"]。
+
++
+請參閱 link:reference_red_hat_software_and_installation_requirements.html["Linux 軟體和安裝需求"]。
+
+* 您必須已將 Unified Manager `.zip` 檔案從 NetApp 支援網站下載到目標系統。
+* 您應該已經驗證下載的 `.zip`檔案的完整性。
+* 您必須擁有受支援的網頁瀏覽器。
+* 您的終端模擬軟體必須啟用回溯功能。
+
+
+Red Hat Enterprise Linux 系統可能已安裝所需支援軟體（Java、MySQL、其他實用程式）的所有必要版本，也可能只安裝了部分必要軟體，或者可能是一個新安裝的系統，未安裝任何必要軟體。
+
+.步驟
+. 登入要安裝 Unified Manager 的伺服器。
+. 輸入適當的命令，以評估目標系統上可能需要安裝或升級哪些軟體才能支援安裝：
++
+[cols="2*"]
+|===
+| 所需軟體及最低版本 | 用於驗證軟體及其版本的命令 
+
+
+ a| 
+OpenJDK 版本 17.0.14+6
+ a| 
+`java -version`
+
+
+
+ a| 
+MySQL 8.4.10 Community Edition
+ a| 
+`rpm -qa | grep -i mysql`
+
+
+
+ a| 
+7-zip
+ a| 
+`7zz -version`
+
+|===
+. 如果已安裝的 MySQL 版本低於 MySQL 8.4.10 Community Edition，請輸入以下命令將其解除安裝：
++
+`rpm -e <mysql_package_name>`
+
++
+如果您收到相依性錯誤，則必須新增  `--nodeps` 選項以解除安裝元件。
+
+. 導覽至您下載安裝 `.zip`檔案的目錄，並擴充 Unified Manager 套裝組合：
++
+`unzip ActiveIQUnifiedManager-_<version>_.zip`
+
++
+Unified Manager 所需的 `.rpm`模組已解壓縮至目標目錄。
+
+. 請確認以下模組存在於該目錄中：
++
+`ls *.rpm`
+
++
+`netapp-um<version>.x86_64.rpm`
+
+. 執行預先安裝指令碼，確保沒有系統組態設定或任何已安裝的軟體可能與 Unified Manager 的安裝衝突：
++
+`sudo ./pre_install_check.sh`
+
++
+預先安裝指令碼會檢查系統是否有有效的 Red Hat Enterprise Linux 訂閱，以及是否有權存取所需的軟體儲存庫。如果指令碼發現任何問題，您必須在安裝 Unified Manager 之前修復這些問題。
+
++
+對於 Red Hat Enterprise Linux 8 系統，如果您有包含由 AppStream 儲存庫所提供之 JDK 17 - OpenJDK、7-zip 及其他軟體套件的內部儲存庫，您必須停用 AppStream 儲存庫並安裝 MySQL Community Server。執行下列命令：
+
++
+[listing]
+----
+# sudo yum --disablerepo=rhel-8-for-x86_64-appstream-rpms install  mysql-community-server
+----
+. *選用：*只有當您的系統未連線至網際網路，且必須手動下載安裝所需的套件時，才必須執行步驟 7。如果您的系統可以存取網際網路，且所有必要的套件皆可使用，請前往步驟 8。對於未連線至網際網路或未使用 Red Hat Enterprise Linux 儲存庫的系統，請執行下列步驟以判斷是否遺漏任何必要的套件，然後下載這些套件：
++
+.. 在您要安裝 Unified Manager 的系統上，檢視可用與不可用套件的清單：+
+`yum install netapp-um<version>.x86_64.rpm --assumeno`
++
+「`Installing:`」部分中的項目是目前目錄中可用的套件，而「`Installing for dependencies:`」部分中的項目則是系統上缺少的套件。
+
+.. 在可存取網際網路的系統上，下載缺少的套件：
++
+`yum install <package_name> --downloadonly --downloaddir=.`
+
++
+[NOTE]
+====
+由於「`yum-plugin-downloadonly`」外掛並非總是在 Red Hat Enterprise Linux 系統上啟用，因此您可能需要啟用該功能，以下載套件而不安裝它：
+`yum install yum-plugin-downloadonly`
+
+====
+.. 從連網系統將缺少的套件複製到您的安裝系統。
+
+
+. 以 root 使用者身分，或使用 `sudo`，執行下列命令來安裝軟體：
++
+`yum install netapp-um<version>.x86_64.rpm`
+
++
+此命令會安裝 .rpm 套件、所有其他必要的支援軟體以及 Unified Manager 軟體。
+
++
+如果安裝失敗並出現 GPG NOKEY 錯誤，請使用 `rpm --import`從 URL 匯入金鑰：
+
++
+rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2023[]
+
++
+[NOTE]
+====
+請勿嘗試使用其他命令（例如 `rpm -ivh`）進行安裝。在 Red Hat Enterprise Linux 系統上成功安裝 Unified Manager 需要將所有 Unified Manager 檔案及相關檔案依照特定順序安裝到特定的目錄結構中，該目錄結構會由 `yum install netapp-um<version>.x86_64.rpm`命令自動強制執行。
+
+====
+. 請忽略安裝訊息後立即顯示的電子郵件通知。
++
+該電子郵件通知 root 使用者初始 cron 作業故障，但這不會對安裝造成不利影響。
+
+. 安裝訊息完成後，向後捲動訊息，直到看到系統顯示 Unified Manager Web UI 的 IP 位址或 URL、維護使用者名稱（umadmin）和預設密碼的訊息。
++
+訊息類似下列內容：
+
++
+[listing]
+----
+Active IQ Unified Manager installed successfully.
+Use a web browser and one of the following URL(s) to configure and access the Unified Manager GUI.
+https://default_ip_address/    (if using IPv4)
+https://[default_ip_address]/  (if using IPv6)
+https://fully_qualified_domain_name/
+
+Log in to Unified Manager in a web browser by using following details:
+  username: umadmin
+  password: admin
+----
+. 記錄 IP 位址或 URL、指派的使用者名稱（umadmin）和目前密碼。
+. 如果在安裝 Unified Manager 之前建立了具有自訂主目錄的 umadmin 使用者帳戶，則必須指定 umadmin 使用者登入 shell：
++
+`usermod -s /bin/maintenance-user-shell.sh umadmin`
+
+
+
+存取 Web UI 以變更 umadmin 使用者的預設密碼，並執行 Unified Manager 的初始設定，如 link:../config/concept_configure_unified_manager.html["設定 Active IQ Unified Manager"] 所述。必須變更 umadmin 使用者的預設密碼。

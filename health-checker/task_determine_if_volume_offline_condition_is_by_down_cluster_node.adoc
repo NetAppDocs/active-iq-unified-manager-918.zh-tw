@@ -1,0 +1,47 @@
+---
+permalink: health-checker/task_determine_if_volume_offline_condition_is_by_down_cluster_node.html 
+sidebar: sidebar 
+keywords: determine, volume, offline, host, node 
+summary: 您可以使用 Unified Manager Web UI 來確認或排除 Volume 離線是否是因為其主機節點停機，且儲存設備容錯移轉至其 HA 配對合作夥伴失敗所致。 
+---
+= 在 Active IQ Unified Manager 中判斷 Volume 是否因其主機節點停機而離線
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 Unified Manager Web UI 來確認或排除 Volume 離線是否是因為其主機節點停機，且儲存設備容錯移轉至其 HA 配對合作夥伴失敗所致。
+
+.開始之前
+您必須擁有操作員、應用程式管理員或儲存管理員角色。
+
+若要確定 Volume 離線狀態是否由託管節點故障和隨後的儲存設備容錯移轉失敗所引起，請執行下列行動：
+
+.步驟
+. 在離線 Volume 的 *Volume / 健全狀況* 詳細資料頁面的 *相關裝置* 窗格中，找到並按一下 SVM 下方顯示的超文字連結。
++
+Storage VM / 健全狀況詳細資料頁面會顯示有關離線 Volume 的託管儲存虛擬機器 (SVM) 的資訊。
+
+. 在 *Storage VM / 健全狀況* 詳細資料頁面的 *相關裝置* 窗格中，找到並按一下顯示在 Volume 下方的超文字連結。
++
+「健全狀況：所有 Volume」檢視會顯示有關 SVM 託管的所有 Volume 的資訊表。
+
+. 在「*健全狀況：所有 Volume*」檢視的「狀態」欄位標題上，按一下篩選符號image:../media/filtericon_um60.png["欄篩選器圖示"]，然後選取「*離線*」選項。
++
+僅列出處於離線狀態的 SVM Volume。
+
+. 在「健全狀況：所有 Volume」檢視上，按一下網格符號 image:../media/gridviewicon.gif["網格檢視圖示"]，然後選擇 *叢集節點* 選項。
++
+您可能需要在網格選取方塊中捲動，才能找到 *叢集節點* 選項。
+
++
+「叢集節點」欄已新增至 Volume 清單，並顯示託管每個離線 Volume 的節點名稱。
+
+. 在 *健全狀況：所有 Volume* 檢視中，找到離線 Volume 的清單，然後在其「叢集節點」欄中，按一下其託管節點的名稱。
++
+「叢集 / 健全狀況」詳細資料頁面上的「節點」標籤會顯示託管節點所屬之節點 HA 配對的狀態。顯示畫面會指出託管節點的狀態，以及任何叢集容錯移轉作業是否成功。
+
+
+
+確認 Volume 離線狀態是由於其主機節點停機且儲存設備容錯移轉到 HA 配對合作夥伴失敗所致後，請聯絡適當的系統管理員或營運者手動重新啟動停機節點並修復儲存設備容錯移轉問題。

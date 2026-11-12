@@ -1,0 +1,24 @@
+---
+permalink: performance-checker/task_view_all_qos_policy_groups_available_on_all_clusters.html 
+sidebar: sidebar 
+keywords: viewing, qos, policy, groups, available, clusters 
+summary: 您可以顯示 Unified Manager 正在監控的叢集上所有可用的 QoS 原則群組清單。這包括傳統 QoS 原則、具調適能力的 QoS 原則，以及由 Unified Manager 效能服務層級原則代管的 QoS 原則。 
+---
+= 在 Active IQ Unified Manager 中檢視所有叢集上可用的 QoS 原則群組
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以顯示 Unified Manager 正在監控的叢集上所有可用的 QoS 原則群組清單。這包括傳統 QoS 原則、具調適能力的 QoS 原則，以及由 Unified Manager 效能服務層級原則代管的 QoS 原則。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存* > *QoS 原則群組*。
++
+預設顯示「效能：傳統 QoS 原則群組」檢視。
+
+. 檢視每個可用傳統 QoS 原則群組的詳細組態設定。
+. 按一下 QoS 原則群組名稱旁的擴充按鈕（image:../media/chevron_down.gif[""]），檢視有關該原則群組的更多詳細資訊。
+. 在「檢視」功能表中，選擇其中一個附加選項，以檢視所有具調適能力的 QoS 原則群組，或檢視使用 Unified Manager 效能服務等級所建立的所有 QoS 原則群組。
+

@@ -1,0 +1,28 @@
+---
+permalink: performance-checker/concept_monitor_cluster_performance_navigation.html 
+sidebar: sidebar 
+keywords: monitor, cluster, performance, navigation 
+summary: 您可以監控 Unified Manager 所代管的所有叢集效能。監控叢集可提供叢集和物件效能的總覽，並包含效能事件監控。您可以高階地檢視效能和事件，也可以進一步調查叢集和物件效能及效能事件的任何詳細資料。 
+---
+= 在 Active IQ Unified Manager 中監控叢集效能導覽
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以監控 Unified Manager 所代管的所有叢集效能。監控叢集可提供叢集和物件效能的總覽，並包含效能事件監控。您可以高階地檢視效能和事件，也可以進一步調查叢集和物件效能及效能事件的任何詳細資料。
+
+這是叢集效能導覽路徑的眾多可能範例之一：
+
+. 在左側導覽窗格中，按一下 *儲存設備* > *彙總*。
+. 若要檢視這些彙總的效能資訊，請選取「效能：所有彙總」檢視。
+. 識別您要調查的彙總，然後按一下該彙總名稱，以導覽至 Aggregate / Performance Explorer 頁面。
+. （可選）在「檢視和比較」功能表中選擇其他物件與此彙總進行比較，然後將其中一個物件新增至比較窗格中。
++
+兩個物件的統計資料將顯示在計數器圖表中，以便進行比較。
+
+. 在 Explorer 頁面右側的「比較」窗格中，按一下其中一個計數器圖表中的「*縮放檢視*」以檢視有關該彙總的效能記錄的詳細資訊。
+
+
+image::../media/monitor_cluster_performance.png[顯示如何調查特定彙總的 UI 快照。]

@@ -1,0 +1,36 @@
+---
+permalink: health-checker/task_view_cluster_list_and_details.html 
+sidebar: sidebar 
+keywords: view, cluster list, details 
+summary: 使用「健全狀況」頁面上的「所有叢集」檢視來檢視叢集清單，並使用「容量」頁面上的「所有叢集」檢視來查看儲存容量與使用率詳細資料。 
+---
+= 在 Active IQ Unified Manager 中檢視叢集清單和詳細資料
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用「健全狀況：所有叢集」檢視來檢視叢集清單。「容量：所有叢集」檢視可讓您檢視所有叢集中關於儲存容量與使用率的摘要資訊。
+
+.開始之前
+您必須擁有操作員、應用程式管理員或儲存管理員角色。
+
+您也可以使用「叢集 / 健全狀況詳細資料」頁面來檢視個別叢集的詳細資料，例如該叢集中的叢集健全狀況、容量、組態、LIF、節點和磁碟。
+
+「健全狀況：所有叢集」檢視、「容量：所有叢集」檢視以及「叢集 / 健全狀況」詳細資料頁面中的詳細資料可協助您規劃儲存設備。例如，在配置新的彙總之前，您可以從「健全狀況：所有叢集」檢視中選取特定叢集並取得容量詳細資料，以判斷叢集是否具有所需的空間。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存設備* > *叢集*。
+. 在「檢視」功能表中，選擇 *健全狀況：所有叢集* 檢視以檢視健全狀況資訊，或選擇 *容量：所有叢集* 檢視以檢視所有叢集中的儲存容量與使用率的詳細資訊。
+. 按一下叢集名稱，即可在 *叢集 / 健全狀況* 詳細資料頁面中檢視叢集的完整詳細資料。
+
+
+*相關資訊*
+
+* link:../health-checker/reference_health_cluster_details_page.html["叢集 / 健全狀況詳細資料頁面"]
+* link:../performance-checker/performance-view-all.html#performance-all-clusters-view["效能：所有叢集檢視"]
+* link:../storage-mgmt/task_monitor_metrocluster_configurations.html["監控 MetroCluster 組態"]
+* link:../health-checker/task_view_detailed_security_status_for_clusters_and_svms.html["檢視叢集與 Storage VM 的安全性狀態"]
+* link:../health-checker/concept_what_security_criteria_is_being_evaluated.html["正在評估哪些安全性標準"]
+

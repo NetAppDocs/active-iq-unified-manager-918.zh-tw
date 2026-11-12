@@ -1,0 +1,31 @@
+---
+permalink: config/task_access_unified_manager_web_ui.html 
+sidebar: sidebar 
+keywords: access, unified manager, web ui 
+summary: 安裝 Unified Manager 後，您可以存取 Web UI 來設定 Unified Manager，以便開始監控您的 ONTAP 系統。 
+---
+= 在 Active IQ Unified Manager 中存取 Web UI
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+安裝 Unified Manager 後，您可以存取 Web UI 來設定 Unified Manager，以便開始監控您的 ONTAP 系統。
+
+.開始之前
+* 如果這是您第一次存取 Web UI，您必須以維護使用者（或 Linux 安裝的 umadmin 使用者）身分登入。
+* 如果您打算允許使用者使用短名稱而不是使用完整網域（FQDN）或 IP 位址來存取 Unified Manager，則您的網路組態必須將此短名稱解析為有效的 FQDN。
+* 如果伺服器使用自我簽署的數位憑證，瀏覽器可能會顯示警告，指出該憑證不受信任。您可以確認風險以繼續存取，或安裝憑證授權單位 （CA） 簽署的數位憑證以進行伺服器驗證。
+
+
+.步驟
+. 使用安裝結束時顯示的 URL，透過瀏覽器啟動 Unified Manager Web UI。該 URL 是 Unified Manager 伺服器的 IP 位址或完整網域名稱（FQDN）。
++
+連結格式如下： `\https://URL`。
+
+. 使用您的維護使用者憑證登入 Unified Manager Web UI。
+
+
+
+NOTE: 如果您在一小時內連續三次嘗試登入 Web UI 失敗，您將被鎖定在系統之外，需要聯絡系統管理員。這僅適用於本機使用者。

@@ -1,0 +1,51 @@
+---
+permalink: data-protection/task_create_snapmirror_relationships_with_version_flexible_replication.html 
+sidebar: sidebar 
+keywords: create, snapmirror, relationships, version-flexible, replication, backup, option 
+summary: 您可以建立具有版本靈活複寫與備份選項功能的 SnapMirror 關係。備份選項功能可讓您實作 SnapMirror 保護，並在目的地位置保留多個版本的備份複本。 
+---
+= 在 Active IQ Unified Manager 中建立具有版本彈性複寫和回溯選項功能的 SnapMirror 關係
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以建立具有版本靈活複寫與備份選項功能的 SnapMirror 關係。備份選項功能可讓您實作 SnapMirror 保護，並在目的地位置保留多個版本的備份複本。
+
+.開始之前
+* 您必須擁有應用程式系統管理員或儲存系統管理員角色。
+* 您必須已設定 Workflow Automation。
+* 來源和目的地 SVM 都必須各自啟用 SnapMirror 授權。
+* 來源和目的地 SVM 都必須啟用 SnapVault 授權。
+* 來源和目的地 SVM 都必須在支援版本靈活複寫的 ONTAP 軟體版本下運作。
+
+
+設定具備備份選項功能的 SnapMirror，可讓您利用 SnapMirror 災難恢復功能（例如 Volume 容錯移轉功能）來保護資料，同時提供 SnapVault 功能（例如多重備份複本保護）。
+
+.步驟
+. 顯示您要保護的 Volume 的 *設定保護* 對話方塊。
++
+** 如果您正在檢視 Volume / 健全狀況詳細資料頁面的保護索引標籤，請在拓撲檢視中以滑鼠右鍵按一下您要保護的 Volume 名稱，然後從功能表選取 *保護* > *SnapMirror*。
+** 如果您正在檢視「健全狀況：所有 Volume」檢視，請找到您要保護的 Volume 並按一下滑鼠右鍵；然後從選單中選取 *保護* > *SnapMirror*。此時會顯示「設定保護」對話方塊。
+
+
+. 按一下 *SnapMirror* 以檢視 *SnapMirror* 索引標籤。
+. 在 *設定保護* 對話方塊中，完成 *目的地資訊* 區域和 *關係設定* 區域。
+. 按一下 *進階* 以顯示 *進階目的地設定* 對話方塊。
+. 如果 *版本彈性複寫* 核取方塊尚未選取，請立即選取。
+. 選取 *含備份選項* 核取方塊以啟用備份選項功能；然後按一下 *套用*。
+. 點選 *套用*。
++
+您將返回「Volume / 健康狀況」詳細資料頁面。
+
+. 點擊 *Volume / 健全狀況* 詳細資料頁面頂部的保護組態作業連結。
++
+工作任務和詳細資訊會顯示在「工作詳細資訊」頁面中。
+
+. 在 *作業* 詳細資料頁面中，按一下 *重新整理* 以更新與保護組態作業相關的工作清單和工作詳細資料，並判斷作業何時完成。
+. 作業工作完成後，請按一下瀏覽器上的 *返回*，以返回 *Volume / 健康狀況* 詳細資料頁面。
++
+新關係會顯示在 Volume / 健康狀況詳細資料頁面的拓撲檢視中。
+
+

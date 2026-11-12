@@ -1,0 +1,33 @@
+---
+permalink: health-checker/task_view_list_of_snapshot_copies.html 
+sidebar: sidebar 
+keywords: view, list, Snapshot copies 
+summary: 您可以檢視所選 Volume 的 Snapshot 快照技術副本清單。您可以使用 Snapshot 快照技術副本清單來計算刪除一個或多個 Snapshot 快照技術副本後可以回收的磁碟空間量，並可根據需要刪除 Snapshot 快照技術副本。 
+---
+= 在 Active IQ Unified Manager 中檢視 Snapshot 快照技術複本清單
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以檢視所選 Volume 的 Snapshot 快照技術副本清單。您可以使用 Snapshot 快照技術副本清單來計算刪除一個或多個 Snapshot 快照技術副本後可以回收的磁碟空間量，並可根據需要刪除 Snapshot 快照技術副本。
+
+.開始之前
+* 您必須擁有操作員、應用程式管理員或儲存管理員角色。
+* 包含 Snapshot 快照技術副本的 Volume 必須處於線上。
+
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存設備* > *Volume*。
+. 在 *健全狀況：所有 Volume* 檢視中，選取包含要檢視的 Snapshot 快照技術副本的 Volume。
+. 在 *Volume / 健全狀況* 詳細資料頁面中，按一下 *容量* 標籤。
+. 在 *容量* 標籤的 *詳細資料* 窗格的「其他詳細資料」部分中，按一下 *Snapshot 快照技術副本* 旁的連結。
++
+Snapshot 快照技術副本數量是一個連結，可顯示 Snapshot 快照技術副本清單。
+
+
+
+*相關資訊*
+
+link:../health-checker/reference_health_volume_details_page.html["健全狀況/Volume 頁面"]

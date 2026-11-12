@@ -1,0 +1,54 @@
+---
+permalink: health-checker/task_restore_mysql_database_backup_on_windows.html 
+sidebar: sidebar 
+keywords: restore, windows, mysql, database, backup 
+summary: 如果發生資料遺失或資料毀損，您可以使用還原功能將 Unified Manager 還原到先前的穩定狀態，並將遺失降至最低。您可以使用 Unified Manager 維護主控台將 Unified Manager MySQL 資料庫還原到本機 Windows 系統或遠端 Windows 系統。 
+---
+= 在 Active IQ Unified Manager 中還原 Windows 上的 MySQL 資料庫備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果發生資料遺失或資料毀損，您可以使用還原功能將 Unified Manager 還原到先前的穩定狀態，並將遺失降至最低。您可以使用 Unified Manager 維護主控台將 Unified Manager MySQL 資料庫還原到本機 Windows 系統或遠端 Windows 系統。
+
+.開始之前
+* 您必須擁有 Windows 系統管理員權限。
+* 您必須將 Unified Manager 備份檔案和資料庫儲存庫目錄的內容複製到要執行還原作業的系統上。
++
+建議您將備份檔案複製到預設目錄 `\ProgramData\NetApp\OnCommandAppData\ocum\backup`。資料庫儲存庫檔案必須複製到 `\backup`目錄下的 `\database_dumps_repo`子目錄。
+
+* 備份檔案必須為  `.7z` 類型。
+
+
+還原功能與平台和版本相關。您只能在相同版本的 Unified Manager 上還原 Unified Manager MySQL 備份，Windows 備份也只能在 Windows 平台上還原。
+
+[TIP]
+====
+如果資料夾名稱包含空間，您必須將備份檔案的絕對路徑或相對路徑包含在雙引號中。
+
+====
+.步驟
+. 如果您要在新伺服器上執行還原，在安裝 Unified Manager 之後，安裝完成時請勿產品發表使用者介面，也不要設定任何叢集、使用者或驗證設定。備份檔案會在還原過程中填入這些資訊。
+. 使用系統管理員憑證登入 Unified Manager 系統。
+. 以 Windows 系統管理員身分產品發表 PowerShell 或命令提示字元。
+. 輸入命令 `maintenance_console`並按下 Enter 鍵。
+. 在維護主控台 *主選單* 中，輸入 *備份還原* 選項的編號。
+. 請輸入*還原 MySQL 備份*的編號。
+. 出現提示時，輸入備份檔案的絕對路徑。
++
+[listing]
+----
+Bundle to restore from: \ProgramData\NetApp\OnCommandAppData\ocum\backup\UM_9.8.N151118.2300_backup_windows_02-20-2020-02-51.7z
+----
++
+還原作業完成後，即可登入 Unified Manager。
+
+
+
+還原備份後，如果 OnCommand Workflow Automation 伺服器無法正常運作，請執行下列步驟：
+
+. 在 Workflow Automation 伺服器上，將 Unified Manager 伺服器的 IP 位址變更為指向最新機器。
+. 如果在步驟 1 中擷取失敗，請在 Unified Manager 伺服器上重設資料庫密碼。
+

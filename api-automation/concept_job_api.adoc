@@ -1,0 +1,74 @@
+---
+permalink: api-automation/concept_job_api.html 
+sidebar: sidebar 
+keywords: jobs, view 
+summary: 您可以使用 management-server 類別下的 jobs API 來檢視非同步操作的執行詳細資料。 
+---
+= 使用 Active IQ Unified Manager 中的 API 檢視作業和系統詳細資料
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 `jobs`類別下的 `management-server` API，檢視非同步作業的執行詳細資料。 `management-server`類別下的 `system` API 可讓您檢視 Active IQ Unified Manager 環境中的執行個體詳細資料。
+
+
+
+[[view-jobs]]
+== 檢視工作
+
+在 Active IQ Unified Manager 中，新增和修改資源等操作會透過同步和非同步 API 呼叫來執行。排定非同步執行的呼叫可以透過為該呼叫建立的 Job 物件進行追蹤。每個 Job 物件都有一個唯一的識別鍵。每個 Job 物件都會傳回 Job 物件 URI，以便您存取和追蹤作業進度。您可以使用此 API 來擷取每次執行的詳細資訊。
+
+透過此 API，您可以查詢資料中心的所有作業物件，包括歷史資料。預設情況下，查詢所有作業會傳回透過 Web UI 和 API 介面觸發的最近 20 個作業的詳細資訊。使用內建篩選器來檢視特定作業。您也可以使用作業金鑰來查詢特定作業的詳細資訊，並對資源執行下一組操作。
+
+[cols="4*"]
+|===
+| 類別 | HTTP 動詞 | 路徑 | 說明 
+
+
+ a| 
+management-server
+ a| 
+取得
+ a| 
+`/management-server/jobs`
+ a| 
+傳回所有作業的詳細資訊。不進行任何排序，最後提交的作業物件會顯示在最前面。
+
+
+
+ a| 
+management-server
+ a| 
+取得
+ a| 
+`/management-server/jobs/\{key}`
+
+輸入作業物件的作業鍵，以檢視該作業的具體詳細資訊。
+ a| 
+傳回特定 Job 物件的詳細資訊。
+
+|===
+
+
+[[view-system-details]]
+== 檢視系統詳細資料
+
+透過使用 `/management-server/system` API，您可以查詢 Unified Manager 環境的特定執行個體詳細資訊。API 傳回有關產品和服務的資訊，例如系統上安裝的 Unified Manager 版本、UUID、廠商名稱、主機作業系統，以及在 Unified Manager 執行個體上執行的服務名稱、執行摘要和狀態。
+
+[cols="4*"]
+|===
+| 類別 | HTTP 動詞 | 路徑 | 說明 
+
+
+ a| 
+management-server
+ a| 
+取得
+ a| 
+`/management-server/system`
+ a| 
+執行此 API 不需要輸入參數。預設情況下，將傳回目前 Unified Manager 執行個體的系統詳細資料。
+
+|===

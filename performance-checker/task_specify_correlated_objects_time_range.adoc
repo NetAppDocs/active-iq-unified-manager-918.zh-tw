@@ -1,0 +1,16 @@
+---
+permalink: performance-checker/task_specify_correlated_objects_time_range.html 
+sidebar: sidebar 
+keywords: specify, time range, correlated objects 
+summary: Performance Explorer 頁面上的「時間範圍」選擇器可讓您指定物件資料比較的時間範圍。指定時間範圍後，Performance Explorer 頁面的內容將縮小範圍，僅顯示您指定時間範圍內的物件資料。 
+---
+= 在 Active IQ Unified Manager 中指定關聯物件的時間範圍
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Performance Explorer 頁面上的「時間範圍」選擇器可讓您指定物件資料比較的時間範圍。指定時間範圍後，Performance Explorer 頁面的內容將縮小範圍，僅顯示您指定時間範圍內的物件資料。
+
+縮小時間範圍可以有效地只顯示您感興趣的效能資料。您可以選擇預先定義的時間範圍，也可以指定自訂時間範圍。預設時間範圍為前 72 小時。

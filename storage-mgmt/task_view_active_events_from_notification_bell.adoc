@@ -1,0 +1,23 @@
+---
+permalink: storage-mgmt/task_view_active_events_from_notification_bell.html 
+sidebar: sidebar 
+keywords: view, active, events, notification, bell 
+summary: 選單列中的通知鈴鐺可以快速檢視 Unified Manager 正在追蹤的最重要的作用中事件。 
+---
+= 從 Active IQ Unified Manager 的通知鈴檢視作用中事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+選單列中的通知鈴鐺（image:../media/notification_bell.png[""]）提供了一種快速檢視 Unified Manager 正在追蹤的最重要作用中事件的方法。
+
+作用中事件清單提供了一種方法，可查看所有叢集上關鍵、錯誤、警告及升級事件的總數。此清單包含過去 7 天的事件，且不包含資訊事件。您可以按一下連結來顯示您最感興趣的事件清單。
+
+請注意，當叢集無法連線時， Unified Manager 會在此頁面顯示此資訊。您可以點擊 *Details* 按鈕檢視無法連線叢集的詳細資訊。此行動將開啟「事件詳細資料」頁面。此頁面也會顯示規模監控問題，例如管理工作站上的空間或 RAM 不足。
+
+.步驟
+. 從功能表列中，按一下image:../media/notification_bell.png[""]。
+. 若要檢視任何作用中事件的詳細資料，請按一下事件文字連結，例如 "2 容量" 或 "4 效能"。
+

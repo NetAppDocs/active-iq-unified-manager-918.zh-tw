@@ -1,0 +1,14 @@
+---
+permalink: reporting/concept_customize_nfs_share_reports.html 
+sidebar: sidebar 
+keywords: customize, nfs, share, reports 
+summary: 您可以自訂 NFS 共享報告，以分析儲存設備系統上 Volume 的 NFS 匯出原則和規則資訊。例如，您可以自訂報告，以顯示裝載路徑無法存取的 Volume 以及使用預設匯出原則的 Volume。 
+---
+= 在 Active IQ Unified Manager 中自訂 NFS 共享報告
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以自訂 NFS 共享報告，以分析儲存設備系統上 Volume 的 NFS 匯出原則和規則資訊。例如，您可以自訂報告，以顯示裝載路徑無法存取的 Volume 以及使用預設匯出原則的 Volume。

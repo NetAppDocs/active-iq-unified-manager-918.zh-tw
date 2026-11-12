@@ -1,0 +1,38 @@
+---
+permalink: reporting/task_create_report_to_identify_space_with_thin_provisioning_disabled.html 
+sidebar: sidebar 
+keywords: volume, provision, disk, volume, thin-provisioning 
+summary: 當 Volume 未進行資源隨需配置時，它會佔用建立 Volume 時所定義的磁碟全部空間。識別已停用資源隨需配置的 Volume 有助於您決定是否要對某些 Volume 啟用資源隨需配置。 
+---
+= 在 Active IQ Unified Manager 中識別已停用資源隨需配置的 Volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當 Volume 未進行資源隨需配置時，它會佔用建立 Volume 時所定義的磁碟全部空間。識別已停用資源隨需配置的 Volume 有助於您決定是否要對某些 Volume 啟用資源隨需配置。
+
+.開始之前
+* 您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+
+請依照下列步驟建立自訂檢視，以正確的順序顯示所需的欄，然後排程為該檢視產生報告。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存設備* > *Volume*。
+. 在「檢視」功能表中，選擇 *容量* > *所有 Volume*。
+. 選取 *顯示/隱藏* 可移除報告中不需要的任何欄。
+. 將 "`已使用資料 %`" 和 "`資源隨需配置`" 欄位拖曳到 "`可用資料容量`" 欄位附近。
+. 點選篩選器圖示，新增以下篩選器，*資源隨需配置*為*否*，然後點選*套用篩選器*。
+. 按一下「`已使用資料 %`」欄的頂端，對結果進行排序，使百分比最高的 Volume 顯示在清單頂端。
+. 將檢視儲存為能夠反映檢視所顯示內容的名稱，例如 "`Vols no 資源隨需配置`"。
+. 在庫存頁面上點選 *排程報告* 按鈕。
+. 點擊 *新增排程* 以在 *報告排程* 頁面新增一列，以便定義新報告的排程特性。
+. 輸入報告排程的名稱並完成其他報告欄位，然後按一下列末尾的勾號（image:../media/blue_check.gif[""]）。
++
+報告會立即作為測試傳送。之後，報告會產生並依指定的頻率透過電子郵件傳送給列出的收件者。
+
+
+
+根據報告中顯示的結果，您可能需要對某些 Volume 啟用資源隨需配置。

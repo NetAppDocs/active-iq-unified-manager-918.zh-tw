@@ -1,0 +1,92 @@
+---
+permalink: storage-mgmt/concept_introduction_to_unified_manager_health_monitoring.html 
+sidebar: sidebar 
+keywords: introduction, active iq unified manager, throughput, Mbps, Kbps, GiB, TiB, logical capacity, PiB, Capacity measurement units 
+summary: 容量計量單位 實體容量和邏輯容量 
+---
+= 了解 Active IQ Unified Manager 中的健全狀況監控
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Active IQ Unified Manager（原名 OnCommand Unified Manager）透過集中式使用者介面，協助您監控大量執行 ONTAP 軟體的系統。Unified Manager 伺服器基礎架構提供擴充性、可支援性以及增強的監控和通知功能。
+
+Unified Manager 的主要功能包括監控、警報、管理叢集的可用度和容量、管理保護能力以及將診斷資料打包並傳送給技術支援。
+
+您可以使用 Unified Manager 來監控叢集。當叢集中出現問題時，Unified Manager 會透過事件通知您問題的詳細資訊。某些事件還會提供您可以採取的補救行動來解決問題。您可以設定事件警報，以便在出現問題時透過電子郵件和 SNMP 陷阱通知您。
+
+您可以使用 Unified Manager 透過將儲存設備物件與註解關聯來管理環境中的儲存設備物件。您可以建立自訂註解，並透過規則動態地將叢集、儲存設備虛擬機器（SVM）和 Volume 與這些註解關聯起來。
+
+您也可以使用容量和健全狀況圖表中提供的資訊，針對相應的叢集物件，規劃叢集物件的儲存設備需求。
+
+
+
+[[physical-and-logical-capacity]]
+== 實體和邏輯容量
+
+Unified Manager 利用了 ONTAP 儲存設備物件所使用的實體空間和邏輯空間的概念。
+
+* 實體容量：實體空間是指 Volume 中使用的實體儲存設備區塊。「實體已使用容量」通常小於邏輯已使用容量，這是因為儲存效率功能（例如重複資料刪除和壓縮）減少了資料。
+* 邏輯容量：邏輯空間是指 Volume 中可用的空間（邏輯區塊）。邏輯空間是指理論上空間的使用方式，不將重複資料刪除或壓縮的結果納入會計。「已使用邏輯空間」是指已使用實體空間加上已設定的儲存效率功能（例如重複資料刪除和壓縮）所節省的空間。此測量值通常大於已使用實體容量，因為這並未反映資料壓縮和其他實體空間的減少。因此，總邏輯容量可能高於已配置的空間。
+
+
+
+
+[[capacity-measurement-units]]
+== 容量計量單位
+
+Unified Manager 以 1024 （2^10^） 位元組的二進位單位來計算儲存容量。在 ONTAP 9.10.0 及更早版本中，這些單位顯示為 KB、MB、GB、TB 和 PB。從 ONTAP 9.10.1 開始，它們在 Unified Manager 中顯示為 KiB、MiB、GiB、TiB 和 PiB。
+
+
+NOTE: ONTAP 的所有版本都繼續使用每秒千位元組（Kbps）、每秒百萬位元組（Mbps）、每秒十億位元組（Gbps）或每秒兆位元組（Tbps）等單位來表示處理量。
+
+[cols="4*"]
+|===
+| 在 ONTAP 9.10.0 及更早版本的 Unified Manager 中顯示的容量單位 | 在 ONTAP 9.10.1 的 Unified Manager 中顯示的容量單位 | 計算 | 以位元組為單位的值 
+
+
+ a| 
+KB
+ a| 
+KiB
+ a| 
+1024
+ a| 
+1024 位元組
+
+
+
+ a| 
+MB
+ a| 
+MiB
+ a| 
+1024 * 1024
+ a| 
+1,048,576 位元組
+
+
+
+ a| 
+GB
+ a| 
+GiB
+ a| 
+1024 * 1024 * 1024
+ a| 
+1,073,741,824 位元組
+
+
+
+ a| 
+TB
+ a| 
+TiB
+ a| 
+1024 * 1024 * 1024 * 1024
+ a| 
+1,099,511,627,776 位元組
+
+|===

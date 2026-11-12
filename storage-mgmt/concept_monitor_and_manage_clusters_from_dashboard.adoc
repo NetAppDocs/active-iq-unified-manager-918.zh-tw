@@ -1,0 +1,83 @@
+---
+permalink: storage-mgmt/concept_monitor_and_manage_clusters_from_dashboard.html 
+sidebar: sidebar 
+keywords: monitor, manage, clusters, dashboard 
+summary: 儀表板提供您所監控的 ONTAP 系統目前健全狀況的累積概覽資訊。儀表板提供「面板」，讓您能夠評估所監控叢集的整體容量、效能和安全性健全狀況。 
+---
+= 在 Active IQ Unified Manager 的儀表板中監控和管理叢集
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+儀表板提供您所監控的 ONTAP 系統目前健全狀況的累積概覽資訊。儀表板提供 "`面板`"，使您能夠評估所監控叢集的整體容量、效能和安全性健全狀況。
+
+此外，某些 ONTAP 問題可以直接透過 Unified Manager 使用者介面進行修復，而無需使用 ONTAP System Manager 或 ONTAP CLI。
+
+在儀表板頂部，您可以選擇面板顯示所有受監控叢集的資訊，還是顯示單一叢集的資訊。您可以先檢視所有叢集的狀態，然後在需要檢視詳細資訊時，再深入檢視單一叢集。
+
+[NOTE]
+====
+根據您的組態，以下列出的某些面板可能不會顯示在頁面上。
+
+====
+|===
+| 面板 | 說明 
+
+
+ a| 
+管理行動
+ a| 
+當 Unified Manager 能夠診斷並判斷出問題的單一解決方案時，這些解決方案會顯示在此面板中，並提供 *Fix It* 按鈕。
+
+
+
+ a| 
+容量
+ a| 
+顯示本地分層和雲端分層的總容量和已使用容量，以及本地容量達到上限所需的天數。
+
+
+
+ a| 
+效能容量
+ a| 
+顯示每個叢集的效能容量值以及效能容量達到上限所需的天數。
+
+
+
+ a| 
+工作負載 IOPS
+ a| 
+顯示目前在特定 IOPS 範圍內運作的工作負載總數。
+
+
+
+ a| 
+工作負載效能
+ a| 
+顯示指派給每個已定義效能服務等級的符合要求和不符合要求的工作負載總數。
+
+
+
+ a| 
+安全性
+ a| 
+顯示符合法規或不符合法規的叢集數量、符合法規或不符合法規的 SVM 數量，以及已加密或未加密的 Volume 數量。
+
+
+
+ a| 
+保護
+ a| 
+顯示受 SVM-DR 關係保護的 Storage VM 數量、受 SnapMirror 關係保護的 Volume 數量、受 Snapshot 快照技術保護的 Volume 數量，以及受 MetroCluster 保護的叢集數量。
+
+
+
+ a| 
+使用概述
+ a| 
+顯示依最高 IOPS、最高處理量（MBps）或最高已用實體容量排序的叢集。
+
+|===

@@ -1,0 +1,67 @@
+---
+permalink: install-windows/qsg-windows.html 
+sidebar: sidebar 
+keywords: quick start guide, getting started, QSG, Windows QSG, quick installation, Windows installer 
+summary: Windows 平台上的 Unified Manager 快速入門指南。 
+---
+= 在 Windows 上開始使用 Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以下載安裝套件並安裝 Unified Manager，以監控和疑難排解資料儲存設備容量、可用度、效能和保護問題。
+
+
+
+[[system-requirements]]
+== 系統需求
+
+* 作業系統
++
+** Microsoft Windows Server 2019 標準版與資料中心版
+** Microsoft Windows Server 2022 標準版與資料中心版
++
+Unified Manager 在 64 位元 Windows 作業系統上支援下列語言：
+
+** 英文
+** 日文
+** 簡體中文
+
+
+* 記憶體：12 GB
+* CPU：總計 9572 MHz
+* 可用磁碟空間：安裝目錄需要 100 GB 磁碟空間，MySQL 資料目錄需要 50 GB 磁碟空間
+
+
+如需詳細的系統需求，請參閱 link:../install-windows/concept_requirements_for_installing_unified_manager.html["安裝 Unified Manager 的需求"] 和 link:http://mysupport.netapp.com/matrix["互通性矩陣"^]。
+
+
+
+[[install-active-iq-unified-manager]]
+== 安裝 Active IQ Unified Manager
+
+
+
+[[download-the-installer]]
+=== 下載安裝程式
+
+. 下載  `ActiveIQUnifiedManager-<version>.exe` 安裝套件。
+. 將安裝檔案複製到目標系統上的某個目錄中。
+
+
+
+
+[[install-unified-manager]]
+=== 安裝 Unified Manager
+
+若要安裝 Unified Manager，請確保已安裝 Microsoft .NET 4.5.2 或較新版本。在安裝過程中，Unified Manager 會依需求安裝其他第三方套件。如需相依軟體套件的詳細資訊，請參閱 link:../install-windows/reference_windows_software_and_installation_requirements.html["Windows 軟體和安裝要求"]。
+
+. 使用預設本機系統管理員帳戶登入 Windows。
+. 在您下載安裝檔案的目錄中，以滑鼠右鍵按一下並以系統管理員身分執行 Unified Manager 執行檔（.exe）。
+. 出現提示時，輸入使用者名稱和密碼以建立 Unified Manager 維護使用者。
+. 在資料庫連線精靈中，輸入 MySQL 根目錄密碼。
+. 請按照剩餘提示完成安裝。
+. 在安裝結束時按一下 *完成*，即會顯示 Unified Manager Web 使用者介面。
+

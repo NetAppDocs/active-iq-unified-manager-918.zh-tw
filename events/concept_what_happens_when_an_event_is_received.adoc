@@ -1,0 +1,28 @@
+---
+permalink: events/concept_what_happens_when_an_event_is_received.html 
+sidebar: sidebar 
+keywords: happens, when, event, received 
+summary: 當 Unified Manager 收到事件時，它會顯示在儀表板頁面、事件管理清單頁面、叢集/效能頁面的摘要和資源管理器標籤，以及物件專屬的清單頁面（例如， Volume / 健全狀況清單頁面）中。 
+---
+= 了解 Active IQ Unified Manager 如何處理接收到的事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當 Unified Manager 收到事件時，它會顯示在儀表板頁面、事件管理清單頁面、叢集/效能頁面的摘要和資源管理器標籤，以及物件專屬的清單頁面（例如， Volume / 健全狀況清單頁面）中。
+
+當 Unified Manager 偵測到相同叢集元件的相同事件條件多次連續發生時，它會將所有發生情況視為單一事件，而不是分隔的事件。事件的持續時間會遞增，以表示該事件仍在作用中。
+
+根據您在「警報設定」頁面中的設定方式，您可以將這些事件通知其他使用者。警報會觸發以下行動：
+
+* 可以向所有 Unified Manager 系統管理員使用者發送有關此事件的電子郵件。
+* 該事件可以發送給其他電子郵件收件者。
+* 可以將 SNMP 陷阱傳送到陷阱接收器。
+* 可以執行自訂指令碼來執行行動。
+
+
+此工作流程如下圖所示。
+
+image::../media/um_perf_threshold_event_flow.gif[一張圖表展示了從計數器收集到電子郵件通知的臨界值事件處理過程]

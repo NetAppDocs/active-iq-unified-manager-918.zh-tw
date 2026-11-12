@@ -1,0 +1,24 @@
+---
+permalink: events/task_configure_event_retention_settings.html 
+sidebar: sidebar 
+keywords: configure, event, retention, settings 
+summary: 您可以指定事件在 Unified Manager 伺服器中保留的月數，超過該月數事件將會自動刪除。 
+---
+= 在 Active IQ Unified Manager 中設定事件保留設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以指定事件在 Unified Manager 伺服器中保留的月數，超過該月數事件將會自動刪除。
+
+.開始之前
+您必須擁有應用程式管理員角色。
+
+保留事件超過 6 個月可能會影響伺服器效能，因此不建議這樣做。
+
+.步驟
+. 在左側導覽窗格中，按一下 *一般* > *資料保留*。
+. 在 *資料保留* 頁面中，選擇事件保留區域中的滑桿，將其移至事件應保留的月數，然後按一下 *儲存*。
+

@@ -1,0 +1,159 @@
+---
+permalink: api-automation/task_modify_fileshare_to_include_cifs_and_nfs.html 
+sidebar: sidebar 
+keywords: modify, nfs, file, share, support, cifs 
+summary: 您可以修改 NFS 檔案共享以支援 CIFS 協定。在建立檔案共享期間，可以為同一個檔案共享指定存取控制清單（ACL）參數和匯出原則規則。但是，如果您想要在建立 NFS 檔案共享的同一個 Volume 上啟用 CIFS，您可以更新該檔案共享上的 ACL 參數以支援 CIFS。 
+---
+= 使用 Active IQ Unified Manager API 修改 NFS 檔案共享以支援 CIFS
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以修改 NFS 檔案共享以支援 CIFS 協定。在建立檔案共享期間，可以為同一個檔案共享指定存取控制清單（ACL）參數和匯出原則規則。但是，如果您想要在建立 NFS 檔案共享的同一個 Volume 上啟用 CIFS，您可以更新該檔案共享上的 ACL 參數以支援 CIFS。
+
+.開始之前
+. 必須僅使用匯出原則詳細資訊建立 NFS 檔案共享。如需詳細資訊，請參閱 _管理檔案共享_ 和 _修改儲存設備工作負載_。
+. 您必須擁有檔案共享金鑰才能執行此操作。如需有關檢視檔案共享詳細資料，以及使用作業 ID 擷取檔案共享金鑰的資訊，請參閱 _資源配置 CIFS 和 NFS 檔案共享_。
+
+
+這適用於您僅透過新增匯出原則規則而未新增 ACL 參數所建立的 NFS 檔案共享。您修改 NFS 檔案共享以包含 ACL 參數。
+
+.步驟
+. 在 NFS 檔案共享上，使用允許 CIFS 存取的 ACL 詳細資訊執行 `PATCH`操作。
++
+[cols="3*"]
+|===
+| 類別 | HTTP 動詞 | 路徑 
+
+
+ a| 
+儲存設備供應商
+ a| 
+PATCH
+ a| 
+`/storage-provider/file-shares`
+
+|===
++
+*cURL 範例*
+
++
+根據您指派給使用者群組的存取權限（如下範例所示），將建立一個 ACL 並將其指派給檔案共享。
+
++
+[listing]
+----
+{
+  "access_control": {
+    "acl": [
+      {
+        "permission": "read",
+        "user_or_group": "everyone"
+      }
+    ],
+    "active_directory_mapping": {
+      "key": "3b648c1b-d965-03b7-20da-61b791a6263c"
+    }
+----
++
+*JSON 輸出範例*
+
++
+此操作傳回執行更新之作業的作業 ID。
+
+. 透過查詢相同檔案共享的檔案共享詳細資料，驗證參數是否已正確新增。
++
+[cols="3*"]
+|===
+| 類別 | HTTP 動詞 | 路徑 
+
+
+ a| 
+儲存設備供應商
+ a| 
+取得
+ a| 
+`/storage-provider/file-shares/\{key}`
+
+|===
++
+*JSON 輸出範例*
+
++
+[listing]
+----
+"access_control": {
+        "acl": [
+            {
+                "user_or_group": "everyone",
+                "permission": "read"
+            }
+        ],
+        "export_policy": {
+            "id": 1460288880641,
+            "key": "7d5a59b3-953a-11e8-8857-00a098dcc959:type=export_policy,uuid=1460288880641",
+            "name": "default",
+            "rules": [
+                {
+                    "anonymous_user": "65534",
+                    "clients": [
+                        {
+                            "match": "0.0.0.0/0"
+                        }
+                    ],
+                    "index": 1,
+                    "protocols": [
+                        "nfs3",
+                        "nfs4"
+                    ],
+                    "ro_rule": [
+                        "sys"
+                    ],
+                    "rw_rule": [
+                        "sys"
+                    ],
+                    "superuser": [
+                        "none"
+                    ]
+                },
+                {
+                    "anonymous_user": "65534",
+                    "clients": [
+                        {
+                            "match": "0.0.0.0/0"
+                        }
+                    ],
+                    "index": 2,
+                    "protocols": [
+                        "cifs"
+                    ],
+                    "ro_rule": [
+                        "ntlm"
+                    ],
+                    "rw_rule": [
+                        "ntlm"
+                    ],
+                    "superuser": [
+                        "none"
+                    ]
+                }
+            ],
+            "_links": {
+                "self": {
+                    "href": "/api/datacenter/protocols/nfs/export-policies/7d5a59b3-953a-11e8-8857-00a098dcc959:type=export_policy,uuid=1460288880641"
+                }
+            }
+        }
+    },
+    "_links": {
+        "self": {
+            "href": "/api/storage-provider/file-shares/7d5a59b3-953a-11e8-8857-00a098dcc959:type=volume,uuid=e581c23a-1037-11ea-ac5a-00a098dcc6b6"
+        }
+    }
+----
++
+您可以看到指派給同一個檔案共享的 ACL 以及匯出原則。
+
+

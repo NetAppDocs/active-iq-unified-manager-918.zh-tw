@@ -1,0 +1,25 @@
+---
+permalink: config/task_regenerate_client_certificate.html 
+sidebar: sidebar 
+keywords: client certificate, regenerate, validity, maintenance console 
+summary: 您可以使用維護主控台重新產生 Unified Manager 用戶端憑證。 
+---
+= 在 Active IQ Unified Manager 中重新產生用戶端憑證
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用維護主控台重新產生 Unified Manager 用戶端憑證。您的憑證有五年的延長有效期限。
+
+.步驟
+. 以維護使用者登入。
+. 選擇 *重新產生用戶端憑證*，然後按 *Enter*。
+. 如果系統提示進行驗證，請輸入所需的憑證。
+. 選擇 *確認重新產生* 並按下 *Enter*。
+. 憑證重新產生後，重新啟動 Unified Manager 服務以套用變更。
+. 若要驗證更新後的憑證，請登入 ONTAP。檢視用戶端憑證狀態和有效性狀態。
+
+
+*相關資訊*  https://docs.netapp.com/us-en/ontap/authentication/manage-certificates-sm-task.html["使用 System Manager 管理 ONTAP 憑證"^]

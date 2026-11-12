@@ -1,0 +1,16 @@
+---
+permalink: health-checker/concept_what_storage_capacity_health_thresholds_are.html 
+sidebar: sidebar 
+keywords: storage, capacity, health, thresholds 
+summary: 儲存容量健全狀況臨界值是指 Unified Manager 伺服器產生事件以報告儲存設備物件任何容量問題的臨界點。您可以設定警報，以便在發生此類事件時發送通知。 
+---
+= 了解 Active IQ Unified Manager 中的儲存容量健全狀況臨界值
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+儲存容量健全狀況臨界值是指 Unified Manager 伺服器產生事件以報告儲存設備物件任何容量問題的臨界點。您可以設定警報，以便在發生此類事件時發送通知。
+
+所有彙總、 Volume 和 qtree 的儲存容量健全狀況臨界值均已設定為預設值。您可以根據需要變更物件或物件群組的設定。

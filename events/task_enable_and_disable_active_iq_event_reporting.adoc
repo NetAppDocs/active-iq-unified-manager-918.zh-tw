@@ -1,0 +1,44 @@
+---
+permalink: events/task_enable_and_disable_active_iq_event_reporting.html 
+sidebar: sidebar 
+keywords: enable, disable, active iq, event, report 
+summary: 預設情況下， Active IQ 平台事件會在 Unified Manager 使用者介面中產生和顯示。如果您覺得這些事件過於「吵雜」，或者不想在 Unified Manager 中檢視這些事件，您可以停用這些事件的產生。如果您以後想恢復接收這些通知，可以隨時啟用它們。 
+---
+= 在 Active IQ Unified Manager 中啟用並停用 Active IQ 事件報告
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+預設情況下， Active IQ 平台事件會在 Unified Manager 使用者介面中產生和顯示。如果您覺得這些事件過於「吵雜」，或者不想在 Unified Manager 中檢視這些事件，您可以停用這些事件的產生。如果您以後想恢復接收這些通知，可以隨時啟用它們。
+
+.開始之前
+您必須擁有應用程式管理員角色。
+
+停用此功能後，Unified Manager 將立即停止接收 Active IQ 平台事件。
+
+當您啟用此功能時，Unified Manager 將根據叢集的時區，在午夜過後不久開始接收 Active IQ 平台事件。開始時間取決於 Unified Manager 何時收到來自各個叢集的 AutoSupport 訊息。
+
+.步驟
+. 在左側導覽窗格中，按一下 *一般* > *功能設定*。
+. 在「功能設定」頁面中，選擇以下選項之一，即可停用或啟用 Active IQ 平台事件：
++
+|===
+| 如果您想要…… | 然後這樣做…… 
+
+
+ a| 
+停用 Active IQ 平台事件
+ a| 
+在 *Active IQ Portal Events* 面板中，將滑桿按鈕向左移動。
+
+
+
+ a| 
+啟用 Active IQ 平台事件
+ a| 
+在 *Active IQ Portal Events* 面板中，將滑桿按鈕向右移動。
+
+|===
+

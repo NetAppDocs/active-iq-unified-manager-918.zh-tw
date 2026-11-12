@@ -1,0 +1,38 @@
+---
+permalink: storage-mgmt/reference_issue_with_ldap_using_other_authentication_services.html 
+sidebar: sidebar 
+keywords: issue, addi, ldap, use, other, authentication, services 
+summary: 疑難排解使用其他驗證服務新增 LDAP 的問題。 
+---
+= 解決在 Active IQ Unified Manager 中使用其他驗證服務新增 LDAP 所造成的問題
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您選擇「其他」作為驗證服務時，使用者和群組物件類別將保留先前所選範本中的值。如果 LDAP 伺服器未使用相同的值，則操作可能會失敗。
+
+*原因*
+
+OpenLDAP 中的使用者設定不正確。
+
+*修正行動*
+
+您可以使用以下解決方法之一手動修復此問題。
+
+如果您的 LDAP 使用者物件類別和群組物件類別分別為 user 和 group，請執行下列步驟：
+
+. 在左側導覽窗格中，按一下 **一般** > *遠端驗證*。
+. 在 *驗證服務* 下拉式功能表中，選擇 *Active Directory*，然後選擇 *其他*。
+. 請填寫文字方塊。
+
+
+如果您的 LDAP 使用者物件類別和群組物件類別分別為 posixAccount 和 posixGroup，請執行下列步驟：
+
+. 在左側導覽窗格中，按一下 **一般** > *遠端驗證*。
+. 在 *驗證服務* 下拉式選單中，選擇 *OpenLDAP*，然後選擇 *其他*。
+. 請填寫文字方塊。
+
+
+如果前兩種解決方法都不適用，請呼叫  `option-set` API，並將  `auth.ldap.userObjectClass` 和  `auth.ldap.groupObjectClass` 選項設為正確的值。

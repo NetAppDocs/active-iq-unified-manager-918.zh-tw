@@ -1,0 +1,36 @@
+---
+permalink: reporting/task_create_report_to_group_volume_relationships_by_issue.html 
+sidebar: sidebar 
+keywords: create, report, group, volume, relationships, issue 
+summary: 您可以建立依問題將 Volume 關係分組的報告。 
+---
+= 在 Active IQ Unified Manager 中建立按問題分組的 Volume 關係報告
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以建立依問題將 Volume 關係分組的報告。
+
+.開始之前
+* 您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+
+請依照下列步驟建立依問題將 Volume 關係分組的自訂檢視，然後排定為該檢視產生報告。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存設備* > *Volume*。
+. 在「檢視」功能表中，選擇 *關係* > *所有關係*。
+. 選取 *顯示/隱藏* 可移除報告中不需要的任何欄。
+. 將 "`不健康原因`" 欄位拖曳到 "`狀態`" 欄位附近。
+. 點選 "`Unhealthy Reason`" 欄的頂部，依問題將 Volume 分組。
+. 將檢視儲存為能夠反映檢視所顯示內容的特定名稱，例如 "`Vol relationships by issue`"。
+. 在庫存頁面上點選 *排程報告* 按鈕。
+. 輸入報告排程的名稱並完成其他報告欄位，然後按一下列末尾的勾號（image:../media/blue_check.gif[""]）。
++
+報告會立即作為測試傳送。之後，報告會產生並依指定的頻率透過電子郵件傳送給列出的收件者。
+
+
+
+根據報告中顯示的結果，您可以調查每種問題的來源和影響。

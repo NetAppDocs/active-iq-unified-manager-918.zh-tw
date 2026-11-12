@@ -1,0 +1,18 @@
+---
+permalink: performance-checker/concept_understand_performance_events_and_alerts.html 
+sidebar: sidebar 
+keywords: understand, performance, events, alerts 
+summary: 效能事件是 Unified Manager 在發生預先定義的條件，或效能計數器值超過臨界值時自動產生的通知。事件可協助您識別受監控叢集中的效能問題。 
+---
+= 了解 Active IQ Unified Manager 中的效能事件和警報
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+效能事件是指與叢集上工作負載效能相關的事件。它們有助於識別回應時間緩慢的工作負載。結合同時發生的健全狀況事件，您可以確定可能導致或加劇回應時間緩慢的問題。
+
+當 Unified Manager 偵測到相同叢集元件的相同事件條件多次出現時，它會將所有出現情況視為單一事件，而不是分隔的事件。
+
+您可以設定警報，以便在發生特定嚴重程度的效能事件時自動發送電子郵件通知。

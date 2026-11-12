@@ -1,0 +1,140 @@
+---
+permalink: api-automation/concept_events_api.html 
+sidebar: sidebar 
+keywords: view, events, system, details 
+summary: 事件 API 使您能夠擷取資料中心中受監控叢集產生的事件。 
+---
+= 使用 Active IQ Unified Manager 中的 API 管理事件與警示
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ `management-server` 類別下的 `events`、 `alerts` 和 `scripts` API 可讓您管理 Active IQ Unified Manager 環境中的事件、警示及與警示相關的指令碼。
+
+
+
+[[view-and-modify-events]]
+== 檢視與修改事件
+
+Unified Manager 會接收 ONTAP 上針對 Unified Manager 監控和代管的叢集所產生的事件。透過使用這些 API，您可以檢視叢集產生的事件，並解決和更新這些事件。
+
+透過針對 `/management-server/events` API 執行 `GET`方法，您可以查詢資料中心中的事件，包括歷史資料。使用內建篩選器（例如名稱、影響層級、影響區域、嚴重性、狀態、資源名稱及資源類型）來檢視特定事件。資源類型和區域參數會傳回事件發生所在儲存設備物件的相關資訊，而影響區域則會傳回事件引發原因的相關資訊，例如可用度、容量、組態、安全性、保護及效能。
+
+透過執行此 API 的 PATCH 操作，您可以啟用事件的解決工作流程。您可以將事件指派給自己或其他使用者，並確認收到該事件。在資源上執行步驟以解決觸發事件的問題後，您可以使用此 API 將事件標記為已解決。
+
+如需關於事件的更多資訊，請參閱link:../events/concept_what_active_iq_platform_events_are.html["了解 Active IQ 平台事件"]。
+
+[cols="4*"]
+|===
+| 類別 | HTTP 動詞 | 路徑 | 說明 
+
+
+ a| 
+management-server
+ a| 
+取得
+ a| 
+`/management-server/events`
+`/management-server/events/{key}`
+ a| 
+執行 Get ALL 方法時，回應正文包含資料中心中所有事件的詳細資訊。透過特定鍵擷取事件詳細資訊時，您可以檢視特定事件的詳細資訊，並對資源執行後續操作。回應正文包含該事件的詳細資訊。
+
+
+
+ a| 
+management-server
+ a| 
+PATCH
+ a| 
+`management-server/events/{key}`
+ a| 
+執行此 API 可指派事件或將狀態變更為已確認或已解決。您也可以使用此方法將事件指派給自己或其他使用者。這是一個同步操作。
+
+|===
+
+
+[[manage-alerts]]
+== 管理警報
+
+事件會自動且持續地產生。Unified Manager 僅在事件符合特定篩選條件時才會產生警報。您可以選擇應產生警報的事件。透過使用  `/management-server/alerts` API ，您可以設定警報，以便在發生特定事件或特定嚴重性類型的事件時自動傳送通知。
+
+關於警報的更多資訊，請參閱 link:../events/concept_what_alerts_are.html["了解警報"]。
+
+[cols="4*"]
+|===
+| 類別 | HTTP 動詞 | 路徑 | 說明 
+
+
+ a| 
+management-server
+ a| 
+取得
+ a| 
+`/management-server/alerts`
+`/management-server/alerts/{key}`
+ a| 
+您可以使用警報鍵查詢環境中所有現有警報或特定警報。您可以檢視環境中產生的警報訊息，例如警報執行摘要、行動、接收通知的電子郵件地址、事件和嚴重性。
+
+
+
+ a| 
+management-server
+ a| 
+POST
+ a| 
+`/management-server/alerts`
+ a| 
+此方法可讓您為特定事件新增警報。您必須新增警報名稱、警報適用的實體或邏輯資源或事件、警報是否已啟用，以及是否發出 SNMP 陷阱。您可以新增要產生警報的其他詳細資料，例如行動、通知電子郵件 ID、指令碼詳細資料（如果您要新增警報指令碼）等等。
+
+
+
+ a| 
+management-server
+ a| 
+PATCH 和 DELETE
+ a| 
+`management-server/events/{key}`
+ a| 
+您可以使用這些方法修改和刪除特定警報。您可以修改不同的屬性，例如執行摘要、名稱，以及啟用和停用警報。當不再需要警報時，您可以將其刪除。
+
+|===
+
+NOTE: 在選擇要新增警告的資源時，請注意，選擇叢集作為資源並不會自動選擇該叢集內的儲存設備物件。例如，如果您為所有叢集的所有關鍵事件建立警告，則只會收到叢集關鍵事件的警告。您不會收到節點、Aggregate 等關鍵事件的警告。
+
+
+
+[[manage-scripts]]
+== 管理指令碼
+
+透過使用  `/management-server/scripts` API，您也可以將警報與觸發警報時執行的指令碼建立關聯。您可以使用指令碼自動修改或更新 Unified Manager 中的多個儲存設備物件。此指令碼與警報相關聯。當事件觸發警報時，就會執行指令碼。您可以上傳自訂指令碼，並在產生警報時測試其執行情況。您可以將警報與指令碼建立關聯，以便在 Unified Manager 中為事件觸發警報時執行該指令碼。
+
+有關指令碼的詳細資訊，請參閱 link:../events/concept_manage_scripts.html["管理指令碼"]。
+
+[cols="4*"]
+|===
+| 類別 | HTTP 動詞 | 路徑 | 說明 
+
+
+ a| 
+management-server
+ a| 
+取得
+ a| 
+`/management-server/scripts`
+ a| 
+使用此 API 可以查詢環境中所有現有指令碼。使用標準篩選和排序操作可以只檢視特定指令碼。
+
+
+
+ a| 
+management-server
+ a| 
+POST
+ a| 
+`/management-server/scripts`
+ a| 
+使用此 API 為指令碼新增執行摘要並上傳與警報關聯的指令碼檔案。
+
+|===

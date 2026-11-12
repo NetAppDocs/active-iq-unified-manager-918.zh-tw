@@ -1,0 +1,16 @@
+---
+permalink: performance-checker/reference_resolve_performance_events.html 
+sidebar: sidebar 
+keywords: resolving, performance, events 
+summary: 您可以嘗試使用建議的行動自行解決效能事件。前三個建議會始終顯示，而第四個建議下的行動則取決於所顯示的事件類型。 
+---
+= 解決 Active IQ Unified Manager 中的效能事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以嘗試使用建議的行動自行解決效能事件。前三個建議會始終顯示，而第四個建議下的行動則取決於所顯示的事件類型。
+
+*幫我執行此行動* 連結為每個建議的行動提供更多資訊，包括執行特定行動的說明。部分行動可能涉及使用 Unified Manager、ONTAP System Manager、OnCommand Workflow Automation、ONTAP CLI 命令，或這些工具的組合。

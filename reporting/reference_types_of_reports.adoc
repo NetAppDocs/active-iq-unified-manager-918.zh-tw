@@ -1,0 +1,110 @@
+---
+permalink: reporting/reference_types_of_reports.html 
+sidebar: sidebar 
+keywords: types, reports 
+summary: 此表格提供可作為報告使用的檢視與庫存頁面完整清單，您可以自訂、下載及排程這些報告。 
+---
+= 了解 Active IQ Unified Manager 中的報告類型
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此表格提供可作為報告使用的檢視與庫存頁面完整清單，您可以自訂、下載及排程這些報告。
+
+
+
+[[active-iq-unified-manager-reports]]
+== Active IQ Unified Manager 報告
+
+[cols="2*"]
+|===
+| 類型 | 儲存設備或網路物件 
+
+
+ a| 
+容量
+ a| 
+叢集
+
+Aggregate
+
+磁碟區
+
+Qtree
+
+
+
+ a| 
+健全狀況
+ a| 
+叢集
+
+節點
+
+Aggregate
+
+儲存 VM
+
+磁碟區
+
+SMB/CIFS 共享
+
+NFS 共用
+
+
+
+ a| 
+效能
+ a| 
+叢集
+
+節點
+
+Aggregate
+
+儲存 VM
+
+磁碟區
+
+LUN
+
+NVMe 命名空間
+
+網路介面（LIF）
+
+連接埠
+
+
+
+ a| 
+服務品質
+ a| 
+傳統 QoS 原則群組
+
+自適應 QoS 原則群組
+
+效能服務等級原則群組
+
+
+
+ a| 
+Volume 保護關係（可從 Volume 頁面取得）
+ a| 
+所有關係
+
+最近 1 個月傳輸狀態
+
+過去 1 個月的傳輸率
+
+
+
+ a| 
+安全性
+ a| 
+儲存 VM
+
+叢集
+
+|===

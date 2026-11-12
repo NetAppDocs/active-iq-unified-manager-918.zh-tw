@@ -1,0 +1,33 @@
+---
+permalink: data-protection/concept_storage_virtual_machine_and_resource_pool_requirements.html 
+sidebar: sidebar 
+keywords: svm, resource pool requirements, support, storage services 
+summary: 檢視支援合作夥伴儲存設備服務中的保護拓撲所需的 SVM 關聯和資源池要求。 
+---
+= 在 Active IQ Unified Manager 中支援儲存設備服務的 SVM 與資源池需求
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您遵守某些儲存設備服務專屬的 SVM 關聯與資源池需求，就能更確保合作夥伴應用程式的一致性：例如，當您在 Unified Manager 中關聯 SVM 並建立資源池，以支援合作夥伴應用程式所提供之儲存設備服務中的保護拓撲時。
+
+某些應用程式與 Unified Manager 伺服器結為合作夥伴，以提供服務，自動設定與執行來源 Volume 與次要或第三位置的保護 Volume 之間的 SnapMirror 或 SnapVault 備份保護。若要支援這些保護儲存設備服務，您必須使用 Unified Manager 設定必要的 SVM 關聯與資源池。
+
+若要支援儲存設備服務單跳或級聯保護，包括從 SnapMirror 來源或 SnapVault 主要 Volume 複寫至位於次要或第三位置的目的地 SnapMirror 或 SnapVault 備份 Volume，請遵守下列要求：
+
+* 必須在包含 SnapMirror 來源或 SnapVault 主要 Volume 的 SVM 與任何包含次要 Volume 或第三 Volume 的 SVM 之間設定 SVM 關聯。
++
+** 例如，若要支援來源 Volume Vol_A 位於 SVM_1、SnapMirror 次要目的地 Volume Vol_B 位於 SVM_2，以及第三 SnapVault 備份 Volume Vol_ C 位於 SVM_3 的保護拓撲，您必須使用 Unified Manager Web UI 來設定 SVM_1 與 SVM_2 之間的 SnapMirror 關聯，以及 SVM_1 與 SVM_3 之間的 SnapVault 備份關聯。
++
+在本例中，SVM_2 和 SVM_3 之間的任何 SnapMirror 關聯或 SnapVault 備份關聯都是不必要的，且未使用。
+
+** 若要支援來源 Volume Vol_A 與 SnapMirror 目的地 Volume Vol_B 皆位於 SVM_1 的保護拓撲，您必須設定 SVM_1 與 SVM_1 之間的 SnapMirror 關聯。
+
+
+* 資源池必須包含可供相關 SVM 使用的叢集彙總資源。
++
+您可以透過 Unified Manager Web UI 設定資源池，然後透過合作夥伴應用程式指派儲存設備服務的次要目標和第三目標節點。
+
+

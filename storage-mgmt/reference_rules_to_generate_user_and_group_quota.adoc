@@ -1,0 +1,85 @@
+---
+permalink: storage-mgmt/reference_rules_to_generate_user_and_group_quota.html 
+sidebar: sidebar 
+keywords: rules, generate, user, group, quota, email, address, page, area, define, add comments, syntax, command buttons 
+summary: 「產生使用者和使用者群組配額電子郵件地址規則」頁面可讓您建立規則，根據與叢集、 SVM 、 Volume 、 qtree 、使用者或使用者群組關聯的使用者配額來指定電子郵件地址。當超出配額時，系統會將通知傳送至指定的電子郵件地址。 
+---
+= 了解 Active IQ Unified Manager 中的配額電子郵件地址規則
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+「產生使用者和使用者群組配額電子郵件地址規則」頁面可讓您建立規則，根據與叢集、 SVM 、 Volume 、 qtree 、使用者或使用者群組關聯的使用者配額來指定電子郵件地址。當超出配額時，系統會將通知傳送至指定的電子郵件地址。
+
+
+
+[[rules-area]]
+== 規則區域
+
+您必須為配額電子郵件地址定義規則。您也可以新增註解來說明規則。
+
+
+
+[[how-you-define-rules]]
+== 如何定義規則
+
+您必須按照您希望執行的順序輸入規則。如果滿足第一條規則的條件，則根據該規則產生電子郵件地址。如果條件不滿足，則考慮下一條規則的條件，依此類推。每行列出一條分隔的規則。預設規則是清單中的最後一條規則。您可以變更規則的優先順序。但是，您無法變更預設規則的順序。
+
+例如，如果您想要使用電子郵件地址 qtree1@xyz.com 接收有關 qtree1 配額超限的通知，並使用電子郵件地址 admin@xyz.com 接收所有其他 qtree 的通知，則規則必須按以下順序列出：
+
+* 如果 ( $QTREE == 'qtree1' ) 則 qtree1@xyz.com
+* 如果 ( $QTREE == * ) 則 admin@xyz.com
+
+
+如果所有指定的規則條件均未滿足，則使用預設規則：
+
+如果 ( $USER_OR_GROUP == * ) 則 $USER_OR_GROUP@$DOMAIN
+
+如果多個使用者擁有相同的配額，則使用者名稱將顯示為逗號分隔值，且該配額不適用規則。
+
+
+
+[[how-you-add-comments]]
+== 如何新增註解
+
+您可以新增註解來解釋規則。您應該在每個註解的開頭使用 #，且每一行列出一個分隔的註解。
+
+
+
+[[rules-syntax]]
+== 規則語法
+
+規則的語法必須符合以下幾種格式之一：
+
+* 如果（ `valid variableoperator *`）則 `email ID@domain name`
++
+if 是關鍵字且為小寫。營運者為 ==。電子郵件 ID 可以包含任何字元、有效變數 $USER_OR_GROUP、$USER 或 $GROUP，或是任何字元與有效變數 $USER_OR_GROUP、$USER 或 $GROUP 的組合。網域名稱可以包含任何字元、有效變數 $DOMAIN，或是任何字元與有效變數 $DOMAIN 的組合。有效變數可以是大寫或小寫，但不能是兩者的組合。例如，$domain 和 $DOMAIN 是有效的，但 $Domain 不是有效的變數。
+
+* 如果（ `valid variableoperator `string``）則 `email ID@domain name`
++
+if 是關鍵字且為小寫。運算子可以是 contains 或 ==。電子郵件 ID 可以包含任何字元、有效變數 $USER_OR_GROUP、$USER 或 $GROUP，或任何字元與有效變數 $USER_OR_GROUP、$USER 或 $GROUP 的組合。網域名稱可以包含任何字元、有效變數 $DOMAIN，或任何字元與有效變數 $DOMAIN 的組合。有效變數可以是大寫或小寫，但不能是大寫和小寫的組合。例如，$domain 和 $DOMAIN 是有效的，但 $Domain 不是有效的變數。
+
+
+
+
+
+[[command-buttons]]
+== 命令按鈕
+
+命令按鈕可用於儲存、驗證或取消已建立的規則：
+
+* *驗證*
++
+驗證已建立規則的語法。如果在驗證過程中出現錯誤，則會顯示導致錯誤的規則以及錯誤訊息。
+
+* *還原為出廠預設值*
++
+允許您將位址規則還原為出廠預設值。
+
+* *儲存*
++
+驗證規則的語法，如果沒有錯誤則儲存規則。如果在驗證過程中出現錯誤，則會顯示導致錯誤的規則以及錯誤訊息。
+
+

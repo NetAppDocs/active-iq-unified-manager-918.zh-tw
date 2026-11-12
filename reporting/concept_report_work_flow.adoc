@@ -1,0 +1,16 @@
+---
+permalink: reporting/concept_report_work_flow.html 
+sidebar: sidebar 
+keywords: report, workflow 
+summary: 描述報告工作流程的決策樹。 
+---
+= 了解 Active IQ Unified Manager 中的報告工作流程
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+描述報告工作流程的決策樹。
+
+image::../media/reports_view_workflow.png[一張圖表，展示用於檢視、自訂、上傳和下載報告的決策樹工作流程。]

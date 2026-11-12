@@ -1,0 +1,25 @@
+---
+permalink: reporting/concept_understand_reports.html 
+sidebar: sidebar 
+keywords: understanding, reports 
+summary: 報告顯示有關儲存設備、網路、服務品質和保護關係的詳細資訊，協助您在潛力問題發生之前加以識別與解決。 
+---
+= 了解 Active IQ Unified Manager 中的報告
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+報告顯示有關儲存設備、網路、服務品質和保護關係的詳細資訊，協助您在潛力問題發生之前加以識別與解決。
+
+自訂檢視後，您可以將其儲存為唯一名稱以便日後使用。您可以基於該檢視安排定期執行的報告，並與他人共享。您也可以將該檢視下載到 Excel 中，使用 Excel 的進階功能進行自訂，然後將該檔案上傳回 Unified Manager。如果您使用該檢視安排報告，系統將使用您上傳的 Excel 檔案產生可共享的強大報告。
+
+您可以在「報告排程」頁面管理所有已排程的報告。
+
+[NOTE]
+====
+您必須擁有應用程式管理員或儲存管理員角色才能管理報告。
+
+====
+您可以將報告下載為逗號分隔值（CSV）、Excel 或 PDF 檔案。

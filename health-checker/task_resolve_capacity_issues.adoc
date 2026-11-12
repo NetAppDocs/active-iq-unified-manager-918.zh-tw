@@ -1,0 +1,41 @@
+---
+permalink: health-checker/task_resolve_capacity_issues.html 
+sidebar: sidebar 
+keywords: resolve, capacity issues 
+summary: 此工作流程提供如何解決容量問題的範例。在此情境中，您是系統管理員或營運者，您存取 Unified Manager 儀表板頁面，查看受監控的儲存設備物件是否有容量問題。您想要判斷問題的可能原因與解決方案。 
+---
+= 解決 Active IQ Unified Manager 中的容量問題
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此工作流程提供如何解決容量問題的範例。在此情境中，您是系統管理員或營運者，您存取 Unified ManagerDashboard 頁面，查看受監控的儲存設備物件是否有容量問題。您想要判斷問題的可能原因與解決方案。
+
+.開始之前
+您必須擁有操作員、應用程式管理員或儲存管理員角色。
+
+在「儀表板」頁面上，在「容量」面板的「事件」下拉清單中尋找 "`Volume 空間已滿`" 錯誤事件。
+
+.步驟
+. 在 *儀表板* 頁面的 *容量* 面板中，按一下 Volume 空間已滿錯誤事件的名稱。
++
+系統會顯示該錯誤的事件詳細資料頁面。
+
+. 從 *事件* 詳情頁面，您可以執行下列一或多項工作：
++
+** 審查「原因」欄位中的錯誤訊息，然後按一下「建議的補救行動」下的建議，以審查可能的補救措施說明。
+** 按一下「來源」欄位中的物件名稱（在本例中為 Volume），以取得有關該物件的詳細資訊。
+** 尋找可能已針對此事件新增的附註。
+** 為事件新增附註。
+** 將事件指派給其他使用者。
+** 確認事件。
+** 將事件標記為已解決。
+
+
+
+
+*相關資訊*
+
+link:../events/reference_event_details_page.html["事件詳情頁面"]

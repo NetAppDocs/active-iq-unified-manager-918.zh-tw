@@ -1,0 +1,25 @@
+---
+permalink: health-checker/task_delete_group_actions.html 
+sidebar: sidebar 
+keywords: delete, group actions 
+summary: 當不再需要某個群組行動時，您可以從 Unified Manager 中刪除該群組行動。 
+---
+= 在 Active IQ Unified Manager 中刪除群組操作
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當不再需要某個群組行動時，您可以從 Unified Manager 中刪除該群組行動。
+
+.開始之前
+您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+刪除 Volume 健全狀況臨界值的群組行動時，全域臨界值將套用於該群組中的儲存設備物件。儲存設備物件上設定的任何物件層級健全狀況臨界值均不受影響。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存管理* > *群組*。
+. 在 *群組行動* 標籤中，選擇要刪除的群組行動，然後按一下 *刪除*。
+. 在「警告」對話方塊中，按一下「是」確認刪除。
+

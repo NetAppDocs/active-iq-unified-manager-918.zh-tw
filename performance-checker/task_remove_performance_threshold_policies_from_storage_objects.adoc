@@ -1,0 +1,58 @@
+---
+permalink: performance-checker/task_remove_performance_threshold_policies_from_storage_objects.html 
+sidebar: sidebar 
+keywords: remove, performance, threshold, policies, storage, objects 
+summary: 當您不再希望 Unified Manager 監控效能計數器的值時，可以從儲存設備物件中移除使用者定義的效能臨界值原則。 
+---
+= 從 Active IQ Unified Manager 的儲存設備物件中移除效能臨界值原則
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您不再希望 Unified Manager 監控效能計數器的值時，可以從儲存設備物件中移除使用者定義的效能臨界值原則。
+
+.開始之前
+您必須擁有應用程式管理員角色。
+
+一次只能從選取的物件中移除一個原則。
+
+您可以透過在清單中選擇多個物件，從多個儲存設備物件移除臨界值原則。
+
+.步驟
+. 從任何儲存設備物件的 *清單* 頁面中，選擇一個或多個已套用至少一個效能臨界值原則的物件。
++
+|===
+| 若要清除臨界值…… | 這樣做…… 
+
+
+ a| 
+單一物件
+ a| 
+選取該物件左側的核取方塊。
+
+
+
+ a| 
+多個物件
+ a| 
+選取每個物件左側的核取方塊。
+
+
+
+ a| 
+頁面上的所有物件
+ a| 
+按一下欄標題中的 image:../media/select_dropdown_65_png.gif["選擇下拉圖示"]。
+
+|===
+. 按一下 *清除效能臨界值原則*。
++
+顯示「清除臨界值原則」頁面，其中顯示目前指派給儲存設備物件的臨界值原則清單。
+
+. 選擇要從物件中移除的臨界值原則，然後按一下 *清除原則*。
++
+當您選擇臨界值原則時，會顯示原則的詳細資料，以便您確認已選擇適當的原則。
+
+

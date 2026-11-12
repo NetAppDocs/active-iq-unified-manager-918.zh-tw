@@ -1,0 +1,18 @@
+---
+permalink: performance-checker/concept_review_impact_of_configuration_changes.html 
+sidebar: sidebar 
+keywords: review, impact, configuration, changes, workload, performance 
+summary: 叢集上的組態變更，例如故障磁碟、HA 故障轉移或 Volume 移動，可能會對 Volume 效能產生負面影響，並導致延遲增加。 
+---
+= 評估組態變更如何影響 Active IQ Unified Manager 中的工作負載效能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+叢集上的組態變更，例如故障磁碟、HA 故障轉移或 Volume 移動，可能會對 Volume 效能產生負面影響，並導致延遲增加。
+
+在 Unified Manager 中，您可以審查工作負載分析頁面，以了解最近組態變更發生的時間，並將其與操作和延遲（回應時間）進行比較，以查看所選 Volume 工作負載的活動是否有變更。
+
+Unified Manager 的效能頁面只能偵測到有限數量的變更事件。健全狀況頁面則會針對組態變更引起的其他事件發出警報。您可以在 Unified Manager 中搜尋 Volume 以查看事件記錄。

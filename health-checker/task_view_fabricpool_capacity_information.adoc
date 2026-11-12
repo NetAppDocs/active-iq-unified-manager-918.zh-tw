@@ -1,0 +1,74 @@
+---
+permalink: health-checker/task_view_fabricpool_capacity_information.html 
+sidebar: sidebar 
+keywords: view, fabricPool, cloud tier, mirror tier, capacity, information 
+summary: 您可以在這些物件的「容量與效能」庫存與詳細資料頁面上，檢視叢集、彙總與 Volume 的 FabricPool 容量資訊。當設定了鏡射分層時，這些頁面也會顯示 FabricPool 鏡射資訊。 
+---
+= 在 Active IQ Unified Manager 中檢視 FabricPool 容量資訊
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在這些物件的「容量與效能」庫存與詳細資料頁面上，檢視叢集、彙總與 Volume 的 FabricPool 容量資訊。當設定了鏡射分層時，這些頁面也會顯示 FabricPool 鏡射資訊。
+
+這些頁面會顯示諸如本機效能分層與雲端分層上的可用容量、兩個分層中正在使用的容量、哪些彙總已附加至雲端分層，以及哪些 Volume 正透過將特定資訊移至雲端分層來實作 FabricPool 功能等資訊。
+
+當雲端分層鏡射到另一個雲端供應商（"`鏡射分層`"）時，兩個雲端分層都會顯示在彙總 / 健全狀況詳細資料頁面中。
+
+.步驟
+. 執行下列操作之一：
++
+[cols="2*"]
+|===
+| 若要檢視容量資訊…… | 這樣做…… 
+
+
+ a| 
+叢集
+ a| 
+.. 在容量：所有叢集檢視中，按一下叢集。
+.. 在叢集 / 健全狀況詳細資料頁面上，按一下 *組態* 索引標籤。
++
+顯示畫面會顯示此叢集所連接的任何雲端分層的名稱。
+
+
+
+
+
+ a| 
+Aggregate
+ a| 
+.. 在容量：所有彙總檢視中，按一下 Type 欄位顯示「`SSD (FabricPool)`」或「`HDD (FabricPool)`」的彙總。
+.. 在「彙總 / 健全狀況詳細資料」頁面上，按一下 *容量* 索引標籤。
++
+顯示畫面顯示雲端分層中使用的總容量。
+
+.. 按一下 *磁碟資訊* 索引標籤。
++
+顯示幕會顯示雲端分層名稱和已使用容量。
+
+.. 按一下 *組態* 索引標籤。
++
+畫面會顯示雲端分層的名稱，以及有關雲端分層的其他詳細資訊。
+
+
+
+
+
+ a| 
+磁碟區
+ a| 
+.. 在「容量：所有 Volume」檢視中，按一下在 "`分層原則`" 欄位中顯示原則名稱的 Volume。
+.. 在「Volume / 健全狀況」詳細資料頁面上，按一下 *設定* 標籤。
++
+顯示畫面會顯示指派給該 Volume 的 FabricPool 分層原則名稱。
+
+
+
+|===
+. 在 *工作負載分析* 頁面中，您可以在 *容量趨勢* 區域選擇 "`雲端層檢視`"，以查看上個月在本地效能層和雲端層中使用的容量。
+
+
+有關 FabricPool 彙總的更多資訊，請參閱 https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["磁碟和彙總總覽"]。

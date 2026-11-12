@@ -1,0 +1,80 @@
+---
+permalink: reporting/task_create_report_to_view_aggregates_with_most_available_iops.html 
+sidebar: sidebar 
+keywords: create, report, view, aggregates, available, IOPS 
+summary: 本報告顯示每個彙總類型中哪些彙總具有最多可用的 IOPS，您可以在這些彙總上資源配置新的工作負載。 
+---
+= 建立報告以檢視 Active IQ Unified Manager 中具有最多可用 IOPS 的彙總
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+本報告顯示每個彙總類型中哪些彙總具有最多可用的 IOPS，您可以在這些彙總上資源配置新的工作負載。
+
+.開始之前
+* 您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+
+請使用下列步驟開啟 Health: All Volumes 檢視、以 Excel 格式下載該檢視、建立可用容量圖表、上傳自訂的 Excel 檔案，並排程最終報告。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存設備* > *彙總*。
+. 從 *檢視* 下拉式選單中選取 *效能：所有彙總*。
+. 選取 *顯示/隱藏* 以顯示 `Available IOPS`欄，並隱藏 `Cluster FQDN, Inactive Data Reporting,`和 `Threshold Policy`欄。
+. 將 `Available IOPS`和 `Free Capacity`欄拖曳到 `Type`欄旁邊。
+. 命名並儲存自訂檢視 `Available IOPS Per Aggr.`
+. 選擇 *報告* > *下載 Excel*。
++
+image::../media/download_excel_menu.png[一張 UI 快照，展示如何從報告中下載 excel。]
+
++
+根據您的瀏覽器，您可能需要按一下 *確定* 來儲存檔案。
+
+. 如有需要，請點選 *啟用編輯*。
+. 在 Excel 中開啟下載的檔案。
+. 在資料表中，按一下表格左上角的小三角形以選擇整個表格。
+. 在 *資料* 功能區上，從 `Sort & Filter area.`選擇 *排序*
+. 設定以下排序級別：
++
+.. 將 *Sort by* 指定為 `Available IOPS`（IOPS），將 *Sort On* 指定為 `Cell Values,`，並將 *Order* 指定為 `Largest to Smallest.`
+.. 按一下 *Add Level*。
+.. 將 *Sort by* 指定為 `Type`，將 *Sort On* 指定為 `Cell Values,`，並將 *Order* 指定為 `Z to A.`
+.. 按一下 *Add Level*。
+.. 將 *Sort by* 指定為 `Free Capacity (GB),`、*Sort On* 指定為 `Cell Values,`，以及 *Order* 指定為 `Largest to Smallest.`
+.. 按一下 *OK* 。
+
+
+. 儲存並結案 Excel 檔案。
+. 在 Unified Manager 中，選擇 *報告* > *上傳 Excel*。
++
+[NOTE]
+====
+請確保您目前所處的檢視與您下載 Excel 檔案時所處的檢視相同。
+
+====
+. 選擇您已修改的 Excel 檔案，在本例中 `performance-aggregates-<date>.xlsx.`
+. 按一下 *開啟*。
+. 按一下 *提交*。
++
+*報告* > *上傳 Excel* 選單項目旁邊會出現一個勾號。
+
++
+image::../media/upload_excel.png[一張使用者介面快照，展示如何將 Excel 檔案上傳到報告中。]
+
+. 點選 *排程報告*。
+. 點擊 *新增排程* 在「報告排程」頁面中新增一列，以便您可以定義新報告的排程特性。
+. 輸入報告排程的名稱並完成其他報告欄位，然後按一下列末尾的勾號（image:../media/blue_check.gif[""]）。
++
+[NOTE]
+====
+為報告選擇 *XLSX* 格式。
+
+====
++
+報告會立即作為測試傳送。之後，報告會產生並依指定的頻率透過電子郵件傳送給列出的收件者。
+
+
+
+根據報告中顯示的結果，您可能需要在具有最大可用 IOPS 的彙總上資源配置新的工作負載。

@@ -1,0 +1,20 @@
+---
+permalink: performance-checker/task_select_predefined_time_range.html 
+sidebar: sidebar 
+keywords: select, predefined, time, range 
+summary: 在檢視叢集物件效能資料時，選擇預先定義的時間範圍是一種快速且有效率的方式，可協助您自訂和聚焦資料輸出。選擇預先定義的時間範圍後，最多可取得 13 個月的資料。 
+---
+= 在 Active IQ Unified Manager 中選擇預先定義的時間範圍
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在檢視叢集物件效能資料時，選擇預先定義的時間範圍是一種快速且有效率的方式，可協助您自訂和聚焦資料輸出。選擇預先定義的時間範圍後，最多可取得 13 個月的資料。
+
+.步驟
+. 在 *效能資源管理器* 頁面的右上角，按一下 *時間範圍*。
+. 從 *時間範圍選擇* 面板的右側，選擇預先定義的時間範圍。
+. 按一下 *套用範圍*。
+

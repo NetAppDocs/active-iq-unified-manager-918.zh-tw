@@ -1,0 +1,38 @@
+---
+permalink: install-linux/task_remove_unified_manager.html 
+sidebar: sidebar 
+keywords: remove, unified manager 
+summary: 您可以使用單一命令從 Red Hat Enterprise Linux 主機停止並解除安裝 Unified Manager。 
+---
+= 移除 Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用單一命令從 Red Hat Enterprise Linux 主機停止並解除安裝 Unified Manager。
+
+.開始之前
+* 您必須擁有要從中移除 Unified Manager 的伺服器的 root 使用者存取權。
+* 必須在 Linux 系統上停用 Security-Enhanced Linux（SELinux）。使用  `setenforce 0` 命令將 SELinux 執行階段模式變更為「`Permissive`」。
+* 在移除軟體之前，必須先從 Unified Manager 伺服器中移除所有叢集（資料來源）。
+* 您應該手動刪除為允許或區塊 MySQL 連接埠 3306 而建立的防火牆規則。這些防火牆規則不會自動刪除。
+
+
+.步驟
+. 以 root 使用者身分登入要移除 Unified Manager 的伺服器。
+. 停止並從伺服器移除 Unified Manager：
++
+`rpm -e netapp-um`
+
++
+此步驟會移除所有相關的 NetApp RPM 套件。它不會移除必要的軟體模組，例如 Java、MySQL 和 7zip。
+
+. *選用：* 若適用，請移除支援的軟體模組，例如 Java、MySQL 和 7zip：
++
+`rpm -e mysql-community-client mysql-community-server mysql-community-common mysql-community-libs java-x.y`
+
+
+
+此操作完成後，軟體即會移除。解除安裝後，來自 `/opt/netapp/data`目錄的所有資料都會移至 `/opt/netapp/data/BACKUP`資料夾。解除安裝 Unified Manager 也會移除 Java 和 MySQL 套件，除非系統上的任何其他應用程式需要並使用這些套件。但是，MySQL 資料不會被刪除。

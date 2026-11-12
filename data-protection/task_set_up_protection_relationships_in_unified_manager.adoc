@@ -1,0 +1,41 @@
+---
+permalink: data-protection/task_set_up_protection_relationships_in_unified_manager.html 
+sidebar: sidebar 
+keywords: set, protection, relationships, unified manager 
+summary: 若要使用 Unified Manager 和 OnCommand Workflow Automation 來設定 SnapMirror 和 SnapVault 關係以保護您的資料，您必須執行幾個步驟。 
+---
+= 在 Active IQ Unified Manager 中設定保護關係
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要使用 Unified Manager 和 OnCommand Workflow Automation 來設定 SnapMirror 和 SnapVault 關係以保護您的資料，您必須執行幾個步驟。
+
+.開始之前
+* 您必須擁有應用程式系統管理員或儲存系統管理員角色。
+* 您必須在兩個叢集或兩個儲存設備虛擬機器（SVM）之間建立對等關係。
+* OnCommand Workflow Automation 必須與 Unified Manager 整合：
++
+** link:task_configure_connection_between_workflow_automation_um.html["設定 OnCommand Workflow Automation"]。
+** link:task_verify_um_data_source_caching_in_workflow_automation.html["在 Workflow Automation 中驗證 Unified Manager 資料來源快取"]。
+
+
+
+
+.步驟
+. 根據您想要建立的保護關係類型，執行下列其中一項操作：
++
+** link:task_create_snapmirror_relationship_from_health_volume.html["建立 SnapMirror 保護關係"]。
+** link:task_create_snapvault_protection_relationship_from_health_volume_details.html["建立 SnapVault 保護關係"]。
+
+
+. 如果您要為該關係建立原則，請根據要建立的關係類型執行下列其中一項：
++
+** link:task_create_snapvault_policy_to_maximize_transfer_efficiency.html["建立 SnapVault 原則"]。
+** link:task_create_snapmirror_policy_to_maximize_transfer_efficiency.html["建立 SnapMirror 原則"]。
+
+
+. link:task_create_snapmirror_and_snapvault_schedules.html["建立 SnapMirror 或 SnapVault 排程"]。
+

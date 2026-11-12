@@ -1,0 +1,24 @@
+---
+permalink: performance-checker/concept_collect_data_and_monitor_workload_performance.html 
+sidebar: sidebar 
+keywords: collect, data, monitor, workload, performance 
+summary: Unified Manager 每 5 分鐘收集並分析工作負載活動，以識別效能事件，並每 15 分鐘偵測組態變更。它最多保留 30 天的 5 分鐘歷史效能和事件資料，並使用這些資料來預測所有受監控工作負載的預期延遲範圍。 
+---
+= 在 Active IQ Unified Manager 中收集資料並監控工作負載效能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager 每 5 分鐘收集並分析工作負載活動，以識別效能事件，並每 15 分鐘偵測組態變更。它最多保留 30 天的 5 分鐘歷史效能和事件資料，並使用這些資料來預測所有受監控工作負載的預期延遲範圍。
+
+Unified Manager 必須收集至少 3 天的工作負載活動，才能開始分析，並且才能在「工作負載分析」頁面和「事件詳細資料」頁面中顯示 I/O 回應時間的延遲預測。在收集此活動期間，延遲預測不會顯示工作負載活動造成的所有變化。收集 3 天的活動後，Unified Manager 會每隔 24 小時的凌晨 12:00 調整延遲預測，以反映工作負載活動的變化並建立更準確的動態效能臨界值。
+
+在 Unified Manager 監控工作負載的前 4 天內，如果距離上次資料收集已超過 24 小時，延遲圖表將不會顯示該工作負載的延遲預測。上次收集之前偵測到的事件仍然可用。
+
+[NOTE]
+====
+日光節約時間（DST）會改變系統時間，這會改變受監控工作負載之效能統計資料的延遲預測。Unified Manager 會立即開始修正延遲預測，這大約需要 15 天才能完成。在此期間，您可以繼續使用 Unified Manager，但由於 Unified Manager 使用延遲預測來偵測動態事件，因此某些事件可能不準確。在時間變更之前偵測到的事件不受影響。
+
+====

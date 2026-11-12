@@ -1,0 +1,16 @@
+---
+permalink: install-windows/concept_upgrade_third_party_products_on_windows_um.html 
+sidebar: sidebar 
+keywords: data center manager, third-party, products, upgrade 
+summary: 在 Windows 系統上安裝 Unified Manager 時，您可以升級第三方產品，例如 JRE。 
+---
+= 在 Windows 版 Active IQ Unified Manager 中升級第三方產品
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在 Windows 系統上安裝 Unified Manager 時，您可以升級第三方產品，例如 JRE。
+
+開發這些第三方產品的公司會定期報告安全性漏洞。您可以根據自己的時間表升級到此軟體的更新版本。

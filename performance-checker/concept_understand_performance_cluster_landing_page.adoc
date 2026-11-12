@@ -1,0 +1,26 @@
+---
+permalink: performance-checker/concept_understand_performance_cluster_landing_page.html 
+sidebar: sidebar 
+keywords: understand, performance, cluster, landing page 
+summary: 效能叢集活動網頁提供所選叢集的高階效能總覽，重點在於叢集內前 10 大物件的效能狀態。效能問題會顯示在頁面頂端的「此叢集上的所有事件」面板中。 
+---
+= 了解 Active IQ Unified Manager 中的「效能叢集登陸頁面」
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+效能叢集活動網頁提供所選叢集的高階效能總覽，重點在於叢集內前 10 大物件的效能狀態。效能問題會顯示在頁面頂端的「此叢集上的所有事件」面板中。
+
+效能叢集活動網頁提供由 Unified Manager 執行個體代管的每個叢集的高階總覽。此頁面提供有關事件和效能的資訊，並可讓您監控叢集及進行疑難排解。下列映像顯示名為 opm-mobility 的叢集的效能叢集活動網頁範例：
+
+image::../media/opm_cluster_landing_page_draft.gif[一張 UI 快照，顯示名為 opm-mobility 的叢集的效能叢集活動網頁範例。]
+
+叢集摘要頁面上的事件計數可能與效能事件清單頁面上的事件計數不符。這是因為當違反組合臨界值原則時，叢集摘要頁面可以在延遲和使用率欄中各顯示一個事件，而效能事件清單頁面在違反組合原則時僅顯示一個事件。
+
+[NOTE]
+====
+如果叢集已從 Unified Manager 的代管中移除，則頁面頂部叢集名稱右側會顯示狀態「*已移除*」。
+
+====

@@ -1,0 +1,42 @@
+---
+permalink: reporting/task_create_report_to_identify_clusters_with_unallocated_capacity.html 
+sidebar: sidebar 
+keywords: clusters, unallocated, LUN, capacity, indentify, additional, workloads 
+summary: 您可以建立一份報告，尋找未分配 LUN 容量最多且大於 0.5 TB 的叢集，以協助找出可新增額外工作負載的位置。 
+---
+= 在 Active IQ Unified Manager 中辨識出具有未指派 LUN 容量的叢集
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以建立一份報告，尋找未分配 LUN 容量最多且大於 0.5 TB 的叢集，以協助找出可新增額外工作負載的位置。
+
+.開始之前
+* 您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+
+請依照下列步驟建立自訂檢視，顯示未配置 LUN 容量最多的叢集，然後排程為該檢視產生報告。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存設備* > *叢集*。
+. 在「檢視」功能表中，選擇 *容量* > *所有叢集*。
+. 選取 *顯示/隱藏* 可移除報告中不需要的任何欄。
+. 將「`Unallocated LUN Capacity`」欄拖曳到「`HA Pair`」欄附近。
+. 點選篩選圖示，新增下列篩選條件，然後點選 *套用篩選條件*：
++
+** 未分配的 LUN 容量大於 0.5 TB
+
+
+. 按一下 "`未分配 LUN 容量`" 欄的頂端，依最大未分配 LUN 容量對結果進行排序。
+. 將檢視儲存為能夠反映檢視內容的特定名稱，例如「`最多未指派的 LUN 容量`」，然後按一下核取記號（image:../media/blue_check.gif[""]）。
+. 在庫存頁面上點選 *排程報告* 按鈕。
+. 點擊 *新增排程* 在「報告排程」頁面中新增一列，以便您可以定義新報告的排程特性。
+. 輸入報告排程的名稱並完成其他報告欄位，然後按一下列末尾的勾號（image:../media/blue_check.gif[""]）。
++
+報告會立即作為測試傳送。之後，報告會產生並依指定的頻率透過電子郵件傳送給列出的收件者。
+
+
+
+根據報告中顯示的結果，您可能需要使用叢集中未指派的 LUN 容量。

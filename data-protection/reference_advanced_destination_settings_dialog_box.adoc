@@ -1,0 +1,30 @@
+---
+permalink: data-protection/reference_advanced_destination_settings_dialog_box.html 
+sidebar: sidebar 
+keywords: advanced, destination, settings, dialog box 
+summary: 您可以使用「進階目的地設定」對話方塊在目的地 Volume 上啟用空間保證設定。當來源上的空間保證已停用，但您希望在目的地上啟用時，您可以選擇進階設定。在 SnapMirror 關係中，重複資料刪除、壓縮和自動增長的設定會繼承自來源 Volume，且無法變更。 
+---
+= 在 Active IQ Unified Manager 中使用「進階目的地設定」對話方塊
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用「進階目的地設定」對話方塊在目的地 Volume 上啟用空間保證設定。當來源上的空間保證已停用，但您希望在目的地上啟用時，您可以選擇進階設定。在 SnapMirror 關係中，重複資料刪除、壓縮和自動增長的設定會繼承自來源 Volume，且無法變更。
+
+
+
+[[space-guarantee]]
+== 空間保證
+
+確保在目的地 Volume 上分配足夠的空間，以便資料傳輸始終成功。空間保證設定可以是下列其中一項：
+
+* 檔案
+* 磁碟區
+* 無
+
+
+例如，您可能有一個 200 GB 的 Volume，其中包含總計 50 GB 的檔案；但是，這些檔案只包含 10 GB 的資料。Volume 保證會為目的地 Volume 分配 200 GB，無論來源上的內容為何。檔案保證會分配 50 GB，以確保在目的地上為來源檔案保留足夠的空間；在此情況下選擇 *無* 表示在目的地上僅分配 10 GB，以供來源上的檔案資料實際使用的空間。
+
+空間保證預設為 Volume。

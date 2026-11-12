@@ -1,0 +1,33 @@
+---
+permalink: performance-checker/task_view_node_iops_based_on_workloads_on_local_node.html 
+sidebar: sidebar 
+keywords: view, node, iops, workloads, reside, only, local node 
+summary: 節點 IOPS 計數器圖表可以重點摘要哪些操作僅透過本機節點，利用網路 LIF 對遠端節點上的 Volume 執行讀寫操作。IOPS - 「總計（本機）」和「細分（本機）」圖表顯示僅駐留在目前節點本機 Volume 中的資料的 IOPS。 
+---
+= 在 Active IQ Unified Manager 中檢視基於本機工作負載的節點 IOPS
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+節點 IOPS 計數器圖表可以重點摘要哪些作業僅透過本機節點，利用網路 LIF 對遠端節點上的 Volume 執行讀寫作業。IOPS - "`Total (Local)`" 和 "`Breakdown (Local)`" 圖表顯示僅駐留在目前節點本機 Volume 中資料的 IOPS。
+
+這些計數器圖表的 "`Local`" 版本與效能容量和使用率的節點圖表類似，因為它們也只顯示位於本機 Volume 上之資料的統計資料。
+
+透過比較這些計數器圖表的 "`Local`" 版本與一般的 Total 版本，您可以查看是否有大量流量通過本機節點來存取遠端節點上的 Volume。如果有太多作業通過本機節點到達遠端節點上的 Volume，這種情況可能會導致效能問題，這可能由節點上的高使用率來表示。在這些情況下，您可能需要將 Volume 移至本機節點，或在遠端節點上建立 LIF，以便連接來自存取該 Volume 的主機流量。
+
+.步驟
+. 在所選節點的 *效能/節點瀏覽器* 頁面中，從 IOPS 圖表的下拉式選單中選取 *總計*。
++
+顯示 IOPS - 總計圖表。
+
+. 點選 *縮放檢視* 可在新的瀏覽器標籤頁中顯示較大版本的圖表。
+. 返回 *Performance/Node Explorer* 頁面，從 IOPS 圖表的下拉式功能表中選取 *Total (Local)*。
++
+顯示 IOPS - 總計（本地）圖表。
+
+. 點選 *縮放檢視* 可在新的瀏覽器標籤頁中顯示較大版本的圖表。
+. 將兩張圖表並排檢視，找出 IOPS 值明顯不同的區域。
+. 將游標移至這些區域上方，以比較特定時間點的本機 IOPS 和總 IOPS。
+

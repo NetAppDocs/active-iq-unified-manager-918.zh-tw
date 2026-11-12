@@ -1,0 +1,23 @@
+---
+permalink: reporting/task_search_to_refine_view.html 
+sidebar: sidebar 
+keywords: search, refine, view 
+summary: 獲得所需檢視後，您可以使用搜尋欄位進一步篩選結果，以專注於要包含在報告中的結果。 
+---
+= 在 Active IQ Unified Manager 中搜尋以精簡您的檢視
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+獲得所需檢視後，您可以使用搜尋欄位進一步篩選結果，以專注於要包含在報告中的結果。
+
+.步驟
+. 開啟要用作報告基礎的自訂檢視或預設檢視。
+. 在搜尋框中輸入內容，即可篩選檢視中所列的資料。您可以在任何顯示的欄位中輸入部分資料。例如，如果您想要搜尋名稱中包含「US_East」的節點，則可以篩選完整的節點清單。
++
+您的搜尋結果會儲存於自訂檢視中，並用於產生的排程報告中。
+
+. 為未儲存的檢視命名以儲存變更。
+

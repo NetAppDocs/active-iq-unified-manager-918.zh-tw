@@ -1,0 +1,55 @@
+---
+permalink: data-protection/reference_browse_directories_dialog_box.html 
+sidebar: sidebar 
+keywords: browse, directories, dialog box 
+summary: 當您想要將資料還原到與原始來源不同的叢集和 SVM 上的目錄時，可以使用「瀏覽目錄」對話方塊。預設情況下，會選取原始來源叢集和 Volume。 
+---
+= 在 Active IQ Unified Manager 中使用「瀏覽目錄」對話方塊
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您想要將資料還原到與原始來源不同的叢集和 SVM 上的目錄時，可以使用「瀏覽目錄」對話方塊。預設情況下，會選取原始來源叢集和 Volume。
+
+「瀏覽目錄」對話方塊可讓您選擇要將資料還原到的叢集、SVM、Volume 和目錄路徑。
+
+* *叢集*
++
+列出可用於還原的叢集目的地。預設情況下，選擇原始來源 Volume 所在的叢集。
+
+* *SVM 下拉清單*
++
+列出所選叢集可用的 SVM。預設情況下，會選取原始來源 Volume 的 SVM。
+
+* *磁碟區*
++
+列出所選 SVM 中的所有讀寫 Volume。您可以按名稱和可用空間篩選 Volume。空間最大的 Volume 會列在最前面，依此類推，按降冪排列。預設會選取原始來源 Volume。
+
+* *檔案路徑文字方塊*
++
+您可以輸入要復原資料的檔案路徑。您輸入的路徑必須已存在。
+
+* *名稱*
++
+顯示所選 Volume 的可用資料夾名稱。按一下名稱清單中的資料夾將顯示其子資料夾（如有）。不會顯示資料夾中包含的檔案。選取資料夾後按一下 image:../media/icon_upfolder.gif["上一層資料夾圖示"]，即可在目錄結構中向上移動一個層級。
+
+
+
+
+
+[[command-buttons]]
+== 命令按鈕
+
+命令按鈕可讓您執行下列任務：
+
+* *選擇目錄*
++
+套用您的選擇並關閉「瀏覽目錄」對話框。如果未選擇任何目錄，則此按鈕將處於停用狀態。
+
+* *取消*
++
+放棄您的選擇並關閉「瀏覽目錄」對話方塊。
+
+

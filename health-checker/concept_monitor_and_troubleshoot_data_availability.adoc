@@ -1,0 +1,16 @@
+---
+permalink: health-checker/concept_monitor_and_troubleshoot_data_availability.html 
+sidebar: sidebar 
+keywords: monitor, troubleshoot, data availability 
+summary: Unified Manager 監控授權使用者存取儲存資料的可靠性，提醒您注意阻擋或妨礙該存取的情況，並讓您能夠診斷這些情況，以及指派和追蹤其解決方案。 
+---
+= 監控與疑難排解 Active IQ Unified Manager 中的資料可用度
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager 監控授權使用者存取儲存資料的可靠性，提醒您注意阻擋或妨礙該存取的情況，並讓您能夠診斷這些情況，以及指派和追蹤其解決方案。
+
+本節中的可用度工作流程主題說明了儲存管理員如何使用 Unified Manager Web UI 來探索、診斷及指派解決對資料可用度造成不利影響的硬體與軟體狀況的範例。

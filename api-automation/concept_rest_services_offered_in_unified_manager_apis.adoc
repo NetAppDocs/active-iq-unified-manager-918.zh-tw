@@ -1,0 +1,59 @@
+---
+permalink: api-automation/concept_rest_services_offered_in_unified_manager_apis.html 
+sidebar: sidebar 
+keywords: rest, services, offer, active iq, unified, manager 
+summary: 在使用 Active IQ Unified Manager API 之前，您應該感知所提供的 REST 服務和操作。 
+---
+= 了解 Active IQ Unified Manager 中提供的 REST 服務
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在使用 Active IQ Unified Manager API 之前，您應該感知所提供的 REST 服務和操作。
+
+用於設定 API 伺服器的資源配置與管理 API 支援讀取（GET）或寫入（POST、PATCH、DELETE）作業。以下是 API 支援的 GET、PATCH、POST 和 DELETE 作業的一些範例：
+
+* GET 範例： `GET /datacenter/cluster/clusters` 擷取資料中心中的叢集詳細資訊。此 `GET`操作傳回的最大記錄數為 1000。
++
+[NOTE]
+====
+API 可讓您依支援的屬性來篩選、排序和排列記錄。
+
+====
+* POST 範例： `POST /datacenter/svm/svms` 建立自訂儲存虛擬機器 （SVM）。
+* PATCH 範例： `PATCH /datacenter/svm/svms/{key}`使用其唯一鍵修改 SVM 的屬性。
+* DELETE 範例： `DELETE /storage-provider/access-endpoints/{key}` 使用其唯一金鑰從 LUN、SVM 或檔案共享中刪除存取端點。
+
+
+使用 API 可以執行的 REST 操作取決於操作員、儲存管理員或應用程式管理員使用者的角色。
+
+[cols="2*"]
+|===
+| 使用者角色 | 支援的 REST 方法 
+
+
+ a| 
+操作員
+ a| 
+對資料的唯讀存取。擁有此角色的使用者可以執行所有 GET 請求。
+
+
+
+ a| 
+儲存管理員
+ a| 
+所有資料的讀取存取。擁有此角色的使用者可以執行所有 GET 請求。
+
+此外，他們還擁有寫入存取（執行 PATCH、POST 和 DELETE 請求）來執行特定活動，例如管理儲存設備服務物件和儲存管理選項。
+
+
+
+ a| 
+應用程式管理員
+ a| 
+所有資料的讀取與寫入存取。擁有此角色的使用者可以對所有功能執行 GET、PATCH、POST 和 DELETE 請求。
+
+|===
+如需所有 REST 作業的詳細資訊，請參閱 _線上 API 文件_。

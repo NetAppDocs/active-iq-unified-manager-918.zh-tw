@@ -1,0 +1,31 @@
+---
+permalink: health-checker/concept_what_security_criteria_is_being_evaluated.html 
+sidebar: sidebar 
+keywords: security criteria, evaluated 
+summary: 總體而言，ONTAP 叢集、儲存虛擬機器（SVM）和 Volume 的安全性標準，是根據《NetApp ONTAP 9 安全性強化指南》中定義的建議進行評估。 
+---
+= 了解 Active IQ Unified Manager 如何評估安全性標準
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+一般而言，您的 ONTAP 叢集、儲存設備虛擬機器（SVM）和 Volume 的安全性標準，是根據 _NetApp Security Hardening Guide for ONTAP 9_ 中定義的建議進行評估。
+
+部分安全性檢查措施包括：
+
+* 叢集是否使用安全的身分驗證方法，例如 SAML
+* 對等叢集的通訊是否加密
+* 儲存 VM 是否已啟用稽核日誌
+* 您的 Volume 是否已啟用軟體或硬體加密
+
+
+請參閱有關法規遵循類別與 https://www.netapp.com/pdf.html?item=/media/10674-tr4569pdf.pdf["NetApp ONTAP 9 安全性強化指南"^]的主題，以取得詳細資訊。
+
+[NOTE]
+====
+從 Active IQ 平台報告的升級事件也被視為安全性事件。這些事件識別出的問題，需要您升級 ONTAP 軟體、節點韌體或作業系統軟體（針對安全性公告）才能解決。這些事件不會顯示在「安全性」面板中，但可以從「事件管理」清單頁面查看。
+
+====
+如需詳細資訊，請參閱 link:../health-checker/concept_manage_cluster_security_objectives.html["管理叢集安全性目標"]。

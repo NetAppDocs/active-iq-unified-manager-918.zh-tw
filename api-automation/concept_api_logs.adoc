@@ -1,0 +1,57 @@
+---
+permalink: api-automation/concept_api_logs.html 
+sidebar: sidebar 
+keywords: logs, troubleshooting 
+summary: 系統日誌可以幫助您分析執行 API 時可能出現的故障原因和疑難排解問題。 
+---
+= 使用 Active IQ Unified Manager 中的系統日誌進行故障排除
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+系統日誌可以幫助您分析執行 API 時可能出現的故障原因和疑難排解問題。
+
+請從下列位置擷取日誌，以便疑難排解與 API 呼叫相關的問題。
+
+[cols="2*"]
+|===
+| 日誌位置 | 使用 
+
+
+ a| 
+`/var/log/ocie/access_log.log`
+ a| 
+包含所有 API 呼叫詳情，例如呼叫 API 的使用者的使用者名稱、開始時間、執行時間、狀態和 URL。
+
+您可以使用此日誌檔來檢查常用的 API，或對任何 GUI 工作流程進行疑難排解。您也可以根據執行時間使用它來調整分析規模。
+
+
+
+ a| 
+`/var/log/ocum/ocumserver.log`
+ a| 
+包含所有 API 執行日誌。
+
+您可以使用此日誌檔來疑難排解和偵錯 API 呼叫。
+
+
+
+ a| 
+`/var/log/ocie/server.log`
+ a| 
+包含所有 Wildfly 伺服器部署和啟動/停止服務相關的日誌。
+
+您可以使用此日誌檔來尋找 Wildfly 伺服器啟動、停止或部署期間發生之任何問題的根本原因。
+
+
+
+ a| 
+`/var/log/ocie/au.log`
+ a| 
+包含擷取單元相關的日誌。
+
+當您在 ONTAP 中建立、修改或刪除任何物件，但這些變更未反映在 Active IQ Unified Manager REST API 中時，您可以使用此日誌檔。
+
+|===

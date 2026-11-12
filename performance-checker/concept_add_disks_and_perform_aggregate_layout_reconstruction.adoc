@@ -1,0 +1,20 @@
+---
+permalink: performance-checker/concept_add_disks_and_perform_aggregate_layout_reconstruction.html 
+sidebar: sidebar 
+keywords: add, disks, perform, aggregate, layout, reconstruction 
+summary: 您可以將磁碟新增至彙總，以增加該彙總的儲存容量和效能。新增磁碟後，只有在重新建構彙總後才能看到效能提升。 
+---
+= 了解在 Active IQ Unified Manager 中新增磁碟如何影響彙總佈局
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以將磁碟新增至彙總，以增加該彙總的儲存容量和效能。新增磁碟後，只有在重新建構彙總後才能看到效能提升。
+
+當您在「事件詳細資料」頁面收到系統定義的臨界值事件時，事件執行摘要文字會列出發生問題的彙總名稱。您可以新增磁碟至此彙總並重建資料。
+
+新增到彙總的磁碟必須已存在於叢集中。如果叢集沒有可用磁碟，您可能需要聯絡系統管理員或購買更多磁碟。您可以使用 ONTAP System Manager 或 ONTAP 命令將磁碟新增至彙總。
+
+https://www.netapp.com/pdf.html?item=/media/19675-tr-3838.pdf["技術報告 3838：儲存設備子系統組態指南"^]

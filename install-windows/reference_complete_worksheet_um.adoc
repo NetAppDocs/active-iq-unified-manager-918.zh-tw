@@ -1,0 +1,217 @@
+---
+permalink: install-windows/reference_complete_worksheet_um.html 
+sidebar: sidebar 
+keywords: complete, worksheet 
+summary: 在安裝和設定 Unified Manager 之前，您應該準備好有關您環境的具體資訊。您可以將這些資訊記錄在工作表中。 
+---
+= 在 Active IQ Unified Manager 中完成工作表
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在安裝和設定 Unified Manager 之前，您應該準備好有關您環境的具體資訊。您可以將這些資訊記錄在工作表中。
+
+
+
+[[unified-manager-installation-information]]
+== Unified Manager 安裝資訊
+
+安裝 Unified Manager 所需的詳細資訊。
+
+[cols="2*"]
+|===
+| 軟體部署的系統 | 您的值 
+
+
+ a| 
+主機完整網域名稱
+ a| 
+
+
+
+ a| 
+主機 IP 位址
+ a| 
+
+
+
+ a| 
+網路遮罩
+ a| 
+
+
+
+ a| 
+閘道 IP 位址
+ a| 
+
+
+
+ a| 
+主要 DNS 位址
+ a| 
+
+
+
+ a| 
+次要 DNS 位址
+ a| 
+
+
+
+ a| 
+搜尋網域
+ a| 
+
+
+
+ a| 
+維護使用者名稱
+ a| 
+
+
+
+ a| 
+維護使用者密碼
+ a| 
+
+|===
+
+
+[[unified-manager-configuration-information]]
+== Unified Manager 組態資訊
+
+安裝後設定 Unified Manager 的詳細資訊。部分值為選用，視您的組態而定。
+
+[cols="2*"]
+|===
+| 設定 | 您的值 
+
+
+ a| 
+維護使用者電子郵件地址
+ a| 
+
+
+
+ a| 
+SMTP 伺服器主機名稱或 IP 位址
+ a| 
+
+
+
+ a| 
+SMTP 使用者名稱
+ a| 
+
+
+
+ a| 
+SMTP 密碼
+ a| 
+
+
+
+ a| 
+SMTP 連接埠
+ a| 
+25（預設值）
+
+
+
+ a| 
+用於發送警報通知的電子郵件
+ a| 
+
+
+
+ a| 
+驗證伺服器主機名稱或 IP 位址
+ a| 
+
+
+
+ a| 
+Active Directory 系統管理員名稱或 LDAP 連結專有名稱
+ a| 
+
+
+
+ a| 
+Active Directory 密碼或 LDAP 連結密碼
+ a| 
+
+
+
+ a| 
+驗證伺服器基本辨識名稱
+ a| 
+
+
+
+ a| 
+身分識別供應商（IdP）URL
+ a| 
+
+
+
+ a| 
+身分供應商（IdP）中繼資料
+ a| 
+
+
+
+ a| 
+SNMP 陷阱目的地主機 IP 位址
+ a| 
+
+
+
+ a| 
+SNMP 連接埠
+ a| 
+
+|===
+
+
+[[cluster-information]]
+== 叢集資訊
+
+您使用 Unified Manager 管理的儲存設備系統的詳細資訊。
+
+[cols="2*"]
+|===
+| N 個叢集中的叢集 1 | 您的值 
+
+
+ a| 
+主機名稱或叢集管理 IP 位址
+ a| 
+
+
+
+ a| 
+ONTAP 系統管理員使用者名稱
+
+[NOTE]
+====
+系統管理員必須已獲指派「`admin`」角色。
+
+==== a| 
+
+
+
+ a| 
+ONTAP 系統管理員密碼
+ a| 
+
+
+
+ a| 
+傳輸協定
+ a| 
+HTTPS
+
+|===

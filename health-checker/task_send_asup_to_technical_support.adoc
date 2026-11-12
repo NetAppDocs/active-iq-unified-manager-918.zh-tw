@@ -1,0 +1,20 @@
+---
+permalink: health-checker/task_send_asup_to_technical_support.html 
+sidebar: sidebar 
+keywords: support bundle, web ui, maintenance console 
+summary: 當您遇到的問題需要比 AutoSupport 訊息所提供的更詳細的診斷與疑難排解時，您應該傳送支援套裝組合。您可以使用 Unified Manager Web UI 和維護主控台，將支援套裝組合傳送給技術支援。 
+---
+= 透過 Active IQ Unified Manager 中的 Web UI 和維護控制台傳送支援套裝組合
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您遇到的問題需要比 AutoSupport 訊息所提供的更詳細的診斷與疑難排解時，您應該傳送支援套裝組合。您可以使用 Unified Manager Web UI 和維護主控台，將支援套裝組合傳送給技術支援。
+
+Unified Manager 一次最多可儲存兩個完整支援套裝組合和三個輕量級支援套裝組合。
+
+*相關資訊*
+
+link:../config/reference_unified_manager_roles_and_capabilities.html["Unified Manager 使用者角色和功能"]

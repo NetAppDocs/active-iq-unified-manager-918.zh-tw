@@ -1,0 +1,26 @@
+---
+permalink: config/task_restart_unified_manager_virtual_machine.html 
+sidebar: sidebar 
+keywords: restart, unified manager, virtual, machine 
+summary: 您可以從 Unified Manager 的維護主控台重新啟動虛擬機器。產生新的安全性憑證後，或虛擬機器出現問題時，必須重新啟動。 
+---
+= 重新啟動 Active IQ Unified Manager 虛擬機器
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以從 Unified Manager 的維護主控台重新啟動虛擬機器。產生新的安全性憑證後，或虛擬機器出現問題時，必須重新啟動。
+
+.開始之前
+虛擬應用裝置已啟動。
+
+您已以維護使用者的身分登入維護主控台。
+
+您也可以使用 *Restart Guest* 選項從 vSphere 重新啟動虛擬機器。如需詳細資訊，請參閱 VMware 文件。
+
+.步驟
+. 存取維護控制台。
+. 選擇 *系統組態* > *重新啟動虛擬機器*。
+

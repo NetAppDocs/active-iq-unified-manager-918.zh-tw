@@ -1,0 +1,45 @@
+---
+permalink: events/reference_metrocluster_bridge_events.html 
+sidebar: sidebar 
+keywords: metrocluster, bridge, events, impact area, availability 
+summary: MetroCluster 橋接器事件提供有關橋接器狀態的資訊，以便您監控潛力問題。事件依影響區域分組，包含事件和陷阱名稱、影響層級、來源類型和嚴重程度。 
+---
+= 了解 Active IQ Unified Manager 中的 MetroCluster Bridge 事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster 橋接事件提供有關橋接器狀態的資訊，以便您可以在 FC 上的 MetroCluster 組態中監控潛力的問題。事件按影響區域分組，包括事件和 trap 名稱、影響層級、來源類型和嚴重性。
+
+
+
+[[impact-area-availability]]
+== 影響區域：可用度
+
+|===
+| 事件名稱（陷阱名稱） | 影響層級 | 來源類型 | 嚴重程度 
+
+
+ a| 
+橋接器無法連線（ocumEvtBridgeUnreachable）
+ a| 
+事件
+ a| 
+MetroCluster 橋接器
+ a| 
+關鍵
+
+
+
+ a| 
+橋接溫度異常（ocumEvtBridgeTemperatureAbnormal）
+ a| 
+事件
+ a| 
+MetroCluster 橋接器
+ a| 
+關鍵
+
+|===

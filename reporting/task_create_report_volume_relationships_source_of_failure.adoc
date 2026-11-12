@@ -1,0 +1,44 @@
+---
+permalink: reporting/task_create_report_volume_relationships_source_of_failure.html 
+sidebar: sidebar 
+keywords: create, report, group, volume, relationships, source, failure 
+summary: 您可以建立報告，根據關係處於不健全狀態的原因將 Volume 分組。 
+---
+= 在 Active IQ Unified Manager 中建立一份報告，依故障來源將 Volume 關係分組
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以建立報告，根據關係處於不健全狀態的原因將 Volume 分組。
+
+.開始之前
+* 您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+
+請依照下列步驟建立按故障來源對 Volume 進行分組的自訂檢視，然後安排為該檢視產生報告。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存設備* > *Volume*。
+. 在「檢視」功能表中，選擇 *關係* > *所有關係*。
+. 選擇 *顯示/隱藏* 以確保 "`關係健全狀況`" 和 "`不健全原因`" 欄位顯示在檢視中。
++
+新增或移除其他欄，以建立對您的報告至關重要的檢視。
+
+. 將 "`關係健全狀況`" 和 "`不健全原因`" 欄拖曳至 "`狀態`" 欄附近。
+. 點選篩選圖示，新增下列篩選條件，然後點選 *套用篩選條件*：
++
+** 關係健全狀況不佳
+
+
+. 按一下 "`不健康原因`" 欄的頂部，依故障來源將 Volume 關係分組。
+. 將檢視儲存為一個能夠反映檢視所顯示內容的特定名稱，例如「`按故障劃分的 Vol 關係`」。
+. 在庫存頁面上點選 *排程報告* 按鈕。
+. 輸入報告排程的名稱並完成其他報告欄位，然後按一下列末尾的勾號（image:../media/blue_check.gif[""]）。
++
+報告會立即作為測試傳送。之後，報告會產生並依指定的頻率透過電子郵件傳送給列出的收件者。
+
+
+
+根據報告中顯示的結果，您可以調查每種故障的來源和影響。

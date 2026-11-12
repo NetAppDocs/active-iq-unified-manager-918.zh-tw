@@ -1,0 +1,45 @@
+---
+permalink: events/reference_service_processor_events.html 
+sidebar: sidebar 
+keywords: service, processor, events, impact area, availability 
+summary: 服務處理器事件提供有關處理器狀態的資訊，以便您可以監控潛力問題。事件按影響區域分組，包括事件和 trap 名稱、影響層級、來源類型和嚴重性。 
+---
+= 了解 Active IQ Unified Manager 中的服務處理器事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+服務處理器事件提供有關處理器狀態的資訊，以便您可以監控潛力問題。事件按影響區域分組，包括事件和 trap 名稱、影響層級、來源類型和嚴重性。
+
+
+
+[[impact-area-availability]]
+== 影響區域：可用度
+
+|===
+| 事件名稱（陷阱名稱） | 影響層級 | 來源類型 | 嚴重程度 
+
+
+ a| 
+服務處理器未設定（ocumEvtServiceProcessorNotConfigured）
+ a| 
+風險
+ a| 
+節點
+ a| 
+警告
+
+
+
+ a| 
+服務處理器離線（ocumEvtServiceProcessorOffline）
+ a| 
+風險
+ a| 
+節點
+ a| 
+錯誤
+
+|===

@@ -1,0 +1,30 @@
+---
+permalink: storage-mgmt/reference_unknown_authentication_error.html 
+sidebar: sidebar 
+keywords: unknown, authentication, error 
+summary: 疑難排解未知的驗證錯誤。 
+---
+= 解決 Active IQ Unified Manager 中的未知驗證錯誤
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您執行與驗證相關的操作（例如新增、編輯、刪除或測試遠端使用者或群組）時，可能會顯示下列錯誤訊息： `Unknown authentication error.`
+
+*原因*
+
+如果您為以下選項設定了錯誤的值，則可能會出現此問題：
+
+* Active Directory 驗證服務的管理員名稱
+* 綁定 OpenLDAP 驗證服務的辨別名稱
+
+
+*修正行動*
+
+. 在左側導覽窗格中，按一下 *一般* > *遠端驗證*。
+. 根據您選擇的驗證服務，輸入管理員名稱或繫結辨識名稱的適當資訊。
+. 按一下 *測試驗證* ，使用您指定的詳細資料來測試驗證。
+. 按一下 *Save* 。
+

@@ -1,0 +1,92 @@
+---
+permalink: data-protection/concept_types_of_snapmirror_protection.html 
+sidebar: sidebar 
+keywords: types, snapmirror, protection, consistency group, SnapMirror active sync 
+summary: 根據資料儲存設備拓撲的部署情況，Unified Manager 可讓您設定多種類型的 SnapMirror 保護關係。所有 SnapMirror 保護方案都提供容錯移轉災難恢復保護，但在效能、版本靈活度和多重備份複本保護方面提供不同的功能。 
+---
+= Active IQ Unified Manager 中的 SnapMirror 保護類型
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+根據資料儲存設備拓撲的部署情況，Unified Manager 可讓您設定多種類型的 SnapMirror 保護關係。所有 SnapMirror 保護方案都提供容錯移轉災難恢復保護，但在效能、版本靈活度和多重備份複本保護方面提供不同的功能。
+
+
+
+[[traditional-snapmirror-asynchronous-protection-relationships]]
+== 傳統 SnapMirror 非同步保護關係
+
+傳統 SnapMirror 非同步保護提供來源與目的地 Volume 之間的區塊複寫鏡射保護。
+
+在傳統 SnapMirror 關係中，鏡射作業的執行速度比在其他 SnapMirror 關係中更快，因為鏡射作業是基於區塊複寫。然而，傳統的 SnapMirror 保護要求目的地 Volume 執行的 ONTAP 軟體次要版本必須與來源 Volume 相同或更新，且位於相同的主要版本內（例如，版本 8.x 到 8.x，或 9.x 到 9.x）。不支援從 9.1 來源複寫到 9.0 目的地，因為目的地執行的是較早的主要版本。
+
+
+
+[[snapmirror-asynchronous-protection-with-version-flexible-replication]]
+== SnapMirror 具有版本靈活複寫的非同步保護
+
+具備版本靈活複寫功能的 SnapMirror 非同步保護可在來源與目的地 Volume 之間提供邏輯複寫鏡射保護，即使這些 Volume 執行的是 ONTAP 8.3 或更新版本軟體的不同版本（例如，版本 8.3 到 8.3.1，或 8.3 到 9.1，或 9.2.2 到 9.2）。
+
+在採用版本靈活複寫的 SnapMirror 關係中，鏡射作業的執行速度不如傳統 SnapMirror 關係那麼快。
+
+由於執行速度較慢，具備版本靈活複寫保護的 SnapMirror 不適合在以下任一情況中實作：
+
+* 來源物件包含超過 1000 萬個需要保護的檔案。
+* 受保護資料的恢復點目標為兩小時或更短。（也就是說，目的地必須一律包含鏡射、可恢復的資料，且這些資料比來源資料舊的時間不得超過兩小時。）
+
+
+在上述任何一種情況下，都需要採用較快、以區塊複寫為基礎的預設 SnapMirror 保護執行方式。
+
+
+
+[[snapmirror-asynchronous-protection-with-version-flexible-replication-and-backup-option]]
+== SnapMirror 具有版本靈活複寫與備份選項的非同步保護
+
+SnapMirror 具備版本靈活複寫與備份選項的非同步保護可在來源與目的地 Volume 之間提供鏡射保護，並具備在目的地儲存多個鏡射資料複本的功能。
+
+儲存管理員可以指定哪些 Snapshot 複本從來源鏡射到目的地，也可以指定在目的地保留這些複本的時間，即使它們在來源被刪除。
+
+在具有版本靈活複寫與備份選項的 SnapMirror 關係中，鏡射作業的執行速度不如傳統 SnapMirror 關係那麼快。
+
+
+
+[[snapmirror-unified-replication-mirror-and-vault]]
+== SnapMirror 統一複寫（鏡射和保存庫）
+
+SnapMirror 統一複寫可讓您在同一目的地 Volume 上設定災難恢復和歸檔。如同 SnapMirror，統一資料保護會在您首次呼叫時執行基礎傳輸。在預設的統一資料保護原則 "`MirrorAndVault`" 下，基礎傳輸會建立來源 Volume 的 Snapshot 複本，然後將該複本及其參照的資料區塊傳輸至目的地 Volume。如同 SnapVault，統一資料保護不會將較舊的 Snapshot 複本包含在基礎傳輸中。
+
+
+
+[[snapmirror-synchronous-protection-with-strict-synchronization]]
+== SnapMirror 嚴格同步的同步保護
+
+採用 "`strict`" 同步的 SnapMirror 同步保護可確保主 Volume 和次要 Volume 始終互為真實複本。如果在嘗試將資料寫入次要 Volume 時發生複寫故障，則用戶端對主 Volume 的 I/O 將會中斷。
+
+
+
+[[snapmirror-synchronous-protection-with-regular-synchronization]]
+== SnapMirror 同步保護與定期同步
+
+採用 "`regular`" 同步的 SnapMirror 同步保護並不要求主要和次要 Volume 始終互為完全相同的複本，從而確保主要 Volume 的可用度。如果在嘗試將資料寫入次要 Volume 時發生複寫故障，主要和次要 Volume 將失去同步，且用戶端 I/O 將繼續流向主要 Volume。
+
+[NOTE]
+====
+從「運作狀況：所有 Volume」檢視或「Volume / 運作狀況詳細資料」頁面監控同步保護關係時，「還原」按鈕和「關係作業」按鈕無法使用。
+
+====
+
+
+[[snapmirror-active-sync]]
+== SnapMirror 主動同步
+
+ONTAP 9.8 及更新版本提供 SnapMirror 作用中同步功能，您可以使用它來保護具有 LUN 的應用程式，讓應用程式能夠透明地進行容錯移轉，確保在發生災難時維持業務連續性。
+
+它可讓您從 Unified Manager 探索並監控叢集與儲存虛擬機器上可用之一致性群組（CG）的同步 SnapMirror 關係。在 AFF 叢集或 All SAN Array（ASA）叢集上支援 SnapMirror 作用中同步，其中主要和次要叢集可以是 AFF 或 ASA。SnapMirror 作用中同步可保護使用 iSCSI 或 FCP LUN 的應用程式。
+
+當您檢視受 SnapMirror 作用中同步關係保護的 Volume 和 LUN 時，您可以獲得保護關係的統一檢視、Volume 清單中的一致性群組檢視、檢視一致性群組關係的保護拓撲，以及檢視長達一年的一致性群組關係歷史資料。您也可以下載報告。您也可以檢視一致性群組關係的總結、搜尋一致性群組關係的支援，並取得受一致性群組保護的 Volume 資訊。
+
+在「關係」頁面上，您也可以對受一致性群組保護的來源與目的地儲存設備物件及其關係進行排序、篩選及擴充保護。
+
+若要深入瞭解 SnapMirror 作用中同步，請參閱 link:https://docs.netapp.com/us-en/ontap/smbc/index.html["適用於 Snapmirror 作用中同步（原 SM-BC）的 ONTAP 9 文件"]。

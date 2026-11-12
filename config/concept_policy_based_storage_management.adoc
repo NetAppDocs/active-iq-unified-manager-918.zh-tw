@@ -1,0 +1,31 @@
+---
+permalink: config/concept_policy_based_storage_management.html 
+sidebar: sidebar 
+keywords: slo, storage efficiency policy, storage workloads 
+summary: 基於策略的儲存管理選項可根據服務層級目標（SLO）進行儲存管理。此選項預設為啟用。 
+---
+= 在 Active IQ Unified Manager 中啟用原則型儲存管理
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+*以原則為基礎的儲存管理* 選項可根據服務層級目標（SLOs）進行儲存管理。此選項預設為啟用。
+
+啟動此功能後，您可以在新增至 Active IQ Unified Manager 執行個體的 ONTAP 叢集上資源配置儲存設備工作負載，並根據指派的效能服務層級和儲存效率原則來管理這些工作負載。
+
+您可以從 *一般* > *功能設定* > *基於政策的儲存管理* 中選擇啟動或停用此功能。啟動此功能後，以下頁面可用於操作和監控：
+
+* 資源配置（儲存設備工作負載資源配置）
+* *策略* > *效能服務層級*
+* *政策* > *儲存效率*
+* 叢集設定頁面上的「由效能服務層級管理的工作負載」欄
+* *儀表板*上的「工作負載效能」面板
+
+
+您可以使用這些畫面建立效能服務等級和儲存效率原則，並資源配置儲存設備工作負載。您也可以監控符合已指派效能服務等級的儲存設備工作負載，以及不符合的儲存設備工作負載。「工作負載效能」和「工作負載 IOPS」面板還可讓您根據在資料中心叢集上資源配置的儲存設備工作負載，評估叢集的總容量、可用容量、已使用容量及效能（IOPS）。
+
+啟用此功能後，您可以從 *功能表列* > *說明按鈕* > *API 文件* > *storage-provider* 類別執行 Unified Manager REST API 來執行部分功能。或者，您可以輸入主機名稱或 IP 位址以及 URL 來存取 REST API 頁面，格式為 +https://<hostname>/docs/api/+
+
+如需有關 API 的詳細資訊，請參閱link:../api-automation/concept_get_started_with_um_apis.html["Active IQ Unified Manager REST API 入門指南"]。

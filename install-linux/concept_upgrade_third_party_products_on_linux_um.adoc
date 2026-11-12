@@ -1,0 +1,16 @@
+---
+permalink: install-linux/concept_upgrade_third_party_products_on_linux_um.html 
+sidebar: sidebar 
+keywords: data center manager, upgrade, third-party products 
+summary: 在 Linux 系統上安裝 Unified Manager 時，您可以升級第三方產品，例如 JRE。 
+---
+= 安裝 Active IQ Unified Manager 後，請升級第三方產品
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當 Unified Manager 已安裝在 Linux 系統上時，您可以升級第三方產品，例如 JRE。
+
+開發這些第三方產品的公司會定期報告安全性漏洞。您可以根據自己的時間表升級到此軟體的更新版本。

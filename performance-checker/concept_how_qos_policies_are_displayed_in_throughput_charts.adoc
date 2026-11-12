@@ -1,0 +1,64 @@
+---
+permalink: performance-checker/concept_how_qos_policies_are_displayed_in_throughput_charts.html 
+sidebar: sidebar 
+keywords: different, types, qos, policies, display, throughput, charts 
+summary: '您可以在效能資源管理器和工作負載分析的 IOPS、IOPS/TB 和 MB/s 圖表中檢視已套用於 Volume 或 LUN 的 ONTAP 定義的服務品質 (QoS) 原則設定。圖表中顯示的資訊會因套用於工作負載的 QoS 原則類型而有所不同。' 
+---
+= 使用 Active IQ Unified Manager 在處理量圖表中檢視 QoS 原則
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在效能資源管理器和工作負載分析的 IOPS、IOPS/TB 和 MB/s 圖表中檢視已套用於 Volume 或 LUN 的 ONTAP 定義的服務品質 (QoS) 原則設定。圖表中顯示的資訊會因套用於工作負載的 QoS 原則類型而有所不同。
+
+處理量最大值（或 "`peak`"）設定定義了工作負載可以使用的最大處理量，從而限制對競爭系統資源的工作負載所造成的影響。處理量最小值（或 "`expected`"）設定定義了工作負載必須獲得的最小處理量，以確保關鍵工作負載無論競爭工作負載的需求如何，都能滿足最低處理量目標。
+
+IOPS 和 MB/s 的共享的與非共享的 QoS 原則使用 "`minimum`" 和 "`maximum`" 術語來定義下限和上限。在 ONTAP 9.3 中引進的 IOPS/TB 具調適能力的 QoS 原則，使用 "`expected`" 和 "`peak`" 術語來定義下限和上限。
+
+雖然 ONTAP 允許您建立這兩種類型的 QoS 原則，但根據它們套用於工作負載的方式，QoS 原則將在效能圖表中以三種方式顯示。
+
+|===
+| 原則類型 | 功能 | Unified Manager 介面中的指示器 
+
+
+ a| 
+指派給單一工作負載的 QoS 共享的原則，或指派給單一工作負載或多個工作負載的 QoS 非共享的原則
+ a| 
+每個工作負載都可以使用指定的處理量設定
+ a| 
+顯示 "`(QoS)`"
+
+
+
+ a| 
+QoS 共享的原則已指派給多個工作負載
+ a| 
+所有工作負載共享指定的處理量設定
+ a| 
+顯示 "`（QoS 共享）`"
+
+
+
+ a| 
+指派給單一工作負載或多個工作負載的具調適能力的 QoS 原則
+ a| 
+每個工作負載都可以使用指定的處理量設定
+ a| 
+顯示 "`(QoS Adaptive)`"
+
+|===
+下圖展示了計數器圖表中三種選項的顯示範例。
+
+image::../media/3_qos_policy_charts.gif[一張 UI 快照，展示了計數器圖表中三個選項的顯示方式範例。]
+
+當在 IOPS 中定義的一般 QoS 原則出現在工作負載的 IOPS/TB 圖表中時，ONTAP 會將 IOPS 值轉換為 IOPS/TB 值，Unified Manager 會在 IOPS/TB 圖表中顯示該原則以及文字 "`QoS，在 IOPS 中定義`"。
+
+當工作負載的 IOPS 圖表中出現以 IOPS/TB 定義的具調適能力的 QoS 原則時，ONTAP 會將 IOPS/TB 值轉換為 IOPS 值，Unified Manager 會在 IOPS 圖表中顯示該原則，並根據峰值 IOPS 分配設定的配置方式，顯示文字 "`QoS Adaptive - Used, defined in IOPS/TB`" 或 "`QoS Adaptive - Allocated, defined in IOPS/TB`"。當分配設定設為 "`allocated-space`" 時，峰值 IOPS 將根據 Volume 的大小計算。當分配設定設為 "`used-space`" 時，峰值 IOPS 將根據 Volume 中儲存的資料量計算，並考量儲存設備效率。
+
+[NOTE]
+====
+IOPS/TB 圖表僅在 Volume 使用的邏輯容量大於或等於 128 GB 時才顯示效能資料。若在所選時間內已使用容量低於 128 GB，則圖表中會顯示空白。
+
+====

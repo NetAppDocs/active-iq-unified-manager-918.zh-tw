@@ -1,0 +1,14 @@
+---
+permalink: performance-checker/concept_analyze_performance_events.html 
+sidebar: sidebar 
+keywords: analyze, performance, events 
+summary: 您可以分析效能事件，以確定何時偵測到這些事件、它們是作用中（新的或已確認的）還是已過時的事件、涉及的工作負載和叢集元件，以及您可以自行解決這些事件的選項。 
+---
+= 在 Active IQ Unified Manager 中分析效能事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以分析效能事件，以確定何時偵測到這些事件、它們是作用中（新的或已確認的）還是已過時的事件、涉及的工作負載和叢集元件，以及您可以自行解決這些事件的選項。

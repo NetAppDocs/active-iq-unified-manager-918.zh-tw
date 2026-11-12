@@ -1,0 +1,49 @@
+---
+permalink: health-checker/task_resolve_volume_offline_issues.html 
+sidebar: sidebar 
+keywords: resolve, volume, offline issues 
+summary: 此工作流程範例示範如何評估和解決 Unified Manager 在事件管理清單頁面中顯示的 Volume 離線事件。在本情境中，您是使用 Unified Manager 排查一個或多個 Volume 離線事件的系統管理員。 
+---
+= 解決 Active IQ Unified Manager 中的 Volume 離線問題
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此工作流程範例示範如何評估和解決 Unified Manager 在事件管理清單頁面中顯示的 Volume 離線事件。在本情境中，您是使用 Unified Manager 排查一個或多個 Volume 離線事件的系統管理員。
+
+.開始之前
+您必須擁有操作員、應用程式管理員或儲存管理員角色。
+
+Volume 可能會因為幾個原因而回報為離線：
+
+* SVM 系統管理員已故意將此 Volume 離線。
+* 該 Volume 所在的叢集節點已停機，儲存設備故障轉移到其 HA 配對合作夥伴也失敗了。
+* 裝載該 Volume 的儲存設備虛擬機器（SVM）已停止，因為裝載該 SVM 根 Volume 的節點已停機。
+* 由於兩個 RAID 磁碟同時發生故障，該 Volume 的託管彙總已關閉。
+
+
+您可以使用事件管理清單頁面以及叢集/運作狀況、Storage VM/運作狀況和 Volume/運作狀況詳細資料頁面來確認或排除其中一種或多種可能性。
+
+.步驟
+. 在左側導覽窗格中，按一下 *事件管理*。
+. 在 *事件管理* 清單頁面中，選擇 *作用中的可用度事件*。
+. 按一下為 Volume 離線事件顯示的超文字連結。
++
+顯示可用度事件的事件詳情頁面。
+
+. 在該頁面上，查看註釋，確認是否有任何跡象顯示 SVM 系統管理員已將相關 Volume 離線。
+. 在 *事件* 詳細資料頁面上，您可以審查下列一或多項任務的資訊：
++
+** 審查「原因」欄位中顯示的資訊，以取得可能的診斷指引。
++
+在這個範例中，「原因」欄位中的資訊僅告知您該 Volume 處於離線。
+
+** 請查看「備註與更新」區域，以查看是否有任何跡象表明 SVM 系統管理員已故意將相關 Volume 離線。
+** 按一下事件的來源（在本例中為回報為離線的 Volume），以取得有關該 Volume 的更多資訊。
+** 將事件指派給系統管理員。
+** 確認事件，或在適當情況下將其標記為已解決。
+
+
+

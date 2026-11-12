@@ -1,0 +1,42 @@
+---
+permalink: storage-mgmt/reference_data_mirroring_status_definitions.html 
+sidebar: sidebar 
+keywords: data mirror, status, definitions 
+summary: MetroCluster 組態提供資料鏡射，並具備在整個站台無法使用時啟動容錯移轉的額外能力。在 MetroCluster 組態中，叢集之間的資料鏡射狀態可以是「正常」或「鏡射無法使用」。了解此狀態有助於您有效地管理 MetroCluster 組態。 
+---
+= 了解 Active IQ Unified Manager 中透過 FC 的 MetroCluster 資料鏡射
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster over FC 組態提供資料鏡射，並具備在整個站台無法使用時啟動容錯移轉的額外能力。在 MetroCluster over FC 組態中，叢集之間的資料鏡射狀態可以是「正常」或「鏡射無法使用」。了解此狀態可讓您有效地管理 MetroCluster 組態。
+
+|===
+| 資料鏡射狀態 | 說明 | 顯示的圖示 
+
+
+ a| 
+正常
+ a| 
+MetroCluster 組態中叢集之間的資料鏡射正常。
+ a| 
+image:../media/metrocluster_connectivity_optimal.gif["MetroCluster 連線最佳圖示"]
+
+
+
+ a| 
+鏡射無法使用
+ a| 
+由於切換，MetroCluster 組態中叢集之間的資料鏡射無法使用。例如，當合作夥伴叢集因災難而停機，或是為了測試目的而進行計畫性切換時。
+ a| 
+切換過程中出現錯誤：
+
+image::../media/metrocluster_connectivity_down.gif[MetroCluster 連線中斷圖示]
+
+切換成功：
+
+image::../media/metrocluster_connectivity_failover.gif[MetroCluster 連線容錯移轉圖示]
+
+|===

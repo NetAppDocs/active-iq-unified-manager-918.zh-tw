@@ -1,0 +1,22 @@
+---
+permalink: reporting/concept_sample_custom_reports.html 
+sidebar: sidebar 
+keywords: sample, custom, reports 
+summary: 這些範例自訂報告通常用於協助您識別潛力問題，並在問題發生之前回應潛力問題。 
+---
+= 了解 Active IQ Unified Manager 中的範例自訂報告
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+這些範例自訂報告通常用於協助您識別潛力問題，並在問題發生之前回應潛力問題。
+
+本部分列出的報告並不完整，並且會隨著時間的推移而不斷增加。您可以透過提供文件回饋來建議新增自訂報告。
+
+[NOTE]
+====
+您必須擁有應用程式管理員或儲存管理員角色才能管理報告。
+
+====

@@ -1,0 +1,60 @@
+---
+permalink: install-linux/task_manually_configure_mysql_repository.html 
+sidebar: sidebar 
+keywords: manually configure mysql repository, mysql key, keys update 
+summary: 如果您要安裝 Unified Manager 的系統無法存取 MySQL Community Edition 儲存庫，則必須手動下載並設定儲存庫才能成功安裝。 
+---
+= 設定 Active IQ Unified Manager 的 MySQL 儲存庫
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您要安裝 Unified Manager 的系統無法存取 MySQL Community Edition 儲存庫，則必須手動下載並設定儲存庫才能成功安裝。
+
+MySQL 儲存庫提供所需 MySQL 軟體的存取，該軟體必須安裝在您的系統上。
+
+[NOTE]
+====
+如果系統沒有網際網路連線，此工作可能會失敗。如果安裝 Unified Manager 的系統無法存取網際網路，請參閱 MySQL 文件。
+
+====
+.步驟
+. 下載適合您安裝的 MySQL 儲存庫。對於版本 8，請從下列位置下載：
++
+`wget http://repo.mysql.com/yum/mysql-8.4-community/el/8/x86_64/mysql84-community-release-el8-1.noarch.rpm`
+
++
+版本 9 的下載位址為：
+
++
+`wget http://repo.mysql.com/yum/mysql-8.4-community/el/9/x86_64/mysql84-community-release-el9-1.noarch.rpm`
+
+. 設定 MySQL 儲存庫：
++
+`yum install mysql84-community-release-.noarch.rpm`
+
+
+
+對於 Red Hat Enterprise Linux 8 系統，如果您有包含由 AppStream 儲存庫提供之 java-17-openjdk、7-zip 及其他軟體套件的內部儲存庫，則必須停用您的 AppStream 儲存庫並安裝 MySQL Community Server。執行下列命令：
+
+[listing]
+----
+# sudo yum --disablerepo=rhel-8-for-x86_64-appstream-rpms install  mysql-community-server
+----
+如果收到金鑰缺失或金鑰不符合的錯誤提示，導致安裝失敗，請嘗試下列步驟：
+
+* 在已連線的系統上，執行下列命令匯入更新後的 MySQL 金鑰：
+
+
+[listing]
+----
+rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-<xxxx>
+
+for example:
+
+rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2023
+----
+* 在沒有網際網路連線的系統上，更新您的 MySQL 儲存庫檔案，並透過標記 `gpgcheck=0`來停用 `gpgcheck`。
+

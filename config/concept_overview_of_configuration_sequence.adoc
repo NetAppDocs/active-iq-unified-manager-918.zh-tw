@@ -1,0 +1,16 @@
+---
+permalink: config/concept_overview_of_configuration_sequence.html 
+sidebar: sidebar 
+keywords: overview, configuration, sequence 
+summary: 組態工作流程描述在使用 Unified Manager 之前必須執行的任務。 
+---
+= 了解 Active IQ Unified Manager 中的組態順序
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+組態工作流程描述在使用 Unified Manager 之前必須執行的任務。
+
+image::../media/post_install_flow.png[一張圖表，展示 Unified Manager 初始組態工作流程和管理設定工作。]

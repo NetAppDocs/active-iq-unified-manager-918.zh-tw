@@ -1,0 +1,33 @@
+---
+permalink: health-checker/concept_what_database_restore_is.html 
+sidebar: sidebar 
+keywords: unified manager, database, restore 
+summary: MySQL 資料庫還原是將現有的 Unified Manager 備份檔案還原至相同或不同 Unified Manager 伺服器的程序。您可以從 Unified Manager 維護主控台執行還原作業。 
+---
+= 了解 Active IQ Unified Manager 中的資料庫還原
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MySQL 資料庫還原是將現有的 Unified Manager 備份檔案還原至相同或不同 Unified Manager 伺服器的程序。您可以從 Unified Manager 維護主控台執行還原作業。
+
+如果您在相同（本機）系統上執行還原操作，並且所有備份檔案都儲存在本機，則可以使用預設位置執行還原選項。如果您在不同的 Unified Manager 系統（遠端系統）上執行還原操作，則必須將備份檔案從次要儲存設備複製到本機磁碟，然後再執行還原選項。
+
+在還原過程中，您將從 Unified Manager 登出。還原過程完成後，您可以登入系統。
+
+如果您要將備份映像還原到新伺服器，則在還原作業完成後，您需要產生新的 HTTPS 安全性憑證並重新啟動 Unified Manager 伺服器。如果需要，您還需要在將備份映像還原到新伺服器時重新設定 SAML 驗證設定。
+
+[NOTE]
+====
+Unified Manager 升級到較新版本的軟體後，舊的備份檔案無法用於還原映像。為了節省空間，升級 Unified Manager 時，除了最新的檔案外，所有舊的備份檔案都會自動移除。
+
+====
+*相關資訊*
+
+link:../config/task_generate_an_https_security_certificate_ocf.html["產生 HTTPS 安全性憑證"]
+
+link:../config/task_enable_saml_authentication_um.html["啟用 SAML 驗證"]
+
+link:../config/concept_authentication_with_active_directory_or_openldap.html["使用 Active Directory 或 OpenLDAP 進行驗證"]

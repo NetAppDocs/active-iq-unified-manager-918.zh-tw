@@ -1,0 +1,20 @@
+---
+permalink: events/concept_what_um_maintenance_window_is.html 
+sidebar: sidebar 
+keywords: unified manager, maintenance, window 
+summary: 您可以定義一個 Unified Manager 維護所需時間，以便在排定叢集維護時，在特定時間內抑制事件和警報，避免收到大量不必要的通知。 
+---
+= 了解 Active IQ Unified Manager 的維護所需時間
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以定義一個 Unified Manager 維護所需時間，以便在排定叢集維護時，在特定時間內抑制事件和警報，避免收到大量不必要的通知。
+
+維護所需時間開始時，事件管理清單頁面會發布一則「物件維護所需時間已開始」事件。維護所需時間結束後，此事件將自動失效。
+
+在維護所需時間期間，與該叢集上所有物件相關的事件仍會產生，但它們不會顯示在任何使用者介面頁面中，也不會針對這些事件傳送任何警報或其他類型的通知。不過，您可以透過在「事件管理」清單頁面上選取其中一個「檢視」選項，來檢視在維護所需時間期間為所有儲存設備物件所產生的事件。
+
+您可以排程在未來啟動維護所需時間，您可以變更已排程維護所需時間的開始和結束時間，也可以取消已排程的維護所需時間。

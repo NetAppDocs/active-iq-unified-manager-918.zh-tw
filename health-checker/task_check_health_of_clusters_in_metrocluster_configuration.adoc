@@ -1,0 +1,78 @@
+---
+permalink: health-checker/task_check_health_of_clusters_in_metrocluster_configuration.html 
+sidebar: sidebar 
+keywords: check, health, clusters, metrocluster, configuration 
+summary: 您可以使用 Unified Manager 檢查 MetroCluster 組態中叢集及其元件的運作健全狀況。如果叢集涉及 Unified Manager 偵測到的效能事件，健全狀況可協助您判斷是否有硬體或軟體問題導致該事件。 
+---
+= 在 Active IQ Unified Manager 中檢查 MetroCluster 組態中叢集的健全狀況
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 Active IQ Unified Manager （Unified Manager）來檢查 FC 上的 MetroCluster 和 IP 上的 MetroCluster 組態中叢集及其元件的運作健全狀況。如果叢集涉及 Unified Manager 偵測到的效能事件，健全狀況可協助您判斷是否有硬體或軟體問題導致該事件。
+
+.開始之前
+* 您必須擁有操作員、應用程式管理員或儲存管理員角色。
+* 您必須已分析過 MetroCluster 組態的效能事件，並取得相關叢集的名稱。
+* 透過 FC 和 IP 的 MetroCluster 組態中的兩個叢集必須由同一個 Unified Manager 執行個體進行監控。
+
+
+
+
+[[determine-cluster-health-in-metrocluster-over-fc-configuration]]
+== 判斷 MetroCluster over FC 組態中的叢集健全狀況
+
+請依照下列步驟判斷 FC 上的 MetroCluster 組態中的叢集健全狀況。
+
+.步驟
+. 在左側導覽窗格中，按一下 *事件管理* 以顯示事件清單。
+. 在篩選面板中，選取 *來源類型* 類別下的所有 MetroCluster 篩選條件。您會看到環境中針對所有 MetroCluster 組態所引發的所有事件。
+. 在 MetroCluster 事件旁邊，按一下叢集名稱。
++
+[NOTE]
+====
+如果未顯示任何 MetroCluster 事件，您可以使用搜尋列來搜尋與您的 MetroCluster over FC 組態相關之事件所涉及的叢集名稱。
+
+====
++
+「健全狀況：所有叢集」檢視會顯示有關該事件的詳細資訊。
+
+. 選取 *MetroCluster 連線* 索引標籤，以顯示所選叢集與其合作夥伴叢集之間的連線健全狀況。
++
+image::../media/opm_um_mcc_connectivity_tab_png.gif[Unified Manager MetroCluster 連線索引標籤]
+
++
+在此範例中，將顯示本機叢集及其合作夥伴叢集的名稱和元件。黃色或紅色圖示表示醒目提示的元件有健全狀況事件。「連線」圖示代表叢集之間的連結。您可以將滑鼠游標指向圖示以顯示事件資訊，或按一下圖示以顯示事件。任一叢集上的健全狀況問題都可能導致效能事件。
+
++
+Unified Manager 會監控叢集間連結的 NVRAM 元件。如果本機叢集或合作夥伴叢集上的 FC 交換器圖示或連接性圖示顯示為紅色，則可能是連結健全狀況問題導致了效能事件。
+
+. 選取 *MetroCluster 複寫* 標籤。
++
+image::../media/opm_um_mcc_replication_tab_png.gif[Unified Manager MetroCluster 複寫標籤]
+
++
+在本例中，如果本機叢集或合作夥伴叢集上的 NVRAM 圖示為黃色或紅色，則可能是 NVRAM 的健全狀況問題導致了效能事件。如果頁面上沒有紅色或黃色圖示，則可能是合作夥伴叢集的效能問題導致了效能事件。
+
+
+
+
+
+[[determine-cluster-health-in-metrocluster-over-ip-configuration]]
+== 判斷 MetroCluster over IP 組態中的叢集健全狀況
+
+請依照下列步驟確定 MetroCluster over IP 組態的叢集健全狀況。
+
+.步驟
+. 在左側導覽窗格中，按一下 *事件管理* 以顯示事件清單。
+. 在篩選面板的 *來源類型* 類別下，選取  `MetroCluster Relationship` 篩選器。您會看到環境中針對所有 MetroCluster 組態所引發的所有事件。
++
+[NOTE]
+====
+如果您看不到報告的 MetroCluster 事件，您可以使用搜尋列，依據與您的 MetroCluster over IP 組態相關的事件中所涉及的叢集名稱來進行搜尋。
+
+====
+. 在相關 MetroCluster 事件旁邊，按一下叢集名稱。此時將顯示「叢集」頁面，其中包含該叢集的詳細資訊。如需判斷健全狀況問題的相關資訊，請參閱 link:../storage-mgmt/task_monitor_metrocluster_configurations.html["監控 MetroCluster 透過 IP 組態的連線問題"]。
+

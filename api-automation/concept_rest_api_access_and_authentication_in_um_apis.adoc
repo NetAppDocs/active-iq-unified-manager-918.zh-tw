@@ -1,0 +1,114 @@
+---
+permalink: api-automation/concept_rest_api_access_and_authentication_in_um_apis.html 
+sidebar: sidebar 
+keywords: rest api, access, authentication, active iq, unified, manager 
+summary: 您可以使用任何能夠發出 HTTP 要求的 Web 瀏覽器或程式設計平台來存取 Active IQ Unified Manager REST API。Unified Manager 支援基本的 HTTP 驗證機制。在呼叫 Unified Manager REST API 之前，您必須先驗證使用者。 
+---
+= 在 Active IQ Unified Manager 中存取和驗證 REST API
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+可以使用任何能夠發出具有基本 HTTP 驗證機制之 HTTP 請求的 REST 用戶端或程式設計平台，來存取 Active IQ Unified Manager REST API。
+
+請求和回應範例：
+
+* *要求*
++
+[listing]
+----
+GET
+https://<IP address/hostname>:<port_number>/api/v2/datacenter/cluster/clusters
+----
+* *回應*
++
+[listing]
+----
+{
+  "records": [
+    {
+      "key": "4c6bf721-2e3f-11e9-a3e2-00a0985badbb:type=cluster,uuid=4c6bf721-2e3f-11e9-a3e2-00a0985badbb",
+      "name": "fas8040-206-21",
+      "uuid": "4c6bf721-2e3f-11e9-a3e2-00a0985badbb",
+      "contact": null,
+      "location": null,
+      "version": {
+        "full": "NetApp Release Dayblazer__9.5.0: Thu Jan 17 10:28:33 UTC 2019",
+        "generation": 9,
+        "major": 5,
+        "minor": 0
+      },
+      "isSanOptimized": false,
+      "management_ip": "10.226.207.25",
+      "nodes": [
+        {
+          "key": "4c6bf721-2e3f-11e9-a3e2-00a0985badbb:type=cluster_node,uuid=12cf06cc-2e3a-11e9-b9b4-00a0985badbb",
+          "uuid": "12cf06cc-2e3a-11e9-b9b4-00a0985badbb",
+          "name": "fas8040-206-21-01",
+          "_links": {
+            "self": {
+              "href": "/api/datacenter/cluster/nodes/4c6bf721-2e3f-11e9-a3e2-00a0985badbb:type=cluster_node,uuid=12cf06cc-2e3a-11e9-b9b4-00a0985badbb"
+            }
+          },
+          "location": null,
+          "version": {
+            "full": "NetApp Release Dayblazer__9.5.0: Thu Jan 17 10:28:33 UTC 2019",
+            "generation": 9,
+            "major": 5,
+            "minor": 0
+          },
+          "model": "FAS8040",
+          "uptime": 13924095,
+          "serial_number": "701424000157"
+        },
+        {
+          "key": "4c6bf721-2e3f-11e9-a3e2-00a0985badbb:type=cluster_node,uuid=1ed606ed-2e3a-11e9-a270-00a0985bb9b7",
+          "uuid": "1ed606ed-2e3a-11e9-a270-00a0985bb9b7",
+          "name": "fas8040-206-21-02",
+          "_links": {
+            "self": {
+              "href": "/api/datacenter/cluster/nodes/4c6bf721-2e3f-11e9-a3e2-00a0985badbb:type=cluster_node,uuid=1ed606ed-2e3a-11e9-a270-00a0985bb9b7"
+            }
+          },
+          "location": null,
+          "version": {
+            "full": "NetApp Release Dayblazer__9.5.0: Thu Jan 17 10:28:33 UTC 2019",
+            "generation": 9,
+            "major": 5,
+            "minor": 0
+          },
+          "model": "FAS8040",
+          "uptime": 14012386,
+          "serial_number": "701424000564"
+        }
+      ],
+      "_links": {
+        "self": {
+          "href": "/api/datacenter/cluster/clusters/4c6bf721-2e3f-11e9-a3e2-00a0985badbb:type=cluster,uuid=4c6bf721-2e3f-11e9-a3e2-00a0985badbb"
+        }
+      }
+    },
+----
++
+** `_IP address/hostname_` 是 API 伺服器的 IP 位址或完整網域名稱 （FQDN）。
+** 連接埠 443
++
+443 是預設的 HTTPS 連接埠。如有需要，您可以自訂 HTTPS 連接埠。
+
+
+
++
+若要從 Web 瀏覽器發出 HTTP 請求，您必須使用 REST API 瀏覽器外掛程式。您也可以使用 cURL 和 Perl 等指令碼平台存取 REST API。
+
+
+
+
+
+[[authentication]]
+== 驗證
+
+Unified Manager 支援 API 的基本 HTTP 驗證方案。對於安全的資訊流（請求和回應），REST API 僅可透過 HTTPS 存取。API 伺服器會向所有用戶端提供自簽的 SSL 憑證以進行伺服器驗證。此憑證可以替換為自訂憑證（或 CA 憑證）。
+
+您必須設定使用者對 API 伺服器的存取才能呼叫 REST API。使用者可以是本機使用者（使用者設定檔儲存在本機資料庫中），也可以是 LDAP 使用者（如果您已將 API 伺服器設定為透過 LDAP 進行驗證）。您可以透過登入 Unified Manager 管理主控台使用者介面來管理使用者存取。

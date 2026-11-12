@@ -1,0 +1,34 @@
+---
+permalink: reporting/task_create_report_to_view_volume_transfers_grouped_by_day.html 
+sidebar: sidebar 
+keywords: create, report, view, volume, transfers, day 
+summary: 您可以建立報告，以檢視依日期分組的 Volume 傳輸。 
+---
+= 在 Active IQ Unified Manager 中建立報告，以檢視按日分組的 Volume 傳輸
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以建立報告，以檢視依日期分組的 Volume 傳輸。
+
+.開始之前
+* 您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+
+請依照下列步驟建立按天分組的 Volume 傳輸自訂檢視，然後排程為該檢視產生報告。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存設備* > *Volume*。
+. 在「檢視」功能表中，選擇 *關係* > *最近 1 個月的傳輸速率*。
+. 點擊 "`Day`" 欄頂部，依日期排序 Volume 傳輸。
+. 將檢視儲存為能夠反映檢視內容的特定名稱，例如 "`按日統計的 Volume 傳輸`"。
+. 在庫存頁面上點選 *排程報告* 按鈕。
+. 輸入報告排程的名稱並完成其他報告欄位，然後按一下列末尾的勾號（image:../media/blue_check.gif[""]）。
++
+報告會立即作為測試傳送。之後，報告會產生並依指定的頻率透過電子郵件傳送給列出的收件者。
+
+
+
+根據報告中顯示的結果，您可以按天調查 Volume 傳輸。

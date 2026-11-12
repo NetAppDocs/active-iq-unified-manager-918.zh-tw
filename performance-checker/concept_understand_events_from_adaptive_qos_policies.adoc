@@ -1,0 +1,69 @@
+---
+permalink: performance-checker/concept_understand_events_from_adaptive_qos_policies.html 
+sidebar: sidebar 
+keywords: understand, events, adaptive, qos, policies, defined, block, size 
+summary: 具調適能力的 QoS 原則群組會根據 Volume 大小自動調整處理量上限或下限，在 Volume 大小變更時維持 IOPS 與 TB 的比率。從 ONTAP 9.5 開始，您可以在 QoS 原則中指定區塊大小，以便同時有效套用 MB/s 臨界值。 
+---
+= 了解 Active IQ Unified Manager 中具有已定義區塊大小的具調適能力的 QoS 事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+具調適能力的 QoS 原則群組會根據 Volume 大小自動調整處理量上限或下限，在 Volume 大小變更時維持 IOPS 與 TB 的比率。從 ONTAP 9.5 開始，您可以在 QoS 原則中指定區塊大小，以便同時有效套用 MB/s 臨界值。
+
+在具調適能力的 QoS 原則中設定 IOPS 臨界值僅限制每個工作負載中發生的操作次數。根據產生工作負載的用戶端上設定的區塊大小，某些 IOPS 包含更多資料，因此會對處理這些操作的節點造成更大的負擔。
+
+工作負載的 MB/s 值是使用下列公式產生的：
+
+[listing]
+----
+MB/s = (IOPS * Block Size) / 1000
+----
+如果工作負載的平均 IOPS 為 3,000，且用戶端上的區塊大小設定為 32 KB，則此工作負載的有效 MB/s 為 96。如果相同工作負載的平均 IOPS 為 3,000，且用戶端上的區塊大小設定為 48 KB，則此工作負載的有效 MB/s 為 144。您可以看到，當區塊大小較大時，節點處理的資料量增加了 50%。
+
+讓我們來看看下面這個具有已定義區塊大小的具調適能力的 QoS 原則，以及如何根據用戶端上設定的區塊大小觸發事件。
+
+建立原則並將峰值處理量設定為 2,500 IOPS/TB，區塊大小為 32KB。這實際上會將已用容量為 1 TB 的 Volume 的 MB/s 臨界值設定為 80 MB/s ((2500 IOPS * 32KB) / 1000)。請注意，當處理量值低於定義的臨界值 10% 時，Unified Manager 會產生警告事件。事件會在下列情況下產生：
+
+|===
+| 已用容量 2+| 當處理量超過此數值時，將產生事件…… 
+
+
+|  | IOPS | MB/s 
+
+
+ a| 
+1 TB
+ a| 
+2,250 IOPS
+ a| 
+72 MB/s
+
+
+
+ a| 
+2 TB
+ a| 
+4,500 IOPS
+ a| 
+144 MB/s
+
+
+
+ a| 
+5 TB
+ a| 
+11,250 IOPS
+ a| 
+360 MB/s
+
+|===
+如果 Volume 使用了 2TB 的可用空間，IOPS 為 4,000，且用戶端的 QoS 區塊大小設定為 32KB，則 MB/ps 處理量為 128 MB/s（(4,000 IOPS * 32 KB) / 1000）。在這種情況下不會產生任何事件，因為 4,000 IOPS 和 128 MB/s 都低於使用 2 TB 空間的 Volume 的臨界值。
+
+如果 Volume 使用了 2TB 的可用空間，IOPS 為 4,000，且用戶端的 QoS 區塊大小設定為 64KB，則 MB/s 處理量為 256 MB/s（（4,000 IOPS * 64 KB）/ 1000）。在這種情況下，4,000 IOPS 不會產生事件，但 256 MB/s 的 MB/s 值高於 144 MB/s 的臨界值，因此會產生事件。
+
+因此，當基於包含區塊大小的具調適能力的 QoS 原則的 MB/s 逾限觸發事件時，事件詳細資料頁面的「系統診斷」區段會顯示 MB/s 圖表。如果事件是基於具調適能力的 QoS 原則的 IOPS 逾限所觸發，則會在「系統診斷」區段顯示 IOPS 圖表。如果 IOPS 和 MB/s 同時發生逾限，您將會收到兩個事件。
+
+如需調整 QoS 設定的詳細資訊，請參閱 https://docs.netapp.com/us-en/ontap/performance-admin/index.html["效能管理總覽"]。

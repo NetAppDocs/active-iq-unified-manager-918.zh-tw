@@ -1,0 +1,56 @@
+---
+permalink: storage-mgmt/concept_volume_behavior_during_switchover_and_switchback.html 
+sidebar: sidebar 
+keywords: volume, behavior, switchover, switchback 
+summary: 觸發切換或切回的事件會導致災難恢復群組中的作用中 Volume 從一個叢集移動到另一個叢集。叢集上原本處於作用中並為用戶端提供資料的 Volume 會停止，而另一個叢集上的 Volume 會啟動並開始提供資料。Unified Manager 僅監控處於作用中且正在執行的 Volume。 
+---
+= 了解 Active IQ Unified Manager 在切換和切回期間的 Volume 行為
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+觸發切換或切回的事件會導致災難恢復群組中的作用中 Volume 從一個叢集移動到另一個叢集。叢集上原本處於作用中並為用戶端提供資料的 Volume 會停止，而另一個叢集上的 Volume 會啟動並開始提供資料。Unified Manager 僅監控處於作用中且正在執行的 Volume。
+
+由於 Volume 會從一個叢集移動到另一個叢集，因此建議您同時監控這兩個叢集。單一 Unified Manager 執行個體可以監控 MetroCluster 組態中的兩個叢集，但有時由於兩個位置之間的距離，需要使用兩個 Unified Manager 執行個體來監控這兩個叢集。下圖顯示單一 Unified Manager 執行個體：
+
+image::../media/opm_mcc_switchover.gif[一張顯示 Unified Manager 單一執行個體的 UI 快照。]
+
+名稱中帶有 p 的 Volume 表示主要 Volume，而名稱中帶有 b 的 Volume 則是由 SnapMirror 建立的鏡射備份 Volume。
+
+正常運作期間：
+
+* 叢集 A 有兩個作用中 Volume：Vol1p 和 Vol2p。
+* 叢集 B 有兩個作用中 Volume：Vol3p 和 Vol4p。
+* 叢集 A 有兩個非作用中的 Volume：Vol3b 和 Vol4b。
+* 叢集 B 有兩個非作用中的 Volume：Vol1b 和 Vol2b。
+
+
+Unified Manager 會收集與每個作用中 Volume 相關的資訊（統計資料、事件等）。Vol1p 和 Vol2p 的統計資料由叢集 A 收集，Vol3p 和 Vol4p 的統計資料由叢集 B 收集。
+
+災難性故障導致作用中 Volume 從叢集 B 切換到叢集 A 後：
+
+* 叢集 A 有四個作用中 Volume：Vol1p、Vol2p、Vol3b 和 Vol4b。
+* 叢集 B 有四個非作用中 Volume：Vol3p、Vol4p、Vol1b 和 Vol2b。
+
+
+與正常運作期間一樣，Unified Manager 會收集每個作用中 Volume 的相關資訊。但在此情況下，Vol1p 和 Vol2p 的統計資料由叢集 A 收集，Vol3b 和 Vol4b 的統計資料也由叢集 A 收集。
+
+請注意， Vol3p 和 Vol3b 不是相同的 Volume ，因為它們位於不同的叢集上。Unified Manager 中 Vol3p 的資訊與 Vol3b 不同：
+
+* 切換到叢集 A 期間，Vol3p 統計資料和事件不可見。
+* 在第一次切換時，Vol3b 看起來像一個沒有歷史資訊的新 Volume。
+
+
+當叢集 B 修復並執行切回後，Vol3p 在叢集 B 上再次作用中，其中包含歷史統計資料以及切換期間的統計資料缺口。在發生另一次切換之前，無法從叢集 A 檢視 Vol3b：
+
+image::../media/opm_mcc_volumes.gif[一張顯示切換期間 Volume 行為的使用者介面快照。]
+
+[NOTE]
+====
+* 非作用中的 MetroCluster Volume（例如切換回復後叢集 A 上的 Vol3b），會以 "`This volume was deleted`" 訊息來識別。該 Volume 實際上並未被刪除，只是由於它不是作用中 Volume，因此 Unified Manager 目前未對其進行監控。
+* 如果單一 Unified Manager 監控 MetroCluster 組態中的兩個叢集，Volume 搜尋將傳回當時處於作用中的 Volume 的資訊。例如，如果發生切換且叢集 A 上的 Vol3 變成作用中，則搜尋「Vol3」將傳回叢集 A 上 Vol3b 的統計資料和事件。
+
+
+====

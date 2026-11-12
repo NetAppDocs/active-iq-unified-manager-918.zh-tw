@@ -1,0 +1,33 @@
+---
+permalink: data-protection/task_edit_resource_pools.html 
+sidebar: sidebar 
+keywords: edit, resource, pools 
+summary: 當您想要變更資源池名稱和執行摘要時，可以編輯現有的資源池。 
+---
+= 在 Active IQ Unified Manager 中編輯資源池
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您想要變更資源池名稱和執行摘要時，可以編輯現有的資源池。
+
+.開始之前
+您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+只有在選擇一個資源池時，*編輯* 按鈕才會啟用。如果選擇了多個資源池，*編輯* 按鈕則會被停用。
+
+.步驟
+. 在左側導覽窗格中，按一下 *保護* > *資源池*。
+. 從清單中選擇一個資源池。
+. 點選 *編輯*。
++
+顯示「編輯資源池」視窗。
+
+. 根據需要編輯資源池名稱和執行摘要。
+. 按一下 *Save* 。
++
+新名稱和執行摘要將顯示在資源池清單中。
+
+

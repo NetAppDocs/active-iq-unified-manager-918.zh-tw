@@ -1,0 +1,24 @@
+---
+permalink: health-checker/task_view_how_user_authentication_is_being_managed_on_all_clusters.html 
+sidebar: sidebar 
+keywords: view, cluster authentication status, user authentication, manage, clusters 
+summary: 「安全性」頁面會顯示每個叢集上用來驗證使用者的驗證類型，以及使用每種類型存取叢集的使用者人數。這可讓您驗證使用者身分驗證是否按照組織定義的安全方式執行。 
+---
+= 在 Active IQ Unified Manager 中檢視叢集如何管理所有叢集上的使用者身分驗證
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+「安全性」頁面會顯示每個叢集上用來驗證使用者的驗證類型，以及使用每種類型存取叢集的使用者人數。這可讓您驗證使用者身分驗證是否按照組織定義的安全方式執行。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儀表板*。
+. 在儀表板頂部，從下拉式選單中選擇 *所有叢集*。
+. 按一下 *安全性* 面板中的右箭頭，即會顯示 *安全性* 頁面。
+. 檢視 *叢集驗證* 卡，以查看使用每種驗證類型存取系統的使用者數量。
+. 檢視 *叢集安全性* 卡片，以檢視每個叢集上用於驗證使用者的驗證機制。
+
+
+如果某些使用者使用不安全的方法，或使用 NetApp 不建議的方法存取系統，您可以停用該方法。

@@ -1,0 +1,208 @@
+---
+section: events
+title: 管理事件和警報
+entries:
+- title: 管理事件
+  entries:
+  - title: 什麼是 Active IQ 平台事件
+    url: "/events/concept_what_active_iq_platform_events_are.html"
+  - title: 什麼是事件管理系統事件
+    entries:
+    - title: 了解事件管理系統事件
+      url: "/events/concept_what_event_management_system_events_are.html"
+    - title: 自動新增至 Unified Manager 的 EMS 事件
+      url: "/events/reference_ems_events_that_are_added_automatically_to_um.html"
+    - title: 訂閱 ONTAP EMS 事件
+      url: "/events/task_subscribe_to_ontap_ems_events.html"
+  - title: 收到事件時會發生什麼事
+    url: "/events/concept_what_happens_when_an_event_is_received.html"
+  - title: 檢視事件與事件詳細資料
+    url: "/events/task_view_event_details.html"
+  - title: 檢視未指派的事件
+    url: "/events/task_view_unassigned_events.html"
+  - title: 確認並解決事件
+    url: "/events/task_acknowledge_and_resolve_events.html"
+  - title: 將事件指派給特定使用者
+    url: "/events/task_assign_events_to_specific_users.html"
+  - title: 停用不需要的事件
+    url: "/events/task_disable_unwanted_events.html"
+  - title: 使用 Unified Manager 自動修復功能解決問題
+    url: "/events/task_fix_issues_using_um_automatic_remediations.html"
+  - title: 啟用並停用 Active IQ 事件報告
+    url: "/events/task_enable_and_disable_active_iq_event_reporting.html"
+  - title: 上傳新的 Active IQ 規則檔案
+    url: "/events/task_upload_new_active_iq_rules_file.html"
+  - title: Active IQ 平台事件是如何產生的
+    url: "/events/concept_how_active_iq_platform_events_are_generated.html"
+  - title: 解決 Active IQ 平台事件
+    url: "/events/concept_resolve_active_iq_platform_events.html"
+  - title: 設定事件保留設定
+    url: "/events/task_configure_event_retention_settings.html"
+  - title: 什麼是 Unified Manager 維護所需時間
+    entries:
+    - title: 了解 Unified Manager 維護時段
+      url: "/events/concept_what_um_maintenance_window_is.html"
+    - title: 安排維護所需時間以停用叢集事件通知
+      url: "/events/task_schedule_maintenance_window_to_disable_cluster_notifications.html"
+    - title: 變更或取消已排程的維護所需時間
+      url: "/events/task_change_or_cancel_scheduled_maintenance_window.html"
+    - title: 檢視維護所需時間期間發生的事件
+      url: "/events/task_view_events_that_occurred_during_maintenance_window.html"
+  - title: 管理主機系統資源事件
+    url: "/events/task_manage_host_system_resource_events.html"
+  - title: 進一步了解事件
+    entries:
+    - title: 事件狀態定義
+      url: "/events/concept_event_state_definitions.html"
+    - title: 事件嚴重性類型的描述
+      url: "/events/reference_description_of_event_severity_types.html"
+    - title: 事件影響程度描述
+      url: "/events/reference_description_of_event_impact_levels.html"
+    - title: 事件影響區域描述
+      url: "/events/reference_description_of_event_impact_areas.html"
+    - title: 物件狀態的計算方式
+      url: "/events/concept_how_object_status_is_computed.html"
+    - title: 動態效能事件圖表詳情
+      url: "/events/reference_dynamic_performance_event_chart_details.html"
+    - title: Unified Manager 偵測到設定變更
+      url: "/events/concept_cluster_configuration_changes_detected_by_um.html"
+  - title: 事件和嚴重性類型列表
+    entries:
+    - title: 集合體事件
+      url: "/events/reference_aggregate_events.html"
+    - title: 叢集事件
+      url: "/events/reference_cluster_events.html"
+    - title: 磁碟事件
+      url: "/events/reference_disk_events.html"
+    - title: 機箱事件
+      url: "/events/reference_enclosures_events.html"
+    - title: 風扇事件
+      url: "/events/reference_fans_events.html"
+    - title: Flash 卡事件
+      url: "/events/reference_flash_card_events.html"
+    - title: Inode 事件
+      url: "/events/reference_inodes_events.html"
+    - title: 網路介面（LIF）事件
+      url: "/events/reference_logical_interface_events.html"
+    - title: LUN 事件
+      url: "/events/reference_lun_events.html"
+    - title: 管理站事件
+      url: "/events/reference_management_station_events.html"
+    - title: MetroCluster 橋接器事件
+      url: "/events/reference_metrocluster_bridge_events.html"
+    - title: MetroCluster 連線事件
+      url: "/events/reference_metrocluster_connectivity_events.html"
+    - title: MetroCluster 交換器事件
+      url: "/events/reference_metrocluster_switch_events.html"
+    - title: NVMe 命名空間事件
+      url: "/events/reference_nvme_namespace_events.html"
+    - title: 節點事件
+      url: "/events/reference_node_events.html"
+    - title: NVRAM 電池事件
+      url: "/events/reference_nvram_battery_events.html"
+    - title: 連接埠事件
+      url: "/events/reference_port_events.html"
+    - title: 電源供應器事件
+      url: "/events/reference_power_supplies_events.html"
+    - title: 保護事件
+      url: "/events/reference_protection_events.html"
+    - title: Qtree 事件
+      url: "/events/reference_qtree_events.html"
+    - title: 服務處理器事件
+      url: "/events/reference_service_processor_events.html"
+    - title: SnapMirror 關係事件
+      url: "/events/reference_snapmirror_relationship_events.html"
+    - title: 非同步 Mirror and Vault 關係事件
+      url: "/events/reference_snapmirror_and_vault_relationship_events.html"
+    - title: Snapshot 快照技術事件
+      url: "/events/reference_snapshot_events.html"
+    - title: SnapVault 關係事件
+      url: "/events/reference_snapvault_relationship_events.html"
+    - title: 儲存故障轉移設定事件
+      url: "/events/reference_storage_failover_settings_events.html"
+    - title: 儲存服務事件
+      url: "/events/reference_storage_services_events.html"
+    - title: 儲存機櫃事件
+      url: "/events/reference_storage_shelf_events.html"
+    - title: 儲存虛擬機器事件
+      url: "/events/reference_storage_vm_events.html"
+    - title: 使用者和群組配額事件
+      url: "/events/reference_user_and_group_quota_events.html"
+    - title: Volume 事件
+      url: "/events/reference_volume_events.html"
+    - title: 磁碟區移動狀態事件
+      url: "/events/reference_volume_move_status_events.html"
+  - title: 事件視窗和對話方塊的描述
+    entries:
+    - title: 通知頁面
+      url: "/events/reference_notifications_page.html"
+    - title: 事件管理清單頁面
+      url: "/events/reference_event_management_inventory_page.html"
+    - title: 事件詳情頁面
+      entries:
+      - title: 了解事件詳情頁面
+        url: "/events/reference_event_details_page.html"
+      - title: 事件資訊部分顯示的內容
+        url: "/events/reference_what_event_information_section_displays.html"
+      - title: 建議操作部分顯示的內容
+        url: "/events/reference_what_suggested_actions_section_displays.html"
+      - title: 系統診斷部分顯示的內容
+        url: "/events/reference_what_system_diagnosis_section_displays.html"
+    - title: 事件設定頁面
+      url: "/events/reference_event_setup_page.html"
+    - title: 停用事件對話方塊
+      url: "/events/reference_disable_events_dialog_box.html"
+- title: 管理警報
+  entries:
+  - title: 有哪些警報
+    url: "/events/concept_what_alerts_are.html"
+  - title: 警報郵件包含哪些資訊
+    url: "/events/concept_what_information_is_contained_in_an_alert_email.html"
+  - title: 新增警示
+    entries:
+    - title: 在 Unified Manager 中新增警報
+      url: "/events/task_add_alerts.html"
+    - title: 新增警報的指南
+      url: "/events/concept_guidelines_for_adding_alerts.html"
+  - title: 新增效能事件警報
+    url: "/events/task_add_alerts_for_performance_events.html"
+  - title: 測試警報
+    url: "/events/task_test_alerts.html"
+  - title: 啟用和停用已解決和已過時事件的警報
+    url: "/events/task_disable_alerts_for_resolved_and_obsolete_events.html"
+  - title: 將災難恢復目的地磁碟區排除在警報產生範圍之外
+    url: "/events/task_exclude_disaster_recovery_destination_volumes_from_alerts.html"
+  - title: 檢視警示
+    url: "/events/task_view_alerts.html"
+  - title: 編輯警示
+    url: "/events/task_edit_alerts.html"
+  - title: 刪除警示
+    url: "/events/task_delete_alerts.html"
+  - title: 警告視窗和對話方塊的說明
+    entries:
+    - title: 警報設定頁面
+      url: "/events/reference_alert_setup_page.html"
+    - title: 新增警報對話方塊
+      url: "/events/reference_add_alert_dialog_box.html"
+    - title: 編輯警報對話方塊
+      url: "/events/reference_edit_alert_dialog_box.html"
+- title: 管理指令碼
+  entries:
+  - title: 了解管理指令碼
+    url: "/events/concept_manage_scripts.html"
+  - title: 指令碼如何與警報搭配運作
+    url: "/events/concept_how_scripts_work_with_alerts.html"
+  - title: 新增指令碼
+    url: "/events/task_add_scripts.html"
+  - title: 刪除指令碼
+    url: "/events/task_delete_scripts.html"
+  - title: 測試指令碼執行
+    url: "/events/task_test_script_execution.html"
+  - title: 支援的 Unified Manager CLI 命令
+    url: "/events/reference_supported_unified_manager_cli_commands.html"
+  - title: 指令碼視窗和對話方塊的說明
+    entries:
+    - title: 指令碼頁面
+      url: "/events/reference_management_scripts_page.html"
+    - title: 新增指令碼對話方塊
+      url: "/events/reference_add_script_dialog_box.html"

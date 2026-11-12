@@ -1,0 +1,37 @@
+---
+permalink: performance-checker/task_analyze_performance_incident_in_metrocluster.html 
+sidebar: sidebar 
+keywords: analyzing, dynamic, performance, event, remote, cluster, metrocluster, configuration 
+summary: 您可以使用 Unified Manager 分析 MetroCluster 組態中遠端叢集上的動態效能事件。此分析可協助您判斷遠端叢集上的事件是否導致其合作夥伴叢集上的事件。 
+---
+= 在 Active IQ Unified Manager 中分析遠端叢集上的 MetroCluster 效能事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 Unified Manager 分析 MetroCluster 組態中遠端叢集上的動態效能事件。此分析可協助您判斷遠端叢集上的事件是否導致其合作夥伴叢集上的事件。
+
+.開始之前
+* 您必須擁有操作員、應用程式管理員或儲存管理員角色。
+* 您必須已分析 MetroCluster 組態中本機叢集上的效能事件，並取得事件偵測時間。
+* 您必須已檢查涉及該效能事件的本機叢集及其合作夥伴叢集的健全狀況，並取得合作夥伴叢集的名稱。
+
+
+.步驟
+. 登入正在監控合作夥伴叢集的 Unified Manager 執行個體。
+. 在左側導覽窗格中，按一下 *事件* 以顯示事件清單。
+. 從 *時間範圍* 選擇器中，選擇 *上一小時*，然後按一下 *套用範圍*。
+. 在 *篩選* 選擇器中，從左側下拉選單中選擇 *叢集*，在文字欄位中輸入合作夥伴叢集的名稱，然後按一下 *套用篩選器*。
++
+如果在過去一小時內所選叢集沒有發生任何事件，則表示該叢集在其合作夥伴上偵測到事件期間沒有出現任何效能問題。
+
+. 如果所選叢集在過去一小時內偵測到事件，請將事件偵測時間與本機叢集上該事件的事件偵測時間進行比較。
++
+如果這些事件涉及佔用大量資源的工作負載，導致資料處理元件資源爭用，則可能是其中一個或多個工作負載在本機叢集上引發了該事件。您可以按一下該事件進行分析，並在「事件詳細資料」頁面上審查建議的解決動作。
+
++
+如果這些事件不涉及惡霸工作負載，則它們並未導致本機叢集上的效能事件。
+
+

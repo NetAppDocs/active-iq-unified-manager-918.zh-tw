@@ -1,0 +1,109 @@
+---
+permalink: health-checker/concept_configure_backup_for_linux.html 
+sidebar: sidebar 
+keywords: netapp, snapshot copy, copies, linux, operate, system, configure, backup 
+summary: 如果您的 Active IQ Unified Manager 安裝在 Linux 機器上，那麼您可以決定使用 NetApp Snapshot 快照技術來設定備份與恢復。 
+---
+= 在 Active IQ Unified Manager 中設定 Linux 上的備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您的 Active IQ Unified Manager 安裝在 Linux 機器上，那麼您可以決定使用 NetApp Snapshot 快照技術來設定備份與恢復。
+
+Snapshot 複本耗時極短，通常只需幾分鐘，而且 Unified Manager 資料庫的鎖定時間也很短，因此對您的安裝幾乎沒有影響。此映像佔用極少的儲存空間，由於它僅記錄自上次建立 Snapshot 複本以來檔案發生的變更，因此效能負荷可以忽略不計。由於 Snapshot 快照技術是在 ONTAP 叢集上建立的，因此如有需要，您可以利用其他 NetApp 功能（例如 SnapMirror）來建立次要保護。
+
+在開始備份作業之前，Unified Manager 會執行完整性檢查，以驗證目的地系統是否可用。
+
+[NOTE]
+====
+* 您只能在相同版本的 Active IQ Unified Manager 上還原 Snapshot 複本。
++
+例如，如果您在 Unified Manager 9.18 上建立了備份，則該備份只能在 Unified Manager 9.18 系統上還原。
+
+* 如果 Snapshot 快照技術組態發生任何變更，可能會導致快照無效。
+
+
+====
+
+
+[[configure-snapshot-copy-location-in-active-iq-unified-manager]]
+== 在 Active IQ Unified Manager 中設定 Snapshot 複本位置
+
+您可以使用 ONTAP System Manager 或 ONTAP CLI，在其中一個 ONTAP 叢集上設定將用來儲存 Snapshot 複本的 Volume。
+
+.開始之前
+叢集、儲存 VM 和 Volume 必須符合下列要求：
+
+* 叢集需求：
++
+** 必須安裝 ONTAP 9.3 或更高版本
+** 它在地理位置上應該靠近 Unified Manager 伺服器
+** 它可以透過 Unified Manager 進行監控，但並非必須
+
+
+* Storage VM 要求：
++
+** 名稱交換器和名稱對應必須設定為使用 "`files`"
+** 建立本機使用者以對應用戶端側使用者
+** 請確保已選擇所有讀取/寫入存取
+** 請確保在匯出原則中將超級使用者存取權限設定為「`any`」
+** 適用於 Linux 的 NetApp Snapshot 快照技術 NFS
+** 必須在 NFS 伺服器上啟用 NFSv4，並在用戶端和儲存 VM 上指定 NFSv4 ID 網域
+** 該 Volume 至少應為 Unified Manager /opt/netapp/data 目錄大小的兩倍
++
+使用命令 du -sh /opt/netapp/data/ 檢查目前大小。
+
+
+
+* Volume 要求：
++
+** 該 Volume 至少應為 Unified Manager /opt/netapp/data 目錄大小的兩倍
+** 安全樣式必須設定為 UNIX
+** 必須停用本機 Snapshot 快照技術原則
+** 應啟用 Volume 自動調整規模
+** 效能服務層級應設定為具有高 IOPS 和低延遲的原則，例如 "`Extreme`"
+
+
+
+
+如需建立 NFS Volume 的詳細步驟，請參閱 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_configure_NFSv4_in_Cluster-Mode["如何在 ONTAP 9 中設定 NFSv4"]與 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-nfsv3-cg/home.html["ONTAP 9 NFS 組態快速指南"]。
+
+
+
+[[specify-the-destination-location-for-snapshot-copies-in-active-iq-unified-manager]]
+== 在 Active IQ Unified Manager 中指定 Snapshot 快照技術副本的目的地位置
+
+您應該在已設定的 ONTAP 叢集中的某個 Volume 上設定 Active IQ Unified Manager Snapshot 複本的目的地位置。您應該使用維護主控台來定義該位置。
+
+* 您必須擁有安裝了 Active IQ Unified Manager 的 Linux 主機的 root 使用者憑證。
+* 您必須擁有授權的使用者 ID 和密碼才能登入 Unified Manager 伺服器的維護控制台。
+* 您必須擁有叢集管理 IP 位址、儲存 VM 的名稱、Volume 的名稱，以及儲存系統的使用者名稱和密碼。
+* 您必須已將 Volume 裝載至 Active IQ Unified Manager 主機，且您必須擁有裝載路徑。
+
+
+.步驟
+. 使用 Secure Shell 連線到 Active IQ Unified Manager 系統的 IP 位址或 FQDN。
+. 使用維護使用者（umadmin）名稱和密碼登入系統。
+. 輸入命令 `maintenance_console`並按下 Enter 鍵。
+. 在維護主控台 *主選單* 中，輸入 *備份還原* 選項的編號。
+. 請輸入 *設定 NetApp Snapshot 快照技術備份* 的編號。
+. 請輸入號碼以設定 NFS。
+. 檢閱您需要提供的資訊，然後輸入 *輸入備份組態詳細資料* 的編號。
+. 若要確定 Snapshot 快照技術將寫入的 Volume，請輸入叢集管理介面的 IP 位址、儲存設備 VM 的名稱、Volume 的名稱、LUN 名稱、儲存系統使用者名稱和密碼以及裝載路徑。
+. 核實此資訊並輸入 `y`。
++
+此系統執行以下任務：
+
++
+** 建立與叢集的連線
+** 停止所有服務
+** 在 Volume 中建立新目錄，並複製 Active IQ Unified Manager 資料庫組態檔案
+** 從 Active IQ Unified Manager 中刪除檔案，並建立指向新資料庫目錄的符號連結
+** 重新啟動所有服務
+
+
+. 如果您尚未這麼做，請退出維護主控台並產品發表 Active IQ Unified Manager 介面，以為 Snapshot 複本建立排程。
+

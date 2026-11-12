@@ -1,0 +1,100 @@
+---
+permalink: events/reference_storage_failover_settings_events.html 
+sidebar: sidebar 
+keywords: storage, failover, settings, events, impact area, availability 
+summary: 儲存設備容錯移轉（SFO）設定事件提供有關儲存設備容錯移轉是否已停用或未設定的資訊，以便您可以監控潛力問題。事件按影響區域分組，包括事件和設陷名稱、影響層級、來源類型和嚴重性。 
+---
+= 了解 Active IQ Unified Manager 中的儲存設備容錯移轉設定事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+儲存設備容錯移轉（SFO）設定事件提供有關儲存設備容錯移轉是否已停用或未設定的資訊，以便您可以監控潛力問題。事件按影響區域分組，包括事件和設陷名稱、影響層級、來源類型和嚴重性。
+
+
+
+[[impact-area-availability]]
+== 影響區域：可用度
+
+|===
+| 事件名稱（陷阱名稱） | 影響層級 | 來源類型 | 嚴重程度 
+
+
+ a| 
+儲存設備故障轉移互連一或多個連結中斷（ocumEvtSfoInterconnectOneOrMoreLinksDown）
+ a| 
+風險
+ a| 
+節點
+ a| 
+警告
+
+
+
+ a| 
+儲存設備故障轉移已停用（ocumEvtSfoSettingsDisabled）
+ a| 
+風險
+ a| 
+節點
+ a| 
+錯誤
+
+
+
+ a| 
+未設定儲存設備故障轉移（ocumEvtSfoSettingsNotConfigured）
+ a| 
+風險
+ a| 
+節點
+ a| 
+錯誤
+
+
+
+ a| 
+儲存設備故障轉移狀態 - 接管（ocumEvtSfoStateTakeover）
+ a| 
+風險
+ a| 
+節點
+ a| 
+警告
+
+
+
+ a| 
+儲存設備故障轉移狀態 - 部分交還（ocumEvtSfoStatePartialGiveback）
+ a| 
+風險
+ a| 
+節點
+ a| 
+錯誤
+
+
+
+ a| 
+儲存故障轉移節點狀態已關閉（ocumEvtSfoNodeStatusDown）
+ a| 
+風險
+ a| 
+節點
+ a| 
+錯誤
+
+
+
+ a| 
+無法進行儲存設備故障轉移接管（ocumEvtSfoTakeoverNotPossible）
+ a| 
+風險
+ a| 
+節點
+ a| 
+錯誤
+
+|===

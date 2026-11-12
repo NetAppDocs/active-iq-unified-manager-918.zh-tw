@@ -1,0 +1,39 @@
+---
+permalink: config/task_change_identity_provider_idp_used_for_saml_authentication.html 
+sidebar: sidebar 
+keywords: change, identity, provider, used, saml, authentication 
+summary: 您可以變更 Unified Manager 用來驗證遠端使用者的身份供應商（IdP）。 
+---
+= 在 Active IQ Unified Manager 中變更 SAML 驗證身分供應商
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以變更 Unified Manager 用來驗證遠端使用者的身份供應商（IdP）。
+
+.開始之前
+* 您必須擁有 IdP URL 和中繼資料。
+* 您必須能夠存取 IdP。
+
+
+新的 IdP 可以在設定 Unified Manager 之前或之後進行設定。
+
+.步驟
+. 在左側導覽窗格中，按一下 *一般* > *SAML 驗證*。
+. 輸入新的 IdP URI 和將 Unified Manager 伺服器連接到 IdP 所需的 IdP 中繼資料。
++
+如果可以從 Unified Manager 伺服器直接存取 IdP，您可以在輸入 IdP URL 後按一下 *取得 IdP 中繼資料* 按鈕，自動填入 IdP 中繼資料欄位。
+
+. 複製 Unified Manager 中繼資料 URI，或將中繼資料儲存到 XML 文字檔案。
+. 按一下 *儲存組態*。
++
+螢幕上會顯示訊息方塊，確認您要變更組態。
+
+. 按一下 *OK* 。
+
+
+存取新的 IdP 並輸入 Unified Manager 伺服器 URI 和中繼資料以完成組態。
+
+下次獲得授權的遠端使用者嘗試存取 Unified Manager 圖形介面時，他們將在新的 IdP 登入頁面而不是舊的 IdP 登入頁面中輸入其憑證。

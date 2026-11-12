@@ -1,0 +1,82 @@
+---
+permalink: config/concept_audit_logging.html 
+sidebar: sidebar 
+keywords: audit, logging 
+summary: 您可以使用稽核日誌來偵測稽核日誌是否已被篡改。使用者執行的所有活動都會被監控並記錄在稽核日誌中。稽核涵蓋 Active IQ Unified Manager 的所有使用者介面和公開 API 功能。 
+---
+= 了解 Active IQ Unified Manager 中的稽核日誌
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用稽核日誌來偵測稽核日誌是否已遭到竄改。使用者執行的所有活動都會受到監控，並記錄在稽核日誌中。稽核涵蓋 Active IQ Unified Manager 的所有使用者介面及公開 API 的功能。
+
+您可以使用 *Audit Log: File View* 檢視和存取 Active IQ Unified Manager 中所有可用的稽核日誌檔。Audit Log: File View 中的檔案會依其建立日期列出。此檢視會顯示從安裝或升級到目前系統中所擷取的所有稽核日誌資訊。每當您在 Unified Manager 中執行行動時，資訊就會更新並提供於日誌中。每個日誌檔的狀態會使用 "`File Integrity Status`" 屬性來擷取，該屬性會受到主動監控，以偵測日誌檔是否遭到竄改或刪除。當稽核日誌在系統中可用時，稽核日誌可能具有下列其中一種狀態：
+
+[cols="2*"]
+|===
+| 狀態 | 說明 
+
+
+ a| 
+作用中
+ a| 
+目前正在記錄日誌的檔案。
+
+
+
+ a| 
+正常
+ a| 
+系統中儲存的非作用中、已壓縮的檔案。
+
+
+
+ a| 
+已竄改
+ a| 
+已被使用者手動編輯而遭到破壞的檔案。
+
+
+
+ a| 
+MANUAL_DELETE
+ a| 
+被授權使用者刪除的檔案。
+
+
+
+ a| 
+ROLLOVER_DELETE
+ a| 
+因基於滾動組態原則進行滾動而遭刪除的檔案。
+
+
+
+ a| 
+UNEXPECTED_DELETE
+ a| 
+因不明原因被刪除的檔案。
+
+|===
+稽核日誌頁面包含下列命令按鈕：
+
+* 設定
+* 刪除
+* 下載
+
+
+*DELETE* 按鈕可讓您刪除「稽核日誌」檢視中所列的任何稽核日誌。您可以刪除稽核日誌，並可選擇提供刪除檔案的原因，以便未來判斷刪除是否有效。REASON 欄會列出原因以及執行刪除作業的使用者名稱。
+
+[NOTE]
+====
+刪除日誌檔會將檔案從系統中刪除，但不會刪除資料庫表格中的項目。
+
+====
+您可以使用 Active IQ Unified Manager 中「稽核日誌」區段的 *DOWNLOAD* 按鈕下載稽核日誌，並匯出稽核日誌檔案。標記為 "`NORMAL`" 或 "`TAMPERED`" 的檔案將以壓縮 `.gzip`格式下載。
+
+稽核日誌檔會定期歸檔並儲存到資料庫中以供參考。歸檔前，稽核日誌會進行數位簽章，以維護安全性和完整性。
+
+產生完整的 AutoSupport 套裝組合時，支援套裝組合包含已歸檔和作用中的稽核日誌檔案。但產生精簡支援套裝組合時，僅包含作用中的稽核日誌。不包含已歸檔的稽核日誌。

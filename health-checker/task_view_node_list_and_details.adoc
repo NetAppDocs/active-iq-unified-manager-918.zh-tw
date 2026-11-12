@@ -1,0 +1,54 @@
+---
+permalink: health-checker/task_view_node_list_and_details.html 
+sidebar: sidebar 
+keywords: view, node list, details 
+summary: 使用「健全狀況」頁面上的「所有節點」檢視來檢視叢集中的節點清單，並使用「叢集健全狀況詳細資料」頁面來查看詳細的節點資訊。 
+---
+= 在 Active IQ Unified Manager 中檢視節點清單和詳細資料
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用「健全狀況：所有節點」檢視來檢視叢集中的節點清單。您可以使用「叢集 / 健全狀況」詳細資料頁面來檢視受監控叢集中各個節點的詳細資訊。
+
+.開始之前
+您必須擁有操作員、應用程式管理員或儲存管理員角色。
+
+您可以檢視節點狀態、包含該節點的叢集、彙總容量詳情（已使用容量和總容量）以及原始容量詳情（可用容量、備援裝置和總容量）等詳細資訊。您也可以取得有關 HA 配對、磁碟櫃和連接埠的資訊。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存設備* > *節點*。
+. 在 *健全狀況：所有節點* 檢視中，按一下您要檢視其詳細資訊的節點。
++
+所選節點的詳細資訊會顯示在「叢集 / 健全狀況詳細資料」頁面中。左側窗格會顯示 HA 配對清單。預設情況下，「HA 詳細資料」為開啟狀態，其中會顯示與所選 HA 配對相關的 HA 狀態詳細資料與事件。
+
+. 若要檢視節點的其他詳細資訊，請執行適當的行動：
++
+[cols="2*"]
+|===
+| 檢視…… | 按一下…… 
+
+
+ a| 
+磁碟架詳情
+ a| 
+*磁碟架*。
+
+
+
+ a| 
+連接埠相關資訊
+ a| 
+*連接埠*。
+
+|===
+
+
+更多資訊請見：
+
+* link:../performance-checker/performance-view-all.html#performance-all-nodes-view["效能：所有節點檢視"]
+* link:../performance-checker/concept_view_node_and_aggregate_available_iops_values.html["檢視節點和彙總可用 IOPS 值"]
+* link:../performance-checker/concept_view_node_and_aggregate_performance_capacity_used_values.html["檢視節點和彙總效能容量使用值"]
+

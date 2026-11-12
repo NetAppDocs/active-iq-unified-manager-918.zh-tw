@@ -1,0 +1,36 @@
+---
+permalink: health-checker/task_configure_global_health_threshold_settings.html 
+sidebar: sidebar 
+keywords: configure, global health, threshold settings 
+summary: 您可以設定容量、成長、Snapshot 保留、配額和 inode 的全域健全狀況臨界值條件，以有效監控彙總、Volume 和 qtree 的大小。您也可以編輯產生超出延遲臨界值事件的設定。 
+---
+= 在 Active IQ Unified Manager 中設定全域健全狀況臨界值設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以設定容量、成長、Snapshot 保留、配額和 inode 的全域健全狀況臨界值條件，以有效監控彙總、Volume 和 qtree 的大小。您也可以編輯產生超出延遲臨界值事件的設定。
+
+全域健全狀況臨界值設定適用於與其關聯的所有物件，例如彙總、Volume 等。當超過臨界值時，系統會產生事件；如果設定了警報，則會發送警報通知。臨界值預設值設定為建議值，但您可以根據具體需求修改這些值，以設定事件產生的時間間隔。臨界值變更後，事件將在下一個監控週期中產生或失效。
+
+全域健全狀況臨界值設定可透過左側導覽選單的「事件臨界值」部分存取。您也可以從個別物件的清單頁面或詳細資料頁面修改該物件的臨界值設定。
+
+* 如需相關資訊，請參閱 link:task_configure_global_aggregate_health_threshold_values.html["設定全域彙總健全狀況臨界值"]。
++
+您可以為所有彙總設定容量、成長和 Snapshot 複本的健全狀況臨界值設定，以追蹤任何違反臨界值的情況。
+
+* 如需相關資訊，請參閱 link:task_configure_global_volume_health_threshold_values.html["設定全域 Volume 健全狀況臨界值"]。
++
+您可以編輯所有 Volume 的容量、Snapshot 複本、qtree 配額、Volume 增長、覆寫保留空間和 inode 的健全狀況臨界值設定，以追蹤任何違反臨界值的情況。
+
+* 如需相關資訊，請參閱 link:task_configure_global_qtree_health_threshold_values.html["設定全域 qtree 健全狀況臨界值"]。
++
+您可以編輯所有 qtree 的容量健全狀況臨界值設定，以追蹤任何違反臨界值的情況。
+
+* 如需相關資訊，請參閱 link:task_configure_lag_threshold_settings_for_unmanaged_protection.html["編輯非託管保護關係的延遲健全狀況臨界值設定"]。
++
+您可以增加或減少警告或錯誤延遲時間百分比，以便事件以更適合您需求的間隔產生。
+
+

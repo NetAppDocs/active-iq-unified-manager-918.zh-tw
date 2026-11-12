@@ -1,0 +1,33 @@
+---
+permalink: performance-checker/task_respond_to_system_defined_performance_threshold_events.html 
+sidebar: sidebar 
+keywords: system-defined, performance, threshold, events 
+summary: 您可以使用 Unified Manager 來調查由效能計數器超過系統定義的警告臨界值而導致的效能事件。您也可以使用 Unified Manager 來檢查叢集元件的健全狀況，以確定最近在該元件上偵測到的事件是否與效能事件有關。 
+---
+= 在 Active IQ Unified Manager 中回應系統定義的效能臨界值事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 Unified Manager 來調查由效能計數器超過系統定義的警告臨界值而導致的效能事件。您也可以使用 Unified Manager 來檢查叢集元件的健全狀況，以確定最近在該元件上偵測到的事件是否與效能事件有關。
+
+.開始之前
+* 您必須擁有操作員、應用程式管理員或儲存管理員角色。
+* 必須存在新的或已過時的效能事件。
+
+
+.步驟
+. 顯示 *事件詳細資料* 頁面以檢視事件的資訊。
+. 請檢閱 *描述* ，其中說明導致事件的臨界值違規。
++
+例如，訊息 "`節點使用率值 90 % 已觸發基於 85 % 臨界值設定的警告事件`" 表示叢集物件發生了節點使用率警告事件。
+
+. 請附註*事件觸發時間*，以便調查是否同時發生了其他事件，這些事件可能導致了該事件的發生。
+. 在 *系統診斷* 下，審查系統定義的原則對叢集物件執行的分析類型的簡要執行摘要。
++
+某些事件會在診斷旁邊顯示綠色或紅色圖示，以指出該特定診斷中是否發現問題。對於其他類型的系統定義事件，計數器圖表會顯示物件的效能。
+
+. 在 *建議操作* 下，按一下 *幫我完成此操作* 連結，檢視您可以執行的建議操作，以嘗試自行解決效能事件。
+

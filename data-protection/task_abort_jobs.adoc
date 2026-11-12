@@ -1,0 +1,23 @@
+---
+permalink: data-protection/task_abort_jobs.html 
+sidebar: sidebar 
+keywords: abort, jobs 
+summary: 如果作業耗時過長、出現過多錯誤或不再需要，您可以使用「作業」頁面中止作業。只有當作業的狀態和類型允許時，才能中止作業。您可以中止任何正在執行的作業。 
+---
+= 在 Active IQ Unified Manager 中中止作業
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果作業耗時過長、出現過多錯誤或不再需要，您可以使用「作業」頁面中止作業。只有當作業的狀態和類型允許時，才能中止作業。您可以中止任何正在執行的作業。
+
+.開始之前
+您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+.步驟
+. 在左側導覽窗格中，按一下 *保護* > *作業*。
+. 從作業清單中選擇一個作業，然後按一下 *中止*。
+. 在確認提示中，按一下 *是* 以中止所選工作。
+

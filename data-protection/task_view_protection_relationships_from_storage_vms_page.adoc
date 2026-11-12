@@ -1,0 +1,27 @@
+---
+permalink: data-protection/task_view_protection_relationships_from_storage_vms_page.html 
+sidebar: sidebar 
+keywords: storage vm, viewing protection relationships 
+summary: 透過「儲存設備 VM」頁面，您可以檢視現有儲存設備 VM 的災難恢復關係狀態。 
+---
+= 在 Active IQ Unified Manager 的儲存設備 VM 頁面中查看保護關係
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+透過 Storage VM 頁面，您可以檢視現有 Storage VM 災難恢復關係的狀態。
+
+.開始之前
+您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+您也可以查看保護關係的詳細資訊，包括傳輸和延遲狀態、來源和目的地詳細資訊。您可以排程報告或以所需格式下載現有報告。*顯示/隱藏* 按鈕可讓您在報告中新增所需的欄，因為預設不會顯示這些欄。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存設備* > *Storage VMs*。
+. 從 *檢視* 功能表中，選擇 *關係* > *所有關係*。
++
+Relationship: All Relationships 檢視會顯示所有已設定的儲存設備 VM。
+
+

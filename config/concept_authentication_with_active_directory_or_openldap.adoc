@@ -1,0 +1,30 @@
+---
+permalink: config/concept_authentication_with_active_directory_or_openldap.html 
+sidebar: sidebar 
+keywords: authentication, active directory, openldap 
+summary: 您可以在管理伺服器上啟用遠端驗證，並將管理伺服器設定為與您的驗證伺服器通訊，以便驗證伺服器中的使用者可以存取 Unified Manager。 
+---
+= 在 Active IQ Unified Manager 中使用 Active Directory 或 OpenLDAP 進行驗證
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在管理伺服器上啟用遠端驗證，並將管理伺服器設定為與您的驗證伺服器通訊，以便驗證伺服器中的使用者可以存取 Unified Manager。
+
+您可以使用以下預先定義的驗證服務之一，也可以指定您自己的驗證服務：
+
+* Microsoft Active Directory
++
+[NOTE]
+====
+您無法使用 Microsoft Lightweight Directory Services。
+
+====
+* OpenLDAP
+
+
+您可以選取所需的驗證服務並新增適當的驗證伺服器，以讓驗證伺服器中的遠端使用者存取 Unified Manager。遠端使用者或群組的認證由驗證伺服器維護。管理伺服器使用輕量型目錄存取通訊協定 （LDAP） 在已設定的驗證伺服器中驗證遠端使用者。
+
+對於在 Unified Manager 中建立的本機使用者，管理伺服器會維護自己的使用者名稱和密碼資料庫。管理伺服器會執行驗證，且不使用 Active Directory 或 OpenLDAP 進行驗證。

@@ -1,0 +1,43 @@
+---
+permalink: events/reference_description_of_event_impact_areas.html 
+sidebar: sidebar 
+keywords: description, event, impact, areas 
+summary: 事件分為六個影響領域（可用度、容量、組態、效能、保護和安全性），以便您可以專注於您負責的事件類型。 
+---
+= 了解 Active IQ Unified Manager 中的事件影響區域
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+事件分為六個影響領域（可用度、容量、組態、效能、保護和安全性），以便您可以專注於您負責的事件類型。
+
+* *可用度*
++
+可用度事件會在儲存設備物件離線、協定服務中斷、儲存設備故障轉移出現問題或硬體發生問題時通知您。
+
+* *容量*
++
+容量事件會在您的集合體、磁碟區、LUN 或命名空間接近或達到大小臨界值，或在您的環境中成長速度異常時通知您。
+
+* *組態*
++
+組態事件會通知您儲存設備物件的探索、刪除、新增、移除或重新命名。組態事件的影響層級為「事件」，嚴重性類別為「資訊」。
+
+* *效能*
++
+效能事件會通知您叢集上的資源、組態或活動狀況，這些狀況可能會對受監控儲存設備物件的資料儲存設備輸入或擷取速度產生不利影響。
+
+* *保護*
++
+保護事件會通知您涉及 SnapMirror 關係、目的地容量問題、SnapVault 關係問題或保護作業問題的事件或風險。任何做為次要磁碟區與保護關係主機的 ONTAP 物件（尤其是 Aggregate、磁碟區和 SVM）都會歸類在保護影響區域中。
+
+* *安全性*
++
+安全性事件會根據在 https://www.netapp.com/pdf.html?item=/media/10674-tr4569pdf.pdf["NetApp ONTAP 9 安全性強化指南"^]中定義的參數，通知您 ONTAP 叢集、儲存設備虛擬機器（SVM）和磁碟區的安全程度。
+
++
+此外，此區域還包含從 Active IQ 平台報告的升級事件。
+
+

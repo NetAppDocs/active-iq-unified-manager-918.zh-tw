@@ -1,0 +1,36 @@
+---
+permalink: events/concept_cluster_configuration_changes_detected_by_um.html 
+sidebar: sidebar 
+keywords: configuration, changes, detected, unified manager 
+summary: Unified Manager 會監控叢集的組態變更，以協助您判斷變更是否可能導致或促成效能事件。Performance Explorer 頁面會顯示變更事件圖示，以指出偵測到變更的日期和時間。 
+---
+= Active IQ Unified Manager 偵測到設定變更
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager 會監控叢集的組態變更，以協助您判斷變更是否可能導致或促成效能事件。Performance Explorer 頁面會顯示變更事件圖示（image:../media/opm_change_icon.gif["更改事件圖示"]），以指出偵測到變更的日期和時間。
+
+您可以在 Performance Explorer 頁面和 Workload Analysis 頁面中審查效能圖表，以查看變更事件是否影響了所選叢集物件的效能。如果偵測到變更的時間與效能事件同時或相近，則該變更可能導致了問題，進而觸發事件警報。
+
+Unified Manager 可以偵測到下列變更事件，這些事件被歸類為資訊事件：
+
+* Volume 在 Aggregate 之間移動。
++
+Unified Manager 可以偵測搬移何時正在進行、已完成或失敗。如果在 Volume 搬移期間 Unified Manager 停機，當它恢復運作時，會偵測到 Volume 搬移並顯示其變更事件。
+
+* 包含一個或多個受監控工作負載的 QoS 原則群組的處理量（MB/s 或 IOPS）限制會變更。
++
+更改原則群組限制可能會導致延遲（回應時間）出現間歇性峰值，這也可能觸發原則群組的事件。延遲會逐漸恢復正常，由峰值引起的任何事件都會失效。
+
+* HA 配對中的一個節點接管或歸還其合作夥伴節點的儲存設備。
++
+Unified Manager 可以偵測到接管、部分接管或歸還作業何時完成。如果接管是由發生當機的節點所引起，Unified Manager 不會偵測到該事件。
+
+* ONTAP 升級或回復作業已成功完成。
++
+顯示舊版本和新版本。
+
+

@@ -1,0 +1,31 @@
+---
+permalink: data-protection/task_retry_failed_protection_job.html 
+sidebar: sidebar 
+keywords: retry, failed, protection job 
+summary: 在您採取措施修復失敗的保護作業後，可以使用「重試」再次執行該作業。重試作業會使用原始作業 ID 建立新作業。 
+---
+= 在 Active IQ Unified Manager 中重試失敗的保護作業
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在您採取措施修復失敗的保護作業後，您可以使用 *重試* 再次執行該作業。重試作業會使用原始作業 ID 建立一個新作業。
+
+.開始之前
+您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+一次只能重試一個失敗的作業。選擇多個作業會停用 *重試* 按鈕。只有「保護配置」和「保護關係操作」類型的作業才能重試。
+
+.步驟
+. 在左側導覽窗格中，按一下 *保護* > *作業*。
+. 從作業清單中，選取單一失敗的保護組態或保護關係操作類型的作業。
++
+*重試*按鈕已啟用。
+
+. 按一下 *重試*。
++
+工作已重新啟動。
+
+

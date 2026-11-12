@@ -1,0 +1,228 @@
+---
+permalink: config/reference_unified_manager_roles_and_capabilities.html 
+sidebar: sidebar 
+keywords: unified manager, user, roles, capabilities 
+summary: 根據您被指派的使用者角色，您可以決定在 Unified Manager 中可以執行哪些操作。 
+---
+= 了解 Active IQ Unified Manager 中的使用者角色和功能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+根據您被指派的使用者角色，您可以決定在 Unified Manager 中可以執行哪些操作。
+
+下表顯示每個使用者角色可執行的功能：
+
+[cols="6*"]
+|===
+| 功能 | 操作員 | 儲存管理員 | 應用程式管理員 | 整合結構描述 | 報表架構 
+
+
+ a| 
+查看儲存系統資訊
+ a| 
+•
+ a| 
+•
+ a| 
+•
+ a| 
+•
+ a| 
+•
+
+
+
+ a| 
+查看其他資料，例如歷史記錄和容量趨勢
+ a| 
+•
+ a| 
+•
+ a| 
+•
+ a| 
+•
+ a| 
+•
+
+
+
+ a| 
+檢視、指派與解決事件
+ a| 
+•
+ a| 
+•
+ a| 
+•
+ a| 
+ a| 
+
+
+
+ a| 
+檢視儲存設備服務物件，例如 SVM 關聯和資源池
+ a| 
+•
+ a| 
+•
+ a| 
+•
+ a| 
+ a| 
+
+
+
+ a| 
+檢視臨界值原則
+ a| 
+•
+ a| 
+•
+ a| 
+•
+ a| 
+ a| 
+
+
+
+ a| 
+管理儲存設備服務物件，例如 SVM 關聯和資源池
+ a| 
+ a| 
+•
+ a| 
+•
+ a| 
+ a| 
+
+
+
+ a| 
+定義警報
+ a| 
+ a| 
+•
+ a| 
+•
+ a| 
+ a| 
+
+
+
+ a| 
+管理儲存管理選項
+ a| 
+ a| 
+•
+ a| 
+•
+ a| 
+ a| 
+
+
+
+ a| 
+管理儲存管理原則
+ a| 
+ a| 
+•
+ a| 
+•
+ a| 
+ a| 
+
+
+
+ a| 
+管理使用者
+ a| 
+ a| 
+ a| 
+•
+ a| 
+ a| 
+
+
+
+ a| 
+管理系統管理選項
+ a| 
+ a| 
+ a| 
+•
+ a| 
+ a| 
+
+
+
+ a| 
+定義臨界值策略
+ a| 
+ a| 
+ a| 
+•
+ a| 
+ a| 
+
+
+
+ a| 
+管理資料庫存取
+ a| 
+ a| 
+ a| 
+•
+ a| 
+ a| 
+
+
+
+ a| 
+管理與 WFA 的整合並提供對資料庫視圖的存取
+ a| 
+ a| 
+ a| 
+ a| 
+•
+ a| 
+
+
+
+ a| 
+排程與儲存報告
+ a| 
+ a| 
+•
+ a| 
+•
+ a| 
+ a| 
+
+
+
+ a| 
+從管理動作執行 "`Fix It`" 作業
+ a| 
+ a| 
+•
+ a| 
+•
+ a| 
+ a| 
+
+
+
+ a| 
+提供資料庫檢視表的唯讀存取
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+•
+
+|===

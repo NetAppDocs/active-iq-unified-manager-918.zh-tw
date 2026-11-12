@@ -1,0 +1,49 @@
+---
+permalink: data-protection/task_resynchronize_protection_relationships.html 
+sidebar: sidebar 
+keywords: resynchronize, protection, relationships, volume, relationships page 
+summary: 在「Volume 關係」頁面中，您可以重新同步關係，以從停用來源 Volume 的事件中恢復，或是當您想要將目前的來源變更為不同的 Volume 時。 
+---
+= 在 Active IQ Unified Manager 的「磁碟區關係」頁面中重新同步保護關係
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在「Volume 關係」頁面中，您可以重新同步關係，以從停用來源 Volume 的事件中恢復，或是當您想要將目前的來源變更為不同的 Volume 時。
+
+.開始之前
+* 您必須擁有應用程式系統管理員或儲存系統管理員角色。
+* 您必須已設定 Workflow Automation。
+
+
+.步驟
+. 從 *Volume 關係* 頁面中，選擇一個或多個具有靜止關係的 Volume，然後從工具列中按一下 *重新同步*。
++
+顯示「重新同步」對話方塊。
+
+. 在 *Resynchronization Options* 索引標籤中，選取傳輸優先順序和最大傳輸率。
+. 按一下 *來源 Snapshot 複本*；然後在 *Snapshot 複本* 欄中，按一下 *預設*。
++
+此時將顯示「選擇來源 Snapshot 複本」對話方塊。
+
+. 如果您要指定現有的 Snapshot 複本而不是傳輸預設的 Snapshot 複本，請按一下 *現有 Snapshot 複本*，然後從清單中選擇 Snapshot 複本。
+. 按一下 *提交*。
++
+您將返回「重新同步」對話方塊。
+
+. 如果您選擇了多個來源進行重新同步，請針對您要指定現有 Snapshot 複本的下一個來源，按一下 *預設*。
+. 按一下 *提交* 以開始重新同步作業。
++
+重新同步作業已啟動，您將返回 Volume 關係頁面，頁面頂部會顯示作業連結。
+
+. *選用：* 在 *Volume 關係* 頁面上按一下 *檢視作業* 以追蹤每個重新同步作業的狀態。
++
+顯示篩選後的工作清單。
+
+. *選用：* 按一下瀏覽器上的 *上一頁* 箭頭，返回 *Volume 關係* 頁面。
++
+當所有作業工作成功完成後，重新同步操作即告完成。
+
+

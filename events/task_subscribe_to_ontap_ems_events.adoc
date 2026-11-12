@@ -1,0 +1,54 @@
+---
+permalink: events/task_subscribe_to_ontap_ems_events.html 
+sidebar: sidebar 
+keywords: subscribe, ontap, ems events 
+summary: '您可以訂閱接收安裝了 ONTAP 軟體的系統所產生的事件管理系統 (EMS) 事件。部分 EMS 事件會自動回報給 Unified Manager，但其他 EMS 事件只有在您訂閱這些事件後才會回報。' 
+---
+= 在 Active IQ Unified Manager 中訂閱 ONTAP EMS 事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以訂閱接收安裝了 ONTAP 軟體的系統所產生的事件管理系統 (EMS) 事件。部分 EMS 事件會自動回報給 Unified Manager，但其他 EMS 事件只有在您訂閱這些事件後才會回報。
+
+.開始之前
+請勿訂閱已自動新增至 Unified Manager 的 EMS 事件，因為收到相同問題的兩個事件可能會導致混淆。
+
+您可以訂閱任意數量的 EMS 事件。您訂閱的所有事件都會經過驗證，而且只有經過驗證的事件才會套用到您在 Unified Manager 中監控的叢集。_ONTAP 9 EMS 事件目錄_ 提供指定 ONTAP 9 軟體版本的所有 EMS 訊息的詳細資訊。從 ONTAP 9 產品文件頁面尋找適當版本的 _EMS 事件目錄_，以取得適用事件的清單。
+
+https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62286["ONTAP 9 產品庫"]
+
+您可以為訂閱的 ONTAP EMS 事件設定警報，也可以建立針對這些事件執行的自訂指令碼。
+
+[NOTE]
+====
+如果您未收到已訂閱的 ONTAP EMS 事件，可能是叢集的 DNS 組態有問題，導致叢集無法連線至 Unified Manager 伺服器。若要解決此問題，叢集管理員必須修正叢集的 DNS 組態，然後重新啟動 Unified Manager。這樣做會將待處理的 EMS 事件傳送到 Unified Manager 伺服器。
+
+====
+.步驟
+. 在左側導覽窗格中，按一下 *儲存設備管理* > *事件設定*。
+. 在「事件設定」頁面中，點選 *訂閱 EMS 事件* 按鈕。
+. 在「訂閱 EMS 事件」對話方塊中，輸入要訂閱的 ONTAP EMS 事件的名稱。
++
+若要檢視您可以訂閱的 EMS 事件名稱，您可以從 ONTAP 叢集 shell 使用 `event route show`命令（ONTAP 9 之前）或 `event catalog show`命令（ONTAP 9 或更新版本）。
+
++
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Infrastructure_Management/OnCommand_Suite/How_to_configure_and_receive_alerts_from_ONTAP_EMS_Event_Subscription_in_Active_IQ_Unified_Manager["如何在 Active IQ Unified Manager 中設定和接收來自 ONTAP EMS 事件訂閱的警報"]
+
+. 點擊 *Add* 。
++
+EMS 事件已新增至已訂閱的 EMS 事件清單中，但「適用於叢集」欄位顯示您新增的 EMS 事件的狀態為「`Unknown`」。
+
+. 按一下 *儲存並關閉* 以向叢集註冊 EMS 事件訂閱。
+. 再次點選 *訂閱 EMS 事件*。
++
+您新增的 EMS 事件的「適用於叢集」欄中會顯示狀態 "`Yes`"。
+
++
+如果狀態不是「`Yes`」，請檢查 ONTAP EMS 事件名稱的拼字。如果名稱輸入錯誤，您必須移除不正確的事件，然後再次新增該事件。
+
+
+
+當 ONTAP EMS 事件發生時，該事件會顯示在「事件」頁面上。您可以選取事件，以在「事件詳細資料」頁面中檢視 EMS 事件的詳細資料。您也可以管理事件的處置方式，或為事件建立警示。

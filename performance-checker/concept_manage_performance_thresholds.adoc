@@ -1,0 +1,22 @@
+---
+permalink: performance-checker/concept_manage_performance_thresholds.html 
+sidebar: sidebar 
+keywords: manage, performance, thresholds 
+summary: 效能臨界值原則可讓您決定 Unified Manager 產生事件，以通知系統管理員可能影響工作負載效能之問題的臨界點。這些臨界值原則稱為使用者定義的效能臨界值。 
+---
+= 在 Active IQ Unified Manager 中管理效能臨界值
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+效能臨界值原則可讓您決定 Unified Manager 產生事件，以通知系統管理員可能影響工作負載效能之問題的時間點。這些臨界值原則稱為_使用者定義_的效能臨界值。
+
+此版本支援使用者自訂、系統定義和動態效能臨界值。對於動態和系統定義的效能臨界值， Unified Manager 會分析工作負載活動以確定適當的臨界值。對於使用者自訂臨界值，您可以為多個效能計數器和多個儲存設備物件定義效能上限。
+
+[NOTE]
+====
+系統定義的效能臨界值和動態效能臨界值皆由 Unified Manager 設定，無法設定。如果您收到來自任何系統定義的效能臨界值原則的不必要事件，可以從「事件設定」頁面停用個別原則。
+
+====

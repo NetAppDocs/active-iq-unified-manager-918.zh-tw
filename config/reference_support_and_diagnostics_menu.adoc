@@ -1,0 +1,29 @@
+---
+permalink: config/reference_support_and_diagnostics_menu.html 
+sidebar: sidebar 
+keywords: support and diagnostics, menu 
+summary: 透過「支援和診斷」選單，您可以產生支援套裝組合，並將其發送給技術支援以獲得疑難排解協助。 
+---
+= 使用 Active IQ Unified Manager 中的「支援與診斷」選單
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+透過「支援和診斷」選單，您可以產生支援套裝組合，並將其發送給技術支援以獲得疑難排解協助。
+
+以下是可供選擇的選單選項：
+
+* *產生輕量級支援套裝組合*
++
+讓您能夠產生輕量級的支援套裝組合，其中僅包含 30 天的日誌和組態資料庫記錄——不包含效能資料、擷取記錄檔案和伺服器堆積傾印。
+
+* *產生支援套裝組合*
++
+可讓您在診斷使用者的主目錄中建立包含診斷資訊的完整支援套裝組合（7-Zip 檔案）。如果您的系統已連線至網際網路，您也可以將支援套裝組合上傳至 NetApp。
+
++
+該檔案包含 AutoSupport 訊息產生的資訊、Unified Manager 資料庫的內容、有關 Unified Manager 伺服器內部的詳細資料，以及通常不包含在 AutoSupport 訊息或輕量級支援套裝組合中的詳細層級記錄。
+
+

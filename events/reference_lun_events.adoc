@@ -1,0 +1,412 @@
+---
+permalink: events/reference_lun_events.html 
+sidebar: sidebar 
+keywords: lun, events, impact area, availability, capacity, configuration, performance 
+summary: LUN 事件提供有關 LUN 狀態的資訊，以便您可以監控潛力問題。事件按影響區域分組，包括事件和陷阱名稱、影響層級、來源類型和嚴重性。 
+---
+= 了解 Active IQ Unified Manager 中的 LUN 事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+LUN 事件提供有關 LUN 狀態的資訊，以便您可以監控潛力問題。事件按影響區域分組，包括事件和陷阱名稱、影響層級、來源類型和嚴重性。
+
+
+
+[[impact-area-availability]]
+== 影響區域：可用度
+
+星號（*）表示已轉換為 Unified Manager 事件的 EMS 事件。
+
+|===
+| 事件名稱（陷阱名稱） | 影響層級 | 來源類型 | 嚴重程度 
+
+
+ a| 
+LUN 離線（ocumEvtLunOffline）
+ a| 
+事件
+ a| 
+LUN
+ a| 
+關鍵
+
+
+
+ a| 
+LUN 已銷毀 *（lunDestroy）
+ a| 
+事件
+ a| 
+LUN
+ a| 
+資訊
+
+
+
+ a| 
+在 igroup（igroupUnsupportedOsType）中對應不支援之作業系統的 LUN
+ a| 
+事件
+ a| 
+LUN
+ a| 
+警告
+
+
+
+ a| 
+存取 LUN 的單一主動路徑（ocumEvtLunSingleActivePath）
+ a| 
+風險
+ a| 
+LUN
+ a| 
+警告
+
+
+
+ a| 
+沒有可存取 LUN 的作用中路徑（ocumEvtLunNotReachable）
+ a| 
+事件
+ a| 
+LUN
+ a| 
+關鍵
+
+
+
+ a| 
+沒有存取 LUN 的最佳化路徑（ocumEvtLunOptimizedPathInactive）
+ a| 
+風險
+ a| 
+LUN
+ a| 
+警告
+
+
+
+ a| 
+沒有從 HA 合作夥伴存取 LUN 的路徑（ocumEvtLunHaPathInactive）
+ a| 
+風險
+ a| 
+LUN
+ a| 
+警告
+
+
+
+ a| 
+HA 對中的一個節點沒有存取 LUN 的路徑（ocumEvtLunNodePathStatusDown）
+ a| 
+風險
+ a| 
+LUN
+ a| 
+錯誤
+
+|===
+
+
+[[impact-area-capacity]]
+== 影響區域：容量
+
+|===
+| 事件名稱（陷阱名稱） | 影響層級 | 來源類型 | 嚴重程度 
+
+
+ a| 
+LUN Snapshot 快照技術副本空間不足（ocumEvtLunSnapshotNotPossible）
+ a| 
+風險
+ a| 
+磁碟區
+ a| 
+警告
+
+|===
+
+
+[[impact-area-configuration]]
+== 影響區域：組態
+
+|===
+| 事件名稱（陷阱名稱） | 影響層級 | 來源類型 | 嚴重程度 
+
+
+ a| 
+在 igroup（igroupUnsupportedOsType）中對應不支援之作業系統的 LUN
+ a| 
+風險
+ a| 
+LUN
+ a| 
+警告
+
+|===
+
+
+[[impact-area-performance]]
+== 影響領域：效能
+
+|===
+| 事件名稱（陷阱名稱） | 影響層級 | 來源類型 | 嚴重程度 
+
+
+ a| 
+LUN IOPS 臨界閾值已突破（ocumLunIopsIncident）
+ a| 
+事件
+ a| 
+LUN
+ a| 
+關鍵
+
+
+
+ a| 
+LUN IOPS 警告閾值已突破（ocumLunIopsWarning）
+ a| 
+風險
+ a| 
+LUN
+ a| 
+警告
+
+
+
+ a| 
+LUN MB/s 嚴重臨界值已遭違反（ocumLunMbpsIncident）
+ a| 
+事件
+ a| 
+LUN
+ a| 
+關鍵
+
+
+
+ a| 
+LUN MB/s 警告閾值已突破（ocumLunMbpsWarning）
+ a| 
+風險
+ a| 
+LUN
+ a| 
+警告
+
+
+
+ a| 
+LUN 延遲 ms/op 嚴重臨界值已突破（ocumLunLatencyIncident）
+ a| 
+事件
+ a| 
+LUN
+ a| 
+關鍵
+
+
+
+ a| 
+LUN 延遲 ms/op 警告臨界值已違反（ocumLunLatencyWarning）
+ a| 
+風險
+ a| 
+LUN
+ a| 
+警告
+
+
+
+ a| 
+LUN 延遲和 IOPS 臨界閾值已違反（ocumLunLatencyIopsIncident）
+ a| 
+事件
+ a| 
+LUN
+ a| 
+關鍵
+
+
+
+ a| 
+LUN 延遲和 IOPS 警告臨界值已違反（ocumLunLatencyIopsWarning）
+ a| 
+風險
+ a| 
+LUN
+ a| 
+警告
+
+
+
+ a| 
+LUN 延遲和 MB/s 臨界閾值已突破（ocumLunLatencyMbpsIncident）
+ a| 
+事件
+ a| 
+LUN
+ a| 
+關鍵
+
+
+
+ a| 
+LUN 延遲和 MB/s 警告閾值已突破（ocumLunLatencyMbpsWarning）
+ a| 
+風險
+ a| 
+LUN
+ a| 
+警告
+
+
+
+ a| 
+LUN 延遲和 Aggregate 效能容量使用情況已超過臨界閾值（ocumLunLatencyAggregatePerfCapacityUsedIncident）
+ a| 
+事件
+ a| 
+LUN
+ a| 
+關鍵
+
+
+
+ a| 
+LUN 延遲和 Aggregate 效能容量使用情況警告閾值已突破（ocumLunLatencyAggregatePerfCapacityUsedWarning）
+ a| 
+風險
+ a| 
+LUN
+ a| 
+警告
+
+
+
+ a| 
+LUN 延遲和 Aggregate 使用率已超過嚴重臨界值（ocumLunLatencyAggregateUtilizationIncident）
+ a| 
+事件
+ a| 
+LUN
+ a| 
+關鍵
+
+
+
+ a| 
+LUN 延遲與 Aggregate 使用率警告臨界值已違反（ocumLunLatencyAggregateUtilizationWarning）
+ a| 
+風險
+ a| 
+LUN
+ a| 
+警告
+
+
+
+ a| 
+LUN 延遲和節點效能容量使用率已超過臨界閾值（ocumLunLatencyNodePerfCapacityUsedIncident）
+ a| 
+事件
+ a| 
+LUN
+ a| 
+關鍵
+
+
+
+ a| 
+LUN 延遲和節點效能容量使用量警告閾值已突破（ocumLunLatencyNodePerfCapacityUsedWarning）
+ a| 
+風險
+ a| 
+LUN
+ a| 
+警告
+
+
+
+ a| 
+LUN 延遲和節點效能容量已用 - 接管臨界閾值已突破（ocumLunLatencyAggregatePerfCapacityUsedTakeoverIncident）
+ a| 
+事件
+ a| 
+LUN
+ a| 
+關鍵
+
+
+
+ a| 
+LUN 延遲和節點效能容量已使用 - 接管警告閾值已突破（ocumLunLatencyAggregatePerfCapacityUsedTakeoverWarning）
+ a| 
+風險
+ a| 
+LUN
+ a| 
+警告
+
+
+
+ a| 
+LUN 延遲和節點利用率已突破臨界閾值（ocumLunLatencyNodeUtilizationIncident）
+ a| 
+事件
+ a| 
+LUN
+ a| 
+關鍵
+
+
+
+ a| 
+LUN 延遲與節點使用率警告臨界值已違反（ocumLunLatencyNodeUtilizationWarning）
+ a| 
+風險
+ a| 
+LUN
+ a| 
+警告
+
+
+
+ a| 
+QoS LUN 最大 IOPS 警告臨界值已違反（ocumQosLunMaxIopsWarning）
+ a| 
+風險
+ a| 
+LUN
+ a| 
+警告
+
+
+
+ a| 
+QoS LUN 最大 MB/s 警告臨界值已違反（ocumQosLunMaxMbpsWarning）
+ a| 
+風險
+ a| 
+LUN
+ a| 
+警告
+
+
+
+ a| 
+工作負載 LUN 延遲臨界值已超出效能服務層級原則（ocumConformanceLatencyWarning）所定義的範圍
+ a| 
+風險
+ a| 
+LUN
+ a| 
+警告
+
+|===

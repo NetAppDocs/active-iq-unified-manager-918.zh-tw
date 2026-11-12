@@ -1,0 +1,75 @@
+---
+permalink: data-protection/task_restore_data_use_health_volume_details_page.html 
+sidebar: sidebar 
+keywords: restore, data, volume, health details page, console 
+summary: 您可以使用 Volume / 執行狀況詳細資料頁面上的還原功能，從 Snapshot 複本中還原已覆寫或已刪除的檔案、目錄或整個 Volume。 
+---
+= 使用 Active IQ Unified Manager 中的「磁碟區」和「磁碟區/運作狀況」詳細資料頁面還原資料
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 Volume 和 Volume / 執行狀況詳細資料頁面上的還原功能，從 Snapshot 複本中還原已覆寫或已刪除的檔案、目錄或整個 Volume。
+
+.開始之前
+您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+
+NOTE: 請注意以下幾點：
+
+* 在以下任何情況下，您都無法從快照還原目錄或磁碟區：
++
+** 已選擇 *Yes, preserve all snapshot copies* 選項。
+** 您正在使用 LDAP 帳戶來監控叢集。
+** 您已以網域使用者身分登入。
+** 您的帳戶已配置為使用 SAML 身份驗證。
+** 您正在使用 NDMP 協定。
++
+如需更多詳細資訊，請參閱知識庫文章 https://kb.netapp.com/on-prem/ontap/DP/NDMP/NDMP-KBs/How_to_configure_NDMP_authentication_in_the_SVM-scope_previously_known_as_Vserver-scope_mode["如何在「SVM 範圍」模式下設定 NDMP 驗證"^]。
+
+
+
+* 您無法還原 NTFS 檔案串流。
+* 以下情況無法使用還原選項：
++
+** Volume ID 未知：例如，當您具有叢集間關係且尚未發現目的地叢集時。
+** 該 Volume 設定為 SnapMirror 同步複寫。
+
+
+
+
+.步驟
+. 從左側導覽窗格中，前往 *儲存設備 > Volume*。
+. 選擇 Volume 並按一下 *還原* 按鈕。或者，按一下 Volume 以前往 *Volume / 健全狀況詳細資料 > 行動 > 還原*。此時會顯示「還原」對話方塊。如需此頁面的相關資訊，請參閱 link:../data-protection/reference_restore_dialog_box.html["還原對話方塊"]。
+. 如果與預設值不同，請選擇要從中還原資料的 Volume 和 Snapshot 複本。
+. 選擇要還原的項目，例如來源 LUN。
++
+您可以還原整個 Volume，也可以指定要還原的資料夾和檔案。
+
+. 選擇要將所選項目還原到的位置：*原始位置* 或 *備用現有位置*。
+. 如果選擇其他現有位置，請執行下列操作之一：
++
+** 在「還原路徑」文字欄位中，鍵入要將資料還原到的位置路徑，然後按一下 *選擇目錄*。
+** 按一下 *瀏覽* 以產品發表「瀏覽目錄」對話方塊，並完成下列步驟：
++
+... 選擇要還原的目的地叢集、儲存設備虛擬機器（SVM）和 Volume。
+... 在「名稱」表中，選擇要還原的目錄名稱。
+... 按一下 *選擇目錄*。
+
+
+
+
+. 按一下 *Restore* 。
++
+還原程序開始。後端會建立一項作業來完成還原程序。
+
+. 如果您想要檢視工作進度，請從左側導覽窗格導覽至 *保護 > 工作*，從工作清單中檢視還原工作的狀態。
++
+[NOTE]
+====
+如果 Cloud Volumes ONTAP HA 叢集之間的還原作業因 NDMP 錯誤而失敗，您可能需要在目的地叢集新增明確的 AWS 路由，以便目的地可以與來源系統的叢集管理 LIF 通訊。您可以使用 NetApp Console 執行此組態步驟。
+
+====
+

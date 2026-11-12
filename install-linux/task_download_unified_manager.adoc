@@ -1,0 +1,60 @@
+---
+permalink: install-linux/task_download_unified_manager.html 
+sidebar: sidebar 
+keywords: download, Unified Manager 
+summary: '您必須從 NetApp 支援網站下載 Unified Manager `.zip` 檔案，才能安裝 Unified Manager。' 
+---
+= 下載 Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須從 NetApp 支援網站下載 Unified Manager `.zip` 檔案，才能安裝 Unified Manager。
+
+.開始之前
+您必須擁有 NetApp 支援網站的登入憑證。
+
+您下載適用於 Red Hat Enterprise Linux 系統的 Unified Manager 安裝套件。
+
+.步驟
+. 登入 NetApp 支援網站，並導覽至 Unified Manager 的下載頁面：
++
+https://mysupport.netapp.com/site/products/all/details/activeiq-unified-manager/downloads-tab["NetApp 支援網站"]
+
+. 選擇所需的 Unified Manager 版本並接受最終使用者授權協議（EULA）。
+. 下載適用於 Linux 的 Unified Manager 安裝程式檔案，並將該 `.zip`檔案儲存到目標系統上的目錄中。
++
+[NOTE]
+====
+** 請確保您為您的 Red Hat Enterprise Linux 系統下載正確版本的安裝程式檔案。根據您安裝的是 Red Hat Enterprise Linux 8 還是 9，請確保您下載適當版本的 Unified Manager `.zip` 檔案。
+** NetApp 建議您下載程式碼簽署憑證 (`.pem`）和數位簽署 (`.sig`），以及 `.zip` 檔案。
+
+
+====
+. 驗證下載軟體的 Checksum，以確保其完整性。
+. 如果您已下載程式碼簽署憑證和數位簽署，則可以驗證安裝程式檔案的完整性。您可以使用下列命令來驗證安裝程式檔案的完整性：
++
+** 此命令會建立一個包含程式碼簽署憑證公鑰的檔案：
++
+[listing]
+----
+openssl x509 -pubkey -noout -in AIQUM-RHEL-CLIENT-INTER-ROOT.pem > <public_key_file_name>
+----
++
+*** 其中 *AIQUM-RHEL-CLIENT-INTER-ROOT.pem* 是包含程式碼簽署憑證的檔案。
+
+
+** 此命令用於驗證安裝程式檔案的簽署：
++
+[listing]
+----
+openssl dgst -sha256 -verify <public_key_file_name> -signature <signature_file_name> ActiveIQUnifiedManager-<version>.zip
+----
++
+類似於 `Verified Ok`的訊息確認安裝程式檔案可以安全使用。
+
+
+
+

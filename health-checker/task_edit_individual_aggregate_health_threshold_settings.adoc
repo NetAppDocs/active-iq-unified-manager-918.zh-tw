@@ -1,0 +1,32 @@
+---
+permalink: health-checker/task_edit_individual_aggregate_health_threshold_settings.html 
+sidebar: sidebar 
+keywords: edit, individual, aggregate, health, threshold, settings 
+summary: 您可以編輯一個或多個彙總的彙總容量、成長和 Snapshot 快照技術複本的健全狀況臨界值設定。當超過臨界值時，系統會產生警報並通知您。這些通知可協助您根據產生的事件採取預防措施。 
+---
+= 在 Active IQ Unified Manager 中編輯個別彙總健全狀況臨界值設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以編輯一個或多個彙總的彙總容量、成長和 Snapshot 快照技術複本的健全狀況臨界值設定。當超過臨界值時，系統會產生警報並通知您。這些通知可協助您根據產生的事件採取預防措施。
+
+.開始之前
+您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+根據臨界值的變化，事件會在下一個監控週期中產生或失效。
+
+當在位於彙總的 Volume 上啟用 Autogrow 時，彙總容量臨界值將根據 Autogrow 設定的最大 Volume 大小來判斷是否超出，而不是根據原始 Volume 大小來判斷。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存設備* > *彙總*。
+. 在 *健全狀況：所有彙總* 檢視中，選取一個或多個彙總，然後按一下 *編輯臨界值*。
+. 在 *編輯彙總臨界值* 對話方塊中，選取適當的核取方塊，然後修改設定，即可編輯下列其中一項的臨界值設定：容量、成長或 Snapshot 快照技術複本。
+. 按一下 *Save* 。
+
+
+*相關資訊*
+
+link:../config/task_add_users.html["新增使用者"]

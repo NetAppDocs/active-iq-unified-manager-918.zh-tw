@@ -1,0 +1,71 @@
+---
+permalink: performance-checker/task_view_workload_qos_minimum_and_maximum_settings.html 
+sidebar: sidebar 
+keywords: view, workload, qos, minimum, maximum, settings, performance, explorer 
+summary: 您可以在 Performance Explorer 圖表中檢視 ONTAP 定義的 Volume 或 LUN 的服務品質（QoS）原則設定。處理量最大值設定可限制競爭工作負載對系統資源的影響。處理量最小值設定可確保關鍵工作負載無論競爭工作負載的需求為何，都能滿足最低處理量目標。 
+---
+= 在 Active IQ Unified Manager 中檢視工作負載 QoS 的最小和最大設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在 Performance Explorer 圖表中檢視 ONTAP 定義的 Volume 或 LUN 的服務品質（QoS）原則設定。處理量最大值設定可限制競爭工作負載對系統資源的影響。處理量最小值設定可確保關鍵工作負載無論競爭工作負載的需求為何，都能滿足最低處理量目標。
+
+只有在 ONTAP 中設定了 QoS 處理量 "`minimum`" 和 "`maximum`" IOPS 和 MB/s 設定後，這些設定才會顯示在計數器圖表中。處理量最小值設定僅適用於執行 ONTAP 9.2 或更新版本軟體的系統，且僅適用於 AFF 系統，目前僅能針對 IOPS 進行設定。
+
+從 ONTAP 9.3 開始提供具調適能力的 QoS 原則，並使用 IOPS/TB 而非 IOPS 來表示。這些原則會根據每個工作負載的 Volume 大小自動調整 QoS 原則值，從而在 Volume 大小變更時維持 IOPS 與 TB 的比率。您只能將具調適能力的 QoS 原則群組套用至 Volume。具調適能力的 QoS 原則使用 QoS 術語 "`預期`" 和 "`峰值`"，而非最小值和最大值。
+
+Unified Manager 會在上一小時的每個效能收集週期內，當工作負載處理量超過定義的 QoS 最大原則設定時，產生 QoS 原則違規警告事件。工作負載處理量可能在每個收集週期內僅在短時間內超過 QoS 臨界值，但 Unified Manager 會在圖表中顯示該收集週期內的「平均」處理量。因此，即使工作負載的處理量可能並未超過圖表中顯示的原則臨界值，您仍然可能會看到 QoS 事件。
+
+.步驟
+. 在所選 Volume 或 LUN 的 *效能資源管理器* 頁面中，執行下列動作以檢視 QoS 上限和下限設定：
++
+|===
+| 如果您想要…… | 這樣做…… 
+
+
+ a| 
+檢視 IOPS 上限（QoS 最大值）
+ a| 
+在 IOPS 總計或細分圖表中，按一下 *縮放檢視*。
+
+
+
+ a| 
+檢視 MB/s 上限（QoS 最大值）
+ a| 
+在 MB/s 總計或細分圖表中，按一下 *縮放檢視*。
+
+
+
+ a| 
+檢視 IOPS 最低要求（QoS 最低要求）
+ a| 
+在 IOPS 總計或細分圖表中，按一下 *縮放檢視*。
+
+
+
+ a| 
+檢視 IOPS/TB 上限（QoS 峰值）
+ a| 
+對於 Volume，在 IOPS/TB 圖表中，按一下 *縮放檢視*。
+
+
+
+ a| 
+檢視 IOPS/TB 的最低要求（預期的 QoS）
+ a| 
+對於 Volume，在 IOPS/TB 圖表中，按一下 *縮放檢視*。
+
+|===
++
+虛線水平線表示 ONTAP 中設定的最大或最小處理量值。您也可以檢視 QoS 值變更的實施時間。
+
+. 若要檢視與 QoS 設定相比的特定 IOPS 和 MB/s 值，請將游標移至圖表區域以查看快顯視窗。
+
+
+如果您發現某些 Volume 或 LUN 的 IOPS 或 MB/s 非常高，並且正在佔用系統資源，則可以使用 System Manager 或 ONTAP CLI 來調整 QoS 設定，以便這些工作負載不會影響其他工作負載的效能。
+
+如需調整 QoS 設定的詳細資訊，請參閱 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-perf-mon/home.html["效能管理總覽"]

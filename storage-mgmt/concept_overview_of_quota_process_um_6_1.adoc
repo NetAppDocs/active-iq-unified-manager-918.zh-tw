@@ -1,0 +1,30 @@
+---
+permalink: storage-mgmt/concept_overview_of_quota_process_um_6_1.html 
+sidebar: sidebar 
+keywords: overview, quota, process 
+summary: 配額可以是軟配額或硬配額。軟配額會在超出指定限制時觸發 ONTAP 發送通知，而硬配額則會在超出指定限制時阻止寫入作業成功。 
+---
+= 了解 Active IQ Unified Manager 配額流程
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+配額可以是軟配額或硬配額。軟配額會在超出指定限制時觸發 ONTAP 發送通知，而硬配額則會在超出指定限制時阻止寫入作業成功。
+
+當 ONTAP 收到使用者或使用者群組對 FlexVol Volume 執行寫入的請求時，它會檢查該 Volume 上是否已針對該使用者或使用者群組啟用配額，並判斷下列事項：
+
+* 是否會達到硬限制
++
+如果是，當達到硬限制時，寫入作業會失敗，並傳送硬性配額通知。
+
+* 軟限制是否將被突破
++
+如果是，當超出軟限制時，寫入作業會成功，並發送軟配額通知。
+
+* 寫入作業是否不會超出軟限制
++
+如果是，寫入作業成功，且不發送通知。
+
+

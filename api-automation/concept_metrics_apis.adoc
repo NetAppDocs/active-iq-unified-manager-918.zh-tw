@@ -1,0 +1,392 @@
+---
+permalink: api-automation/concept_metrics_apis.html 
+sidebar: sidebar 
+keywords: view, performance, metrics 
+summary: Active IQ Unified Manager 在 /datacenter 類別下提供了一組 API，讓您能夠檢視資料中心中叢集和儲存設備物件的效能資料。這些 API 擷取不同儲存設備物件（例如叢集、節點、LUN、Volume、彙總和儲存設備虛擬機器）的效能資料。 
+---
+= 使用 Active IQ Unified Manager 中的 API 檢視效能計量
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Active IQ Unified Manager 提供了一系列  `/datacenter` 類別下的 API，可用於檢視資料中心中叢集和儲存設備物件的效能資料。這些 API 擷取不同儲存設備物件的效能資料，例如叢集、節點、LUN、Volume、彙總、儲存設備 VM、FC 介面、FC 連接埠、乙太網路連接埠和 IP 介面。
+
+ `/metrics` 和  `/analytics` API 提供效能計量的不同檢視，您可藉此深入查看資料中心內下列儲存設備物件的不同詳細資料層級：
+
+* 叢集
+* 節點
+* 儲存設備 VMs
+* Aggregate
+* 磁碟區
+* LUN
+* FC 介面
+* FC 埠
+* 乙太網路埠
+* IP 介面
+
+
+下表對  `/metrics` 和  `/analytics` API 在擷取到的效能資料細節方面進行了比較。
+
+[cols="2*"]
+|===
+| 指標 | 分析 
+
+
+ a| 
+單一物件的效能詳細資料。例如， `/datacenter/cluster/clusters/\{key}/metrics` API 要求將叢集金鑰作為路徑參數輸入，才能擷取該特定叢集的計量。
+ a| 
+資料中心內多個相同類型物件的效能詳細資料。例如，該  `/datacenter/cluster/clusters/analytics` API 會擷取資料中心內所有叢集的整體計量。
+
+
+
+ a| 
+基於擷取時間間隔參數的儲存設備物件效能計量樣本。
+ a| 
+特定類型儲存設備物件在特定期間（超過 72 小時）內的效能高階彙總值。
+
+
+
+ a| 
+擷取物件的基本詳細資訊，例如節點或叢集的詳細資訊。
+ a| 
+未擷取特定詳細資料。
+
+
+
+ a| 
+擷取單一物件（例如讀取、寫入、總計和其他計數器）的累積計數器，例如最小值、最大值、第 95 個百分位數和一段時間內的平均效能值。
+ a| 
+對於所有相同類型的物件，會顯示單一彙總值。
+
+
+
+ a| 
+時間範圍和樣本資料基於以下時間表：資料的時間範圍。例如可以是 1 小時、12 小時、1 天、2 天、3 天、15 天、1 週、1 個月、2 個月、3 個月、6 個月。如果範圍超過 3 天（72 小時），您將獲得 1 小時的樣本，否則為 5 分鐘的樣本。每個時間範圍的週期如下：
+
+* 1h：最近一小時內每 5 分鐘採樣一次的計量。
+* 12h：每 5 分鐘採樣一次，統計最近 12 小時的計量。
+* 1d：最近一天每 5 分鐘採樣一次的計量。
+* 2d：最近兩天每 5 分鐘採樣一次的計量。
+* 3d：最近 3 天的計量，採樣間隔為 5 分鐘。
+* 15d：每 1 小時採樣一次，統計最近 15 天的計量。
+* 1w：最近一週內每 1 小時採樣的計量。
+* 1m：最近一個月內每 1 小時採樣的計量。
+* 2m：最近兩個月的計量，採樣時間為 1 小時。
+* 3m：最近 3 個月內每 1 小時抽取的計量。
+* 6m：最近 6 個月內每 1 小時採樣一次的計量。
++
+可用值：1h, 12h, 1d, 2d, 3d, 15d, 1w, 1m, 2m, 3m, 6m
+
++
+預設值：1h
+
+
+ a| 
+超過 72 小時。此樣本的計算持續時間以 ISO-8601 標準格式表示。
+
+|===
+
+
+[[output-sample-for-metrics-apis]]
+== 計量 API 的輸出範例
+
+例如， `/datacenter/cluster/nodes/\{key}/metrics` API 會擷取節點的下列詳細資料（以及其他資訊）：
+
+
+NOTE: 總結值中的第 95 個百分位數表示該期間收集的樣本中有 95% 的計數值小於指定為第 95 個百分位數的值。
+
+[listing]
+----
+{
+     "iops": {
+       "local": {
+         "other": 100.53,
+         "read": 100.53,
+         "total": 100.53,
+         "write": 100.53
+       },
+       "other": 100.53,
+       "read": 100.53,
+       "total": 100.53,
+       "write": 100.53
+     },
+     "latency": {
+       "other": 100.53,
+       "read": 100.53,
+       "total": 100.53,
+       "write": 100.53
+     },
+     "performance_capacity": {
+       "available_iops_percent": 0,
+       "free_percent": 0,
+       "system_workload_percent": 0,
+       "used_percent": 0,
+       "user_workload_percent": 0
+     },
+     "throughput": {
+       "other": 100.53,
+       "read": 100.53,
+       "total": 100.53,
+       "write": 100.53
+     },
+     "timestamp": "2018-01-01T12:00:00-04:00",
+     "utilization_percent": 0
+   }
+ ],
+ "start_time": "2018-01-01T12:00:00-04:00",
+ "summary": {
+   "iops": {
+     "local_iops": {
+       "other": {
+         "95th_percentile": 28,
+         "avg": 28,
+         "max": 28,
+         "min": 5
+       },
+       "read": {
+         "95th_percentile": 28,
+         "avg": 28,
+         "max": 28,
+         "min": 5
+       },
+       "total": {
+         "95th_percentile": 28,
+         "avg": 28,
+         "max": 28,
+         "min": 5
+       },
+       "write": {
+         "95th_percentile": 28,
+         "avg": 28,
+         "max": 28,
+         "min": 5
+       }
+     },
+----
+
+
+[[output-sample-for-analytics-apis]]
+== 分析 API 的輸出範例
+
+例如， `/datacenter/cluster/nodes/analytics` API 會擷取所有節點的下列值（以及其他值）：
+
+[listing]
+----
+{     "iops": 1.7471,
+     "latency": 60.0933,
+     "throughput": 5548.4678,
+     "utilization_percent": 4.8569,
+     "period": 72,
+     "performance_capacity": {
+       "used_percent": 5.475,
+       "available_iops_percent": 168350
+     },
+     "node": {
+       "key": "37387241-8b57-11e9-8974-00a098e0219a:type=cluster_node,uuid=95f94e8d-8b4e-11e9-8974-00a098e0219a",
+       "uuid": "95f94e8d-8b4e-11e9-8974-00a098e0219a",
+       "name": "ocum-infinity-01",
+       "_links": {
+         "self": {
+           "href": "/api/datacenter/cluster/nodes/37387241-8b57-11e9-8974-00a098e0219a:type=cluster_node,uuid=95f94e8d-8b4e-11e9-8974-00a098e0219a"
+         }
+       }
+     },
+     "cluster": {
+       "key": "37387241-8b57-11e9-8974-00a098e0219a:type=cluster,uuid=37387241-8b57-11e9-8974-00a098e0219a",
+       "uuid": "37387241-8b57-11e9-8974-00a098e0219a",
+       "name": "ocum-infinity",
+       "_links": {
+         "self": {
+           "href": "/api/datacenter/cluster/clusters/37387241-8b57-11e9-8974-00a098e0219a:type=cluster,uuid=37387241-8b57-11e9-8974-00a098e0219a"
+         },
+     "_links": {
+       "self": {
+         "href": "/api/datacenter/cluster/nodes/analytics"
+       }
+     }
+   },
+----
+
+
+[[list-of-the-available-apis]]
+== 可用 API 清單
+
+下表詳細說明了 `/metrics`與 `/analytics` API。
+
+[NOTE]
+====
+這些 API 傳回的 IOPS 和效能計量是雙精確度數值，例如 `100.53`。不支援使用管線（|）和萬用字元（*）來篩選這些浮點值。
+
+====
+[cols="3*"]
+|===
+| HTTP 動詞 | 路徑 | 說明 
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/cluster/clusters/\{key}/metrics`
+ a| 
+擷取由叢集金鑰輸入參數指定的叢集的效能資料（樣本和總結）。傳回的資訊包括叢集金鑰和 UUID、時間範圍、IOPS、處理量和樣本數。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/cluster/clusters/analytics`
+ a| 
+擷取資料中心內所有叢集的高階效能計量。您可以根據所需條件篩選結果。會傳回彙總 IOPS 、處理量和收集期間（以小時為單位）等值。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/cluster/nodes/\{key}/metrics`
+ a| 
+擷取由節點金鑰的輸入參數所指定之節點的效能資料（樣本與總結）。傳回的資訊包括節點 UUID、時間範圍、IOPS、處理量、延遲與效能的總結、收集的樣本數，以及使用率百分比。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/cluster/nodes/analytics`
+ a| 
+擷取資料中心所有節點的高階效能計量。您可以根據所需條件篩選結果。會傳回節點和叢集鍵等資訊，以及彙總 IOPS、處理量和收集期間（以小時為單位）等值。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/storage/aggregates/\{key}/metrics`
+ a| 
+擷取由彙總鍵的輸入參數所指定的彙總效能資料（樣本與總結）。傳回的資訊包括時間範圍、IOPS、延遲、處理量與效能容量的總結、每個計數器收集的樣本數，以及使用率百分比。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/storage/aggregates/analytics`
+ a| 
+擷取資料中心內所有彙總的高階效能計量。您可以根據所需的條件篩選結果。會傳回資訊（例如彙總和叢集鍵）以及值（例如彙總的 IOPS、處理量和收集期間（以小時為單位））。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/storage/luns/\{key}/metrics`
+
+`/datacenter/storage/volumes/\{key}/metrics`
+ a| 
+擷取 LUN 或 Volume 鍵的輸入參數指定的 LUN 或檔案共享（Volume）的效能資料（樣本和總結）。傳回的資訊包括讀取、寫入和總 IOPS 的最小值、最大值和平均值、延遲和處理量的總結，以及每個計數器收集的樣本數。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/storage/luns/analytics`
+
+`/datacenter/storage/volumes/analytics`
+ a| 
+擷取資料中心內所有 LUN 或 Volume 的高階效能計量。您可以根據所需條件篩選結果。傳回的資訊包括儲存設備 VM 和叢集金鑰，以及彙總 IOPS、處理量和收集期間（以小時為單位）等值。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/svm/svms/{key}/metrics`
+ a| 
+擷取由儲存設備虛擬機器鍵的輸入參數指定的儲存設備虛擬機器的效能資料（樣本和總結）。傳回基於每個受支援協定（例如 `nvmf, fcp, iscsi,`和 `nfs`）的 IOPS、處理量、延遲以及收集的樣本數量的總結。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/svm/svms/analytics`
+ a| 
+擷取資料中心中所有儲存設備虛擬機器的高階效能計量。您可以根據所需條件篩選結果。傳回的資訊包括儲存設備虛擬機器 UUID、彙總 IOPS、延遲、處理量和資料收集週期（以小時為單位）。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/network/ethernet/ports/{key}/metrics`
+ a| 
+擷取由連接埠鍵輸入參數指定的特定乙太網路連接埠的效能計量。當提供支援範圍內的時間間隔（時間範圍）時，API 將傳回該時間段內的累計計數器，例如最小值、最大值和平均效能值。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/network/ethernet/ports/analytics`
+ a| 
+擷取資料中心環境中所有乙太網路連接埠的高階效能計量。傳回的資訊包括叢集和節點金鑰及 UUID、處理量、收集週期以及連接埠的使用率百分比。您可以根據可用參數篩選結果，例如連接埠金鑰、使用率百分比、叢集和節點名稱及 UUID 等。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/network/fc/interfaces/{key}/metrics`
+ a| 
+擷取由介面鍵的輸入參數所指定的特定網路 FC 介面的效能計量。當提供支援範圍內的時間間隔（時間範圍）時，API 將傳回該時間段內的累計計數器，例如最小值、最大值和平均效能值。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/network/fc/interfaces/analytics`
+ a| 
+擷取資料中心環境中所有乙太網路連接埠的高階效能計量。傳回的資訊包括叢集和 FC 介面金鑰和 UUID、處理量、IOPS、延遲以及儲存設備虛擬機器。您可以根據可用參數篩選結果，例如叢集和 FC 介面名稱和 UUID、儲存設備虛擬機器、處理量等等。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/network/fc/ports/{key}/metrics`
+ a| 
+擷取由連接埠鍵輸入參數指定的特定 FC 連接埠的效能計量。當提供支援範圍內的時間間隔（時間範圍）時，API 將傳回該時間段內的累計計數器，例如最小值、最大值和平均效能值。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/network/fc/ports/analytics`
+ a| 
+擷取資料中心環境中所有 FC 連接埠的高階效能計量。傳回的資訊包括叢集和節點金鑰及 UUID、處理量、收集週期以及連接埠使用率。您可以根據可用參數篩選結果，例如連接埠金鑰、使用率、叢集和節點名稱及 UUID 等。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/network/ip/interfaces/{key}/metrics`
+ a| 
+根據介面鍵的輸入參數指定，擷取網路 IP 介面的效能計量。當提供支援範圍內的時間間隔（時間範圍）時，API 將傳回諸如樣本數、累計計數器、處理量以及接收和傳送的封包數量等資訊。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/network/ip/interfaces/analytics`
+ a| 
+擷取資料中心環境中所有網路 IP 介面的高階效能計量。傳回的資訊包括叢集和 IP 介面金鑰及 UUID、處理量、IOPS 和延遲。您可以根據可用參數篩選結果，例如叢集和 IP 介面名稱及 UUID、IOPS、延遲、處理量等。
+
+|===

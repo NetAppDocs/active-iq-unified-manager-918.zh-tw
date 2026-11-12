@@ -1,0 +1,27 @@
+---
+permalink: events/task_edit_alerts.html 
+sidebar: sidebar 
+keywords: edit, alerts 
+summary: 您可以編輯警報屬性，例如警報關聯的資源、事件、收件者、通知選項、通知頻率和關聯的指令碼。 
+---
+= 在 Active IQ Unified Manager 中編輯警報
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以編輯警報屬性，例如警報關聯的資源、事件、收件者、通知選項、通知頻率和關聯的指令碼。
+
+.開始之前
+您必須擁有應用程式管理員角色。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存設備管理* > *警示設定*。
+. 在*警報設定*頁面中，選擇要編輯的警報，然後按一下*編輯*。
+. 在 *編輯警報* 對話方塊中，視需要編輯名稱、資源、事件和行動區段。
++
+您可以變更或移除與警報關聯的指令碼。
+
+. 按一下 *Save* 。
+

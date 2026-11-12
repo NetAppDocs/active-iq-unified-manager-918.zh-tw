@@ -1,0 +1,56 @@
+---
+permalink: data-protection/task_resolve_lag_issues.html 
+sidebar: sidebar 
+keywords: resolve, lag, issues 
+summary: 此工作流程提供如何解決延遲問題的範例。在此情境中，您作為系統管理員或營運者存取 Unified Manager 儀表板頁面，查看您的保護關係是否有任何問題，如果有問題，請尋找解決方案。 
+---
+= 解決 Active IQ Unified Manager 中的延遲問題
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此工作流程提供如何解決延遲問題的範例。在此情境中，您是存取 Unified ManagerDashboard 頁面的系統管理員或營運者，以查看您的保護關係是否有任何問題，如果存在問題，則尋找解決方案。
+
+.開始之前
+您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+在儀表板頁面中，您查看「未解決的事件與風險」區域，並在「保護風險」下的「保護」窗格中看到 SnapMirror 延遲錯誤。
+
+.步驟
+. 在「儀表板」頁面的「保護」窗格中，找到 SnapMirror 關係延遲錯誤並按一下它。
++
+顯示延遲錯誤事件的事件詳細資料頁面。
+
+. 從 *事件* 詳細資料頁面，您可以執行下列一項或多項工作：
++
+** 查看摘要區域「原因」欄位中的錯誤訊息，以確定是否有任何建議的修正行動。
+** 按一下摘要區域的「來源」欄位中的物件名稱（在本例中為 Volume），以取得有關該 Volume 的詳細資訊。
+** 尋找可能已針對此事件新增的附註。
+** 為事件新增附註。
+** 將事件指派給特定使用者。
+** 確認或解決該事件。
+
+
+. 在這種情況下，按一下 *摘要* 區域的「來源」欄位中的物件名稱（在本例中為 Volume），即可取得有關該 Volume 的詳細資訊。
++
+顯示「Volume / 健康狀況詳細資料」頁面的「保護」標籤。
+
+. 在 *保護* 標籤中，您查看拓撲圖。
++
+您注意到發生延遲錯誤的 Volume 是三個 Volume 的 SnapMirror 串聯中的最後一個 Volume。您選取的 Volume 以深灰色外框標示，且來自來源 Volume 的雙橘線表示 SnapMirror 關係錯誤。
+
++
+image::../media/topology_cascade_lag_error.gif[SnapMirror 延遲級聯拓撲]
+
+. 點擊 SnapMirror 級聯中的每個 Volume。
++
+當您選擇每個 Volume 時，「摘要」、「拓撲」、「歷史記錄」、「事件」、「相關設備」和「相關警報」區域中的保護資訊會發生變化，以顯示與所選 Volume 相關的詳細資訊。
+
+. 您查看 *摘要* 區域，並將游標停留在每個 Volume 的 *更新排程* 欄位中的資訊圖示上。
++
+在這種情況下，您注意到 SnapMirror 原則為 DPDefault，並且 SnapMirror 排程每小時更新一次，更新時間為整點後五分鐘。您發現關係中的所有 Volume 都在嘗試同時完成 SnapMirror 傳輸。
+
+. 為了解決延遲問題，您修改其中兩個級聯 Volume 的排程，以便每個目的地在其來源完成傳輸後，才開始 SnapMirror 傳輸。
+

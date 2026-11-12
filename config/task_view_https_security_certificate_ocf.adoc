@@ -1,0 +1,28 @@
+---
+permalink: config/task_view_https_security_certificate_ocf.html 
+sidebar: sidebar 
+keywords: view, https, security, certificate 
+summary: 您可以將 HTTPS 憑證詳細資訊與瀏覽器中擷取的憑證進行比較，以確保瀏覽器與 Unified Manager 的加密連線未遭攔截。 
+---
+= 在 Active IQ Unified Manager 中檢視 HTTPS 安全性憑證
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以將 HTTPS 憑證詳細資訊與瀏覽器中擷取的憑證進行比較，以確保瀏覽器與 Unified Manager 的加密連線沒有被攔截。
+
+.開始之前
+您必須擁有操作員、應用程式管理員或儲存管理員角色。
+
+檢視憑證可讓您驗證重新產生的憑證內容，或檢視可從中存取 Unified Manager 的主題備用名稱（SAN）。
+
+.步驟
+. 在左側導覽窗格中，按一下 *一般* > *HTTPS 憑證*。
++
+HTTPS 憑證顯示在頁面頂部
+
+
+
+如果您需要檢視比 HTTPS 憑證頁面上所顯示更詳細的安全性憑證資訊，您可以在瀏覽器中檢視連線憑證。

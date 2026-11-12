@@ -1,0 +1,133 @@
+---
+permalink: storage-mgmt/reference_dashboard_page.html 
+sidebar: sidebar 
+keywords: dashboard page, 
+summary: 儀表板頁面包含多個「面板」，用於顯示您正在監控的叢集的高階容量、效能和安全性健全狀況。此頁面還提供一個「管理動作」面板，其中列出 Unified Manager 可以執行的修復措施，以解決某些事件。 
+---
+= 了解 Active IQ Unified Manager 儀表板頁面
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+儀表板頁面包含多個「面板」，用於顯示您正在監控的叢集的高階容量、效能和安全性健全狀況。此頁面還提供一個「管理操作」面板，其中列出了 Unified Manager 可以執行的修復措施，以解決某些事件。
+
+大多數面板還會顯示該類別中的作用中事件數量，以及過去 24 小時內新增的事件數量。這些資訊有助於您決定可能需要進一步分析哪些叢集以解決事件。按一下事件即可顯示熱門事件，並提供連結至事件管理清單頁面，該頁面已篩選為顯示該類別中的作用中事件。
+
+在儀表板頂部，您可以選擇面板顯示所有受監控叢集的資訊（「所有叢集」）還是單一叢集的資訊。您可以先檢視所有叢集的狀態，然後在需要檢視詳細資訊時，再深入檢視單一叢集。
+
+[NOTE]
+====
+根據您的組態，以下列出的部分面板會顯示在儀表板上。
+
+====
+
+
+[[management-actions-panel]]
+== 管理操作面板
+
+Unified Manager 可以徹底診斷某些問題並提供單一解決方案。如有解決方案，則會在此面板中顯示，並帶有「修復此問題」或「全部修復」按鈕。您可以立即透過 Unified Manager 修復這些問題，而無需使用 ONTAP System Manager 或 ONTAP CLI。若要查看所有問題，請按一下「查看 link:concept_fix_ontap_issues_directly_from_unified_manager.html["直接從 Unified Manager 修復 ONTAP 問題"] 」以取得更多資訊。
+
+
+
+[[capacity-panel]]
+== 容量面板
+
+在檢視所有叢集時，此面板會顯示每個叢集的實體已使用容量（套用儲存效率節省後）和實體可用容量（不包括潛力儲存效率節省）、磁碟預計滿載的天數，以及根據已設定的 ONTAP 儲存效率設定的資料減量比率（不包括 Snapshot 快照技術複本）。它也會列出任何已設定雲端分層的已使用容量。按一下長條圖會將您帶往該叢集的彙總庫存頁面。按一下「滿載天數」文字會顯示一則訊息，指出剩餘容量天數最少的彙總；按一下彙總名稱以查看更多詳細資料。
+
+檢視單一叢集時，此面板會顯示資料彙總的實體已使用容量和實體可用容量，這些資料彙總會依本機分層上的各個磁碟類型以及雲端分層進行排序。按一下磁碟類型的長條圖，即可進入使用該磁碟類型之 Volume 的 Volumes 清單頁面。
+
+
+
+[[performance-capacity-panel]]
+== 效能容量面板
+
+檢視所有叢集時，此面板會顯示每個叢集的效能容量值（過去 1 小時的平均值）以及效能容量達到上限所需的天數（基於每日成長率）。點擊長條圖即可進入該叢集的節點清單頁面。請注意，節點清單頁面顯示的是過去 72 小時的平均效能容量。點擊「Days To Full」文字會顯示一則訊息，其中會指出剩餘效能容量天數最少的節點；點擊節點名稱可查看更多詳細資訊。
+
+在檢視單一叢集時，此面板顯示叢集效能容量使用百分比、總 IOPS 和總處理量 (MB/s) 值，以及預計這三個計量分別達到其上限所需的天數。
+
+
+
+[[workload-iops-panel]]
+== 工作負載 IOPS 面板
+
+檢視單一叢集時，此面板會顯示目前在特定 IOPS 範圍內執行的工作負載總數，並在您將游標停留在圖表上時，指出每種磁碟類型的數量。
+
+
+
+[[workload-performance-panel]]
+== 工作負載效能面板
+
+此面板顯示指派給每個效能服務層級 (PSL) 原則的符合要求和不符合要求的工作負載總數。它還顯示未指派 PSL 的工作負載數量。按一下長條圖，即可在「工作負載」頁面中查看指派給該原則的符合要求的工作負載。按一下長條圖後面的數字，即可查看指派給該原則的符合要求和不符合要求的工作負載。
+
+
+
+[[security-panel]]
+== 安全性面板
+
+「安全性」面板顯示所有叢集或單一叢集的高階安全性狀態，具體取決於您目前的檢視。此面板顯示：
+
+* 過去 24 小時內收到的安全性事件清單。點擊事件即可在「事件詳情」頁面檢視詳細資訊
+* 叢集安全性狀態（符合法規與不符合法規叢集的數量）
+* 儲存設備 VM 安全性狀態（符合法規和不符合法規的儲存設備 VM 數量）
+* Volume 加密狀態（已加密或未加密的 Volume 數量）
+* Volume 反勒索軟體狀態（已啟用或已停用反勒索軟體的 Volume 數）
+
+
+您可以點擊符合法規和不符合法規叢集、儲存 VM、加密和未加密 Volume，以及 Volume 反勒索軟體狀態的長條圖，進入對應的頁面，檢視已篩選叢集、儲存 VM 和 Volume 的安全性詳細資料。
+
+合規性基於 https://www.netapp.com/pdf.html?item=/media/10674-tr4569pdf.pdf["NetApp ONTAP 9 安全性強化指南"^]。按一下面板頂端的向右箭頭，即可在「安全性」頁面上檢視所有叢集的安全性詳細資訊。如需詳細資訊，請參閱link:../health-checker/task_view_detailed_security_status_for_clusters_and_svms.html["檢視叢集和 Storage VM 的詳細安全性狀態"]。
+
+
+
+[[data-protection-panel]]
+== 資料保護面板
+
+此面板顯示資料中心中單一或所有叢集的資料保護總結。它顯示 ONTAP 中過去 24 小時內觸發的資料保護事件總數、MetroCluster 事件總數，以及作用中事件數。點擊這些事件的連結即可進入事件詳細資料頁面。您可以點擊 *View All* 連結，在事件管理清單頁面中檢視所有作用中保護事件。此面板顯示：
+
+* 叢集或資料中心內所有叢集中受 Snapshot 快照技術複本保護的 Volume 數量。
+* 叢集中或資料中心內所有受 SnapMirror 關係保護之叢集中的 Volume 數量。對於 SnapMirror 關係，會考量來源叢集中的 Volume 數。
+* 受 IP 或 FC 上的 MetroCluster 組態保護的資料中心內的叢集數量或所有叢集。
+* 根據延遲狀態，具有 SnapMirror 恢復點目標 (RPO) 延遲的 Volume 關係數量。
+
+
+您可以將滑鼠懸停以檢視各自的計數和圖例。您可以按一下面板頂端的右箭頭，在「資料保護」頁面上檢視單一或所有叢集的詳細資料。此外，您也可以按一下：
+
+* 未受保護的 Volume 和受 Snapshot 複本保護的 Volume 的長條圖，可前往 Volume 頁面並檢視詳細資料。
+* 若要查看受 MetroCluster 組態保護或未受保護的叢集長條圖，請前往「叢集」頁面並檢視詳細資訊。
+* 所有關係的長條圖會導向至「關係」頁面，其中的詳細資料會根據來源叢集進行篩選。
+
+
+如需詳細資訊，請參閱 link:../data-protection/view-protection-status.html["檢視 Volume 保護狀態"]。
+
+
+
+[[usage-overview-panel]]
+== 使用總覽面板
+
+檢視所有叢集時，您可以選擇檢視依最高 IOPS、最高處理量（MB/s）或最高已使用實體容量排序的叢集。
+
+在檢視單一叢集時，您可以選擇檢視依最高 IOPS、最高處理量（MB/s）或最高已使用邏輯容量排序的工作負載。
+
+*相關資訊*
+
+link:../events/task_fix_issues_using_um_automatic_remediations.html["使用 Unified Manager 自動修復功能解決問題"]
+
+link:../performance-checker/task_display_information_about_performance_event.html["顯示有關效能事件的資訊"]
+
+link:../performance-checker/concept_manage_performance_using_perf_capacity_available_iops.html["利用效能容量和可用 IOPS 資訊來管理效能"]
+
+link:../health-checker/reference_health_volume_details_page.html["Volume / 健全狀況詳細資料頁面"]
+
+link:../performance-checker/reference_performance_event_analysis_and_notification.html["效能事件分析和通知"]
+
+link:../events/reference_description_of_event_severity_types.html["事件嚴重性類型的描述"]
+
+link:../performance-checker/concept_sources_of_performance_events.html["效能事件的來源"]
+
+link:../health-checker/concept_manage_cluster_security_objectives.html["管理叢集安全性目標"]
+
+link:../performance-checker/concept_monitor_cluster_performance_from_cluster_landing_page.html["從「效能叢集登陸頁面」監控叢集效能"]
+
+link:../performance-checker/concept_monitor_performance_using_object_performance.html["使用效能清單頁面監控效能"]

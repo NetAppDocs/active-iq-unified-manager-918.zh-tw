@@ -1,0 +1,54 @@
+---
+permalink: reporting/task_use_excel_to_customize_your_report.html 
+sidebar: sidebar 
+keywords: excel, customize, report 
+summary: 儲存檢視後，您可以將其下載為 Excel 工作簿格式（.xlsx）。開啟 Excel 檔案後，您可以使用 Excel 的進階功能來自訂報告。 
+---
+= 使用 Excel 在 Active IQ Unified Manager 中自訂報告
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+儲存檢視後，您可以將其下載為 Excel 工作簿格式（.xlsx）。開啟 Excel 檔案後，您可以使用 Excel 的進階功能來自訂報告。
+
+.開始之前
+您只能上傳副檔名為 .xlsx 的 Excel 工作簿檔案。
+
+例如，您可以在報告中使用的一些進階 Excel 功能包括：
+
+* 多欄排序
+* 複雜過濾
+* 樞紐分析表
+* 圖表
+
+
+[NOTE]
+====
+* 下載的 Excel 檔案使用檢視的預設檔案名稱，而不是您儲存的名稱。
++
+** 格式為 `<View Area>-<Day>-<Month>-<Year>-<Hour>-<Minute>-<Second>.xlsx.`
+** 例如，名為 `Volumes-not online`的自訂儲存檢視，如果在該日期和時間儲存，其檔案名稱為 `health-volumes-05-May-2020-19-18-00.xlsx`。
+
+
+* 您可以在 Excel 檔案中新增工作表，但請勿變更現有的工作表。
++
+** 請勿更改現有工作表、資料和資訊。而是將資料複本到您建立的新頁面中。
+** 上述規則的例外是，您可以在 "`資料`" 頁面上建立公式。使用資料頁面公式可以在新頁面上建立圖表。
+** 請勿將新工作表命名為資料或資訊。
+
+
+* 如果有自訂的 Excel 檔案，*報告* > *上傳 Excel* 功能表項目旁邊會顯示勾選標記。下載 Excel 檔案時，將使用已進行自訂的版本。image:../media/upload_excel.png["一張使用者介面快照，展示如何將 Excel 檔案上傳到報告中。"]
+
+
+====
+.步驟
+. 開啟要用作報告基礎的預設檢視、自訂檢視或已儲存檢視。
+. 選擇 *報告* > *下載 Excel*。
+. 儲存檔案。檔案已儲存至您的下載資料夾。
+. 在 Excel 中開啟已儲存的檔案。請勿將檔案移至新位置，或者如果您在其他位置進行工作，請在上傳檔案之前，使用原始檔案名稱將檔案儲存回原始位置。
+. 使用 Excel 功能自訂檔案，例如複雜排序、分層篩選器、樞紐分析表或圖表。如需詳細資訊，請參閱 Microsoft® Excel 文件。
+. 選擇 *報告* > *上傳 Excel*，然後選擇您修改過的檔案。系統會從相同檔案位置上傳最近下載的檔案。
+. 使用 *排程報告* 功能傳送測試報告給自己。
+

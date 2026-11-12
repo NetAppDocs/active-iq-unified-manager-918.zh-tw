@@ -1,0 +1,19 @@
+---
+permalink: health-checker/concept_understand_node_root_volumes.html 
+sidebar: sidebar 
+keywords: understand, node, root, volumes 
+summary: 您可以使用 Unified Manager 監控節點根 Volume。最佳實務做法是節點根 Volume 應具有足夠的容量，以防止節點停機。 
+---
+= 了解 Active IQ Unified Manager 中的節點根目錄 Volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 Unified Manager 監控節點根 Volume。最佳實務做法是節點根 Volume 應具有足夠的容量，以防止節點停機。
+
+當節點根 Volume 的已使用容量超過總節點根 Volume 容量的 80% 時，系統會產生「節點根 Volume 空間幾乎已滿」事件。您可以設定該事件的警報以接收通知。您可以使用 ONTAP System Manager 或 ONTAP CLI 採取適當的行動，以防止節點停機。
+
+
+NOTE: 如果叢集執行 ONTAP 9.14.1 或更新版本，則無法使用監控節點根 Volume 的功能。

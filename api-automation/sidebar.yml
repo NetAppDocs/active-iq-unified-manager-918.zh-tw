@@ -1,0 +1,92 @@
+---
+section: api-automation
+title: 使用 REST API 管理儲存設備
+entries:
+- title: Active IQ Unified Manager 入門指南
+  entries:
+  - title: 開始使用 Active IQ Unified Manager REST API
+    url: "/api-automation/concept_get_started_with_um_apis.html"
+  - title: 此內容的受眾
+    url: "/api-automation/reference_intended_audience_for_this_guide.html"
+  - title: Active IQ Unified Manager API 存取和類別
+    url: "/api-automation/concept_api_url_and_categories.html"
+  - title: Active IQ Unified Manager 中提供的 REST 服務
+    url: "/api-automation/concept_rest_services_offered_in_unified_manager_apis.html"
+  - title: Active IQ Unified Manager 中的 API 版本
+    url: "/api-automation/concept_rest_api_versioning_in_unified_manager_apis.html"
+  - title: ONTAP 中的儲存資源
+    url: "/api-automation/concept_storage_resource_model.html"
+- title: Active IQ Unified Manager 中的 REST API 存取和驗證
+  entries:
+  - title: 在 Active IQ Unified Manager 中存取和驗證 REST API
+    url: "/api-automation/concept_rest_api_access_and_authentication_in_um_apis.html"
+  - title: Active IQ Unified Manager 中使用的 HTTP 狀態碼
+    url: "/api-automation/reference_authentication_errors.html"
+  - title: 使用 Active IQ Unified Manager API 的建議
+    url: "/api-automation/reference_recommendations_to_use_um_apis.html"
+  - title: 用於疑難排解的日誌
+    url: "/api-automation/concept_api_logs.html"
+  - title: 作業物件非同步程序
+    url: "/api-automation/concept_async_run.html"
+  - title: 您好 API 伺服器
+    url: "/api-automation/concept_hello_api_server.html"
+- title: Unified Manager REST API
+  entries:
+  - title: 了解 Active IQ Unified Manager REST API 的類別
+    url: "/api-automation/concept_um_apis_list_intro.html"
+  - title: 管理資料中心中的儲存設備物件
+    url: "/api-automation/concept_data_center_apis.html"
+  - title: 透過 Proxy 存取 ONTAP API
+    url: "/api-automation/concept_gateway_apis.html"
+  - title: 執行管理工作
+    url: "/api-automation/concept_administration_apis.html"
+  - title: 管理使用者
+    url: "/api-automation/concept_security_apis.html"
+  - title: 查看效能計量
+    url: "/api-automation/concept_metrics_apis.html"
+  - title: 檢視工作和系統詳細資料
+    url: "/api-automation/concept_job_api.html"
+  - title: 管理事件和警報
+    url: "/api-automation/concept_events_api.html"
+  - title: 管理工作負載
+    entries:
+    - title: 檢視儲存設備工作負載
+      url: "/api-automation/concept_view_workloads.html"
+    - title: 管理存取端點
+      url: "/api-automation/concept_manage_access_endpoint.html"
+    - title: 管理 Active Directory 對應
+      url: "/api-automation/concept_manage_active_directory.html"
+    - title: 管理檔案共享
+      url: "/api-automation/concept_manage_fileshares_api.html"
+    - title: 管理 LUN
+      url: "/api-automation/concept_manage_lun.html"
+    - title: 管理效能服務級別
+      url: "/api-automation/concept_manage_psl.html"
+    - title: 管理儲存效率原則
+      url: "/api-automation/concept_manage_sep.html"
+- title: 儲存管理的常用工作流程
+  entries:
+  - title: 了解儲存管理的常見 API 工作流程
+    url: "/api-automation/concept_workflow_intro.html"
+  - title: 判斷集合體中的空間問題
+    url: "/api-automation/concept_workflow_space_issue.html"
+  - title: 使用事件確定儲存設備物件中的問題
+    url: "/api-automation/concept_events_workflows.html"
+  - title: 使用閘道 API 對 ONTAP 磁碟區進行疑難排解
+    url: "/api-automation/concept_ontap_troubleshooting_workflow.html"
+  - title: 工作負載管理的工作流程
+    entries:
+    - title: 配置和修改儲存設備工作負載
+      url: "/api-automation/concept_provision_workflow.html"
+    - title: 驗證叢集上的 SVM
+      url: "/api-automation/concept_verify_svm_workflow.html"
+    - title: 資源配置 CIFS 和 NFS 檔案共享
+      url: "/api-automation/concept_provision_file_share.html"
+    - title: 配置 LUN
+      url: "/api-automation/concept_provision_luns.html"
+    - title: 修改儲存設備工作負載
+      entries:
+      - title: 使用 API 修改儲存設備工作負載
+        url: "/api-automation/concept_modify_workloads_workflow.html"
+      - title: 修改 NFS 檔案共享以支援 CIFS
+        url: "/api-automation/task_modify_fileshare_to_include_cifs_and_nfs.html"

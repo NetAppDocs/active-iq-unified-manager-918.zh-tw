@@ -1,0 +1,412 @@
+---
+permalink: events/reference_aggregate_events.html 
+sidebar: sidebar 
+keywords: aggregate events, impact, area, availability, capacity, configuration, performance 
+summary: Aggregate 事件提供有關 Aggregate 狀態的資訊，以便您可以監控潛力問題。事件按影響區域分組，包括事件和設陷名稱、影響層級、來源類型和嚴重性。 
+---
+= 了解 Active IQ Unified Manager 中的彙總事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Aggregate 事件提供有關 Aggregate 狀態的資訊，以便您可以監控潛力問題。事件按影響區域分組，包括事件和設陷名稱、影響層級、來源類型和嚴重性。
+
+
+
+[[impact-area-availability]]
+== 影響區域：可用度
+
+星號（*）表示已轉換為 Unified Manager 事件的 EMS 事件。
+
+|===
+| 事件名稱（設陷名稱） | 影響層級 | 來源類型 | 嚴重程度 
+
+
+ a| 
+集合體離線（ocumEvtAggregateStateOffline）
+ a| 
+事件
+ a| 
+彙總
+ a| 
+關鍵
+
+
+
+ a| 
+集合體失敗（ocumEvtAggregateStateFailed）
+ a| 
+事件
+ a| 
+彙總
+ a| 
+關鍵
+
+
+
+ a| 
+集合體受限（ocumEvtAggregateStateRestricted）
+ a| 
+風險
+ a| 
+彙總
+ a| 
+警告
+
+
+
+ a| 
+Aggregate 重構（ocumEvtAggregateRaidStateReconstructing）
+ a| 
+風險
+ a| 
+彙總
+ a| 
+警告
+
+
+
+ a| 
+集合體降級（ocumEvtAggregateRaidStateDegraded）
+ a| 
+風險
+ a| 
+彙總
+ a| 
+警告
+
+
+
+ a| 
+雲端層部分可達（ocumEventCloudTierPartiallyReachable）
+ a| 
+風險
+ a| 
+彙總
+ a| 
+警告
+
+
+
+ a| 
+雲端層無法連線（ocumEventCloudTierUnreachable）
+ a| 
+風險
+ a| 
+彙總
+ a| 
+錯誤
+
+
+
+ a| 
+雲端層存取遭拒，無法進行 Aggregate 重新配置 *（arlNetraCaCheckFailed）
+ a| 
+風險
+ a| 
+彙總
+ a| 
+錯誤
+
+
+
+ a| 
+在儲存容錯移轉期間 Aggregate 重新定位的雲端層存取遭拒 *(gbNetraCaCheckFailed)
+ a| 
+風險
+ a| 
+彙總
+ a| 
+錯誤
+
+
+
+ a| 
+MetroCluster 遺留的集合體（ocumEvtMetroClusterAggregateLeftBehind）
+ a| 
+風險
+ a| 
+彙總
+ a| 
+錯誤
+
+
+
+ a| 
+MetroCluster 集合體鏡射降級（ocumEvtMetroClusterAggregateMirrorDegraded）
+ a| 
+風險
+ a| 
+彙總
+ a| 
+錯誤
+
+|===
+
+
+[[impact-area-capacity]]
+== 影響區域：容量
+
+|===
+| 事件名稱（設陷名稱） | 影響層級 | 來源類型 | 嚴重程度 
+
+
+ a| 
+集合體空間幾乎已滿（ocumEvtAggregateNearlyFull）
+ a| 
+風險
+ a| 
+彙總
+ a| 
+警告
+
+
+
+ a| 
+集合體空間已滿（ocumEvtAggregateFull）
+ a| 
+風險
+ a| 
+彙總
+ a| 
+錯誤
+
+
+
+ a| 
+Aggregate 滿載前天數（ocumEvtAggregateDaysUntilFullSoon）
+ a| 
+風險
+ a| 
+彙總
+ a| 
+錯誤
+
+
+
+ a| 
+集合體過度配置（ocumEvtAggregateOvercommitted）
+ a| 
+風險
+ a| 
+彙總
+ a| 
+錯誤
+
+
+
+ a| 
+集合體幾乎過度配置（ocumEvtAggregateAlmostOvercommitted）
+ a| 
+風險
+ a| 
+彙總
+ a| 
+警告
+
+
+
+ a| 
+Aggregate Snapshot 快照技術保留空間已滿（ocumEvtAggregateSnapReserveFull）
+ a| 
+風險
+ a| 
+彙總
+ a| 
+警告
+
+
+
+ a| 
+Aggregate 成長率異常（ocumEvtAggregateGrowthRateAbnormal）
+ a| 
+風險
+ a| 
+彙總
+ a| 
+警告
+
+|===
+
+
+[[impact-area-configuration]]
+== 影響區域：組態
+
+|===
+| 事件名稱（設陷名稱） | 影響層級 | 來源類型 | 嚴重程度 
+
+
+ a| 
+已發現 Aggregate（不適用）
+ a| 
+事件
+ a| 
+彙總
+ a| 
+資訊
+
+
+
+ a| 
+集合體已重新命名（不適用）
+ a| 
+事件
+ a| 
+彙總
+ a| 
+資訊
+
+
+
+ a| 
+Aggregate 已刪除（不適用）
+ a| 
+事件
+ a| 
+節點
+ a| 
+資訊
+
+|===
+
+
+[[impact-area-performance]]
+== 影響領域：效能
+
+|===
+| 事件名稱（設陷名稱） | 影響層級 | 來源類型 | 嚴重程度 
+
+
+ a| 
+Aggregate IOPS 臨界閾值已突破（ocumAggregateIopsIncident）
+ a| 
+事件
+ a| 
+彙總
+ a| 
+關鍵
+
+
+
+ a| 
+Aggregate IOPS 警告臨界值已遭違反（ocumAggregateIopsWarning）
+ a| 
+風險
+ a| 
+彙總
+ a| 
+警告
+
+
+
+ a| 
+Aggregate MB/s 嚴重臨界值已違反（ocumAggregateMbpsIncident）
+ a| 
+事件
+ a| 
+彙總
+ a| 
+關鍵
+
+
+
+ a| 
+Aggregate MB/s 警告臨界值已違反（ ocumAggregateMbpsWarning）
+ a| 
+風險
+ a| 
+彙總
+ a| 
+警告
+
+
+
+ a| 
+集合體延遲臨界閾值已突破（ocumAggregateLatencyIncident）
+ a| 
+事件
+ a| 
+彙總
+ a| 
+關鍵
+
+
+
+ a| 
+集合體延遲警告臨界值已遭違反（ocumAggregateLatencyWarning）
+ a| 
+風險
+ a| 
+彙總
+ a| 
+警告
+
+
+
+ a| 
+已使用的 Aggregate 效能容量已突破臨界閾值（ocumAggregatePerfCapacityUsedIncident）
+ a| 
+事件
+ a| 
+彙總
+ a| 
+關鍵
+
+
+
+ a| 
+Aggregate 已使用的效能容量警告臨界值已突破（ocumAggregatePerfCapacityUsedWarning）
+ a| 
+風險
+ a| 
+彙總
+ a| 
+警告
+
+
+
+ a| 
+集合體使用率臨界閾值已突破（ocumAggregateUtilizationIncident）
+ a| 
+事件
+ a| 
+彙總
+ a| 
+關鍵
+
+
+
+ a| 
+集合體使用率警告臨界值已違反（ocumAggregateUtilizationWarning）
+ a| 
+風險
+ a| 
+彙總
+ a| 
+警告
+
+
+
+ a| 
+Aggregate 磁碟過度使用臨界值已突破（ocumAggregateDisksOverUtilizedWarning）
+ a| 
+風險
+ a| 
+彙總
+ a| 
+警告
+
+
+
+ a| 
+集合體動態臨界值突破（ocumAggregateDynamicEventWarning）
+ a| 
+風險
+ a| 
+彙總
+ a| 
+警告
+
+|===

@@ -1,0 +1,18 @@
+---
+permalink: data-protection/concept_monitor_storage_vm_disaster_recovery_relationships.html 
+sidebar: sidebar 
+keywords: disaster recovery, monitor, storage vm protection, relationships 
+summary: Active IQ Unified Manager 支援監控儲存設備 VM 災難恢復關係，提供儲存設備 VM 層級精細度的災難恢復。儲存設備 VM 災難恢復可恢復儲存設備 VM 組成 Volume 中的資料，以及恢復儲存設備 VM 組態。 
+---
+= 了解 Active IQ Unified Manager 中的儲存設備 VM 災難恢復關係
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Active IQ Unified Manager 支援監控儲存設備 VM 災難恢復關係，提供儲存設備 VM 層級精細度的災難恢復。儲存設備 VM 災難恢復可恢復儲存設備 VM 組成 Volume 中的資料，以及恢復儲存設備 VM 組態。
+
+系統會從來源儲存 VM 建立至目的地儲存 VM 的儲存 VM DR 關係，以提供非同步災難恢復。您可以根據叢集設定，選擇複寫全部或部分的儲存 VM 組態（不包括網路和傳輸協定組態）以及資料 Volume。
+
+設定儲存設備虛擬機器災難恢復關係後，當來源儲存設備虛擬機器因硬體故障或環境災害而無法使用時，目的地儲存設備虛擬機器將會啟動，以最少的中斷提供資料存取。同樣地，當來源儲存設備虛擬機器恢復可用時，它會與目的地儲存設備虛擬機器重新同步，然後來源會重新啟動以提供資料。您可以使用 SnapMirror 命令來設定和管理儲存設備虛擬機器災難恢復關係。

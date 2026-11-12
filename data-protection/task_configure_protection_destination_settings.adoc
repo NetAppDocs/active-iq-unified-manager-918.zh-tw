@@ -1,0 +1,29 @@
+---
+permalink: data-protection/task_configure_protection_destination_settings.html 
+sidebar: sidebar 
+keywords: configure, destination, efficiency, settings 
+summary: 您可以使用「進階目的地設定」對話方塊，在保護目的地上設定目的地效率設定，例如重複資料刪除、壓縮、自動成長和空間保證。當您想要最大化目的地或次要 Volume 上的空間使用率時，可以使用這些設定。 
+---
+= 在 Active IQ Unified Manager 中設定目的地效率設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用「進階目的地設定」對話方塊，在保護目的地上設定目的地效率設定，例如重複資料刪除、壓縮、自動成長和空間保證。當您想要最大化目的地或次要 Volume 上的空間使用率時，可以使用這些設定。
+
+.開始之前
+您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+預設情況下，效率設定與來源 Volume 的效率設定相符，但 SnapVault 關係中的壓縮設定除外，這些設定預設為停用。
+
+.步驟
+. 根據您要設定的關係類型，按一下 *設定保護* 對話方塊中的 *SnapMirror* 標籤或 *SnapVault* 標籤。
+. 在 *目的地資訊* 區域中按一下 *進階*。
++
+「進階目的地設定」對話方塊隨即開啟。
+
+. 根據需要啟用或停用重複資料刪除、壓縮、自動成長和空間保證的效率設定。
+. 按一下 *套用* 以儲存您的選擇，並返回 *設定保護* 對話方塊。
+

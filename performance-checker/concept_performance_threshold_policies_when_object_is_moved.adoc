@@ -1,0 +1,53 @@
+---
+permalink: performance-checker/concept_performance_threshold_policies_when_object_is_moved.html 
+sidebar: sidebar 
+keywords: happens, performance, threshold, policies, object, moved 
+summary: 由於效能臨界值原則是指派給儲存設備物件，因此如果您移動某個物件，所有已指派的臨界值原則在移動完成後仍會附加至該物件。例如，如果您將 Volume 或 LUN 移至不同的彙總，則該 Volume 或 LUN 在新彙總上的臨界值原則仍然作用中。 
+---
+= 在 Active IQ Unified Manager 中移動物件時管理臨界值原則
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+由於效能臨界值原則是指派給儲存設備物件，因此如果您移動某個物件，所有已指派的臨界值原則在移動完成後仍會附加至該物件。例如，如果您將 Volume 或 LUN 移至不同的彙總，則該 Volume 或 LUN 在新彙總上的臨界值原則仍然作用中。
+
+如果臨界值原則（組合原則）存在輔助計數器條件（例如，如果為彙總或節點指派了附加條件），則輔助計數器條件將套用於 Volume 或 LUN 已移至的新彙總或節點。
+
+如果使用變更後臨界值原則的物件存在任何新的作用中事件，則這些事件將被標記為過時，並且臨界值原則將開始以新定義的臨界值原則來監控計數器。
+
+Volume 移動作業會導致 ONTAP 傳送資訊性變更事件。變更事件圖示會顯示在「效能資源管理器」頁面和「工作負載分析」頁面的「事件」時間軸中，以指示移動作業完成的時間。
+
+[NOTE]
+====
+如果您將物件移動到不同的叢集，則使用者定義的臨界值原則將從該物件中移除。如有需要，您必須在移動作業完成後為該物件指派臨界值原則。但是，動態和系統定義的臨界值原則會在物件移動到新叢集後自動套用。
+
+====
+
+
+[[threshold-policy-functionality-during-ha-takeover-and-giveback]]
+== HA 接管和歸還期間的臨界值原則功能
+
+在高可用性（HA）組態中發生接管或歸還作業時，從一個節點移動到另一個節點的物件會保留其臨界值原則，這與手冊移動作業的方式相同。由於 Unified Manager 每 15 分鐘檢查一次叢集組態變更，因此切換到新節點的影響要到下一次叢集組態輪詢時才能識別出來。
+
+[NOTE]
+====
+如果在 15 分鐘的組態變更收集期內同時發生接管和歸還操作，您可能看不到效能統計資料從一個節點移動到另一個節點。
+
+====
+
+
+[[threshold-policy-functionality-during-aggregate-relocation]]
+== 彙總遷移期間的臨界值原則功能
+
+如果您使用 `aggregate relocation start` 命令將彙總從一個節點移動到另一個節點，所有物件都會保留單一與組合臨界值原則，而且臨界值原則的節點部分會套用至新節點。
+
+
+
+[[threshold-policy-functionality-during-metrocluster-switchover]]
+== MetroCluster 切換期間的臨界值原則功能
+
+在 MetroCluster 組態中，從一個叢集移動到另一個叢集的物件不會保留其使用者定義的臨界值原則設定。如有需要，您可以對已移至合作夥伴叢集的 Volume 和 LUN 套用臨界值原則。物件移回其原始叢集後，使用者定義的臨界值原則會自動重新套用。
+
+如需相關資訊，請參閱 link:../storage-mgmt/concept_volume_behavior_during_switchover_and_switchback.html["切換與切回期間的 Volume 行為"]。

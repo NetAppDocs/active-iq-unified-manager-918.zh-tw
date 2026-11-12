@@ -1,0 +1,14 @@
+---
+permalink: performance-checker/concept_monitor_cluster_performance_from_cluster_landing_page.html 
+sidebar: sidebar 
+keywords: monitor, cluster, performance, performance, cluster, landing, page 
+summary: 「效能叢集登陸頁面」顯示由 Unified Manager 執行個體監控之選定叢集的高階效能狀態。此頁面可讓您評估特定叢集的整體效能，並快速附註、定位或指派任何已識別的叢集特定事件以進行解決。 
+---
+= 在 Active IQ Unified Manager 的「效能叢集登入頁面」監控叢集效能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+「效能叢集登陸頁面」顯示由 Unified Manager 執行個體監控之選定叢集的高階效能狀態。此頁面可讓您評估特定叢集的整體效能，並快速附註、定位或指派任何已識別的叢集特定事件以進行解決。

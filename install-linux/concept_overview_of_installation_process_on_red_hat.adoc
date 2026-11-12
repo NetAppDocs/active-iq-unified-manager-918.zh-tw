@@ -1,0 +1,16 @@
+---
+permalink: install-linux/concept_overview_of_installation_process_on_red_hat.html 
+sidebar: sidebar 
+keywords: overview, installation process 
+summary: 安裝工作流程描述您在使用 Unified Manager 之前必須執行的任務。 
+---
+= 了解在 Red Hat Enterprise Linux 上安裝 Active IQ Unified Manager 的順序
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+安裝工作流程描述您在使用 Unified Manager 之前必須執行的任務。
+
+image::../media/install_flow_on_rhel_2026.png[此圖展示了在 Red Hat Linux 系統上安裝 Unified Manager 的先決條件、安裝過程和初始組態工作流程。]

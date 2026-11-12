@@ -1,0 +1,39 @@
+---
+permalink: health-checker/task_perform_diagnotstic_actions_for_volume_offline_conditions.html 
+sidebar: sidebar 
+keywords: perform, diagnostic actions, volume, offline, conditions 
+summary: 導覽至報告為離線的 Volume 的「Volume / 運作狀況」詳細資料頁面後，您可以搜尋有助於診斷 Volume 離線狀況的其他資訊。 
+---
+= 在 Active IQ Unified Manager 中對 Volume 離線情況執行診斷操作
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+導覽至報告為離線的 Volume 的「Volume / 運作狀況」詳細資料頁面後，您可以搜尋有助於診斷 Volume 離線狀況的其他資訊。
+
+.開始之前
+您必須擁有操作員、應用程式管理員或儲存管理員角色。
+
+如果報告離線的 Volume 不是故意離線的，則該 Volume 離線可能是由於以下幾個原因造成的。
+
+從離線 Volume 的「Volume / 運作狀況」詳細資料頁面開始，您可以導覽至其他頁面和窗格，以確認或排除可能的原因：
+
+* 按一下 *Volume / Health* 詳細資料頁面連結，以判斷 Volume 是否因為其主機節點停機，且儲存設備容錯移轉至其 HA 配對合作夥伴也失敗而離線。
++
+請參閱 link:task_determine_if_volume_offline_condition_is_by_down_cluster_node.html["確定 Volume 離線狀態是否由停機節點引起"]。
+
+* 按一下 *Volume / 運作狀況* 詳細資料頁面連結，以判斷 Volume 是否離線，以及其主機儲存設備虛擬機器（SVM）是否因為代管該 SVM 根 Volume 的節點停機而停止。
++
+請參閱 link:task_determine_if_volume_is_offline_and_its_svm_is_stopped.html["判斷 Volume 是否離線，以及是否因節點停機而導致 SVM 停止運作"]。
+
+* 按一下「*Volume / Health*」詳細資料頁面連結，以判斷 Volume 是否因其主機彙總中的磁碟損壞而離線。
++
+請參閱 link:task_determine_if_volume_is_offline_because_of_broken_disks.html["確定彙總中的 Volume 是否因磁碟損壞而離線"]。
+
+
+
+*相關資訊*
+
+link:../config/reference_unified_manager_roles_and_capabilities.html["Unified Manager 使用者角色和功能"]

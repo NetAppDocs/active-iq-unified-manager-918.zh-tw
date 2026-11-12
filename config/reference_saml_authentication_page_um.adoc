@@ -1,0 +1,58 @@
+---
+permalink: config/reference_saml_authentication_page_um.html 
+sidebar: sidebar 
+keywords: saml authentication page 
+summary: '您可以使用 SAML 驗證頁面設定 Unified Manager，以便在遠端使用者登入 Unified Manager Web UI 之前，透過安全的身分供應商 (IdP) 使用 SAML 對其進行驗證。' 
+---
+= 在 Active IQ Unified Manager 中使用 SAML 驗證頁面
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 SAML 驗證頁面設定 Unified Manager，以便在遠端使用者登入 Unified Manager Web UI 之前，透過安全的身分供應商 (IdP) 使用 SAML 對其進行驗證。
+
+* 您必須擁有應用程式管理員角色才能建立或修改 SAML 組態。
+* 您必須設定遠端驗證。
+* 您必須至少設定一個遠端使用者或遠端群組。
+
+
+設定遠端驗證和遠端使用者後，您可以選取「啟用 SAML 驗證」核取方塊，以啟用透過安全的身分供應商進行驗證。
+
+* *IdP URI*
++
+從 Unified Manager 伺服器存取 IdP 的 URI。範例 URI 如下所示。
+
++
+ADFS 範例 URI：
+
++
+`+https://win2016-dc.ntap2016.local/federationmetadata/2007-06/federationmetadata.xml+`
+
++
+Shibboleth 範例 URI：
+
++
+`+https://centos7.ntap2016.local/idp/shibboleth+`
+
+* *IdP 中繼資料*
++
+XML 格式的 IdP 中繼資料。
+
++
+如果可以從 Unified Manager 伺服器存取 IdP URL，則可以按一下 *取得 IdP 中繼資料* 按鈕來填入此欄位。
+
+* *主機系統（FQDN）*
++
+安裝期間所定義的 Unified Manager 主機系統的完整網域名稱（FQDN）。如有必要，您可以變更此值。
+
+* *主機 URI*
++
+從身分識別提供者（IdP）存取 Unified Manager 主機系統的 URI。
+
+* *主機中繼資料*
++
+XML 格式的主機系統中繼資料。
+
+

@@ -1,0 +1,103 @@
+---
+permalink: health-checker/reference_setup_autosupport_page.html 
+sidebar: sidebar 
+keywords: autosupport, messages, support bundles, technical support 
+summary: AutoSupport 頁面可讓您傳送預先定義與隨選的 AutoSupport 訊息給技術支援團隊，以確保環境正常運作，並協助您維護環境的完整性。AutoSupport 預設為啟用且不應停用，以便您獲得 NetAppActive IQ 的效益。 
+---
+= 在 Active IQ Unified Manager 中將 AutoSupport 訊息傳送給技術支援
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+AutoSupport 頁面可讓您傳送預先定義與隨選的 AutoSupport 訊息給技術支援團隊，以確保環境正常運作，並協助您維護環境的完整性。AutoSupport 預設為啟用且不應停用，以便您獲得 NetAppActive IQ 的效益。
+
+您可以根據需要，在訊息中傳送診斷系統資訊和有關 Unified Manager 伺服器的詳細資料，排程定期傳送訊息，甚至可以產生支援套裝組合並傳送給技術支援團隊。
+
+[NOTE]
+====
+具有儲存管理員角色的使用者可以產生並傳送隨選 AutoSupport 訊息和支援套裝組合給技術支援。但是，只有系統管理員或維護使用者才能啟用或停用定期 AutoSupport，並依照「設定 HTTP Proxy 伺服器」一節所述來設定 HTTP 設定。在需要使用 HTTP Proxy 伺服器的環境中，必須先完成組態，儲存管理員才能傳送隨選 AutoSupport 訊息和支援套裝組合給技術支援。
+
+====
+
+
+[[send-on-demand-autosupport-messages]]
+== 傳送隨需 AutoSupport 訊息
+
+您可以產生並傳送隨選訊息給技術支援，或指定的電子郵件收件者，或同時傳送給兩者。
+
+.步驟
+. 導覽至 *一般* > *AutoSupport* ，然後執行下列一或兩項行動：
+. 如果您想將 AutoSupport 訊息傳送給技術支援，請選取 *傳送給技術支援* 核取方塊。
+. 如果您想要將 AutoSupport 訊息傳送給特定的電子郵件收件人，請勾選 *傳送給電子郵件收件人* 核取方塊，然後輸入收件人的電子郵件地址。
+. 按一下 *Save* 。
+. 按一下 *產生並傳送 AutoSupport*。
+
+
+
+
+[[enable-periodic-autosupport]]
+== 啟用定期 AutoSupport
+
+您可以定期向技術支援傳送特定的預先定義訊息，以進行問題診斷與解決。此功能預設為啟用。如果已停用，系統管理員或維護使用者可以啟用此設定。
+
+.步驟
+. 導覽至 *一般* > *AutoSupport*。
+. 在「定期」 AutoSupport 部分，選取 *啟用定期傳送 AutoSupport 資料至 Active IQ* 核取方塊。
+. 如有需要，請依照「設定 HTTP Proxy 伺服器」部分中的說明，定義 HTTP Proxy 伺服器的名稱、連接埠和驗證資訊。
+. 按一下 *Save* 。
+
+
+
+
+[[upload-on-demand-support-bundle]]
+== 上傳隨選支援套裝組合
+
+您可以根據疑難排解的要求產生支援套裝組合，並傳送給技術支援。Unified Manager 僅儲存最近產生的兩個支援套裝組合。較舊的支援套裝組合會從系統中刪除。
+
+由於某些類型的支援資料會佔用大量叢集資源或耗時較長，因此在選擇完整支援套裝組合時，您可以選擇包含或排除特定資料類型，以減少支援套裝組合的大小。您也可以選擇建立輕量級支援套裝組合，其中僅包含 30 天的日誌和組態資料庫記錄——它不包含效能資料、擷取記錄檔和伺服器堆疊傾印。
+
+.步驟
+. 導覽至 *一般* > *AutoSupport*。
+. 在「隨選支援套裝組合」區段中，按一下 *產生並傳送支援套裝組合*。
+. 若要將輕量級支援套裝組合傳送給技術支援，請在「產生並傳送支援套裝組合」快顯視窗中，選取 **產生輕量級支援套裝組合** 核取方塊。
+. 或者，若要傳送完整的支援套裝組合，請選取 *產生完整支援套裝組合* 核取方塊。選取要在支援套裝組合中包含或排除的特定資料類型。
++
+[NOTE]
+====
+即使您不選擇任何資料類型，支援套裝組合仍然會使用其他 Unified Manager 資料產生。
+
+====
+. 選取 *將套裝組合傳送給技術支援* 核取方塊，以產生套裝組合並傳送給技術支援。如果您未選取此核取方塊，套裝組合會在本機產生並儲存於 Unified Manager 伺服器中。產生的支援套裝組合可供日後使用，位於 VMware 系統的 /support 目錄中、Linux 系統的 `/opt/netapp/data/support/`中，以及 Windows 系統的 `ProgramData\NetApp\OnCommandAppData\ocum\support`中。
+. 按一下 *傳送*。
+
+
+
+
+[[set-up-http-proxy-server]]
+== 設定 HTTP Proxy 伺服器
+
+如果您的環境未提供從 Unified Manager 伺服器的直接存取，您可以指定 Proxy 來提供網際網路存取，以便將 AutoSupport 內容傳送給支援部門。此區段僅供系統管理員和維護使用者使用。
+
+* *使用 HTTP Proxy*
++
+勾選此方塊以識別做為 HTTP Proxy 的伺服器。
+
++
+輸入 Proxy 伺服器的主機名稱或 IP 位址，以及用於連接伺服器的連接埠號碼。
+
+* *使用驗證*
++
+如果您需要提供驗證資訊才能存取用作 HTTP Proxy 的伺服器，請核取此方塊。
+
++
+輸入透過 HTTP Proxy 進行驗證所需的使用者名稱和密碼。
+
+
+
+[NOTE]
+====
+不支援僅提供基本驗證的 HTTP Proxy。
+
+====

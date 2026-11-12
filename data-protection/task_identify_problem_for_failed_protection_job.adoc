@@ -1,0 +1,127 @@
+---
+permalink: data-protection/task_identify_problem_for_failed_protection_job.html 
+sidebar: sidebar 
+keywords: identify, problem, perform, corrective actions, failed, protection job 
+summary: 您審查「事件詳細資料」頁面上「原因」欄位中的作業故障錯誤訊息，確定作業失敗是由於 Snapshot 複本錯誤造成的。然後，您前往「Volume / 健全狀況詳細資料」頁面以收集更多資訊。 
+---
+= 識別 Active IQ Unified Manager 中保護作業失敗的問題並執行修正措施
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您審查「事件詳細資料」頁面上「原因」欄位中的作業故障錯誤訊息，確定作業失敗是由於 Snapshot 複本錯誤造成的。然後，您前往「Volume / 健全狀況詳細資料」頁面以收集更多資訊。
+
+.開始之前
+您必須擁有應用程式管理員角色。
+
+事件詳情頁面「原因」欄位中提供的錯誤訊息包含以下有關失敗作業的文字：
+
+[listing]
+----
+Protection Job Failed. Reason: (Transfer operation for
+relationship 'cluster2_src_svm:cluster2_src_vol2->cluster3_dst_svm:
+managed_svc2_vol3' ended unsuccessfully. Last error reported by
+Data ONTAP: Failed to create Snapshot copy 0426cluster2_src_vol2snap
+on volume cluster2_src_svm:cluster2_src_vol2. (CSM: An operation
+failed due to an ONC RPC failure.)
+Job Details
+----
+此訊息提供下列資訊：
+
+* 備份或鏡射作業未成功完成。
++
+此工作涉及虛擬伺服器 `cluster2_src_svm`上的來源 Volume `cluster2_src_vol2`與名為 `cluster3_dst_svm`的虛擬伺服器上的目的地 Volume `managed_svc2_vol3`之間的保護關係。
+
+* 來源 Volume `cluster2_src_svm:/cluster2_src_vol2` 上的 `0426cluster2_src_vol2snap` Snapshot 複本工作失敗。
+
+
+在這種情況下，您可以確定作業故障的原因和潛力的糾正行動。但是，要解決此故障，您需要存取 System Manager Web 使用者介面或 ONTAP CLI 命令。
+
+.步驟
+. 您審查錯誤訊息並確定來源 Volume 上的 Snapshot 複本作業失敗，這表示您的來源 Volume 可能有問題。
++
+您也可以點擊錯誤訊息結尾的 *工作詳細資料* 連結，但就本情境而言，您選擇不這麼做。
+
+. 您決定嘗試解決該事件，因此執行下列操作：
++
+.. 按一下 *指派給* 按鈕，然後從選單中選擇 *我*。
+.. 如果已為該事件設定警報，請點選 *確認* 按鈕，這樣您就不會繼續收到重複的警報通知。
+.. 您也可以選擇新增有關該事件的附註。
+
+
+. 按一下 *摘要* 窗格中的 *來源* 欄位，查看有關來源 Volume 的詳細資訊。
++
+*Source* 欄位包含來源物件的名稱：在本例中，即排程執行 Snapshot 複本作業的 Volume。
+
++
+「Volume / 健康狀況」詳細資料頁面顯示 `cluster2_src_vol2`，其中顯示了「保護」標籤的內容。
+
+. 查看保護拓撲圖，您會看到與拓撲中第一個 Volume 相關聯的錯誤圖示，該 Volume 是 SnapMirror 關係的來源 Volume。
++
+您也可以在來源 Volume 圖示中看到水平條，表示為該 Volume 設定的警告和錯誤臨界值。
+
++
+image::../media/um_topology_cascade_job_failure.gif[作業故障級聯拓撲]
+
+. 將游標停留在錯誤圖示上，即可看到顯示臨界值設定的彈出對話方塊，並看到 Volume 已超過錯誤臨界值，表示存在容量問題。
+. 按一下 *容量* 索引標籤。
++
+顯示 Volume  `cluster2_src_vol2` 的容量資訊。
+
+. 在 *容量* 面板中，您可以看到長條圖中有一個錯誤圖示，這再次表明 Volume 容量已超過為該 Volume 設定的臨界值層級。
+. 在容量圖下方，可以看到 Volume 自動擴充已停用，並且已設定 Volume 空間保證。
++
+您可以決定啟用自動擴充，但就此情境而言，您決定先進行進一步調查，再決定如何解決容量問題。
+
+. 您向下捲動到 *事件* 列表，可以看到產生了「保護作業失敗」、「Volume 滿載前剩餘天數」和「Volume 空間已滿」事件。
+. 在 *事件* 清單中，您按一下 *Volume 空間已滿* 事件以取得更多資訊，因為您認為此事件似乎與您的容量問題最相關。
++
+事件詳情頁面顯示來源 Volume 的 Volume 空間已滿事件。
+
+. 在「摘要」區域中，您讀取事件的「原因」欄位： `The full threshold set at 90% is breached. 45.38 MB (95.54%) of 47.50 MB is used`。
+. 在「摘要」區域下方，您可以看到「建議的糾正行動」。
++
+[TIP]
+====
+建議的糾正行動僅針對某些事件顯示，因此並非所有類型的事件都會顯示此區域。
+
+====
++
+您可以點選查看可用於解決「Volume 空間已滿」事件的建議行動清單：
+
++
+** 在此 Volume 上啟用自動擴充。
+** 調整 Volume 大小。
+** 啟用並執行此 Volume 的重複資料刪除功能。
+** 啟用並執行此 Volume 的壓縮。
+
+
+. 您決定在 Volume 上啟用自動擴充，但為此，您必須確定父彙總上的可用空間和目前的 Volume 成長率：
++
+.. 在 *相關設備* 窗格中查看父彙總  `cluster2_src_aggr1`。
++
+[TIP]
+====
+您可以點擊彙總的名稱以取得有關該彙總的更多詳細資訊。
+
+====
++
+您確定彙總有足夠的空間來啟用 Volume 自動擴充。
+
+.. 在頁面頂部，查看表示關鍵事件的圖示，並審查圖示下方的文字。
++
+您確定「達到滿載所需天數：不到一天 | 日成長率：5.4%」。
+
+
+
+. 請前往 System Manager 或存取 ONTAP CLI 以啟用該 `volume autogrow`選項。
++
+[TIP]
+====
+請記下 Volume 和彙總的名稱，以便在啟用自動擴充時可以使用它們。
+
+====
+. 解決容量問題後，返回 Unified Manager *事件* 詳細資料頁面，並將事件標記為已解決。
+

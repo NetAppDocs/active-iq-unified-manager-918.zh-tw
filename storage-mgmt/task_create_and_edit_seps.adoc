@@ -1,0 +1,58 @@
+---
+permalink: storage-mgmt/task_create_and_edit_seps.html 
+sidebar: sidebar 
+keywords: create, edit, storage, efficiency, policies 
+summary: 當系統定義的儲存效率原則與您的工作負載需求不符時，您可以建立針對您的工作負載最佳化的專屬儲存效率原則。 
+---
+= 在 Active IQ Unified Manager 中建立和編輯儲存效率原則
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當系統定義的儲存效率原則與您的工作負載需求不符時，您可以建立針對您的工作負載最佳化的專屬儲存效率原則。
+
+.開始之前
+* 您必須擁有應用程式管理員角色。
+* 儲存效率策略名稱必須唯一，且不能使用以下保留關鍵字：
++
+`High`、 `Low`、 `Unassigned`、 `Learning`、 `Idle`、 `Default`和 `None`。
+
+
+
+您可以透過在「儲存效率原則」頁面中定義將存取儲存設備的應用程式所需的儲存效率特性，來建立和編輯自訂儲存效率原則。
+
+[NOTE]
+====
+如果儲存效率策略目前已指派給工作負載，則無法對其進行修改。
+
+====
+.步驟
+. 在左側導覽窗格的 *設定* 下，選擇 *原則* > *儲存效率*。
+. 在 *儲存效率策略* 頁面中，根據您是要建立新的儲存效率策略還是要編輯現有的儲存效率策略，按一下適當的按鈕。
++
+|===
+| 若要…… | 請依照以下步驟操作...... 
+
+
+ a| 
+建立新的儲存效率策略
+ a| 
+按一下 *新增*
+
+
+
+ a| 
+編輯現有的儲存效率策略
+ a| 
+選擇現有的儲存效率原則，然後按一下 *編輯*
+
+|===
++
+隨即顯示新增或編輯儲存效率原則的頁面。
+
+. 透過指定儲存效率特性來自訂 Storage Efficiency Policy，然後按一下 *Submit* 以儲存 Storage Efficiency Policy。
+
+
+您可以從「工作負載」頁面或在配置新工作負載時，將新的或變更的儲存效率原則套用至工作負載（LUN、NFS 檔案共用、CIFS 共用）。

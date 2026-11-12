@@ -1,0 +1,48 @@
+---
+permalink: data-protection/task_create_snapvault_protection_relationship_from_health_volume_details.html 
+sidebar: sidebar 
+keywords: create, snapvault, protection, relationship, volume, health details page 
+summary: 您可以使用「Volume / 健全狀況詳細資料」頁面建立 SnapVault 關係，以便在 Volume 上啟用資料備份以達到保護目的。 
+---
+= 在 Active IQ Unified Manager 的「磁碟區/運作狀況」詳細資料頁面中建立 SnapVault 保護關係
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用「Volume / 健全狀況詳細資料」頁面建立 SnapVault 關係，以便在 Volume 上啟用資料備份以達到保護目的。
+
+.開始之前
+* 您必須擁有應用程式系統管理員或儲存系統管理員角色。
+* 您必須設定 Workflow Automation 才能執行此工作。
+
+
+在以下情況下，*保護* 功能表不會顯示：
+
+* 如果 RBAC 設定不允許此行動：例如，如果您只有營運者權限
+* 當 Volume ID 未知時：例如，當您有叢集間關係且目的地叢集尚未被發現時
+
+
+.步驟
+. 在 *Volume / 運作狀況* 詳細資料頁面的 *保護* 標籤中，以滑鼠右鍵按一下拓撲檢視中要保護的 Volume。
+. 從選單中選擇 *保護* > *SnapVault*。
++
+「設定保護」對話方塊隨即啟動。
+
+. 按一下 *SnapVault* 以檢視 *SnapVault* 索引標籤，並設定次要資源資訊。
+. 按一下 *進階* 以視需要設定重複資料刪除、壓縮、自動成長和空間保證，然後按一下 *套用*。
+. 在 *設定保護* 對話方塊中，完成 *目的地資訊* 區域和 *關係設定* 區域。
+. 點選 *套用*。
++
+您將返回「Volume / 健康狀況」詳細資料頁面。
+
+. 點擊 *Volume / 健全狀況* 詳細資料頁面頂部的保護組態作業連結。
++
+隨即顯示工作詳細資料頁面。
+
+. 按一下 *Refresh* 可更新與保護組態工作相關聯的工作清單和工作詳細資料，並確認工作何時完成。
++
+作業工作完成後，新的關係將顯示在 Volume / 健康狀況詳細資料頁面拓撲檢視中。
+
+

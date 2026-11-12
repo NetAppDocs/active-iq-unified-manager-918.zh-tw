@@ -1,0 +1,39 @@
+---
+permalink: data-protection/task_remove_aggregates_from_resource_pools.html 
+sidebar: sidebar 
+keywords: remove, aggregates, resource pools 
+summary: 從現有資源池移除彙總，例如當您想要將彙總用於其他用途時。 
+---
+= 從 Active IQ Unified Manager 的資源池中移除 Aggregate
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以從現有資源池移除彙總：例如，當您想要將彙總用於其他目的時。
+
+.開始之前
+您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+只有在選取資源池後才會顯示資源池成員。
+
+.步驟
+. 在左側導覽窗格中，按一下 *保護* > *資源池*。
+. 選擇要從中移除成員彙總的資源池。
++
+成員彙總清單顯示在「成員」窗格中。
+
+. 選擇一個或多個彙總。
++
+*移除*按鈕已啟用。
+
+. 點選 *移除*。
++
+會顯示警告對話方塊。
+
+. 按一下 *Yes* 繼續。
++
+選定的彙總將從「成員」窗格中移除。
+
+

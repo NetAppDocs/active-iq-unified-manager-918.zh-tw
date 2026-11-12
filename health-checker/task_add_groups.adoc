@@ -1,0 +1,26 @@
+---
+permalink: health-checker/task_add_groups.html 
+sidebar: sidebar 
+keywords: add, groups 
+summary: 您可以建立群組來結合叢集、Volume 和儲存設備虛擬機器（SVM），以利管理。 
+---
+= 在 Active IQ Unified Manager 中新增群組
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以建立群組來結合叢集、Volume 和儲存設備虛擬機器（SVM），以利管理。
+
+.開始之前
+您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+您可以定義群組規則，以新增或移除群組成員，並修改該群組的群組行動。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存管理* > *群組*。
+. 在 *群組* 標籤中，按一下 *新增*。
+. 在 *新增群組* 對話方塊中，輸入群組的名稱和執行摘要。
+. 點擊 *Add* 。
+

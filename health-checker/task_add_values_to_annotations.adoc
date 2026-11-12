@@ -1,0 +1,29 @@
+---
+permalink: health-checker/task_add_values_to_annotations.html 
+sidebar: sidebar 
+keywords: add, values, annotations 
+summary: 您可以為註解新增值，然後將儲存設備物件與特定的註解名稱-值對建立關聯。為註解新增值有助於您更有效地管理儲存設備物件。 
+---
+= 在 Active IQ Unified Manager 中為註解新增值
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以為註解新增值，然後將儲存設備物件與特定的註解名稱-值對建立關聯。為註解新增值有助於您更有效地管理儲存設備物件。
+
+.開始之前
+您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+您無法為預先定義的註解新增值。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存設備管理* > *註解*。
+. 在 *註釋* 頁面中，選擇要新增值的註釋，然後在 *值* 區段中按一下 *新增*。
+. 在 *新增註釋值* 對話方塊中，指定註釋的值。
++
+您指定的值對於所選註釋必須是唯一的。
+
+. 點擊 *Add* 。
+

@@ -1,0 +1,38 @@
+---
+permalink: performance-checker/reference_performance_dashboard_cluster_banner_messages.html 
+sidebar: sidebar 
+keywords: performance, banner, messages, descriptions 
+summary: Unified Manager 可能會在通知頁面（透過通知鈴鐺）上顯示橫幅訊息，以提醒您特定叢集的狀態問題。 
+---
+= 在 Active IQ Unified Manager 中解讀效能橫幅訊息
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager 可能會在通知頁面（透過通知鈴鐺）上顯示橫幅訊息，以提醒您特定叢集的狀態問題。
+
+|===
+| 橫幅訊息 | 說明 | 解決方案 
+
+
+ a| 
+`No performance data is being collected from cluster _cluster_name_. Restart Unified Manager to correct this issue.`
+ a| 
+Unified Manager 資料收集服務已停止，任何叢集均未收集效能資料。
+ a| 
+重新啟動 Unified Manager 以解決此問題。如果這無法解決問題，請聯絡技術支援。
+
+
+
+ a| 
+`More than x hour(s) of historical data is being collected from cluster _cluster_name_. Current data collections will start after all historical data is collected.`
+ a| 
+目前正在執行資料連續性收集週期，以擷取即時叢集效能收集週期以外的效能資料。
+ a| 
+無需採取任何行動。目前的效能資料將在資料連續性收集週期完成後收集。
+
+當新增叢集或 Unified Manager 因某種原因無法收集目前效能資料時，將執行資料連續性收集週期。
+
+|===

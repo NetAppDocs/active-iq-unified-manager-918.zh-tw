@@ -1,0 +1,62 @@
+---
+permalink: config/task_enable_saml_authentication_um.html 
+sidebar: sidebar 
+keywords: enable, saml, authentication 
+summary: '您可以啟用安全性聲明標記語言 (SAML) 驗證，以便遠端使用者在存取 Unified Manager Web UI 之前，先透過安全的身分供應商 (IdP) 進行驗證。' 
+---
+= 在 Active IQ Unified Manager 中啟用 SAML 驗證
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以啟用安全性聲明標記語言 (SAML) 驗證，以便遠端使用者在存取 Unified Manager Web UI 之前，先透過安全的身分供應商 (IdP) 進行驗證。
+
+.開始之前
+* 您必須已設定遠端驗證並驗證其已成功。
+* 您必須至少建立一個具有應用程式管理員角色的遠端使用者或遠端群組。
+* 身分供應商（IdP）必須受 Unified Manager 支援，並且必須進行設定。
+* 您必須擁有 IdP URL 和中繼資料。
+* 您必須能夠存取 IdP 伺服器。
+
+
+在 Unified Manager 中啟用 SAML 驗證後，使用者必須先使用 Unified Manager 伺服器主機資訊設定身分提供者（IdP），才能存取圖形化使用者介面。因此，您必須準備好在開始組態程序之前完成連線的兩個部分。IdP 可以在設定 Unified Manager 之前或之後進行設定。
+
+啟用 SAML 驗證後，只有遠端使用者才能存取 Unified Manager 圖形化使用者介面。本機使用者和維護使用者將無法存取 UI。此組態不會影響存取維護主控台、Unified Manager 命令或 ZAPI 的使用者。
+
+[NOTE]
+====
+完成此頁面上的 SAML 組態後，Unified Manager 將自動重新啟動。
+
+====
+.步驟
+. 在左側導覽窗格中，按一下 *一般* > *SAML 驗證*。
+. 選取 *啟用 SAML 驗證* 核取方塊。
++
+顯示設定 IdP 連線所需的欄位。
+
+. 輸入將 Unified Manager 伺服器連接至 IdP 伺服器所需的 IdP URI 與 IdP 中繼資料。
++
+如果可以從 Unified Manager 伺服器直接存取 IdP 伺服器，您可以在輸入 IdP URI 後按一下 *取得 IdP 中繼資料* 按鈕，自動填入 IdP 中繼資料欄位。
+
+. 複製 Unified Manager 主機中繼資料 URI，或將主機中繼資料儲存到 XML 文字檔案。
++
+現在您可以使用此資訊設定 IdP 伺服器。
+
+. 按一下 *Save* 。
++
+系統會顯示訊息方塊，確認您要完成組態並重新啟動 Unified Manager。
+
+. 按一下 *確認並登出* ， Unified Manager 將重新啟動。
+
+
+下次獲得授權的遠端使用者嘗試存取 Unified Manager 圖形介面時，他們將在 IdP 登入頁面而不是 Unified Manager 登入頁面輸入他們的憑證。
+
+如果尚未完成，請存取您的 IdP 並輸入 Unified Manager 伺服器 URI 和中繼資料以完成組態。
+
+[NOTE]
+====
+當使用 ADFS 作為身分供應商時，Unified Manager GUI 不會遵循 ADFS 逾時設定，而是會持續運作，直到達到 Unified Manager 工作階段逾時為止。您可以按一下 *一般* > *功能設定* > *閒置逾時* 來變更 GUI 工作階段逾時。
+
+====

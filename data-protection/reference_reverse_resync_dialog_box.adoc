@@ -1,0 +1,67 @@
+---
+permalink: data-protection/reference_reverse_resync_dialog_box.html 
+sidebar: sidebar 
+keywords: reverse, resync, dialog box 
+summary: 當由於來源 Volume 被停用且目的地被設定為讀寫 Volume 而導致保護關係中斷時，反向重新同步功能可以反轉關係的方向，使目的地成為新的來源，來源成為新的目的地。 
+---
+= 在 Active IQ Unified Manager 中進行反向重新同步
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當由於來源 Volume 被停用且目的地被設定為讀寫 Volume 而導致保護關係中斷時，反向重新同步功能可以反轉關係的方向，使目的地成為新的來源，來源成為新的目的地。
+
+當災難導致保護關係中的來源 Volume 失效時，您可以將目的地 Volume 轉換為讀寫以提供資料，同時修理或替換來源、更新來源，並重新建立關係。當您執行反向重新同步作業時，來源上比通用 Snapshot 複本上更新的資料將會被刪除。
+
+
+
+[[before-reverse-resync]]
+== 反向重新同步之前
+
+在執行反向重新同步作業之前，顯示關係的來源和目的地。
+
+* *來源 Volume*
++
+反向重新同步作業之前的來源 Volume 的名稱和位置。
+
+* *目的地 Volume*
++
+反向重新同步作業之前目的地 Volume 的名稱和位置。
+
+
+
+
+
+[[after-reverse-resync]]
+== 反向重新同步後
+
+顯示保留重新同步作業後，關係的來源與目的地。
+
+* *來源 Volume*
++
+反向重新同步作業後的來源 Volume 的名稱和位置。
+
+* *目的地 Volume*
++
+反向重新同步作業後目的地 Volume 的名稱和位置。
+
+
+
+
+
+[[command-buttons]]
+== 命令按鈕
+
+命令按鈕可讓您執行下列行動：
+
+* *提交*
++
+開始反向重新同步程序。
+
+* *取消*
++
+關閉「反向重新同步」對話方塊，而不啟動反向重新同步作業。
+
+

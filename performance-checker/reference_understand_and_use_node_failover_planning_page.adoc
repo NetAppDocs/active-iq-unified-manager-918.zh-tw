@@ -1,0 +1,20 @@
+---
+permalink: performance-checker/reference_understand_and_use_node_failover_planning_page.html 
+sidebar: sidebar 
+keywords: understanding, node, failover, planning page 
+summary: '「效能/節點故障轉移規劃」頁面用於估算當節點的高可用性 (HA) 合作夥伴節點發生故障時，此節點的效能影響。Unified Manager 是基於 HA 配對中節點的歷史效能進行估算。' 
+---
+= 使用 Active IQ Unified Manager 中的「節點故障轉移規劃」頁面
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+「效能/節點故障轉移規劃」頁面會估算當節點的高可用性 (HA) 合作夥伴節點發生故障時，對該節點的效能影響。Unified Manager 會根據 HA 配對中節點的歷史效能來進行估算。
+
+評估故障轉移的效能影響有助於您在以下情境中進行規劃：
+
+* 如果容錯移轉持續將接管節點的估計效能降低至無法接受的層級，您可以考慮採取修正措施，以減少容錯移轉造成的效能影響。
+* 在啟動手冊故障轉移以執行硬體維護工作之前，您可以估算故障轉移對接管節點效能的影響，以便確定執行該工作的最佳時間。
+

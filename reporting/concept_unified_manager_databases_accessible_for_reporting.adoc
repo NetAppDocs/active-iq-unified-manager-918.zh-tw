@@ -1,0 +1,99 @@
+---
+permalink: reporting/concept_unified_manager_databases_accessible_for_reporting.html 
+sidebar: sidebar 
+keywords: unified manager, databases, access, custom, reporting 
+summary: Unified Manager 使用 MySQL 資料庫來儲存來自其所監控之叢集的資料。資料會持續保存至 MySQL 資料庫的各種結構描述中。 
+---
+= 在 Active IQ Unified Manager 中存取資料庫以進行自訂報告
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager 使用 MySQL 資料庫來儲存來自其所監控之叢集的資料。資料會持續保存至 MySQL 資料庫的各種結構描述中。
+
+以下資料庫中的所有表格資料均可用：
+
+[cols="2*"]
+|===
+| 資料庫 | 說明 
+
+
+ a| 
+netapp_model
+ a| 
+關於 ONTAP 控制器上物件的資料。
+
+
+
+ a| 
+netapp_model_view
+ a| 
+關於 ONTAP 控制器上物件的資料，適合供報告工具使用。
+
+
+
+ a| 
+netapp_performance
+ a| 
+叢集特定效能計數器。
+
+
+
+ a| 
+ocum
+ a| 
+Unified Manager 應用程式資料和資訊，用於支援 UI 篩選、排序和某些衍生欄位的計算。
+
+
+
+ a| 
+ocum_report
+ a| 
+庫存組態和容量相關資訊的資料。
+
+
+
+ a| 
+ocum_report_birt
+ a| 
+庫存組態和容量相關資料的檢視，適合報告工具使用。
+
+
+
+ a| 
+opm
+ a| 
+效能組態設定和臨界值資訊。
+
+
+
+ a| 
+scalemonitor
+ a| 
+關於 Unified Manager 應用程式健全狀況和效能問題的資料。
+
+
+
+ a| 
+vmware_model
+ a| 
+託管在 NetApp 儲存設備上的資料存放區的 VMware 物件資料。
+
+
+
+ a| 
+vmware_model_view
+ a| 
+託管在 NetApp 儲存設備上的資料存放區的 VMware 物件資料檢視，適合報告工具使用。
+
+
+
+ a| 
+vmware_performance
+ a| 
+VMware 效能計數器資料，適用於託管在 NetApp 儲存設備上的資料存放區。
+
+|===
+報告使用者（即具有報告架構角色的資料庫使用者）可以存取這些表格中的資料。此使用者可以直接從 Unified Manager 資料庫對報告和其他資料庫檢視進行唯讀存取。請注意，此使用者沒有權限存取任何包含使用者資料或叢集認證資料資訊的表格。

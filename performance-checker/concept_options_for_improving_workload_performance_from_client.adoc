@@ -1,0 +1,20 @@
+---
+permalink: performance-checker/concept_options_for_improving_workload_performance_from_client.html 
+sidebar: sidebar 
+keywords: options, improving, workload, performance, client-side 
+summary: 您可以檢查將 I/O 傳送至涉及效能事件之 Volume 的用戶端工作負載（例如應用程式或資料庫），以判斷用戶端側變更是否可以修正該事件。 
+---
+= 透過調整 Active IQ Unified Manager 中的用戶端側設定來提升工作負載效能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以檢查將 I/O 傳送至涉及效能事件之 Volume 的用戶端工作負載（例如應用程式或資料庫），以判斷用戶端側變更是否可以修正該事件。
+
+當連接到叢集上 Volume 的用戶端增加其 I/O 要求時，叢集必須更加努力才能滿足需求。如果您知道哪些用戶端對叢集上特定 Volume 的 I/O 要求數量較多，則可以透過調整存取該 Volume 的用戶端數量或減少對該 Volume 的 I/O 量來提高叢集效能。您也可以套用或提高該 Volume 所屬的 QoS 原則群組的限制。
+
+您可以調查用戶端及其應用程式，以確定用戶端是否傳送了比平常更多的 I/O，這可能會導致叢集元件發生爭用。在「事件詳細資料」頁面上，「系統診斷」區段會顯示使用爭用元件的最高 Volume 工作負載。如果您知道哪個用戶端正在存取特定 Volume，您可以前往該用戶端，以判斷用戶端硬體或應用程式是否未如預期運作，或執行了比平常更多的工作。
+
+在 MetroCluster 組態中，對本機叢集上 Volume 的寫入要求會鏡射到遠端叢集上的 Volume。保持本機叢集上的來源 Volume 與遠端叢集上的目的地 Volume 同步，也會增加 MetroCluster 組態中兩個叢集的需求。透過減少對這些鏡射 Volume 的寫入要求，叢集可以執行較少的同步作業，進而降低對其他工作負載的效能影響。

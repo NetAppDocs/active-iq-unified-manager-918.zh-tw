@@ -1,0 +1,56 @@
+---
+permalink: events/reference_nvram_battery_events.html 
+sidebar: sidebar 
+keywords: nvram, battery, events, impact area, availability 
+summary: NVRAM 電池事件提供有關電池狀態的資訊，以便您監控潛力問題。事件依影響區域分組，包含事件和陷阱名稱、影響層級、來源類型和嚴重程度。 
+---
+= 了解 Active IQ Unified Manager 中的 NVRAM 電池事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NVRAM 電池事件提供有關電池狀態的資訊，以便您監控潛力問題。事件依影響區域分組，包含事件和陷阱名稱、影響層級、來源類型和嚴重程度。
+
+
+
+[[impact-area-availability]]
+== 影響區域：可用度
+
+|===
+| 事件名稱（陷阱名稱） | 影響層級 | 來源類型 | 嚴重程度 
+
+
+ a| 
+NVRAM 電池電量低（ocumEvtNvramBatteryLow）
+ a| 
+風險
+ a| 
+節點
+ a| 
+警告
+
+
+
+ a| 
+NVRAM 電池已放電（ocumEvtNvramBatteryDischarged）
+ a| 
+風險
+ a| 
+節點
+ a| 
+錯誤
+
+
+
+ a| 
+NVRAM 電池過度充電（ocumEvtNvramBatteryOverCharged）
+ a| 
+事件
+ a| 
+節點
+ a| 
+關鍵
+
+|===

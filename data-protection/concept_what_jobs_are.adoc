@@ -1,0 +1,18 @@
+---
+permalink: data-protection/concept_what_jobs_are.html 
+sidebar: sidebar 
+keywords: jobs 
+summary: 工作是一系列可以使用 Unified Manager 監控的任務。檢視工作及其相關任務，可讓您確認這些工作是否已成功完成。 
+---
+= 了解 Active IQ Unified Manager 中的工作
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+工作是一系列可以使用 Unified Manager 監控的任務。檢視工作及其相關任務，可讓您確認這些工作是否已成功完成。
+
+當您建立 SnapMirror 和 SnapVault 關係、執行任何關係操作（中斷、編輯、靜止、移除、繼續、重新同步及反向重新同步）、執行資料還原任務、登入叢集等時，就會啟動作業。
+
+啟動作業後，您可以使用「作業」頁面和「作業詳情」頁面來監控作業和相關作業任務的進度。

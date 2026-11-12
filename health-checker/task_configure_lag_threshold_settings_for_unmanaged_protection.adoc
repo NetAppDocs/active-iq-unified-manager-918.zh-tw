@@ -1,0 +1,32 @@
+---
+permalink: health-checker/task_configure_lag_threshold_settings_for_unmanaged_protection.html 
+sidebar: sidebar 
+keywords: configure, lag, threshold settings, unmanaged, protection, relationships 
+summary: 您可以編輯非託管保護關係的全域預設延遲警告和錯誤健全狀況臨界值設定，以便按適合您需求的間隔產生事件。 
+---
+= 在 Active IQ Unified Manager 中設定非託管保護關係的延遲臨界值
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以編輯非託管保護關係的全域預設延遲警告和錯誤健全狀況臨界值設定，以便按適合您需求的間隔產生事件。
+
+.開始之前
+您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+延遲時間不得超過定義的傳輸排程間隔。例如，如果傳輸排程是每小時一次，則延遲時間不得超過一小時。延遲臨界值指定延遲時間不得超過的百分比。以一小時為例，如果延遲臨界值定義為 150%，則當延遲時間超過 1.5 小時時，您將收到一個事件。
+
+本工作中所述的設定會全域套用於所有未受管的保護關係。這些設定無法指定並僅套用於單一未受管的保護關係。
+
+.步驟
+. 在左側導覽窗格中，按一下 *事件臨界值* > *關係*。
+. 根據需要增加或減少全域預設警告或錯誤延遲時間百分比。
+. 若要停用因任何延遲臨界值而觸發的警告或錯誤事件，請取消選取 *已啟用* 旁的核取方塊。
+. 按一下 *Save* 。
+
+
+*相關資訊*
+
+link:../config/task_add_users.html["新增使用者"]

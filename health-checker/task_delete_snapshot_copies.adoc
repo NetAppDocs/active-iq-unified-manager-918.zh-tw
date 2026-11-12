@@ -1,0 +1,45 @@
+---
+permalink: health-checker/task_delete_snapshot_copies.html 
+sidebar: sidebar 
+keywords: delete, snapshot copies 
+summary: 您可以刪除 Snapshot 複本以節省空間或釋放磁碟空間，或者如果不再需要 Snapshot 複本，也可以將其刪除。 
+---
+= 在 Active IQ Unified Manager 中刪除 Snapshot 複本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以刪除 Snapshot 複本以節省空間或釋放磁碟空間，或者如果不再需要 Snapshot 複本，也可以將其刪除。
+
+.開始之前
+您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+該 Volume 必須在線上。
+
+若要刪除忙碌或已鎖定的 Snapshot 複本，必須先從正在使用該 Snapshot 複本的應用程式中釋放該複本。
+
+* 如果某個 FlexClone Volume 正在使用該 Snapshot 複本，則無法刪除父 Volume 中的基礎 Snapshot 複本。
++
+基礎 Snapshot 複本是用於建立 FlexClone Volume 的 Snapshot 複本，並在父 Volume 中顯示狀態 `Busy`與應用程式相依性為 `Busy, Vclone`。
+
+* 您無法刪除在 SnapMirror 關係中使用的已鎖定 Snapshot 複本。
++
+Snapshot 複本已被鎖定，下次更新需要用到。
+
+
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存設備* > *Volume*。
+. 在 *健全狀況：所有 Volume* 檢視中，選取包含要檢視的 Snapshot 快照技術副本的 Volume。
++
+顯示 Snapshot 快照技術副本清單。
+
+. 在 *Volume / 健全狀況* 詳細資料頁面中，按一下 *容量* 標籤。
+. 在 *容量* 標籤的 *詳細資料* 窗格的「其他詳細資料」部分中，按一下 *Snapshot 快照技術副本* 旁的連結。
++
+Snapshot 快照技術副本數量是一個連結，可顯示 Snapshot 快照技術副本清單。
+
+. 在 *Snapshot 複本* 檢視中，選取您要刪除的 Snapshot 複本，然後按一下 *刪除所選項目*。
+

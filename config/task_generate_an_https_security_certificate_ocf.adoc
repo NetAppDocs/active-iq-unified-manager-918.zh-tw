@@ -1,0 +1,65 @@
+---
+permalink: config/task_generate_an_https_security_certificate_ocf.html 
+sidebar: sidebar 
+keywords: generate, https, security, certificate 
+summary: 首次安裝 Active IQ Unified Manager 時，系統會安裝預設的 HTTPS 憑證。您可以產生新的 HTTPS 安全性憑證來取代現有憑證。 
+---
+= 在 Active IQ Unified Manager 中產生 HTTPS 安全性憑證
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+首次安裝 Active IQ Unified Manager 時，系統會安裝預設的 HTTPS 憑證。您可以產生新的 HTTPS 安全性憑證來取代現有憑證。
+
+.開始之前
+您必須擁有應用程式管理員角色。
+
+重新產生憑證的原因有很多，例如，如果您想要更好的可分辨名稱（DN）值，或想要更大的金鑰長度，或更長的有效期，或目前憑證已過期。
+
+如果您無法存取 Unified Manager Web UI，您可以使用維護主控台以相同的值重新產生 HTTPS 憑證。重新產生憑證時，您可以定義金鑰大小和金鑰的有效期間。如果您使用維護主控台中的  `Reset Server Certificate` 選項，則會建立有效期限為 397 天的新 HTTPS 憑證。此憑證將具有大小為 2048 位元的 RSA 金鑰。
+
+.步驟
+. 在左側導覽窗格中，按一下 *一般* > *HTTPS 憑證*。
+. 點選 *重新產生 HTTPS 憑證*。
++
+隨即顯示「重新產生 HTTPS 憑證」對話方塊。
+
+. 根據您希望產生憑證的方式，選擇以下選項之一：
++
+[cols="2*"]
+|===
+| 如果您想要…… | 這樣做…… 
+
+
+ a| 
+使用目前值重新產生憑證
+ a| 
+按一下 *使用目前憑證屬性重新產生* 選項。
+
+
+
+ a| 
+使用不同的值產生憑證
+ a| 
+點選 *更新目前憑證屬性* 選項。
+
+如果您不輸入新值， Common Name 和 Alternative Names 欄位將使用現有憑證中的值。`"Common Name"` 應設定為主機的 FQDN。其他欄位不需要值，但如果您希望憑證中填入這些值，則可以輸入值，例如 EMAIL、COMPANY、DEPARTMENT、City、State 和 Country。您也可以從可用的 KEY SIZE（金鑰演算法為 `"RSA"`）和 VALIDITY PERIOD 中進行選擇。
+
+[NOTE]
+====
+** 金鑰大小允許的值為  `2048`、 `3072` 和  `4096`。
+** 有效期限最短為 1 天，最長為 36500 天。
++
+儘管允許的有效期為 36500 天，但建議您使用不超過 397 天或 13 個月的有效期。因為如果您選擇的有效期超過 397 天，並且計畫為此憑證匯出 CSR 並由知名 CA 簽署，則 CA 傳回給您的已簽署憑證的有效期將縮短至 397 天。
+
+** 如果您希望從憑證的「備用名稱」欄位移除本機識別資訊，可以選取「排除本機識別資訊（例如 localhost）」核取方塊。選取此核取方塊後，「備用名稱」欄位將僅使用您在此欄位中輸入的內容。如果留空，產生的憑證將完全不包含「備用名稱」欄位。
+
+
+====
+|===
+. 按一下 *是* 以重新產生憑證。
+. 重新啟動 Unified Manager 伺服器，使新憑證生效。
+. 透過檢視 HTTPS 憑證來驗證新的憑證資訊。
+

@@ -1,0 +1,16 @@
+---
+permalink: storage-mgmt/concept_understand_user_interface.html 
+sidebar: sidebar 
+keywords: understand, user, interface 
+summary: Unified Manager 的使用者介面主要由一個儀表板組成，該儀表板提供受監控物件的概覽檢視。此使用者介面也提供存取以檢視所有叢集物件。 
+---
+= 了解 Active IQ Unified Manager 使用者介面
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager 的使用者介面主要由一個儀表板組成，該儀表板提供受監控物件的概覽檢視。此使用者介面也提供存取以檢視所有叢集物件。
+
+您可以選擇偏好的檢視，並根據需要使用行動按鈕。您的畫面組態會儲存在工作區中，以便在啟動 Unified Manager 時可以使用所有需要的功能。但是，當您從一個檢視導覽到另一個檢視，然後再返回時，檢視可能不再相同。

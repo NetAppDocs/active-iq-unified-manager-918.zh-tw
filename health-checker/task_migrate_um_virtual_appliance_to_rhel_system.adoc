@@ -1,0 +1,67 @@
+---
+permalink: health-checker/task_migrate_um_virtual_appliance_to_rhel_system.html 
+sidebar: sidebar 
+keywords: unified manager, migrate, virtual, appliance, linux system 
+summary: 如果您想要變更 Unified Manager 運作所在的主機作業系統，可以將 Unified Manager MySQL 資料庫傾印備份從虛擬應用裝置還原至 Red Hat Enterprise Linux 系統。 
+---
+= 將 Active IQ Unified Manager 虛擬應用裝置遷移到 Linux 系統
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您想要變更 Unified Manager 運作所在的主機作業系統，可以將 Unified Manager MySQL 資料庫傾印備份從虛擬應用裝置還原至 Red Hat Enterprise Linux 系統。
+
+.開始之前
+* 在虛擬應用裝置上：
++
+** 您必須擁有操作員、應用程式管理員或儲存管理員角色。
+** 若要執行還原操作，您必須知道 Unified Manager 維護使用者的名稱。
+
+
+* 在 Linux 系統上：
++
+** 您必須已按照 link:../install-linux/task_install_unified_manager_linux.html["在 Linux 系統上安裝 Unified Manager"] 中的說明，在 Linux 伺服器上安裝 Unified Manager。
+** 此伺服器上的 Unified Manager 版本必須與您正在使用備份檔案的虛擬應用裝置上的版本相同。
+** 安裝後，請勿在 Linux 系統上產品發表 UI 或設定任何叢集、使用者或驗證設定。備份檔案會在還原過程中填入這些資訊。
+** 您必須擁有 Linux 主機的 root 使用者憑證。
+
+
+
+
+這些步驟描述如何在虛擬應用裝置上建立備份檔案，將備份檔案複製到 Red Hat Enterprise Linux，然後將資料庫備份還原到新系統。
+
+.步驟
+. 在虛擬應用裝置上，按一下 *管理* > *資料庫備份*。
+. 在 *資料庫備份* 頁面中，按一下 *備份設定*。
+. 將備份路徑變更為 /jail/support。
+. 在「排程」區段中，選取 *Scheduled Daily*，並輸入比目前時間晚幾分鐘的時間，以便盡快建立備份。
+. 點選 *套用*。
+. 請等待幾個小時，備份即可產生。
++
+完整備份可能超過 1 GB，需要三到四個小時才能完成。
+
+. 以 root 使用者身分登入安裝 Unified Manager 的 Linux 主機，並使用 SCP 從虛擬應用裝置上的 /support 複製備份檔案.`root@<rhel_server>:/# scp -r admin@<vapp_server_ip_address>:/support/* .`
++
+`root@ocum_rhel-21:/# scp -r admin@10.10.10.10:/support/* .`
+
++
+請確保您已將 .7z 備份檔案和所有 .7z 儲存庫檔案複製到 /database-dumps-repo 子目錄中。
+
+. 在命令提示字元下，還原備份： `um backup restore -f /<backup_file_path>/<backup_file_name>`
++
+`um backup restore -f /UM_9.7.N151113.1348_backup_unix_02-12-2019-04-16.7z`
+
+. 還原作業完成後，登入 Unified Manager web UI。
+
+
+您應該執行以下任務：
+
+* 產生新的 HTTPS 安全性憑證並重新啟動 Unified Manager 伺服器。
+* 將備份路徑變更為 Linux 系統的預設設定（/data/ocum-backup），或變更為您選擇的新路徑，因為 Linux 系統上沒有 /jail/support 路徑。
+* 如果正在使用 WFA，請重新設定 Workflow Automation 連線的兩端。
+* 如果您正在使用 SAML，請重新設定 SAML 驗證設定。
+
+
+確認 Linux 系統上的所有程式都如預期運作後，即可關閉並移除 Unified Manager 虛擬應用裝置。

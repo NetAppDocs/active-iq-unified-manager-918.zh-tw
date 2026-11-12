@@ -1,0 +1,25 @@
+---
+permalink: storage-mgmt/reference_user_not_found.html 
+sidebar: sidebar 
+keywords: user, not, found 
+summary: 疑難排解「找不到使用者」錯誤。 
+---
+= 解決 Active IQ Unified Manager 中的「找不到使用者」錯誤
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您執行與驗證相關的操作（例如新增、編輯、刪除或測試遠端使用者或群組）時，會顯示下列錯誤訊息： `User not found.`
+
+*原因*
+
+如果使用者存在於 AD 伺服器或 LDAP 伺服器中，並且您將基本可分辨名稱設為不正確的值，則可能會發生此問題。
+
+*修正行動*
+
+. 在左側導覽窗格中，按一下 *一般* > *遠端驗證*。
+. 請輸入基本專有名稱的相應資訊。
+. 按一下 *Save* 。
+

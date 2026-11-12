@@ -1,0 +1,18 @@
+---
+permalink: performance-checker/concept_check_for_client_or_network_issues.html 
+sidebar: sidebar 
+keywords: check, client, network, issues 
+summary: 當連接到叢集 Volume 的用戶端增加其 I/O 請求時，叢集必須更加努力才能滿足需求。叢集需求的增加可能會導致某個元件出現爭用，增加使用該元件的工作負載的延遲，並觸發 Unified Manager 中的事件。 
+---
+= 了解用戶端或網路問題如何影響 Active IQ Unified Manager 的效能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當連接到叢集 Volume 的用戶端增加其 I/O 請求時，叢集必須更加努力才能滿足需求。叢集需求的增加可能會導致某個元件出現爭用，增加使用該元件的工作負載的延遲，並觸發 Unified Manager 中的事件。
+
+在「事件詳情」頁面中，「系統診斷」區段會顯示使用爭用元件的最高 Volume 工作負載。如果您知道哪個用戶端在存取特定 Volume，則可以前往該用戶端，以確定用戶端硬體或應用程式是否未如預期運作，或執行比平常更多的工作。您可能需要聯絡用戶端系統管理員或應用程式廠商尋求協助。
+
+您可以檢查網路基礎架構，以確定是否存在硬體問題、瓶頸或相互衝突的工作負載，這些都可能導致叢集與連接用戶端之間的 I/O 請求速度低於預期。您可能需要聯絡網路管理員尋求協助。

@@ -1,0 +1,190 @@
+---
+permalink: events/reference_management_station_events.html 
+sidebar: sidebar 
+keywords: management, station, events, impact area, configuration, performance 
+summary: 管理站事件提供有關安裝 Unified Manager 的伺服器狀態的資訊，以便您監控潛力問題。事件依影響區域分組，包括事件與陷阱名稱、影響層級、來源類型及嚴重性。 
+---
+= 了解 Active IQ Unified Manager 中的管理站台事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+管理站事件提供有關安裝 Unified Manager 的伺服器狀態的資訊，以便您監控潛力問題。事件依影響區域分組，包括事件與陷阱名稱、影響層級、來源類型及嚴重性。
+
+
+
+[[impact-area-configuration]]
+== 影響區域：組態
+
+|===
+| 事件名稱（陷阱名稱） | 影響層級 | 來源類型 | 嚴重程度 
+
+
+ a| 
+管理伺服器磁碟空間即將用完（ocumEvtUnifiedManagerDiskSpaceNearlyFull）
+ a| 
+風險
+ a| 
+管理站
+ a| 
+警告
+
+
+
+ a| 
+管理伺服器磁碟空間已滿（ocumEvtUnifiedManagerDiskSpaceFull）
+ a| 
+事件
+ a| 
+管理站
+ a| 
+關鍵
+
+
+
+ a| 
+管理伺服器記憶體不足（ocumEvtUnifiedManagerMemoryLow）
+ a| 
+風險
+ a| 
+管理站
+ a| 
+警告
+
+
+
+ a| 
+管理伺服器記憶體即將耗盡（ocumEvtUnifiedManagerMemoryAlmostOut）
+ a| 
+事件
+ a| 
+管理站
+ a| 
+關鍵
+
+
+
+ a| 
+MySQL 日誌檔案大小增加；需要重新啟動（ocumEvtMysqlLogFileSizeWarning）
+ a| 
+事件
+ a| 
+管理站
+ a| 
+警告
+
+
+
+ a| 
+總稽核日誌大小配置即將額滿
+ a| 
+風險
+ a| 
+管理站
+ a| 
+警告
+
+
+
+ a| 
+Syslog 伺服器憑證即將過期
+ a| 
+風險
+ a| 
+管理站
+ a| 
+警告
+
+
+
+ a| 
+Syslog 伺服器憑證已過期
+ a| 
+風險
+ a| 
+管理站
+ a| 
+錯誤
+
+
+
+ a| 
+稽核日誌檔案遭竄改
+ a| 
+風險
+ a| 
+管理站
+ a| 
+警告
+
+
+
+ a| 
+稽核日誌檔已刪除
+ a| 
+風險
+ a| 
+管理站
+ a| 
+警告
+
+
+
+ a| 
+Syslog 伺服器連線錯誤
+ a| 
+風險
+ a| 
+管理站
+ a| 
+錯誤
+
+
+
+ a| 
+Syslog 伺服器組態已更改
+ a| 
+事件
+ a| 
+管理站
+ a| 
+警告
+
+|===
+
+
+[[impact-area-performance]]
+== 影響領域：效能
+
+|===
+| 事件名稱（陷阱名稱） | 影響層級 | 來源類型 | 嚴重程度 
+
+
+ a| 
+效能資料分析受到影響（ocumEvtUnifiedManagerDataMissingAnalyze）
+ a| 
+風險
+ a| 
+管理站
+ a| 
+警告
+
+
+
+ a| 
+效能資料收集受到影響（ocumEvtUnifiedManagerDataMissingCollection）
+ a| 
+事件
+ a| 
+管理站
+ a| 
+關鍵
+
+|===
+[NOTE]
+====
+最後這兩個效能事件僅適用於 Unified Manager 7.2。如果其中任何一個事件處於「新增」狀態，然後您升級到較新版本的 Unified Manager 軟體，則這些事件不會自動清除。您需要手動將這些事件移至「已解決」狀態。
+
+====

@@ -1,0 +1,37 @@
+---
+permalink: performance-checker/task_view_performance_status_of_all_san_array_clusters.html 
+sidebar: sidebar 
+keywords: all san, array, performance, clusters 
+summary: 使用「效能」頁面上的「所有叢集」檢視來顯示 All SAN Array 叢集的效能狀態。 
+---
+= 在 Active IQ Unified Manager 中檢視 All SAN Array 叢集的效能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用「效能：所有叢集」檢視來顯示 All SAN Array 叢集的效能狀態。
+
+.開始之前
+您必須擁有操作員、應用程式管理員或儲存管理員角色。
+
+您可以在「效能：所有叢集」檢視中檢視 All SAN Array 叢集的總覽資訊，並在「叢集 / 效能資源管理器」頁面中檢視詳細資訊。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存設備* > *叢集*。
+. 請確定 "`Personality`" 欄顯示在 *健全狀況：所有叢集* 檢視中，或使用 *顯示 / 隱藏* 控制將其新增。
++
+此欄會針對您的 All SAN Array 叢集顯示 "`All SAN Array`"。
+
+. 若要檢視有關這些叢集的效能資訊，請選取 *效能：所有叢集* 檢視。
++
+檢視 All SAN Array 叢集的效能資訊。
+
+. 若要檢視有關這些叢集效能的詳細資訊，請按一下 All SAN Array 叢集的名稱。
+. 點選 *Explorer* 標籤。
+. 在 *叢集 / 效能資源管理器* 頁面上，從 *檢視和比較* 功能表中選擇 *此叢集上的節點*。
++
+您可以比較叢集中兩個節點的效能統計資料，以確保兩個節點的負載幾乎相同。如果兩個節點之間存在較大差異，您可以將第二個節點新增至圖表中，並在更長的時間範圍內比較其數值，以識別任何組態問題。
+
+

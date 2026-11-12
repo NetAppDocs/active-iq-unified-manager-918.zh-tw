@@ -1,0 +1,37 @@
+---
+permalink: config/reference_https_dialog_box_ocf.html 
+sidebar: sidebar 
+keywords: https certificate page 
+summary: HTTPS 憑證頁面可讓您檢視目前安全性憑證、下載憑證簽章要求、產生新的 HTTPS 憑證或安裝新的 HTTPS 憑證。 
+---
+= 了解 Active IQ Unified Manager 中的 HTTPS 憑證頁面
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+HTTPS 憑證頁面可讓您檢視目前安全性憑證、下載憑證簽署要求、產生新的自簽名 HTTPS 憑證或安裝新的 HTTPS 憑證。
+
+如果您尚未產生新的自簽署 HTTPS 憑證，則此頁面上顯示的憑證是安裝期間所產生的憑證。
+
+
+
+[[command-buttons]]
+== 命令按鈕
+
+命令按鈕可用於執行以下操作：
+
+* *下載 HTTPS 憑證簽署請求*
++
+下載目前已安裝的 HTTPS 憑證的認證請求。瀏覽器會提示您儲存 <hostname>.csr 檔案，以便您可以將該檔案提供給憑證授權單位進行簽署。
+
+* *安裝 HTTPS 憑證*
++
+允許您在憑證授權單位簽署並返回安全性憑證後上傳並安裝該憑證。新憑證將在您重新啟動管理伺服器後生效。
+
+* *重新產生 HTTPS 憑證*
++
+允許您產生新的自簽名 HTTPS 憑證，以取代目前的安全性憑證。重新啟動 Unified Manager 後，新憑證將生效。
+
+

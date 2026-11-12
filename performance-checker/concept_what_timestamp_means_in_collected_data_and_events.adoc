@@ -1,0 +1,22 @@
+---
+permalink: performance-checker/concept_what_timestamp_means_in_collected_data_and_events.html 
+sidebar: sidebar 
+keywords: timestamp, means, collected, data, events 
+summary: 收集到的健全狀況和效能資料中顯示的時間戳記，或作為事件偵測時間顯示的時間戳記，是基於 ONTAP 叢集時間，並根據 Web 瀏覽器上設定的時區進行調整。 
+---
+= 了解 Active IQ Unified Manager 中收集的資料和事件的時間戳記
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+收集到的健全狀況和效能資料中顯示的時間戳記，或作為事件偵測時間顯示的時間戳記，是基於 ONTAP 叢集時間，並根據 Web 瀏覽器上設定的時區進行調整。
+
+強烈建議您使用網路時間協定（NTP）伺服器來同步 Unified Manager 伺服器、ONTAP 叢集和 Web 瀏覽器上的時間。
+
+[NOTE]
+====
+如果您發現某個叢集的時間戳記看起來不正確，您可能需要檢查叢集時間是否已正確設定。
+
+====

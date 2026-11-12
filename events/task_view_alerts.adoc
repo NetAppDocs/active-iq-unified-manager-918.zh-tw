@@ -1,0 +1,24 @@
+---
+permalink: events/task_view_alerts.html 
+sidebar: sidebar 
+keywords: view, alerts 
+summary: 您可以在「警報設定」頁面檢視針對各種事件所建立的警報清單。您還可以檢視警報屬性，例如警報執行摘要、通知方法和頻率、觸發警報的事件、警報的電子郵件收件人以及受影響的資源，例如叢集、彙總和 Volume。 
+---
+= 在 Active IQ Unified Manager 中查看警報
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在「警報設定」頁面檢視針對各種事件所建立的警報清單。您還可以檢視警報屬性，例如警報執行摘要、通知方法和頻率、觸發警報的事件、警報的電子郵件收件人以及受影響的資源，例如叢集、彙總和 Volume。
+
+.開始之前
+您必須擁有操作員、應用程式管理員或儲存管理員角色。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存設備管理* > *警示設定*。
++
+警報清單顯示在「警報設定」頁面中。
+
+

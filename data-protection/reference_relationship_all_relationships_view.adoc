@@ -1,0 +1,327 @@
+---
+permalink: data-protection/reference_relationship_all_relationships_view.html 
+sidebar: sidebar 
+keywords: volume, relationships, metrocluster 
+summary: 「關係」頁面上的「所有關係」檢視顯示有關儲存系統上保護關係的資訊。 
+---
+= 在 Active IQ Unified Manager 中顯示關係：所有關係檢視
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+「關係：所有關係」檢視顯示儲存系統上保護關係的資訊。
+
+預設情況下，當您存取「Relationships」頁面時，顯示的報告包含 Volume 和儲存設備 VM 的頂層保護關係。頁面頂部的控制項可讓您選擇特定檢視、執行搜尋以尋找特定物件、建立和套用篩選器以縮小顯示的資料清單、新增/移除/重新排序頁面上的欄，以及將頁面上的資料匯出為 .csv、.pdf 或 .xlsx 檔案。在您完成自訂的頁面後，您可以將結果儲存為自訂檢視，然後排程定期產生此資料的報告並透過電子郵件傳送。預設情況下，當您選取 *Relationships* 功能表時，顯示的報告包含資料中心內 Volume 和儲存設備 VM 的保護關係。您可以使用 *Filter* 選項僅檢視選定的儲存系統，例如僅檢視 Volume 或僅檢視儲存設備 VM。相同的報告也會顯示在「Storage」頁面中，並且僅針對選定的儲存設備實體。如果您想要檢視 Volume 或儲存設備 VM 關係，可以存取 *Storage* > *Volumes* > *Relationship: All Relationships* 頁面，或存取 *Protection* > *Relationships* > *Relationship: All Relationships*，然後在 *Filter* 中使用 *Relationship Object Type* 選項，僅篩選出 Volume 或儲存設備 VM 資料。
+
+列出所有保護關係的「關係」頁面具有目的地叢集的 *在 System Manager 中檢視* 連結，可讓您在 ONTAP System Manager 中檢視相同的物件。
+
+* *狀態*
++
+顯示保護關係的目前狀態。
+
++
+狀態可以是 Error（image:../media/sev_error_um60.png[""]）、Warning（image:../media/sev_warning_um60.png[""]）或 OK（image:../media/sev_normal_um60.png[""]）。
+
+* *來源儲存 VM*
++
+顯示來源 SVM 的名稱。點選 SVM 名稱，即可檢視來源 SVM 的更多詳細資料。
+
++
+如果叢集中存在 SVM 但尚未新增至 Unified Manager 清單中，或者 SVM 是在叢集上次重新整理之後建立的，則此欄位為空。您必須確保 SVM 存在，或在叢集上執行重新探索以重新整理資源清單。
+
+* *來源*
++
+根據您的選擇，顯示受保護的來源 Volume 或來源儲存 VM。您可以按一下 Volume 或儲存 VM 的名稱，檢視有關來源 Volume 或儲存 VM 的更多詳細資訊。
+
++
+如果顯示 `Resource-key not discovered`訊息，則可能表示該 Volume 存在於叢集中，但尚未新增至 Unified Manager 清單中，或該 Volume 是在叢集上次重新整理之後建立的。您必須確保該 Volume 存在，或在叢集上執行重新探索以重新整理資源清單。
+
+* *目的地 Storage VM*
++
+顯示目的地 SVM 的名稱。點選 SVM 名稱，即可檢視目的地 SVM 的更多詳細資料。
+
+* *目的地*
++
+根據您的選擇，顯示目的地 Volume 或 storage VM 的名稱。您可以按一下對應的物件名稱，檢視目的地 Volume 或 storage VM 的更多詳細資訊。
+
+* *關係物件類型*
++
+顯示關係中使用的物件類型，例如儲存設備虛擬機器、Volume 和一致性群組。對於一致性關係中的物件，關係來源和目的地會顯示一致性群組，按一下它們會帶您前往 LUNs 頁面以檢視關係。
+
+* *原則*
++
+顯示 SnapMirror 關係的保護原則名稱。您可以按一下原則名稱以檢視與該原則相關的詳細資訊，包括下列資訊：
+
++
+** 傳輸優先權
++
+指定非同步作業中傳輸的優先權。傳輸優先權為「正常」或「低」。「正常」優先權的傳輸會優先於「低」優先權的傳輸進行排程。預設值為「正常」。
+
+** 忽略存取時間
++
+僅適用於 SnapVault 關係。這會指定遞增傳輸是否忽略僅存取時間發生變更的檔案。值為 True 或 False。預設為 False。
+
+** 當關係不同步時
++
+指定當同步關係無法同步時 ONTAP 執行的行動。StrictSync 關係在與次要 Volume 同步故障時，將限制對主 Volume 的存取。同步關係在與次要 Volume 同步故障時，不會限制對主 Volume 的存取。
+
+** 嘗試次數限制
++
+指定針對 SnapMirror 關係嘗試每次手冊或排程傳輸的最大次數。預設值為 8。
+
+** 註解
++
+提供一個文字欄位，用於輸入針對所選原則的註解。
+
+** SnapMirror 標籤
++
+指定與 Snapshot 複本原則相關聯的第一個排程的 SnapMirror 標籤。當您將 Snapshot 複本備份至 SnapVault 目的地時，SnapVault 子系統會使用 SnapMirror 標籤。
+
+** 保留設定
++
+指定備份的保留時間，以時間或備份數量為準。
+
+** 實際 Snapshot 複本
++
+指定此 Volume 上與指定標籤相符的 Snapshot 複本數量。
+
+** 保留 Snapshot 複本
++
+指定即使達到原則的最大限制，也不會自動刪除的 SnapVault Snapshot 複本數量。值為 True 或 False。預設值為 False。
+
+** 保留警告臨界值
++
+指定 Snapshot 複本限制，達到此限制時會發出警告，表示即將達到最大保留限制。
+
+
+
+* *延遲持續時間*
++
+顯示鏡射資料比來源滯後的時間量。
+
++
+對於 StrictSync 關係，延遲時間應接近或等於 0 秒。
+
+* *延遲狀態*
++
+顯示代管關係的延遲狀態，以及具有相關排程之未代管關係的延遲狀態。延遲狀態可以是：
+
++
+** 錯誤
++
+滯後持續時間大於或等於滯後誤差臨界值。
+
+** 警告
++
+滯後持續時間大於或等於滯後警告臨界值。
+
+** 確定
++
+延遲時間在正常範圍內。
+
+** 不適用
++
+延遲狀態不適用於同步關係，因為無法設定排程。
+
+
+
+* *上次成功更新*
++
+顯示上次成功 SnapMirror 或 SnapVault 操作的時間。
+
++
+最後一次成功更新不適用於同步關係。
+
+* *成員關係*
++
+顯示所選物件中是否存在任何 Volume。
+
+* *關係類型*
++
+顯示用於複寫 Volume 的關係類型。關係類型包括：
+
++
+** 非同步鏡射
+** 非同步 Vault
+** 非同步 MirrorVault
+** StrictSync
+** 同步
+
+
+* *傳輸狀態*
++
+顯示保護關係的傳輸狀態。傳輸狀態可以是下列其中一項：
+
++
+** 中止
++
+SnapMirror 傳輸已啟用；但是，可能包含移除檢查點的傳輸中止作業正在進行中。
+
+** 檢查
++
+目的地 Volume 正在進行診斷檢查，目前沒有傳輸正在進行中。
+
+** 完成中
++
+SnapMirror 傳輸已啟用。該 Volume 目前處於遞增 SnapVault 傳輸的傳輸後階段。
+
+** 閒置
++
+傳輸已啟用，且沒有正在進行的傳輸。
+
+** 同步
++
+同步關係中兩個 Volume 的資料已同步。
+
+** 不同步
++
+目的地 Volume 中的資料與來源 Volume 中的資料不同步。
+
+** 準備中
++
+SnapMirror 傳輸已啟用。該 Volume 目前處於遞增 SnapVault 傳輸的預傳輸階段。
+
+** 已排入佇列
++
+SnapMirror 傳輸已啟用。沒有正在進行的傳輸。
+
+** 已靜止
++
+SnapMirror 傳輸已停用。目前沒有正在進行的傳輸。
+
+** 靜默
++
+SnapMirror 傳輸正在進行中。其他傳輸已停用。
+
+** 轉移
++
+SnapMirror 傳輸已啟用，且傳輸正在進行中。
+
+** 過渡
++
+從來源到目的地 Volume 的非同步資料傳輸已完成，並已開始向同步作業過渡。
+
+** 等待
++
+SnapMirror 傳輸已啟動，但部分相關工作正在等待排隊。
+
+
+
+* *上次傳輸時間*
++
+顯示上次資料傳輸完成所花費的時間。
+
++
+傳輸持續時間不適用於 StrictSync 關係，因為傳輸應該是同時進行的。
+
+* *上次傳輸大小*
++
+顯示上次資料傳輸的大小（以位元組為單位）。
+
++
+傳輸大小不適用於 StrictSync 關係。
+
+* *中介軟體*
++
+顯示中介程式狀態。
+
++
+** 不適用
++
+如果叢集不支援 SnapMirror 作用中同步。
+
+** 未設定
++
+如果未配置，或已配置但僅新增了目的地叢集而未在 Unified Manager 中新增來源叢集。
+
+** 中介者 IP 位址
++
+如果已配置，且來源和目的地叢集都已新增至 Unified Manager。
+
+
+
+* *狀態*
++
+顯示 SnapMirror 或 SnapVault 關係的狀態。狀態可以是「未初始化」、SnapMirrored 或「已斷開」。如果選擇了來源 Volume，則關係狀態不適用，也不會顯示。
+
+* *關係健康狀況*
++
+顯示叢集的關係健康狀況。
+
+* *不正常原因*
++
+關係處於不健康狀態的原因。
+
+* *傳輸優先權*
++
+顯示傳輸執行的優先權。傳輸優先權為正常或低。正常優先權的傳輸會優先於低優先權的傳輸進行排程。
+
++
+傳輸優先權不適用於同步關係，因為所有傳輸都具有相同的優先權。
+
+* *排程*
++
+顯示指派給該關係的保護排程名稱。
+
++
+此排程不適用於同步關係。
+
+* *版本彈性複寫*
++
+顯示「是」、「是（含備份選項）」或「無」。
+
+* *來源叢集*
++
+顯示 SnapMirror 關係之來源叢集的 FQDN、簡稱或 IP 位址。
+
+* *來源叢集 FQDN*
++
+顯示 SnapMirror 關係的來源叢集名稱。
+
+* *來源節點*
++
+顯示 Volume 的 SnapMirror 關係的來源節點名稱連結，並在物件為 Storage VM 或一致性群組時，顯示 SnapMirror 關係節點計數連結。
+
+
+
+在自訂檢視中，當您按一下節點名稱連結時，您可以檢視及擴充儲存設備物件的保護，這些一致性群組的 Volume 屬於 SnapMirror 作用中同步關係，且位於這些儲存設備物件上。
+
+點擊節點計數連結後，會跳到節點頁面，其中顯示與該關係關聯的各個節點。當節點計數為 0 時，由於沒有節點與該關係關聯，因此不會顯示任何值。
+
+* *目的地節點*
++
+顯示 Volume 之 SnapMirror 關係的目的地節點名稱連結，並在物件為 Storage VM 或一致性群組時，顯示 SnapMirror 關係節點計數連結。
+
++
+點擊節點計數連結後，會跳到節點頁面，其中顯示與該關係關聯的各個節點。當節點計數為 0 時，由於沒有節點與該關係關聯，因此不會顯示任何值。
+
+* *目的地叢集*
++
+顯示 SnapMirror 關係的目的地叢集名稱。
+
+* *目的地叢集 FQDN*
++
+顯示 SnapMirror 關係的目的地叢集的 FQDN、簡稱或 IP 位址。
+
+* *受保護於*
++
+顯示不同的關係。在此欄中，您可以檢視叢集和儲存設備虛擬機器順序的 Volume 和一致性群組關係，包括：
+
++
+** SnapMirror
+** Storage VM 災難復原
+** SnapMirror，儲存虛擬機器災難復原
+** 一致性群組
+** SnapMirror，一致性群組。
+
+
+
+
+*相關資訊*
+
+* 如需有關 *關係：MetroCluster* 檢視的資訊，請參閱 link:../storage-mgmt/task_monitor_metrocluster_configurations.html["監控 MetroCluster 組態"]。
+* 如需有關 *關係：最近 1 個月傳輸狀態* 檢視的資訊，請參閱 link:../data-protection/reference_relationship_last_1_month_transfer_status_view.html["關係：過去 1 個月傳輸狀態檢視"]。
+* 如需 *關係：所有關係* 檢視的相關資訊，請參閱 link:../data-protection/reference_relationship_last_1_month_transfer_rate_view.html["關係：過去 1 個月的傳輸率檢視"]。
+

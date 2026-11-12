@@ -1,0 +1,37 @@
+---
+permalink: config/concept_maintenance_console_menu.html 
+sidebar: sidebar 
+keywords: maintenance, console, menus 
+summary: 維護主控台由不同的選單組成，可讓您維護與管理 Unified Manager 伺服器的特殊功能與組態設定。 
+---
+= 了解 Active IQ Unified Manager 中的維護主控台選單
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+維護主控台由不同的選單組成，可讓您維護與管理 Unified Manager 伺服器的特殊功能與組態設定。
+
+根據您安裝 Unified Manager 的作業系統，維護主控台包含下列選單：
+
+* 升級 Unified Manager（僅限 VMware）
+* 網路組態（僅限 VMware）
+* 系統組態（僅限 VMware）
++
+.. 支援/診斷
+.. 重設伺服器憑證
+.. 重新產生用戶端憑證
+.. 備份恢復
+.. 外部資料供應商
+.. 效能輪詢間隔組態
+.. 停用 SAML 驗證
+.. 檢視/變更應用程式連接埠
+.. 偵錯日誌組態
+.. 控制對 MySQL 連接埠 3306 的存取
+.. 結束
+
+
+
+
+您可以從清單中選擇數字來存取特定的選單選項。例如，若要備份與恢復，請選擇 _4_。

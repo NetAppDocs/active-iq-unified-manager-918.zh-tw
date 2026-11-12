@@ -1,0 +1,22 @@
+---
+permalink: health-checker/reference_description_of_cluster_object_windows_and_dialog_boxes.html 
+sidebar: sidebar 
+keywords: description, cluster, object, windows, dialog boxes 
+summary: 您可以從對應的儲存設備物件頁面檢視所有叢集和叢集物件。您也可以從對應的儲存設備物件詳細資料頁面檢視詳細資訊。現在，您可以從「清單」的下列「儲存設備」和「保護」區段產品發表 System Manager 使用者介面。 
+---
+= 了解 Active IQ Unified Manager 中的叢集物件視窗與對話方塊
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以從對應的儲存設備物件頁面檢視所有叢集和叢集物件。您也可以從對應的儲存設備物件詳細資料頁面檢視詳細資訊。現在，您可以從「清單」的下列「儲存設備」和「保護」區段產品發表 System Manager 使用者介面。
+
+* 叢集清單、叢集健全狀況和叢集效能頁面
+* 彙總庫存、彙總健全狀況和彙總效能頁面
+* Volume 庫存、Volume 健全狀況和 Volume 效能頁面
+* 節點清單和節點效能頁面
+* StorageVM 清單、StorageVM 健全狀況和 StorageVM 效能頁面
+* 保護關係頁面
+

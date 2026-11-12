@@ -1,0 +1,57 @@
+---
+permalink: api-automation/concept_manage_active_directory.html 
+sidebar: sidebar 
+keywords: manage, active, directory, mapping 
+summary: 您可以使用此處列出的 API 來管理 SVM 上的 Active Directory 對應，這些對應是配置 SVM 上的 CIFS 共享所必需的。需要設定 Active Directory 對應，才能將 SVM 與 ONTAP 進行對應。 
+---
+= 使用 Active IQ Unified Manager 中的 API 管理 Active Directory 對應
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用此處列出的 API 來管理 SVM 上的 Active Directory 對應，這些對應是配置 SVM 上的 CIFS 共享所必需的。需要設定 Active Directory 對應，才能將 SVM 與 ONTAP 進行對應。
+
+
+
+[[view-active-directory-mappings]]
+== 檢視 Active Directory 對應
+
+您可以使用下列方法檢視 SVM 的 Active Directory 對應組態詳細資料。若要檢視 SVM 上的 Active Directory 對應，您需要輸入 SVM 金鑰。若要查詢特定對應的詳細資料，您必須輸入對應金鑰。
+
+[cols="3*"]
+|===
+| 類別 | HTTP 動詞 | 路徑 
+
+
+ a| 
+儲存設備供應商
+ a| 
+取得
+ a| 
+`/storage-provider/active-directories-mappings`
+
+`/storage-provider/active-directories-mappings/\{key}`
+
+|===
+
+
+[[add-active-directory-mapping]]
+== 新增 Active Directory 對應
+
+您可以使用下列方法在 SVM 上建立 Active Directory 對應。您必須輸入對應詳細資料做為輸入參數。
+
+[cols="3*"]
+|===
+| 類別 | HTTP 動詞 | 路徑 
+
+
+ a| 
+儲存設備供應商
+ a| 
+POST
+ a| 
+`/storage-provider/active-directories-mappings`
+
+|===

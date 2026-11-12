@@ -1,0 +1,48 @@
+---
+permalink: data-protection/reference_edit_resource_pool_dialog_box.html 
+sidebar: sidebar 
+keywords: edit, resource pool, dialog box 
+summary: 您可以使用「編輯資源池」對話方塊來變更現有資源池的名稱和執行摘要。例如，如果原始名稱和執行摘要不準確或不正確，您可以變更它們，使其更加精確。 
+---
+= 在 Active IQ Unified Manager 中使用「編輯資源池」對話方塊
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用「編輯資源池」對話方塊來變更現有資源池的名稱和執行摘要。例如，如果原始名稱和執行摘要不準確或不正確，您可以變更它們，使其更加精確。
+
+
+
+[[text-boxes]]
+== 文字方塊
+
+文字方塊可讓您變更所選資源池的以下資訊：
+
+* *資源池名稱*
++
+允許您輸入新名稱。
+
+* *說明*
++
+允許您輸入新的執行摘要。
+
+
+
+
+
+[[command-buttons]]
+== 命令按鈕
+
+命令按鈕可讓您執行下列任務：
+
+* *儲存*
++
+儲存資源池名稱和執行摘要的變更。
+
+* *取消*
++
+放棄變更並關閉「編輯資源池」對話方塊。
+
+

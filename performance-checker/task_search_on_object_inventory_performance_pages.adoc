@@ -1,0 +1,36 @@
+---
+permalink: performance-checker/task_search_on_object_inventory_performance_pages.html 
+sidebar: sidebar 
+keywords: object, inventory, performance, pages 
+summary: 您可以在物件清單效能頁面上搜尋字串。使用位於頁面右上角的搜尋欄位，即可根據物件名稱或原則名稱快速尋找資料。這可讓您快速尋找特定物件及其關聯資料，或快速尋找原則並檢視關聯的原則物件資料。 
+---
+= 在 Active IQ Unified Manager 中搜尋物件清單效能頁面
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在物件清單效能頁面上搜尋字串。使用位於頁面右上角的 *搜尋* 欄位，根據物件名稱或原則名稱快速尋找資料。這可讓您快速尋找特定物件及其相關資料，或快速尋找原則並檢視相關的原則物件資料。
+
+.步驟
+. 根據您的搜尋需求，請執行以下操作之一：
++
+|===
+| 若要找到此項目…… | 輸入此內容…… 
+
+
+ a| 
+特定物件
+ a| 
+在 *搜尋* 欄位中輸入物件名稱，然後按一下 *搜尋*。系統將顯示您搜尋的物件及其相關資料。
+
+
+
+ a| 
+使用者自訂效能臨界值原則
+ a| 
+在 *搜尋* 欄位中輸入全部或部分原則名稱，然後按一下 *搜尋*。系統將顯示指派給您所搜尋原則的物件。
+
+|===
+

@@ -1,0 +1,25 @@
+---
+permalink: performance-checker/task_view_volume_and_lun_latency_charts_to_verify_performance_guarantee.html 
+sidebar: sidebar 
+keywords: view, volume, lun, latency, charts, verify, performance, guarantee 
+summary: 您可以檢視您已訂閱「效能保證」方案的 Volume 和 LUN，以驗證延遲是否超過您所保證的層級。 
+---
+= 檢視 Volume 和 LUN 延遲圖表，以驗證 Active IQ Unified Manager 中的效能保證
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以檢視您已訂閱 "`Performance Guarantee`" 方案的 Volume 和 LUN，以驗證延遲未超過您所獲保證的層級。
+
+延遲效能保證值以毫秒為單位，每次操作不得超過此值。此保證值是基於小時平均值，而非預設的五分鐘效能擷取週期。
+
+.步驟
+. 在 *效能：所有 Volume* 檢視或 *效能：所有 LUN* 檢視中，選擇您感興趣的 Volume 或 LUN。
+. 在所選 Volume 或 LUN 的「效能資源管理器」頁面中，從「檢視統計資料」選擇器中選擇「每小時平均值」。
++
+延遲圖表中的水平線會隨著五分鐘的採集資料被每小時的平均值取代而變得更加平滑。
+
+. 如果同一彙總上還有其他 Volume 也處於效能保證範圍內，您可以將這些 Volume 新增至同一圖表以檢視其延遲值。
+

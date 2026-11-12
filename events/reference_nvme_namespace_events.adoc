@@ -1,0 +1,187 @@
+---
+permalink: events/reference_nvme_namespace_events.html 
+sidebar: sidebar 
+keywords: nvme, namespace, events, impact area, availability, performance 
+summary: NVMe 命名空間事件提供有關命名空間狀態的資訊，以便您可以監控潛力問題。事件按影響區域分組，包括事件和陷阱名稱、影響層級、來源類型和嚴重性。 
+---
+= 了解 Active IQ Unified Manager 中的 NVMe 命名空間事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NVMe 命名空間事件提供有關命名空間狀態的資訊，以便您可以監控潛力問題。事件按影響區域分組，包括事件和陷阱名稱、影響層級、來源類型和嚴重性。
+
+星號（*）表示已轉換為 Unified Manager 事件的 EMS 事件。
+
+
+
+[[impact-area-availability]]
+== 影響區域：可用度
+
+|===
+| 事件名稱（陷阱名稱） | 影響層級 | 來源類型 | 嚴重程度 
+
+
+ a| 
+NVMeNS 離線 *(nvmeNamespaceStatusOffline)
+ a| 
+事件
+ a| 
+命名空間
+ a| 
+資訊
+
+
+
+ a| 
+NVMeNS 線上 *(nvmeNamespaceStatusOnline)
+ a| 
+事件
+ a| 
+命名空間
+ a| 
+資訊
+
+
+
+ a| 
+NVMeNS 空間不足 *（nvmeNamespaceSpaceOutOfSpace）
+ a| 
+風險
+ a| 
+命名空間
+ a| 
+警告
+
+
+
+ a| 
+NVMeNS 銷毀 *(nvmeNamespaceDestroy)
+ a| 
+事件
+ a| 
+命名空間
+ a| 
+資訊
+
+|===
+
+
+[[impact-area-performance]]
+== 影響領域：效能
+
+|===
+| 事件名稱（陷阱名稱） | 影響層級 | 來源類型 | 嚴重程度 
+
+
+ a| 
+NVMe 命名空間 IOPS 嚴重臨界值已突破（ocumNvmeNamespaceIopsIncident）
+ a| 
+事件
+ a| 
+命名空間
+ a| 
+關鍵
+
+
+
+ a| 
+NVMe 命名空間 IOPS 警告臨界值已違反（ocumNvmeNamespaceIopsWarning）
+ a| 
+風險
+ a| 
+命名空間
+ a| 
+警告
+
+
+
+ a| 
+NVMe 命名空間 MB/s 臨界閾值已突破（ocumNvmeNamespaceMbpsIncident）
+ a| 
+事件
+ a| 
+命名空間
+ a| 
+關鍵
+
+
+
+ a| 
+NVMe 命名空間 MB/s 警告閾值已突破（ocumNvmeNamespaceMbpsWarning）
+ a| 
+風險
+ a| 
+命名空間
+ a| 
+警告
+
+
+
+ a| 
+NVMe 命名空間延遲 ms/op 臨界閾值已突破（ocumNvmeNamespaceLatencyIncident）
+ a| 
+事件
+ a| 
+命名空間
+ a| 
+關鍵
+
+
+
+ a| 
+NVMe 命名空間延遲 ms/op 警告閾值已突破（ocumNvmeNamespaceLatencyWarning）
+ a| 
+風險
+ a| 
+命名空間
+ a| 
+警告
+
+
+
+ a| 
+NVMe 命名空間延遲和 IOPS 臨界閾值已突破（ocumNvmeNamespaceLatencyIopsIncident）
+ a| 
+事件
+ a| 
+命名空間
+ a| 
+關鍵
+
+
+
+ a| 
+NVMe 命名空間延遲和 IOPS 警告閾值已突破（ocumNvmeNamespaceLatencyIopsWarning）
+ a| 
+風險
+ a| 
+命名空間
+ a| 
+警告
+
+
+
+ a| 
+NVMe 命名空間延遲和 MB/s 臨界閾值已突破（ocumNvmeNamespaceLatencyMbpsIncident）
+ a| 
+事件
+ a| 
+命名空間
+ a| 
+關鍵
+
+
+
+ a| 
+NVMe 命名空間延遲和 MB/s 警告閾值已突破（ocumNvmeNamespaceLatencyMbpsWarning）
+ a| 
+風險
+ a| 
+命名空間
+ a| 
+警告
+
+|===

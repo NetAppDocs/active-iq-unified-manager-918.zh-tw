@@ -1,0 +1,22 @@
+---
+permalink: config/concept_api_gateway.html 
+sidebar: sidebar 
+keywords: api gateway 
+summary: API 閘道功能使 Active IQ Unified Manager 成為單一控制平面，您可以從中管理多個 ONTAP 叢集，而無需個別登入它們。 
+---
+= 了解 Active IQ Unified Manager 中的 API 閘道功能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+API 閘道功能使 Active IQ Unified Manager 成為單一控制平面，您可以從中管理多個 ONTAP 叢集，而無需個別登入它們。
+
+您可以在首次登入 Unified Manager 時顯示的組態頁面中啟用此功能。或者，您也可以從 *一般* > *功能設定* > *API 閘道* 啟用或停用此功能。
+
+Unified Manager REST API 與 ONTAP REST API 不同，並非所有 ONTAP REST API 的功能都可以透過 Unified Manager REST API 實現。但是，如果您有特定的業務需求，需要存取 ONTAP API 來管理 Unified Manager 未公開的特定功能，則可以啟用 API 閘道功能並執行 ONTAP API。閘道充當 Proxy，透過保持標頭和主體請求的格式與 ONTAP API 相同來傳輸 API 請求。您可以使用 Unified Manager 憑證執行特定的 API 來存取和管理 ONTAP 叢集，而無需傳遞個別叢集的憑證。Unified Manager 作為管理的單點，用於在您的 Unified Manager 執行個體代管的 ONTAP 叢集上執行 API。API 傳回的回應與直接從 ONTAP 執行對應的 ONTAP REST API 傳回的回應相同。
+
+啟用此功能後，您可以從 *功能表列* > *說明* 按鈕 > *API 文件* > *閘道* 類別執行 Unified Manager REST API。或者，您也可以以下列格式輸入主機名稱或 IP 位址以及 URL 來存取 REST API 頁面 `https://<hostname>/docs/api/`
+
+如需有關 API 的詳細資訊，請參閱link:../api-automation/concept_get_started_with_um_apis.html["Active IQ Unified Manager REST API 入門指南"]。

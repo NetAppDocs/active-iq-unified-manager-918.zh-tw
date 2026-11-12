@@ -1,0 +1,25 @@
+---
+permalink: config/task_download_an_https_certificate_sign_request_ocf.html 
+sidebar: sidebar 
+keywords: download, https, certificate, signing, request 
+summary: 您可以下載目前 HTTPS 安全性憑證的認證簽署要求，以便將該檔案提供給憑證授權單位（CA）進行簽署。由 CA 簽署的憑證有助於防止中間人攻擊，並提供比自簽名憑證更好的安全性保護。 
+---
+= 在 Active IQ Unified Manager 中下載 HTTPS 憑證簽署要求
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以下載目前 HTTPS 安全性憑證的認證簽署要求，以便將該檔案提供給憑證授權單位（CA）進行簽署。由 CA 簽署的憑證有助於防止中間人攻擊，並提供比自簽名憑證更好的安全性保護。
+
+.開始之前
+您必須擁有應用程式管理員角色。
+
+.步驟
+. 在左側導覽窗格中，按一下 *一般* > *HTTPS 憑證*。
+. 按一下 *下載 HTTPS 憑證簽章請求*。
+. 儲存 `<hostname>.csr`檔案。
+
+
+您可以將檔案提供給憑證授權單位進行簽署，然後安裝已簽署的憑證。

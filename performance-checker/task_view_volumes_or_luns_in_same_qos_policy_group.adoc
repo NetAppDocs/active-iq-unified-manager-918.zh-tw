@@ -1,0 +1,31 @@
+---
+permalink: performance-checker/task_view_volumes_or_luns_in_same_qos_policy_group.html 
+sidebar: sidebar 
+keywords: view, volumes, luns, same. qos, policy, group 
+summary: 您可以顯示已指派給相同 QoS 原則群組的 Volume 和 LUN 清單。 
+---
+= 在 Active IQ Unified Manager 中檢視相同 QoS 原則群組中的 Volume 或 LUN
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以顯示已指派給相同 QoS 原則群組的 Volume 和 LUN 清單。
+
+對於在多個 Volume 之間「共享的」傳統 QoS 原則群組，這有助於查看某些 Volume 是否過度使用了為該原則群組定義的處理量。它還可以幫助您確定是否可以在不影響其他 Volume 的情況下向該原則群組新增其他 Volume。
+
+對於具調適能力的 QoS 原則和 Unified Manager 效能服務層級原則，這有助於檢視使用原則群組的所有 Volume 或 LUN，以便您查看如果變更 QoS 原則的組態設定，哪些物件會受到影響。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存* > *QoS 原則群組*。
++
+預設顯示「效能：傳統 QoS 原則群組」檢視。
+
+. 如果您對傳統原則群組感興趣，請留在此頁面。否則，請選擇其他檢視選項之一，以顯示所有具調適能力的 QoS 原則群組或由 Unified Manager Performance Service Levels 建立的所有 QoS 原則群組。
+. 在您感興趣的 QoS 原則中，按一下 QoS 原則群組名稱旁的擴充按鈕（image:../media/chevron_down.gif["擴充按鈕圖示"]）以檢視更多詳細資料。image:../media/adaptive_qos_expanded.gif["UI 快照顯示了 Unified Manager Performance Service Levels 所建立的所有 QoS 原則群組。"]
+. 按一下「Volume」或「LUN」連結以檢視使用此 QoS 原則的物件。
++
+Volume 或 LUN 的效能清單頁面會顯示使用 QoS 原則的物件排序清單。
+
+

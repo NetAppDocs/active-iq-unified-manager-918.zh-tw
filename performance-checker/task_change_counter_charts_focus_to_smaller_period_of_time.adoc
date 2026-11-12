@@ -1,0 +1,33 @@
+---
+permalink: performance-checker/task_change_counter_charts_focus_to_smaller_period_of_time.html 
+sidebar: sidebar 
+keywords: change, counter, charts, focus, shorter, period, time 
+summary: 您可以使用滑鼠縮小時間範圍，以便在「計數器圖表」窗格或「計數器圖表縮放檢視」視窗中專注於特定時間段。這可讓您更精細、更微觀地檢視效能資料、事件和臨界值時間軸的任何部分。 
+---
+= 在 Active IQ Unified Manager 中，將計數器圖表的焦點變更為更短的期間
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用滑鼠縮小時間範圍，以便在「計數器圖表」窗格或「計數器圖表縮放檢視」視窗中專注於特定時間段。這可讓您更精細、更微觀地檢視效能資料、事件和臨界值時間軸的任何部分。
+
+.開始之前
+游標必須變成放大鏡，以表示此功能為作用中。
+
+[NOTE]
+====
+使用此功能時，時間軸會改變以顯示與更精細顯示相對應的值，但 *時間範圍* 選擇器上的時間和日期範圍不會從圖表的原始值變更。
+
+====
+.步驟
+. 若要放大檢視特定時間段，請使用放大鏡點擊並拖曳滑鼠，以重點摘要要詳細查看的區域。
++
+您選擇的時間段內的計數器值將填入計數器圖表。
+
+. 若要恢復到「時間範圍」選擇器中設定的原始時間段，請按一下「重設圖表縮放」按鈕。
++
+計數器圖表以其原始狀態顯示。
+
+

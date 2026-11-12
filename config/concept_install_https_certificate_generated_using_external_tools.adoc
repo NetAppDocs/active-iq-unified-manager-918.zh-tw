@@ -1,0 +1,123 @@
+---
+permalink: config/concept_install_https_certificate_generated_using_external_tools.html 
+sidebar: sidebar 
+keywords: install, HTTPS, certificate, generated from external tools 
+summary: 您可以安裝自我簽署或 CA 簽署的憑證，這些憑證是使用 OpenSSL、BoringSSL、LetsEncrypt 等外部工具所產生。 
+---
+= 了解 Active IQ Unified Manager Unified Manager 中如何使用外部工具產生 HTTPS 憑證
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以安裝自我簽署或 CA 簽署的憑證，這些憑證是使用 OpenSSL、BoringSSL、LetsEncrypt 等外部工具所產生。
+
+您應該將私鑰與憑證鏈一起載入，因為這些憑證是外部產生的公私鑰對。允許使用的金鑰對演算法為 "`RSA`" 和 "`EC`"。*安裝 HTTPS 憑證* 選項位於「一般」區段下的「HTTPS 憑證」頁面中。您上傳的檔案應採用下列輸入格式。
+
+. 屬於 Active IQ Unified Manager 主機的伺服器的私鑰
+. 與私鑰匹配的伺服器憑證
+. 用於簽署上述憑證的 CA 憑證（反向排列直至根目錄 CA）
+
+
+
+
+[[format-for-loading-a-certificate-with-an-ec-key-pair]]
+== 用於載入包含 EC 金鑰對的憑證的格式
+
+允許的曲線為「`prime256v1`」和「`secp384r1`」。包含外部產生 EC 對的憑證範例：
+
+[listing]
+----
+ -----BEGIN EC PRIVATE KEY-----
+<EC private key of Server>
+-----END EC PRIVATE KEY-----
+----
+[listing]
+----
+ -----BEGIN CERTIFICATE-----
+ <Server certificate>
+ -----END CERTIFICATE-----
+ -----BEGIN CERTIFICATE-----
+ <Intermediate certificate #1 (if present)>
+ -----END CERTIFICATE-----
+ -----BEGIN CERTIFICATE-----
+ <Intermediate certificate #2 (if present)>
+ -----END CERTIFICATE-----
+ -----BEGIN CERTIFICATE-----
+ <Root signing certificate>
+ -----END CERTIFICATE-----
+----
+
+
+[[format-for-loading-a-certificate-with-an-rsa-key-pair]]
+== 用於載入包含 RSA 金鑰對的憑證的格式
+
+屬於主機憑證的 RSA 金鑰對允許的金鑰長度為 2048、3072 和 4096。具有外部產生之 *RSA 金鑰對* 的憑證：
+
+[listing]
+----
+-----BEGIN RSA PRIVATE KEY-----
+ <RSA private key of Server>
+ -----END RSA PRIVATE KEY-----
+ -----BEGIN CERTIFICATE-----
+ <Server certificate>
+ -----END CERTIFICATE-----
+ -----BEGIN CERTIFICATE-----
+ <Intermediate certificate #1 (if present)>
+ -----END CERTIFICATE-----
+ -----BEGIN CERTIFICATE-----
+ <Intermediate certificate #2 (if present)>
+ -----END CERTIFICATE-----
+ -----BEGIN CERTIFICATE-----
+ <Root signing certificate>
+ -----END CERTIFICATE-----
+----
+憑證上傳後，您應該重新啟動 Active IQ Unified Manager 執行個體，以使變更生效。
+
+
+
+[[checks-while-uploading-externally-generated-certificates]]
+== 上傳外部產生的憑證時的檢查
+
+系統在上傳使用外部工具產生的憑證時會進行檢查。如果任何一項檢查失敗，則憑證將被拒絕。此外，系統也會對產品內部從 CSR 產生的憑證以及使用外部工具產生的憑證進行驗證。
+
+* 輸入中的私鑰會根據輸入中的主機憑證進行驗證。
+* 主機憑證中的通用名稱（CN）會與主機的 FQDN 進行比對。
+* 主機憑證的通用名稱（CN）不應為空，也不應設定為 localhost。
+* 憑證的有效期限起始日期不應在未來，有效期限終止日期也不應在過去。
+* 如果存在中繼 CA 或 CA，憑證的有效起始日期不應在未來，且有效到期日期不應在過去。
+
+
+[NOTE]
+====
+輸入的私鑰不應加密。如果存在任何加密的私鑰，系統將拒絕該私鑰。
+
+====
+範例 1
+
+[listing]
+----
+----BEGIN ENCRYPTED PRIVATE KEY-----
+<Encrypted private key>
+-----END ENCRYPTED PRIVATE KEY-----
+----
+範例 2
+
+[listing]
+----
+-----BEGIN RSA PRIVATE KEY-----
+Proc-Type: 4,ENCRYPTED
+<content here>
+-----END RSA PRIVATE KEY-----
+----
+範例 3
+
+[listing]
+----
+-----BEGIN EC PRIVATE KEY-----
+Proc-Type: 4,ENCRYPTED
+<content here>
+-----END EC PRIVATE KEY-----
+----
+如果憑證安裝失敗，請參閱知識庫（KB）文章：https://kb.netapp.com/mgmt/AIQUM/AIQUM_fails_to_install_externally_generated_certificate["ActiveIQ Unified Manager 無法安裝外部產生的憑證"^]

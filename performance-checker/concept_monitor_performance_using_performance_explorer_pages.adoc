@@ -1,0 +1,16 @@
+---
+permalink: performance-checker/concept_monitor_performance_using_performance_explorer_pages.html 
+sidebar: sidebar 
+keywords: monitoring, performance, explorer, pages 
+summary: Performance Explorer 頁面顯示叢集中每個物件效能的詳細資訊。此頁面提供所有叢集物件效能的詳細檢視，讓您可以選擇並比較特定物件在不同時間段的效能資料。 
+---
+= 使用 Active IQ Unified Manager 中的 Performance Explorer 頁面監控效能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Performance Explorer 頁面顯示叢集中每個物件效能的詳細資訊。此頁面提供所有叢集物件效能的詳細檢視，讓您可以選擇並比較特定物件在不同時間段的效能資料。
+
+您還可以評估所有物件的整體效能，並以並排格式比較物件效能資料。

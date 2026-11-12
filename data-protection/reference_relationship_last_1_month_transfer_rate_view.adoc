@@ -1,0 +1,37 @@
+---
+permalink: data-protection/reference_relationship_last_1_month_transfer_rate_view.html 
+sidebar: sidebar 
+keywords: relationship, 1 month, transfer rate, view 
+summary: 「關係」頁面上的「最近 1 個月傳輸速率」檢視會顯示非同步關係中 Volume 的每日資料傳輸量與傳輸時間。 
+---
+= 在 Active IQ Unified Manager 中顯示「關係：過去 1 個月傳輸率」檢視
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+「關係：過去 1 個月傳輸速率」檢視可讓您分析非同步關係中 Volume 的每日資料 Volume 傳輸量。此頁面還提供有關 Volume 和 Storage VM 每日傳輸的詳細資訊，以及完成傳輸作業所需的時間。
+
+頁面頂端的控制項可讓您執行搜尋以找出特定物件、建立並套用篩選條件以縮小顯示資料的清單、新增／移除／重新排列頁面上的欄位，以及將頁面上的資料匯出為 .csv、.pdf 或 .xlsx 檔案。自訂頁面後，您可以將結果儲存為自訂檢視，然後排程定期產生此資料的報告並以電子郵件傳送。例如，若要檢視 Volume 關係，您可以存取 *Storage* > *Volumes* > *Relationship: Last 1 Month Transfer Rate* 功能表，或存取 *Protection* > *Relationships* > *Relationships:Last 1 Month Transfer Rate* 功能表，並使用 *Filter* 僅檢視 Volume 的資料。
+
+* *總傳輸大小*
++
+顯示 Volume 傳輸的總大小（以 GB 為單位）。
+
+* *天*
++
+顯示啟動 Volume 傳輸的日期。
+
+* *結束時間*
++
+顯示 Volume 傳輸結束時間與日期。
+
+
+
+*相關資訊*
+
+* 如需 *關係：MetroCluster* 檢視的相關資訊，請參閱 link:../storage-mgmt/task_monitor_metrocluster_configurations.html["監控 MetroCluster 組態"]。
+* 如需有關 *關係：最近 1 個月傳輸狀態* 檢視的資訊，請參閱 link:../data-protection/reference_relationship_last_1_month_transfer_status_view.html["關係：過去 1 個月傳輸狀態檢視"]。
+* 如需有關 *關係：所有關係* 檢視的資訊，請參閱 link:../data-protection/reference_relationship_last_1_month_transfer_rate_view.html["關係：過去 1 個月的傳輸率檢視"]
+

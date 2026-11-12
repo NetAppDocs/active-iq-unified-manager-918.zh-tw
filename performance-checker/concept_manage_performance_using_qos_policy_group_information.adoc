@@ -1,0 +1,16 @@
+---
+permalink: performance-checker/concept_manage_performance_using_qos_policy_group_information.html 
+sidebar: sidebar 
+keywords: managing, performance, qos, policy, group, information 
+summary: Unified Manager 可讓您檢視所有受監控叢集上可用的服務品質（QoS）原則群組。這些原則可能使用 ONTAP 軟體（System Manager 或 ONTAP CLI）定義，也可能由 Unified Manager 效能服務等級原則定義。Unified Manager 也會顯示哪些 Volume 和 LUN 已指派 QoS 原則群組。 
+---
+= 使用 Active IQ Unified Manager 中的 QoS 原則群組資訊來管理效能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager 可讓您檢視所有受監控叢集上可用的服務品質（QoS）原則群組。這些原則可能使用 ONTAP 軟體（System Manager 或 ONTAP CLI）定義，也可能由 Unified Manager 效能服務等級原則定義。Unified Manager 也會顯示哪些 Volume 和 LUN 已指派 QoS 原則群組。
+
+如需調整 QoS 設定的詳細資訊，請參閱 https://docs.netapp.com/us-en/ontap/performance-admin/index.html["效能管理總覽"]

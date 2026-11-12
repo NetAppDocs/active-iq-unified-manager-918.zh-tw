@@ -1,0 +1,56 @@
+---
+permalink: events/reference_storage_shelf_events.html 
+sidebar: sidebar 
+keywords: storage, shelf, events, impact area, availability 
+summary: 儲存設備機櫃事件會告知您儲存設備機櫃是否有異常，以便您監控潛力問題。事件依影響區域分組，包含事件和陷阱名稱、影響層級、來源類型和嚴重程度。 
+---
+= 了解 Active IQ Unified Manager 中的儲存設備機櫃事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+儲存設備機櫃事件會告知您儲存設備機櫃是否有異常，以便您監控潛力問題。事件依影響區域分組，包含事件和陷阱名稱、影響層級、來源類型和嚴重程度。
+
+
+
+[[impact-area-availability]]
+== 影響區域：可用度
+
+|===
+| 事件名稱（陷阱名稱） | 影響層級 | 來源類型 | 嚴重程度 
+
+
+ a| 
+異常電壓範圍（ocumEvtShelfVoltageAbnormal）
+ a| 
+風險
+ a| 
+儲存機櫃
+ a| 
+警告
+
+
+
+ a| 
+異常電流範圍（ocumEvtShelfCurrentAbnormal）
+ a| 
+風險
+ a| 
+儲存機櫃
+ a| 
+警告
+
+
+
+ a| 
+異常溫度（ocumEvtShelfTemperatureAbnormal）
+ a| 
+風險
+ a| 
+儲存機櫃
+ a| 
+警告
+
+|===

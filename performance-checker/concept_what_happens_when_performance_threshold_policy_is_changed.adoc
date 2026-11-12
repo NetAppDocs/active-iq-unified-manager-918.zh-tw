@@ -1,0 +1,24 @@
+---
+permalink: performance-checker/concept_what_happens_when_performance_threshold_policy_is_changed.html 
+sidebar: sidebar 
+keywords: happens, performance, threshold, policy, changed 
+summary: 如果您調整現有效能臨界值原則的計數器值或持續時間，原則變更將套用於使用該原則的所有儲存設備物件。新設定會立即生效，Unified Manager 會開始將所有新收集的效能資料的效能計數器值與新的臨界值設定進行比較。 
+---
+= 了解 Active IQ Unified Manager 中的效能臨界值原則變更
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您調整現有效能臨界值原則的計數器值或持續時間，原則變更將套用於使用該原則的所有儲存設備物件。新設定會立即生效，Unified Manager 會開始將所有新收集的效能資料的效能計數器值與新的臨界值設定進行比較。
+
+如果使用更改後的臨界值原則的物件存在任何作用中事件，則這些事件將被標記為過時，並且臨界值原則將開始監控計數器，作為新定義的臨界值原則。
+
+在「計數器圖表詳細檢視」中檢視已套用臨界值的計數器時，關鍵和警告臨界值線會反映目前的臨界值設定。即使您檢視舊臨界值設定生效時的歷史資料，原始臨界值設定也不會顯示在此頁面上。
+
+[NOTE]
+====
+由於舊的臨界值設定不會顯示在計數器圖表詳細檢視中，因此您可能會看到出現在目前臨界值線下方的歷史事件。
+
+====

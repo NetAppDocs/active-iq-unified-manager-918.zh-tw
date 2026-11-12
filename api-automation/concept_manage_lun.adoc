@@ -1,0 +1,115 @@
+---
+permalink: api-automation/concept_manage_lun.html 
+sidebar: sidebar 
+keywords: manage, lun 
+summary: 您可以使用 /storage-provider/luns API 檢視、新增、修改和刪除資料中心環境中的 LUN。 
+---
+= 使用 Active IQ Unified Manager 中的 API 管理 LUN
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 `/storage-provider/luns` API 檢視、新增、修改和刪除資料中心環境中的 LUN。
+
+在配置 LUN 之前，請確保已建立並使用受支援的協定配置 SVM。如果在配置過程中指派效能服務層級（PSL）或儲存效率原則（SEP），則應在建立 LUN 之前建立 PSL 或 SEP。
+
+
+
+[[view-luns]]
+== 檢視 LUN
+
+您可以使用下列方法檢視 Unified Manager 環境中的 LUN。當您在 Active IQ Unified Manager 上將 ONTAP 叢集新增為資料來源後，這些叢集的儲存設備工作負載會自動新增至您的 Unified Manager 執行個體中。此 API 會擷取所有自動和手動新增至 Unified Manager 執行個體中的 LUN。您可以使用 LUN 金鑰執行此 API 來檢視特定 LUN 的詳細資訊。
+
+[cols="3*"]
+|===
+| 類別 | HTTP 動詞 | 路徑 
+
+
+ a| 
+儲存設備供應商
+ a| 
+取得
+ a| 
+`/storage-provider/luns`
+
+`/storage-provider/luns/\{key}`
+
+|===
+
+
+[[add-luns]]
+== 新增 LUN
+
+您可以使用以下方法將 LUN 新增至您的 SVM 中。
+
+[cols="3*"]
+|===
+| 類別 | HTTP 動詞 | 路徑 
+
+
+ a| 
+儲存設備供應商
+ a| 
+POST
+ a| 
+`/storage-provider/luns`
+
+|===
+[NOTE]
+====
+在 cURL 請求中，如果您在輸入中為選用參數 volume_name_tag 提供值，則該值將用於在建立 LUN 時命名 Volume。此標籤可讓您輕鬆搜尋 Volume。如果您在請求中提供 Volume 鍵，則會略過標記。
+
+====
+
+
+[[delete-luns]]
+== 刪除 LUN
+
+您可以使用下列方法刪除特定的 LUN。您需要提供 LUN 金鑰才能刪除特定的 LUN。
+
+[NOTE]
+====
+如果您在 ONTAP 中建立了一個 Volume，然後透過 Unified Manager 在該 Volume 上配置了 LUN，當您使用此 API 刪除所有 LUN 時，該 Volume 也會從 ONTAP 叢集中刪除。
+
+====
+[cols="3*"]
+|===
+| 類別 | HTTP 動詞 | 路徑 
+
+
+ a| 
+儲存設備供應商
+ a| 
+刪除
+ a| 
+`/storage-provider/luns/\{key}`
+
+|===
+
+
+[[modify-luns]]
+== 修改 LUN
+
+您可以使用以下方法修改 LUN 並更新其屬性。您需要提供 LUN 鍵以修改特定 LUN。您還需要輸入要更新的 LUN 屬性及其值。若要使用此 API 更新 LUN 陣列，您應該審查 "`使用 API 的建議`" 中的建議。
+
+[NOTE]
+====
+單一呼叫此 API 只能更新一個屬性。如需更新多個屬性，則需要多次執行此 API。
+
+====
+|===
+
+
+| 類別 | HTTP 動詞 | 路徑 
+
+
+ a| 
+儲存設備供應商
+ a| 
+PATCH
+ a| 
+`/storage-provider/luns/\{key}`
+
+|===

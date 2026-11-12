@@ -1,0 +1,46 @@
+---
+permalink: install-vapp/task_deploy_unified_manager_vapp.html 
+sidebar: sidebar 
+keywords: deploy, unified manager 
+summary: 部署 Unified Manager 包括下載軟體、部署虛擬應用裝置、建立維護使用者名稱和密碼，以及在 Web UI 中執行初始設定。 
+---
+= 部署 Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+部署 Unified Manager 包括下載軟體、部署虛擬應用裝置、建立維護使用者名稱和密碼，以及在 Web UI 中執行初始設定。
+
+.開始之前
+* 您應該核實並完成部署所需的系統需求。
++
+請參閱 link:concept_requirements_for_installing_unified_manager.html["系統需求"]。
+
+* 請確定您有下列資訊：
++
+** NetApp 支援網站的登入憑證
+** 存取 VMware vCenter 伺服器和 vSphere Web 用戶端的憑證
+** 部署 Unified Manager 虛擬應用裝置的 ESXi 伺服器的 IP 位址
+** 資料中心的詳細資訊，例如資料存放區中的儲存空間和記憶體容量需求
+** 如果您規劃使用 IPv6 位址，則應在主機上啟用 IPv6。
+
+
+
+
+您可以將 Unified Manager 作為虛擬應用裝置部署在 VMware ESXi 伺服器上。
+
+您應該使用 VMware 主控台存取維護主控台，而不是使用 SSH。
+
+[NOTE]
+====
+從 Unified Manager 9.8 開始，VMware Tools 已被 Open VM Tools  `open-vm-tools` 取代）。您不再需要將 VMware Tools 做為安裝的一部分來安裝，因為  `open-vm-tools` 已包含在 Unified Manager 安裝套件中。
+
+====
+完成部署和初始設定後，您可以新增叢集，或在維護主控台中設定其他網路設定，然後存取 Web UI。
+
+.步驟
+. 請依照 link:task_download_unified_manager_ova_file.html["下載 Unified Manager"] 中的步驟操作。
+. 此外，請依照 link:task_deploy_unified_manager_virtual_appliance_vapp.html["部署 Unified Manager 虛擬應用裝置"] 中的步驟操作。
+

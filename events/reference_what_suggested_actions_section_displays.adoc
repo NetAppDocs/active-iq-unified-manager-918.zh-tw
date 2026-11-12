@@ -1,0 +1,26 @@
+---
+permalink: events/reference_what_suggested_actions_section_displays.html 
+sidebar: sidebar 
+keywords: suggest, actions, section, displays 
+summary: 事件詳細資料頁面的「建議行動」區段提供了事件的可能原因，並建議了一些行動，以便您嘗試自行解決事件。這些建議行動是根據事件類型或超出的臨界值類型所自訂的。 
+---
+= 了解 Active IQ Unified Manager 中的建議操作
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+事件詳細資料頁面的「建議行動」區段提供了事件的可能原因，並建議了一些行動，以便您嘗試自行解決事件。這些建議行動是根據事件類型或超出的臨界值類型所自訂的。
+
+此區域僅針對某些類型的事件顯示。
+
+在某些情況下，頁面上會提供 *Help* 連結，其中包含許多建議行動的其他資訊，包括執行特定行動的指示。某些行動可能涉及使用 Unified Manager 、 ONTAP System Manager 、 OnCommand Workflow Automation 、 ONTAP CLI 命令或這些工具的組合。
+
+您應將此處建議的行動僅視為解決此事件的指引。您為解決此事件所採取的行動，應根據您環境的背景而定。
+
+如果要更詳細地分析物件和事件，請按一下 *分析工作負載* 按鈕以顯示工作負載分析頁面。
+
+Unified Manager 可以徹底診斷某些事件並提供單一解決方案。如果解決方案可用，則會顯示 *Fix It* 按鈕。按一下此按鈕，讓 Unified Manager 修復導致該事件的問題。
+
+對於 Active IQ 平台事件，本部分可能包含 NetApp 知識庫文章的連結（如果可用），該文章描述了問題及可能的解決方案。在沒有外部網路存取的站點，知識庫文章的 PDF 檔案將在本機開啟；該 PDF 檔案包含在您手動下載到 Unified Manager 執行個體的規則檔案中。

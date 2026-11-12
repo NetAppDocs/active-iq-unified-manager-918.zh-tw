@@ -1,0 +1,264 @@
+---
+permalink: storage-mgmt/reference_what_ontap_issues_can_unified_manager_fix.html 
+sidebar: sidebar 
+keywords: ontap issues, fix it action, automatic remediation feature, remediation events, fix-it messages, fix-it events 
+summary: 此表描述了 Unified Manager 可以透過點擊 Unified Manager 使用者介面上的「修復此問題」或「全部修復」按鈕直接解決的 ONTAP 問題。 
+---
+= 了解 Active IQ Unified Manager 可以解決的 ONTAP 問題
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+透過使用 Active IQ Unified Manager 的自動修復功能，您可以選擇透過 Unified Manager 有效地解決某些 ONTAP 問題或管理某些 ONTAP 功能，例如反勒索軟體監控。
+
+此表描述了您可以透過 Unified Manager Web UI 上的 *Fix It* 或 *Fix All* 按鈕直接管理的這些 ONTAP 問題或功能。
+
+|===
+| 事件名稱及描述 | 管理行動 | 「修復」作業 
+
+
+ a| 
+Volume 空間已滿
+
+該 Volume 的空間幾乎耗盡，且已超過容量已滿臨界值。此臨界值預設為 Volume 大小的 90%。
+ a| 
+啟用 Volume 自動擴充
+ a| 
+Unified Manager 判斷此 Volume 未設定 Volume 自動擴充，因此啟用此功能，以便 Volume 在需要時增加容量。
+
+
+
+ a| 
+Inode 已滿
+
+此 Volume 的 inode 已用完，無法接受任何新檔案。
+ a| 
+增加 Volume 上的 inode 數量
+ a| 
+將 Volume 上的 inode 數量增加 2%。
+
+
+
+ a| 
+偵測到儲存層原則不相符
+
+此 Volume 包含大量非作用中資料，目前分層原則設定為「僅快照」或「無」。
+ a| 
+啟用自動雲端分層
+ a| 
+由於 Volume 已位於 FabricPool 上，因此會將分層原則變更為 "auto" ，以便將非作用中資料移至成本較低的雲端層。
+
+
+
+ a| 
+偵測到儲存層不匹配
+
+該 Volume 包含大量不活躍資料，但它並不位於雲端整合式的儲存層（FabricPool）。
+ a| 
+更改 Volume 的儲存層
+ a| 
+將 Volume 移至雲端整合式儲存層，並將分層原則設為 "auto"，以便將非作用中資料移至雲端層。
+
+
+
+ a| 
+稽核日誌已停用
+
+儲存設備虛擬機器未啟用稽核日誌
+ a| 
+為儲存設備 VM 啟用稽核記錄
+ a| 
+啟用儲存設備 VM 上的稽核記錄。
+
+請注意，儲存設備 VM 必須已設定本機或遠端稽核日誌位置。
+
+
+
+ a| 
+登入橫幅已停用
+
+應啟用叢集登入橫幅，以明確存取限制，從而提高安全性。
+ a| 
+為叢集設定登入橫幅
+ a| 
+將叢集登入橫幅設定為 "`存取僅限授權使用者`"。
+
+
+
+ a| 
+登入橫幅已停用
+
+應啟用儲存設備虛擬機器的登入橫幅，以明確存取限制，從而提高安全性。
+ a| 
+為儲存設備 VM 設定登入橫幅
+ a| 
+將儲存設備虛擬機器登入橫幅設定為「僅限授權使用者存取」。
+
+
+
+ a| 
+SSH 正在使用不安全的加密演算法
+
+字尾為 "-cbc" 的密碼被視為不安全。
+ a| 
+從叢集中移除不安全的加密演算法
+ a| 
+從叢集中移除不安全的密碼套件，例如 aes192-cbc 和 aes128-cbc。
+
+
+
+ a| 
+SSH 正在使用不安全的加密演算法
+
+字尾為 "-cbc" 的密碼被視為不安全。
+ a| 
+從儲存設備虛擬機器中移除不安全的加密演算法
+ a| 
+從儲存設備虛擬機器中移除不安全的加密演算法，例如 aes192-cbc 和 aes128-cbc。
+
+
+
+ a| 
+AutoSupport HTTPS 傳輸已停用
+
+用於向技術支援傳送 AutoSupport 訊息的傳輸協定應該加密。
+ a| 
+將 HTTPS 設定為 AutoSupport 訊息的傳輸協定
+ a| 
+將 HTTPS 設定為叢集上 AutoSupport 訊息的傳輸協定。
+
+
+
+ a| 
+叢集負載不平衡閾值已違反
+
+表示叢集中各節點間的負載不平衡。當節點間效能容量使用率差異超過 30% 時，就會產生此事件。
+ a| 
+平衡叢集工作負載
+ a| 
+Unified Manager 會辨識出要從一個節點移動到另一個節點的最佳 Volume，以減少不平衡，然後移動該 Volume。
+
+
+
+ a| 
+叢集容量不平衡閾值已突破
+
+表示叢集中各彙總的容量分配不均。當各彙總間的已使用容量差異超過 70% 時，會產生此事件。
+ a| 
+平衡叢集容量
+ a| 
+Unified Manager 會辨識出要從一個彙總移動到另一個彙總的最佳 Volume，以減少不平衡，然後移動該 Volume。
+
+
+
+ a| 
+效能容量使用率已超過臨界值
+
+表示如果不降低一個或多個高度作用中工作負載的使用率，節點上的負載可能會過度使用。當已使用的節點效能容量值超過 100% 且持續超過 12 小時時，會產生此事件。
+ a| 
+限制節點上的高負載
+ a| 
+Unified Manager 會辨識 IOPS 最高的 Volume，並套用 QoS 原則，利用歷史預期和峰值 IOPS 層級來降低節點上的負載。
+
+
+
+ a| 
+超出動態事件警告臨界值
+
+表示由於某些工作負載的負載異常高，該節點已處於過載狀態。
+ a| 
+減少節點過載
+ a| 
+Unified Manager 會辨識 IOPS 最高的 Volume，並套用 QoS 原則，利用歷史預期和峰值 IOPS 層級來降低節點上的負載。
+
+
+
+ a| 
+無法接管
+
+故障轉移目前已停用，因此在停電或重新開機期間，將無法存取節點的資源，直到節點再次可用為止。
+ a| 
+啟用節點故障轉移
+ a| 
+Unified Manager 會傳送適當的命令，以在叢集中的所有節點上啟用容錯移轉。
+
+
+
+ a| 
+選項 Cf.takeover.on_panic 已設定為關閉
+
+nodeshell 選項 "cf.takeover.on_panic" 設定為 *off*，這可能會導致 HA 設定的系統發生問題。
+ a| 
+發生異常當機時啟用接管
+ a| 
+Unified Manager 向叢集傳送適當的命令，將此設定變更為 *開啟*。
+
+
+
+ a| 
+停用 nodeshell 選項 snapmirror.enable
+
+舊的 nodeshell 選項「snapmirror.enable」設定為 *on*，這可能會導致升級到 ONTAP 9.3 或更高版本後開機時出現問題。
+ a| 
+將 snapmirror.enable 選項設定為關閉
+ a| 
+Unified Manager 向叢集傳送適當的命令，將此設定變更為 *關閉*。
+
+
+
+ a| 
+已啟用 Telnet
+
+指出潛力的安全性問題，因為 Telnet 不安全，並且以未加密的方式傳遞資料。
+ a| 
+停用 Telnet
+ a| 
+Unified Manager 向叢集傳送適當的命令以停用 Telnet。
+
+
+
+ a| 
+設定儲存設備 VM 反勒索軟體學習
+
+定期檢查具有反勒索軟體監控授權的叢集。驗證儲存設備虛擬機器在此類叢集中是否僅支援 NFS 或 SMB Volume。
+ a| 
+將儲存設備虛擬機器置於 `learning`反勒索軟體監控模式
+ a| 
+Unified Manager 透過叢集管理將儲存設備 VM 的反勒索軟體監控設定為 `learning`狀態。儲存設備 VM 上所有新建立的 Volume 的反勒索軟體監控會自動移至學習模式。透過此能力開發， ONTAP 可以學習 Volume 上的活動模式，並偵測潛力惡意攻擊所導致的異常情況。
+
+
+
+ a| 
+設定 Volume 反勒索軟體學習
+
+定期檢查具有反勒索軟體監控授權的叢集。驗證此類叢集中的 Volume 是否僅支援 NFS 或 SMB 服務。
+ a| 
+將 Volume 置於 `learning`反勒索軟體監控模式
+ a| 
+Unified Manager 透過叢集管理將 Volume 的反勒索軟體監控設定為 `learning`狀態。透過此能力開發， ONTAP 可以了解 Volume 上的活動模式，並偵測由潛力惡意攻擊引起的異常情況。
+
+
+
+ a| 
+啟用 Volume 反勒索軟體
+
+定期檢查具有反勒索軟體監控授權的叢集。偵測 Volume 是否處於反勒索軟體監控的 `learning`模式超過 45 天，並確定將其置於作用中模式的潛在客戶。
+ a| 
+將 Volume 置於 `active`反勒索軟體監控模式
+ a| 
+Unified Manager 透過叢集管理將 Volume 上的反勒索軟體監控設定為 `active`。透過此能力開發，ONTAP 可以了解 Volume 上的活動模式，偵測因潛力惡意攻擊所造成的異常情況，並建立警報以採取資料保護行動。
+
+
+
+ a| 
+停用 Volume 反勒索軟體
+
+定期檢查具有反勒索軟體監控授權的叢集。在 Volume 進行作用中反勒索軟體監控期間，偵測重複通知（例如，在 30 天內傳回多個潛力勒索軟體攻擊的警告）。
+ a| 
+停用 Volume 上的反勒索軟體監控
+ a| 
+Unified Manager 透過叢集管理停用 Volume 上的反勒索軟體監控。
+
+|===

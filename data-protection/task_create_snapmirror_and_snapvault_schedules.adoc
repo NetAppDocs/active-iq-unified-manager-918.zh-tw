@@ -1,0 +1,44 @@
+---
+permalink: data-protection/task_create_snapmirror_and_snapvault_schedules.html 
+sidebar: sidebar 
+keywords: create, snapmirror, snapvault, schedules 
+summary: 您可以建立基本或進階的 SnapMirror 與 SnapVault 排程，以在來源或主要 Volume 上啟用自動資料保護傳輸，以便根據 Volume 上資料變更的頻率，更頻繁或較不頻繁地進行傳輸。 
+---
+= 在 Active IQ Unified Manager 中建立 SnapMirror 和 SnapVault 排程
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以建立基本或進階的 SnapMirror 與 SnapVault 排程，以在來源或主要 Volume 上啟用自動資料保護傳輸，以便根據 Volume 上資料變更的頻率，更頻繁或較不頻繁地進行傳輸。
+
+.開始之前
+* 您必須擁有應用程式系統管理員或儲存系統管理員角色。
+* 您必須已在「設定保護」對話方塊中完成「目的地資訊」區域。
+* 您必須設定 Workflow Automation 才能執行此工作。
+
+
+.步驟
+. 從 *設定保護* 對話方塊的 *SnapMirror* 索引標籤或 *SnapVault* 索引標籤中，按一下 *關係設定* 區域中的 *建立排程* 連結。
++
+隨即顯示「建立排程」對話方塊。
+
+. 在 *排程名稱* 欄位中，輸入您要為排程指定的名稱。
+. 請選擇以下選項之一：
++
+** *基本*
++
+請選擇是否要建立基本間隔式行程表。
+
+** *進階*
++
+選擇是否要建立 cron 式排程。
+
+
+
+. 按一下 *Create* 。
++
+新排程會顯示在 SnapMirror 排程或 SnapVault 排程下拉式清單中。
+
+

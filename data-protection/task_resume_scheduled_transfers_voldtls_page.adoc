@@ -1,0 +1,35 @@
+---
+permalink: data-protection/task_resume_scheduled_transfers_voldtls_page.html 
+sidebar: sidebar 
+keywords: resume schedule, transfers, quiesce, relationship,  volume, health details page 
+summary: 在您將關係置於靜止狀態以停止排程傳輸後，可以使用「 Volume / 運作狀況」詳細資料頁面上的「繼續」來重新啟用排程傳輸，從而保護來源或主要 Volume 上的資料。如果存在檢查點，傳輸將在下一個排程傳輸間隔從檢查點繼續。 
+---
+= 從 Active IQ Unified Manager 的「磁碟區 / 健康狀況」詳細資料頁面恢復已靜止關係的傳輸
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在您將關係靜默以停止排程的傳輸之後，您可以在 Volume / 運作狀況詳細資料頁面上使用 *Resume* 來重新啟用排程的傳輸，以便保護來源或主要 Volume 上的資料。如果存在檢查點，傳輸會在下一個排程傳輸間隔從檢查點繼續。
+
+.開始之前
+* 您必須擁有應用程式系統管理員或儲存系統管理員角色。
+* 您必須已設定 Workflow Automation。
+
+
+.步驟
+. 在 *Volume / 運作狀況* 詳細資料頁面的 *保護* 標籤中，在拓撲檢視中以滑鼠右鍵按一下要繼續的已暫停關係。
++
+或者，從 *行動* > *關係* 選單中選取 *恢復*。
+
+. 在 *恢復* 對話方塊中，按一下 *繼續*。
++
+您將返回「Volume / 健康狀況」詳細資料頁面。
+
+. 若要檢視相關的作業工作並追蹤其進度，請按一下顯示在 *Volume / 健康狀況* 詳細資料頁面頂端的作業連結。
+. 在 *作業* 詳細資料頁面中，按一下 *重新整理* 以更新與保護組態作業相關聯的工作清單和工作詳細資料，並確定作業何時完成。
++
+作業完成後，資料傳輸將在下一個預定的傳輸間隔恢復。
+
+

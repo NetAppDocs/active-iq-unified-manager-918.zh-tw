@@ -1,0 +1,34 @@
+---
+permalink: data-protection/task_create_snapmirror_policy_to_maximize_transfer_efficiency.html 
+sidebar: sidebar 
+keywords: create, snapmirror, policy, maximize, transfer, efficiency 
+summary: 您可以建立 SnapMirror 原則來指定保護關係的 SnapMirror 傳輸優先順序。SnapMirror 原則可讓您透過指派優先順序來最大化從來源到目的地的傳輸效率，以便將較低優先順序的傳輸排程在正常優先順序的傳輸之後執行。 
+---
+= 在 Active IQ Unified Manager 中建立 SnapMirror 原則以最大化傳輸效率
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以建立 SnapMirror 原則來指定保護關係的 SnapMirror 傳輸優先順序。SnapMirror 原則可讓您透過指派優先順序來最大化從來源到目的地的傳輸效率，以便將較低優先順序的傳輸排程在正常優先順序的傳輸之後執行。
+
+.開始之前
+* 您必須擁有應用程式系統管理員或儲存系統管理員角色。
+* 您必須已設定 Workflow Automation。
+* 此工作假設您已在「設定保護」對話方塊中完成了「目的地資訊」區域。
+
+
+.步驟
+. 在 *設定保護* 對話方塊的 *SnapMirror* 索引標籤中，按一下 *關係設定* 區域中的 *建立原則* 連結。
++
+隨即顯示「建立 SnapMirror 原則」對話方塊。
+
+. 在 *原則名稱* 欄位中，輸入您要為原則指定的名稱。
+. 在 *傳輸優先順序* 欄位中，選擇您要指派給原則的傳輸優先順序。
+. 在 *備註* 欄位中，輸入原則的選用備註。
+. 按一下 *Create* 。
++
+新原則顯示在 SnapMirror 原則下拉清單中。
+
+

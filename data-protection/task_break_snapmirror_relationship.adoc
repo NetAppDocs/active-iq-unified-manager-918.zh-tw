@@ -1,0 +1,31 @@
+---
+permalink: data-protection/task_break_snapmirror_relationship.html 
+sidebar: sidebar 
+keywords: break, snapmirror, relationship, volume, relationship page 
+summary: 您可以中斷保護關係，以停止 SnapMirror 關係中來源 Volume 和目的地 Volume 之間的資料傳輸。當您想要移轉資料、進行災難恢復或應用程式測試時，可以中斷關係。目的地 Volume 會變更為讀寫 Volume。您無法中斷 SnapVault 關係。 
+---
+= 從 Active IQ Unified Manager 磁碟區關係頁面中斷 SnapMirror 關係
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以中斷保護關係，以停止 SnapMirror 關係中來源 Volume 和目的地 Volume 之間的資料傳輸。當您想要移轉資料、進行災難恢復或應用程式測試時，可以中斷關係。目的地 Volume 會變更為讀寫 Volume。您無法中斷 SnapVault 關係。
+
+.開始之前
+* 您必須擁有應用程式系統管理員或儲存系統管理員角色。
+* 您必須已設定 Workflow Automation。
+
+
+.步驟
+. 從 *Volume 關係* 頁面中，選取一個或多個具有保護關係且您想要停止資料傳輸的 Volume，然後在工具列上，按一下 *中斷*。
++
+會顯示「中斷關係」對話方塊。
+
+. 按一下 *繼續* 以中斷關係。
+. 在 *Volume 關係* 頁面中，在 *關係狀態* 欄中確認關係已中斷。
++
+「關係狀態」欄預設為隱藏，因此您可能需要在顯示/隱藏欄清單中選取它 image:../media/icon_columnshowhide_sm_onc.gif[""]。
+
+

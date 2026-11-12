@@ -1,0 +1,18 @@
+---
+permalink: health-checker/concept_what_annotations_are.html 
+sidebar: sidebar 
+keywords: annotations 
+summary: 註解是一個字串（名稱），它被指派給另一個字串（值）。每個註解名稱-值配對都可以使用註解規則與儲存設備物件動態關聯。將儲存設備物件與預先定義的註解關聯後，您可以篩選並檢視與其相關的事件。您可以將註解套用至叢集、Volume 和儲存設備虛擬機器（SVM）。 
+---
+= 了解 Active IQ Unified Manager 中的註解功能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+註解是一個字串（名稱），它被指派給另一個字串（值）。每個註解名稱-值配對都可以使用註解規則與儲存設備物件動態關聯。將儲存設備物件與預先定義的註解關聯後，您可以篩選並檢視與其相關的事件。您可以將註解套用至叢集、Volume 和儲存設備虛擬機器（SVM）。
+
+每個註解名稱可以有多個值；每個名稱-值對都可以透過規則與儲存設備物件關聯。
+
+例如，您可以建立一個名為「`data-center`」的註解，其值為「`Boston`」和「`Canada`」。然後，您可以將值為「`Boston`」的註解「`data-center`」套用至 Volume v1。當標註為「`data-center`」的 Volume v1 上的任何事件產生警報時，產生的電子郵件會指出 Volume 的位置「`Boston`」，這可讓您排定優先順序並解決問題。

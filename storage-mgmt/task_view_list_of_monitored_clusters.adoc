@@ -1,0 +1,24 @@
+---
+permalink: storage-mgmt/task_view_list_of_monitored_clusters.html 
+sidebar: sidebar 
+keywords: view, list, monitored, clusters 
+summary: 您可以使用「叢集設定」頁面檢視您的叢集清單。您可以檢視叢集的詳細資料，例如其名稱或 IP 位址和通訊狀態。 
+---
+= 檢視 Active IQ Unified Manager 監控的叢集清單
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用「叢集設定」頁面檢視您的叢集清單。您可以檢視叢集的詳細資料，例如其名稱或 IP 位址和通訊狀態。
+
+.開始之前
+您必須擁有操作員、應用程式管理員或儲存管理員角色。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存管理* > *叢集設定*。
++
+此處顯示由 Unified Manager 代管的儲存環境中所有的叢集。叢集清單會依收集狀態嚴重性層級欄進行排序。您可以按一下欄標題，依不同的欄對叢集進行排序。
+
+

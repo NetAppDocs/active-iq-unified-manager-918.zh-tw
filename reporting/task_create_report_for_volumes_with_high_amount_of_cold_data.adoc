@@ -1,0 +1,45 @@
+---
+permalink: reporting/task_create_report_for_volumes_with_high_amount_of_cold_data.html 
+sidebar: sidebar 
+keywords: display, volumes, cold, data, non-fabricpool, aggregate, identify 
+summary: 您可以建立一份報告，顯示非 FabricPool 彙總上包含大量冷資料的 Volume。這有助於您識別應該移至 FabricPool 彙總的 Volume。 
+---
+= 在 Active IQ Unified Manager 中建立報告，以識別非 FabricPool 彙總上具有大量冷資料的 Volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以建立一份報告，顯示非 FabricPool 彙總上包含大量冷資料的 Volume。這有助於您識別應該移至 FabricPool 彙總的 Volume。
+
+.開始之前
+* 您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+
+使用下列步驟，為位於未啟用 FabricPool 的彙總上且具有大量冷資料的 Volume 建立自訂檢視，然後排程為該檢視產生報告。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存設備* > *Volume*。
+. 在「檢視」功能表中，選擇 *效能* > *所有 Volume*。
+. 選取 *顯示/隱藏* 以確保 "`磁碟類型`" 欄顯示在檢視中。
++
+新增或移除其他欄，以建立對您的報告至關重要的檢視。
+
+. 將 "`磁碟類型`" 欄拖曳至 "`冷資料`" 欄附近。
+. 點選篩選圖示，新增下列篩選條件，然後點選 *套用篩選條件*：
++
+** 冷資料大於 100 GB
+** 磁碟類型包含 SSD
+
+
+. 按一下「`Disk Type`」欄的頂部，依磁碟類型對 Volume 進行排序，使磁碟類型 SSD（FabricPool）位於底部。
+. 將檢視儲存為能夠反映檢視所顯示內容的特定名稱，例如 "`冷資料 Volume 非 FabricPool`"。
+. 在庫存頁面上點選 *排程報告* 按鈕。
+. 輸入報告排程的名稱並完成其他報告欄位，然後按一下列末尾的勾號（image:../media/blue_check.gif[""]）。
++
+報告會立即作為測試傳送。之後，報告會產生並依指定的頻率透過電子郵件傳送給列出的收件者。
+
+
+
+根據報告中顯示的結果，您可以找到適合移至 FabricPool 彙總的 Volume。

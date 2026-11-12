@@ -1,0 +1,26 @@
+---
+permalink: performance-checker/concept_use_qos_policy_settings_to_prioritize_work_on_this_node.html 
+sidebar: sidebar 
+keywords: qos, policy, settings, prioritize, work, node 
+summary: '您可以為 QoS 原則群組設定限制，以控制其包含的工作負載的每秒 I/O (IOPS) 或 MBps 處理量限制。如果工作負載位於未設定限制的原則群組（例如預設原則群組）中，或設定的限制無法滿足您的需求，您可以提高設定的限制，或將工作負載移至具有所需限制的新或現有原則群組。' 
+---
+= 使用 QoS 原則設定來優先處理 Active IQ Unified Manager 中的節點工作負載
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以為 QoS 原則群組設定限制，以控制其包含的工作負載的每秒 I/O (IOPS) 或 MBps 處理量限制。如果工作負載位於未設定限制的原則群組（例如預設原則群組）中，或設定的限制無法滿足您的需求，您可以提高設定的限制，或將工作負載移至具有所需限制的新或現有原則群組。
+
+如果節點上的效能事件是由工作負載過度使用節點資源所引起，則「事件詳情」頁面上的事件執行摘要會顯示一個連結，指向涉及的 Volume 清單。在「效能 / Volume」頁面中，您可以按 IOPS 和 MBps 對受影響的 Volume 進行排序，以查看哪些工作負載的使用量最高，進而可能導致該事件。
+
+透過將過度使用節點資源的 Volume 分配到更嚴格的原則群組設定，原則群組可以抑制工作負載以限制其活動，從而減少該節點上資源的使用。
+
+您可以使用 ONTAP System Manager 或 ONTAP 指令來管理原則群組，包括下列任務：
+
+* 建立原則群組
+* 在原則群組中新增或移除工作負載
+* 在原則群組之間移動工作負載
+* 更改原則群組的處理量限制
+

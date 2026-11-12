@@ -1,0 +1,35 @@
+---
+permalink: reporting/task_edit_scheduled_reports.html 
+sidebar: sidebar 
+keywords: editing, schedule, reports 
+summary: 報告排程完成後，您可以在「報告排程」頁面上進行編輯。 
+---
+= 在 Active IQ Unified Manager 中編輯排程報告
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+報告排程完成後，您可以在「報告排程」頁面上進行編輯。
+
+.開始之前
+* 您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存管理* > *報告排程*。
++
+image::../media/scheduled_reports_2.gif[顯示排程報告的 UI 快照。]
+
++
+[NOTE]
+====
+如果您擁有適當的權限，您可以在系統中修改任何報告及其排程。
+
+====
+. 按一下您要變更之排程的更多圖示 image:../media/more_icon.gif[""]。
+. 點選 *編輯*。
+. 您可以變更報告排程的*排程名稱*、*收件者*清單、*頻率*和*格式*。
+. 完成後，點選勾號儲存變更。
+

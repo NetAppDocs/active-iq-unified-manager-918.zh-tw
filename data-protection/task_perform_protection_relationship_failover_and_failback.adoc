@@ -1,0 +1,48 @@
+---
+permalink: data-protection/task_perform_protection_relationship_failover_and_failback.html 
+sidebar: sidebar 
+keywords: perform, protection, relationship, failover, failback 
+summary: 當來源 Volume 不可用時，容錯移轉至保護目的地，然後在原始來源可用時，容錯回復至原始來源。 
+---
+= 在 Active IQ Unified Manager 中執行保護關係故障轉移和故障復原作業
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當保護關係中的來源 Volume 因硬體故障或災難而停用時，您可以使用 Unified Manager 中的保護關係功能，使保護目的地可供讀寫存取，並容錯移轉至該 Volume，直到來源再次處於線上狀態為止；然後，當原始來源可用於提供資料時，您可以容錯回復至原始來源。
+
+.開始之前
+* 您必須擁有應用程式系統管理員或儲存系統管理員角色。
+* 您必須已設定 OnCommand Workflow Automation 才能執行此操作。
+
+
+.步驟
+. link:task_break_snapmirror_relationship_from_health_volume_details.html["中斷 SnapMirror 關係"]。
++
+您必須先中斷關係，才能將目的地從資料保護 Volume 轉換為讀寫 Volume，以及反轉關係。
+
+. link:task_reverse_protection_relationships_from_health_volume_details.html["反轉保護關係"]。
++
+當原始來源 Volume 再次可用時，您可以選擇透過還原來源 Volume 來重建原始保護關係。在還原來源之前，必須將其與寫入先前目的地的資料同步。您可以使用反向重新同步操作來建立新的保護關係，方法是反轉原始關係的角色，並將來源 Volume 與先前目的地同步。系統會為新關係建立一個新的基礎 Snapshot 複本。
+
++
+反向關係看起來類似級聯關係：
+
++
+image::../media/um_toplogy_reverse_resync.gif[一張顯示反向關係建立過程的使用者介面快照。]
+
+. link:task_break_snapmirror_relationship_from_health_volume_details.html["中斷反向 SnapMirror 關係"]。
++
+當原始來源 Volume 重新同步並可以再次提供資料時，使用中斷操作來中斷反向關係。
+
+. link:task_remove_protection_relationship_voldtls.html["移除關係"]。
++
+當不再需要反向關係時，應先移除該反向關係，然後再重新建立原始關係。
+
+. link:task_resynchronize_protection_relationships_voldtls.html["重新同步關係"]。
++
+使用重新同步操作將資料從來源同步到目的地，並重新建立原始關係。
+
+

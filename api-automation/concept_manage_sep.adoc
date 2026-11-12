@@ -1,0 +1,107 @@
+---
+permalink: api-automation/concept_manage_sep.html 
+sidebar: sidebar 
+keywords: manage, storage, efficiency, policy 
+summary: 您可以使用儲存設備供應商 API 檢視、建立、修改和刪除儲存效率原則。 
+---
+= 使用 Active IQ Unified Manager 中的 API 管理儲存效率原則
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用儲存設備供應商 API 檢視、建立、修改和刪除儲存效率原則。
+
+[NOTE]
+====
+請注意以下幾點：
+
+* 在 Unified Manager 上建立工作負載時，並非必須指派儲存效率原則。
+* 將原則指派給工作負載之後，您無法從工作負載取消指派儲存效率原則。
+* 如果工作負載在 ONTAP Volume 上指定了一些儲存設備設定，例如重複資料刪除和壓縮，則這些設定可能會被您在 Unified Manager 上新增儲存設備工作負載時所套用的儲存效率原則中指定的設定所覆寫。
+
+
+====
+
+
+[[view-storage-efficiency-policies]]
+== 檢視儲存效率原則
+
+您可以使用以下方法在將儲存效率原則指派給儲存設備工作負載之前檢視這些原則。此 API 會列出所有系統定義和使用者建立的儲存效率原則，並擷取所有儲存效率原則的屬性。如果要查詢特定的儲存效率原則，則需要輸入該原則的唯一 ID 以擷取其詳細資訊。
+
+[cols="3*"]
+|===
+| 類別 | HTTP 動詞 | 路徑 
+
+
+ a| 
+儲存設備供應商
+ a| 
+取得
+ a| 
+`/storage-provider/storage-efficiency-policies`
+
+`/storage-provider/storage-efficiency-policies/\{key}`
+
+|===
+
+
+[[add-storage-efficiency-policies]]
+== 新增儲存效率原則
+
+如果系統定義的原則無法滿足儲存工作負載的資源配置需求，您可以使用下列方法建立自訂儲存效率原則，並將其指派給您的儲存工作負載。輸入您要建立的儲存效率原則詳細資料，作為輸入參數。
+
+[cols="3*"]
+|===
+| 類別 | HTTP 動詞 | 路徑 
+
+
+ a| 
+儲存設備供應商
+ a| 
+POST
+ a| 
+`/storage-provider/storage-efficiency-policies`
+
+|===
+
+
+[[delete-storage-efficiency-policies]]
+== 刪除儲存效率原則
+
+您可以使用以下方法刪除特定的儲存效率原則。如果儲存效率原則已指派給工作負載，或者它是唯一可用的儲存效率原則，則無法刪除該原則。若要刪除特定的儲存效率原則，您需要提供儲存效率原則的唯一 ID 作為輸入參數。
+
+[cols="3*"]
+|===
+| 類別 | HTTP 動詞 | 路徑 
+
+
+ a| 
+儲存設備供應商
+ a| 
+刪除
+ a| 
+`/storage-provider/storage-efficiency-policies/\{key}`
+
+|===
+
+
+[[modify-storage-efficiency-policies]]
+== 修改儲存效率原則
+
+您可以使用下列方法修改儲存設備效率原則並更新其屬性。您無法修改系統定義或已指派給工作負載的儲存設備效率原則。若要修改特定的儲存設備效率原則，您需要提供該儲存設備效率原則的唯一 ID。此外，您還需要提供要更新的屬性及其值。
+
+[cols="3*"]
+|===
+| 類別 | HTTP 動詞 | 路徑 
+
+
+ a| 
+儲存設備供應商
+ a| 
+PATCH
+ a| 
+`/storage-provider/storage-efficiency-policies/\{key}`
+
+|===

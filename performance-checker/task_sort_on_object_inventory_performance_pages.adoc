@@ -1,0 +1,23 @@
+---
+permalink: performance-checker/task_sort_on_object_inventory_performance_pages.html 
+sidebar: sidebar 
+keywords: sort, object, inventory, performance, pages 
+summary: 您可以在「物件清單效能」頁面上，依任何欄以遞增或遞減順序對所有資料進行排序。這可讓您快速找到物件清單資料，這在檢查效能或開始疑難排解程序時非常有幫助。 
+---
+= 在 Active IQ Unified Manager 的「物件清單效能」頁面上對資料進行排序
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在「物件清單效能」頁面上，依任何欄以遞增或遞減順序對所有資料進行排序。這可讓您快速找到物件清單資料，這在檢查效能或開始疑難排解程序時非常有幫助。
+
+選定用於排序的欄會以重點摘要的欄標題名稱，以及名稱右側指出排序方向的箭頭圖示來表示。向上箭頭表示遞增排序；向下箭頭表示遞減排序。預設排序順序為依據 *狀態*（事件關鍵程度）遞減排序，最關鍵的效能事件會列在最前面。
+
+.步驟
+. 您可以按一下欄位名稱，以遞增或遞減順序切換該欄的排序。
++
+「物件清單效能」頁面內容會根據所選欄位，以升序或降序排序。
+
+

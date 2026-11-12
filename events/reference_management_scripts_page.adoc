@@ -1,0 +1,48 @@
+---
+permalink: events/reference_management_scripts_page.html 
+sidebar: sidebar 
+keywords: scripts, page, command, buttons, list, view 
+summary: 「指令碼」頁面可讓您將自訂指令碼新增至 Unified Manager。您可以將這些指令碼與警報建立關聯，以啟用儲存設備物件的自動重新組態。 
+---
+= 了解 Active IQ Unified Manager 中的「指令碼」頁面
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+「指令碼」頁面可讓您將自訂指令碼新增至 Unified Manager。您可以將這些指令碼與警報建立關聯，以啟用儲存設備物件的自動重新組態。
+
+指令碼頁面可讓您從 Unified Manager 新增或刪除指令碼。
+
+
+
+[[command-buttons]]
+== 命令按鈕
+
+* *新增*
++
+顯示「新增指令碼」對話方塊，讓您可以新增指令碼。
+
+* *刪除*
++
+刪除選定的指令碼。
+
+
+
+
+
+[[list-view]]
+== 清單檢視
+
+清單檢視以表格形式顯示您新增至 Unified Manager 的指令碼。
+
+* *名稱*
++
+顯示指令碼名稱。
+
+* *說明*
++
+顯示指令碼的執行摘要。
+
+

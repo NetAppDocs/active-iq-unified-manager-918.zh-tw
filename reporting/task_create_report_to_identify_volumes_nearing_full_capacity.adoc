@@ -1,0 +1,42 @@
+---
+permalink: reporting/task_create_report_to_identify_volumes_nearing_full_capacity.html 
+sidebar: sidebar 
+keywords: create, report, identify, volumes, full capacity, snapshot, autodelete, turned off 
+summary: 您可以建立一個報告，其中包含已接近滿容量且 Snapshot 自動刪除功能已停用的 Volume 清單。結果可協助識別您可能想要設定 Snapshot 自動刪除的 Volume。 
+---
+= 在 Active IQ Unified Manager 中識別已停用 Snapshot 自動刪除且接近容量上限的 Volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以建立一個報告，其中包含已接近滿容量且 Snapshot 自動刪除功能已停用的 Volume 清單。結果可協助識別您可能想要設定 Snapshot 自動刪除的 Volume。
+
+.開始之前
+* 您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+
+請依照下列步驟建立自訂檢視，以正確的順序顯示所需的欄，然後排程為該檢視產生報告。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存設備* > *Volume*。
+. 在「檢視」功能表中，選擇 *容量* > *所有 Volume*。
+. 選取 *顯示/隱藏* 可移除報告中不需要的任何欄。
+. 將 "`Snapshot 自動刪除`" 和 "`剩餘天數`" 欄拖曳到 "`可用資料容量`" 欄附近。
+. 點選篩選圖示，新增以下兩個篩選條件，然後點選 *套用篩選條件*：
++
+** 達到滿載天數少於 30 天
+** Snapshot 自動刪除已停用
+
+
+. 按一下 *Days To Full* 欄的頂端，讓剩餘天數最少的 Volume 顯示在清單頂端。
+. 以反映檢視所顯示內容的特定名稱來儲存檢視，例如 "`接近容量上限的 Volume`"。
+. 在庫存頁面上點選 *排程報告* 按鈕。
+. 輸入報告排程的名稱並完成其他報告欄位，然後按一下列末尾的勾號（image:../media/blue_check.gif[""]）。
++
+報告會立即作為測試傳送。之後，報告會產生並依指定的頻率透過電子郵件傳送給列出的收件者。
+
+
+
+根據報告中顯示的結果，您可能需要在 Volume 上啟用 Snapshot 自動刪除，或尋找增加可用空間的方法。

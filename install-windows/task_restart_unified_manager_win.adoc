@@ -1,0 +1,69 @@
+---
+permalink: install-windows/task_restart_unified_manager_win.html 
+sidebar: sidebar 
+keywords: restart, unified manager 
+summary: 進行組態變更後，您可能需要重新啟動 Unified Manager。 
+---
+= 在 Windows 上重新啟動 Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+進行組態變更後，您可能需要重新啟動 Unified Manager。
+
+.開始之前
+您必須擁有 Windows 系統管理員權限。
+
+.步驟
+. 使用預設本機系統管理員帳戶登入 Windows。
+. 停止 Unified Manager 服務：
++
+[cols="2*"]
+|===
+| 從…… | 請依照以下順序停止服務…… 
+
+
+ a| 
+命令列
+ a| 
+.. `sc stop ocie-au`
+.. `sc stop Oncommandsvc`
+
+
+
+
+ a| 
+Microsoft Service Manager
+ a| 
+.. NetApp Active IQ Acquisition Service （Ocie-au）
+.. NetApp Active IQ 管理伺服器服務（Oncommandsvc）
+
+
+|===
+. 啟動 Unified Manager 服務：
++
+[cols="2*"]
+|===
+| 從…… | 請依照以下順序啟動服務…… 
+
+
+ a| 
+命令列
+ a| 
+.. `sc start Oncommandsvc`
+.. `sc start ocie-au`
+
+
+
+
+ a| 
+Microsoft Service Manager
+ a| 
+.. NetApp Active IQ 管理伺服器服務（Oncommandsvc）
+.. NetApp Active IQ Acquisition Service （Ocie-au）
+
+
+|===
+

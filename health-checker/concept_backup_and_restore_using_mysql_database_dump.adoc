@@ -1,0 +1,34 @@
+---
+permalink: health-checker/concept_backup_and_restore_using_mysql_database_dump.html 
+sidebar: sidebar 
+keywords: backup, restore, using, mysql, database, dump, snapshot copy, copies 
+summary: MySQL 資料庫傾印備份是 Active IQ Unified Manager 資料庫和組態檔的複本，可在系統故障或資料遺失時使用。您可以排程將備份寫入本機目的地或遠端目的地。強烈建議您定義 Active IQ Unified Manager 主機系統外部的遠端位置。 
+---
+= 在 Active IQ Unified Manager 中使用 MySQL 資料庫傾印進行備份與恢復
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MySQL 資料庫傾印備份是 Active IQ Unified Manager 資料庫和組態檔的複本，可在系統故障或資料遺失時使用。您可以排程將備份寫入本機目的地或遠端目的地。強烈建議您定義 Active IQ Unified Manager 主機系統外部的遠端位置。
+
+[NOTE]
+====
+在 Linux 和 Windows 伺服器上安裝 Unified Manager 時，MySQL 資料庫傾印是預設的備份機制。但是，如果 Unified Manager 管理大量的叢集和節點，或者您的 MySQL 備份需要數小時才能完成，則可以使用 Snapshot 複本進行備份。此功能在 Red Hat Enterprise Linux 和 Windows 上均可使用。
+
+====
+資料庫轉儲備份包含備份目錄中的單一檔案和資料庫儲存庫目錄中的一個或多個檔案。備份目錄中的檔案非常小，因為它僅包含指向資料庫儲存庫目錄中用於重新建立備份所需檔案的指標。
+
+首次產生資料庫備份時，會在備份目錄中建立單一檔案，並在資料庫儲存庫目錄中建立完整備份檔案。下次產生備份時，會在備份目錄中建立單一檔案，並在資料庫儲存庫目錄中建立遞增備份檔案，其中包含與完整備份檔案之間的差異。此程序會隨著您建立更多備份而持續進行，直到達到最大保留設定，如下圖所示。
+
+image::../media/database_backup.gif[此圖顯示三個備份目錄檔案，分別指向資料庫儲存庫中的完整備份檔案和遞增檔案。]
+
+[NOTE]
+====
+請勿重新命名或移除這兩個目錄中的任何備份檔案，否則後續的還原作業將會失敗。
+
+====
+如果您將備份檔案寫入本機系統，則應啟動程序將備份檔案複製到遠端位置，以便在發生需要完整還原的系統問題時可以使用這些檔案。
+
+在開始備份作業之前，Active IQ Unified Manager 會執行完整性檢查，以驗證所有必要的備份檔案和備份目錄是否存在且可寫入的。它還會檢查系統上是否有足夠的空間來建立備份檔案。

@@ -1,0 +1,39 @@
+---
+permalink: reporting/task_create_report_to_view_volumes_with_an_inaccessible_junction_path.html 
+sidebar: sidebar 
+keywords: create, report, view, volumes, inaccessible, mount, path 
+summary: 您可以建立報告來尋找裝載路徑無法存取的 Volume。 
+---
+= 建立一份報告，以檢視 Active IQ Unified Manager 中裝載路徑無法存取的 Volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以建立報告來尋找裝載路徑無法存取的 Volume。
+
+.開始之前
+* 您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+
+使用下列步驟為具有無法存取裝載路徑的 Volume 建立自訂檢視，然後排程為該檢視產生報告。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存* > *NFS 共享*。
+. 選取 *顯示/隱藏* 以移除報告中不需要的任何欄。
+. 點選篩選圖示，新增下列篩選條件，然後點選 *套用篩選條件*：
++
+** 裝載路徑活動狀態為否
+
+
+. 以反映檢視顯示內容的特定名稱儲存檢視，例如 "`具有無法存取裝載路徑的 Volume`"，然後按一下核取記號（image:../media/blue_check.gif[""]）。
+. 在庫存頁面上點選 *排程報告* 按鈕。
+. 按一下 *新增排程* 以在「報告排程」頁面中新增一列，以便您定義新報告的排程特性。
+. 輸入報告排程的名稱並完成其他報告欄位，然後按一下列末尾的勾號（image:../media/blue_check.gif[""]）。
++
+報告會立即作為測試傳送。之後，報告會產生並依指定的頻率透過電子郵件傳送給列出的收件者。
+
+
+
+根據報告中顯示的結果，您可能需要修正無法存取的裝載路徑。

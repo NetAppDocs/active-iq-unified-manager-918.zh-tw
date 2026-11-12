@@ -1,0 +1,42 @@
+---
+permalink: events/task_disable_alerts_for_resolved_and_obsolete_events.html 
+sidebar: sidebar 
+keywords: enable, disable, alerts, resolved, obsolete, events 
+summary: 設定全域設定，以抑制進入「已解決」和「已過時」狀態的事件警報。 
+---
+= 停用 Active IQ Unified Manager 中已解決與已過時事件的警報
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+對於所有已配置為發送警報的事件，當這些事件經歷所有可用狀態（New、Resolved 和 Obsolete）時，系統都會發送警報訊息。如果您不希望接收事件進入 Resolved 和 Obsolete 狀態時的警報，您可以設定全域設定來抑制這些警報。
+
+.開始之前
+您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+預設情況下，事件進入「已解決」和「已過時」狀態時不會發送警報。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存設備管理* > *警示設定*。
+. 在 *警報設定* 頁面中，使用 *已解決且已過時事件的警報* 項目旁的滑桿控制執行下列其中一項動作：
++
+|===
+| 若要…… | 這樣做…… 
+
+
+ a| 
+事件解決或過時後，停止發送警報
+ a| 
+將滑桿控制向左移動
+
+
+
+ a| 
+當事件解決或過時，開始發送警報
+ a| 
+將滑桿控制向右移動
+
+|===
+

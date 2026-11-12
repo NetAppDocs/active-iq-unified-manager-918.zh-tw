@@ -1,0 +1,29 @@
+---
+permalink: reporting/concept_understand_view_and_reports_relationship.html 
+sidebar: sidebar 
+keywords: understand, view, report, relationship 
+summary: 當您下載或排程檢視與庫存頁面時，它們就會變成報告。 
+---
+= 了解 Active IQ Unified Manager 中的檢視與報告關係
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您下載或排程檢視與庫存頁面時，它們就會變成報告。
+
+您可以自訂並儲存檢視和庫存頁面以供重複使用。在 Unified Manager 中，幾乎所有可檢視的內容都可以儲存、重複使用、自訂的、排程，以及作為報告共享的。
+
+在檢視下拉式選單中，帶有刪除圖示的項目是您或其他使用者建立的現有自訂檢視。沒有圖示的項目是 Unified Manager 提供的預設檢視。預設檢視無法修改或刪除。
+
+[NOTE]
+====
+* 如果從清單中刪除自訂檢視，也會刪除使用該檢視的任何 Excel 檔案或排程報告。
+* 如果您變更自訂檢視，則使用該檢視的報告將在下次產生並根據報告排程透過電子郵件傳送報告時反映此變更。變更檢視時，請確保您的變更與報告使用的任何相關 Excel 自訂相容。如有需要，您可以藉由下載 Excel 檔案、進行所需的變更，並將其作為該檢視的新 Excel 自訂上傳，來更新 Excel 檔案。
+
+
+====
+image::../media/view_drop_down_3.png[「檢視」下拉式選單的使用者介面快照。]
+
+只有具有應用程式管理員或儲存設備管理員角色的使用者才能看到刪除圖示、變更或刪除檢視，或變更或刪除排程報告。

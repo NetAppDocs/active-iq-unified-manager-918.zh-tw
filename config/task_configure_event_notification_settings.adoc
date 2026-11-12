@@ -1,0 +1,48 @@
+---
+permalink: config/task_configure_event_notification_settings.html 
+sidebar: sidebar 
+keywords: configure, event, notification, settings 
+summary: 您可以設定 Unified Manager，使其在產生事件或將事件指派給使用者時傳送警報通知。您可以設定用於傳送警報的 SMTP 伺服器，也可以設定各種通知機制，例如，警報通知可以透過電子郵件或 SNMP 陷阱的形式傳送。 
+---
+= 在 Active IQ Unified Manager 中設定事件通知設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以設定 Unified Manager，使其在產生事件或將事件指派給使用者時傳送警報通知。您可以設定用於傳送警報的 SMTP 伺服器，也可以設定各種通知機制——例如，警報通知可以透過電子郵件或 SNMP 陷阱的形式傳送。
+
+.開始之前
+您必須具備以下資訊：
+
+* 發送警報通知的電子郵件地址
++
+此電子郵件地址會顯示在已傳送提醒通知的 "`From`" 欄位中。如果電子郵件因任何原因無法送達，此電子郵件地址也會做為無法送達郵件的收件者。
+
+* SMTP 伺服器主機名稱，以及存取該伺服器的使用者名稱和密碼
+* 接收 SNMP 陷阱的目的地主機的主機名稱或 IP 位址，以及 SNMP 版本、傳出陷阱連接埠、團體名稱和其他必要的 SNMP 組態值
++
+若要指定多個陷阱目的地，請用逗號分隔每個主機。在這種情況下，清單中所有其他 SNMP 設定（例如版本和傳出陷阱連接埠）對於所有主機都必須相同。
+
+
+
+您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+.步驟
+. 在左側導覽窗格中，按一下 *一般* > *通知*。
+. 在「通知」頁面中，設定適當的設定。
++
+*附註：*
+
++
+** 如果「寄件者地址」預先填寫了地址「+ActiveIQUnifiedManager@localhost.com+」，則應將其變更為真實、有效的電子郵件地址，以確保所有電子郵件通知都能成功送達。
+** 如果無法解析 SMTP 伺服器的主機名稱，您可以指定 SMTP 伺服器的 IP 位址（IPv4 或 IPv6）而不是主機名稱。
+
+
+. 按一下 *Save* 。
+. 如果您選擇了 *使用 STARTTLS* 或 *使用 SSL* 選項，按一下 *儲存* 按鈕後會顯示憑證頁面。請驗證憑證詳細資料並接受憑證，以儲存通知設定。
++
+您可以按一下 *View Certificate Details* 按鈕來檢視憑證詳細資料。如果現有憑證已過期，請取消勾選 *Use STARTTLS* 或 *Use SSL* 方塊，儲存通知設定，然後再次勾選 *Use STARTTLS* 或 *Use SSL* 方塊以檢視新憑證。
+
+

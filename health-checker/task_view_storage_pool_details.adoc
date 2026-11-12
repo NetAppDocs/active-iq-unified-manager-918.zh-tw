@@ -1,0 +1,39 @@
+---
+permalink: health-checker/task_view_storage_pool_details.html 
+sidebar: sidebar 
+keywords: view, storage pool, details 
+summary: 您可以檢視儲存資源池的詳細資料，以監控儲存資源池的健全狀況、總快取與可用快取，以及已使用與可用的分配。 
+---
+= 在 Active IQ Unified Manager 中檢視儲存資源池詳細資料
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以檢視儲存資源池的詳細資料，以監控儲存資源池的健全狀況、總快取與可用快取，以及已使用與可用的分配。
+
+.開始之前
+您必須擁有操作員、應用程式管理員或儲存管理員角色。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存設備* > *彙總*。
+. 點選彙總名稱。
++
+顯示所選彙總的詳細資訊。
+
+. 按一下 *磁碟資訊* 索引標籤。
++
+顯示詳細的磁碟資訊。
+
++
+[NOTE]
+====
+只有在選取的彙總使用儲存資源池時，才會顯示快取表格。
+
+====
+. 在快取表中，將指標移到所需儲存資源池的名稱上。
++
+顯示儲存資源池的詳細資訊。
+
+

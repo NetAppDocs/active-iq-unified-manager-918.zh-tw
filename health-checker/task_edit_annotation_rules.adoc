@@ -1,0 +1,29 @@
+---
+permalink: health-checker/task_edit_annotation_rules.html 
+sidebar: sidebar 
+keywords: edit, annotation rules 
+summary: 您可以編輯註解規則，以修改條件群組和條件群組內的條件，從而為儲存設備物件新增註解或從中移除註解。 
+---
+= 在 Active IQ Unified Manager 中編輯註解規則
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以編輯註解規則，以修改條件群組和條件群組內的條件，從而為儲存設備物件新增註解或從中移除註解。
+
+.開始之前
+您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+編輯關聯的註釋規則時，註釋會與儲存設備物件解除關聯。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存設備管理* > *註解*。
+. 在 *註解規則* 標籤中，選擇要編輯的註解規則，然後按一下 *行動* > *編輯*。
+. 在 *編輯註解規則* 對話方塊中，根據需要變更規則名稱、註解名稱和值、條件群組和條件。
++
+您無法變更註解規則的目標物件類型。
+
+. 按一下 *Save* 。
+

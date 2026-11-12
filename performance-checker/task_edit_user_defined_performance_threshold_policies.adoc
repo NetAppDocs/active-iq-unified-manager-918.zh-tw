@@ -1,0 +1,38 @@
+---
+permalink: performance-checker/task_edit_user_defined_performance_threshold_policies.html 
+sidebar: sidebar 
+keywords: edit, user-defined, performance, threshold, policies 
+summary: 您可以編輯現有效能臨界值原則的臨界值設定。如果您發現針對某些臨界值條件收到的警報過多或過少，這將非常有用。 
+---
+= 在 Active IQ Unified Manager 中編輯使用者定義的效能臨界值原則
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以編輯現有效能臨界值原則的臨界值設定。如果您發現針對某些臨界值條件收到的警報過多或過少，這將非常有用。
+
+.開始之前
+您必須擁有應用程式管理員角色。
+
+您無法變更現有臨界值原則的原則名稱或受監控的儲存設備物件類型。
+
+.步驟
+. 在左側導覽窗格中，選擇 *事件臨界值* > *效能*。
++
+顯示「效能臨界值」頁面。
+
+. 選擇要變更的臨界值原則，然後按一下 *編輯*。
++
+顯示「編輯效能臨界值原則」頁面。
+
+. 對臨界值原則進行更改，然後按一下 *儲存*。
++
+您將返回到效能臨界值頁面。
+
+
+
+儲存後，所有使用該原則的儲存設備物件都會立即更新變更。
+
+根據您對原則所做的變更類型，您可能需要在「警報設定」頁面中審查為使用該原則的物件配置的警報設定。

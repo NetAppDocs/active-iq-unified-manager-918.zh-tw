@@ -1,0 +1,68 @@
+---
+permalink: data-protection/reference_create_snapmirror_policy_dialog_box.html 
+sidebar: sidebar 
+keywords: create, snapmirror, policy, dialog box 
+summary: 「建立 SnapMirror 原則」對話方塊可讓您建立原則來設定 SnapMirror 傳輸的優先順序。您可以使用原則來最大化從來源到目的地的傳輸效率。 
+---
+= 在 Active IQ Unified Manager 中使用「建立 SnapMirror 原則」對話方塊
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+「建立 SnapMirror 原則」對話方塊可讓您建立原則來設定 SnapMirror 傳輸的優先順序。您可以使用原則來最大化從來源到目的地的傳輸效率。
+
+* *目的地叢集*
++
+您在「設定保護」對話方塊的 SnapMirror 索引標籤中選取的叢集名稱。
+
+* *目的地 SVM*
++
+您在「設定保護」對話方塊的 SnapMirror 索引標籤中所選的 SVM 名稱。
+
+* *原則名稱*
++
+您為新原則提供的名稱。原則名稱可以包含 A 到 Z、a 到 z、0 到 9、句點（.）、連字號（-）和底線（_）。
+
+* *傳輸優先權*
++
+非同步作業執行傳輸的優先權。您可以選擇「正常」或「低」。具有指定正常傳輸優先權原則的傳輸關係，會先於具有指定低傳輸優先權原則的傳輸關係執行。
+
+* *備註*
++
+這是一個選用欄位，您可以在其中新增有關該原則的備註。
+
+* *傳輸重新啟動*
++
+指示當傳輸因中止操作或任何類型的故障（例如網路停電）而中斷時，應採取的重新啟動行動。您可以選擇以下選項之一：
+
++
+** 總是
++
+指定在重新啟動傳輸之前建立新的 Snapshot 複本，然後，如果存在，則從檢查點重新啟動傳輸，接著從新建立的 Snapshot 複本進行遞增傳輸。
+
+** 絕不
++
+指定中斷的傳輸永遠不會重新啟動。
+
+
+
+
+
+
+
+[[command-buttons]]
+== 命令按鈕
+
+命令按鈕可讓您執行下列任務：
+
+* *取消*
++
+放棄選取項目並關閉「設定保護」對話方塊。
+
+* *套用*
++
+套用您的選擇並開始保護程序。
+
+

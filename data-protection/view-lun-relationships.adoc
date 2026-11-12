@@ -1,0 +1,38 @@
+---
+permalink: data-protection/view-lun-relationships.html 
+sidebar: sidebar 
+keywords: LUN, SnapMirror active sync, Consistency Group, CG 
+summary: 統一檢視受 SnapMirror 作用中同步保護的 LUN。 
+---
+= 在 Active IQ Unified Manager 中監控一致性群組 LUN 關係
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您的 ONTAP 環境支援 SnapMirror 作用中同步以保護具有 LUN 的應用程式，您可以在 Active IQ Unified Manager 上檢視和監控這些 LUN。
+
+SnapMirror 作用中同步可確保在 SAN 環境中容錯移轉期間的恢復時間目標（RTO）為零。在支援 SnapMirror 作用中同步的典型部署中，Volume 上的 LUN 受到一致性群組關係的保護。
+
+這些主要和次要 LUN 是複合 LUN，或是具有相同 UUID 和序號的複本 LUN 配對。I/O 作業（包括讀取和寫入）在這些複合 LUN 的來源和目的地站台之間進行多工處理，以確保通透性。
+
+若要檢視複合 LUN，必須在 Unified Manager 中新增並探索包含屬於一致性群組關係一部分之 LUN 的主要和次要叢集。僅支援 iSCSI 和 FCP LUN。
+
+如需有關 SnapMirror 作用中同步的資訊，請參閱 link:https://docs.netapp.com/us-en/ontap/smbc/index.html["適用於 SnapMirror 作用中同步（原 SM-BC）的 ONTAP 9 文件"]。
+
+若要檢視環境中的複合 LUN，請依照下列步驟操作：
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存設備* > *LUNs*。
+. 從「檢視」功能表中，選擇 *關係* > *所有 LUN*。
++
+顯示「關係：所有 LUN」檢視。
+
+
+
+您可以檢視 LUN 詳細資料，例如 LUN 名稱、Volume、託管 LUN 的儲存 VM、叢集、一致性群組和合作夥伴 LUN。您可以按一下這些元件中的每一個，以向下鑽研至詳細檢視。按一下一致性群組會將您帶往「關係」頁面。
+
+點選合作夥伴 LUN，即可在託管該合作夥伴 LUN 的儲存設備 VM 的「儲存設備 VM 詳細資料」頁面的「SAN」標籤上檢視其組態詳細資料。此處會顯示諸如啟動器和啟動器群組，以及合作夥伴 LUN 的其他層面等資訊。
+
+您可以對環境中的受保護 LUN 執行標準的網格級功能，例如排序、篩選、產生和上傳報告。

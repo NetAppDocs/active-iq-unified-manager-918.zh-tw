@@ -1,0 +1,25 @@
+---
+permalink: performance-checker/task_view_performance_threshold_policies.html 
+sidebar: sidebar 
+keywords: view, performance, threshold, policies 
+summary: 您可以在「效能臨界值」頁面上檢視所有目前已定義的效能臨界值原則。 
+---
+= 在 Active IQ Unified Manager 中檢視效能臨界值原則
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在「效能臨界值」頁面上檢視所有目前已定義的效能臨界值原則。
+
+臨界值原則清單會依原則名稱的字母順序排序，並包含所有類型儲存設備物件的原則。您可以按一下欄標題，依該欄對原則進行排序。如果您正在尋找特定原則，請使用篩選與搜尋機制，以精簡顯示在詳細目錄清單中的臨界值原則清單。
+
+您可以將游標懸停在原則名稱和條件名稱上，查看原則的組態詳細資料。此外，您還可以使用提供的按鈕建立、Clone、編輯和刪除使用者自訂的臨界值原則。
+
+.步驟
+. 在左側導覽窗格中，選擇 *事件臨界值* > *效能*。
++
+顯示「效能臨界值」頁面。
+
+

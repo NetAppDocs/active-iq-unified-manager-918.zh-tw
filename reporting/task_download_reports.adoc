@@ -1,0 +1,44 @@
+---
+permalink: reporting/task_download_reports.html 
+sidebar: sidebar 
+keywords: download, reports 
+summary: '您可以下載報告並將資料儲存到本機或網路磁碟機，格式包括逗號分隔值 (CSV) 檔案、Microsoft Excel (.XLSX) 檔案或 PDF 檔案。您可以使用 Microsoft Excel 等試算表應用程式開啟 CSV 和 XLSX 檔案，並使用 Adobe Acrobat 等閱讀器開啟 PDF 檔案。' 
+---
+= 在 Active IQ Unified Manager 中下載報告
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以下載報告並將資料儲存到本機或網路磁碟機，格式包括逗號分隔值 (CSV) 檔案、Microsoft Excel (.XLSX) 檔案或 PDF 檔案。您可以使用 Microsoft Excel 等試算表應用程式開啟 CSV 和 XLSX 檔案，並使用 Adobe Acrobat 等閱讀器開啟 PDF 檔案。
+
+.步驟
+. 點選 *報告* 按鈕，即可下載下列其中一種格式的報告：
++
+[cols="2*"]
+|===
+| 選擇 | 若要…… 
+
+
+ a| 
+下載 CSV
+ a| 
+將報告儲存為逗號分隔值（CSV）檔案。
+
+
+
+ a| 
+下載 PDF
+ a| 
+將報告儲存為 .pdf 檔案。
+
+
+
+ a| 
+下載 Excel
+ a| 
+將報告儲存為 Microsoft Excel（XLSX）檔案。
+
+|===
+

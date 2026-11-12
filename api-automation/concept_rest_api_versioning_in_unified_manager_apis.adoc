@@ -1,0 +1,23 @@
+---
+permalink: api-automation/concept_rest_api_versioning_in_unified_manager_apis.html 
+sidebar: sidebar 
+keywords: api, version, active iq, unified, manager 
+summary: Active IQ Unified Manager 中的 REST API URI 會指定版本號碼。例如，/v2/datacenter/svm/svms。/v2/datacenter/svm/svms 中的版本號碼 v2 表示特定版本中所使用的 API 版本。版本號碼透過傳回用戶端可以處理的回應，盡量減少 API 變更對用戶端軟體的影響。 
+---
+= 了解 Active IQ Unified Manager 中的 API 版本號
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Active IQ Unified Manager 中的 REST API URI 會指定版本號碼。例如， `/v2/datacenter/svm/svms.` 版本號碼 `v2` 位於 `/v2/datacenter/svm/svms` 中，表示特定版本中使用的 API 版本。版本號碼透過傳回用戶端可處理的回應，將 API 變更對用戶端軟體的影響降至最低。
+
+此版本號碼的數字部分相對於各版本而言是遞增的。含有版本號碼的 URI 提供一致的介面，可在未來版本中維持向下相容性。您也可以找到不含版本的相同 API，例如 `/datacenter/svm/svms,`，這些 API 表示不含版本的基本 API。基本 API 一律是最新版本的 API。
+
+[NOTE]
+====
+在 Swagger 介面的右上角，您可以選擇要使用的 API 版本。預設會選擇最高版本。建議您使用 Unified Manager 執行個體中特定 API 的最高版本（以遞增整數為準）。
+
+====
+對於所有要求，您必須明確要求要使用的 API 版本。指定版本號碼時，服務不會傳回您的應用程式未設計來處理的回應元素。在 REST 要求中，您應該包含版本參數。較早版本的 API 最終會在幾個版本之後棄用。在此版本中，API 的 `v1`版本已棄用。

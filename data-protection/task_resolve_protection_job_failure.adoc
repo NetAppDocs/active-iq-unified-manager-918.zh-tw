@@ -1,0 +1,36 @@
+---
+permalink: data-protection/task_resolve_protection_job_failure.html 
+sidebar: sidebar 
+keywords: resolve, protection, job failure 
+summary: 此工作流程提供了一個範例，說明如何從 Unified Manager 儀表板識別和解決保護作業故障。 
+---
+= 解決 Active IQ Unified Manager 中的保護作業故障
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此工作流程提供了一個範例，說明如何從 Unified Manager 儀表板識別和解決保護作業故障。
+
+.開始之前
+由於此工作流程中的某些工作需要您使用系統管理員角色登入，因此您必須熟悉使用各種功能所需的角色。
+
+在這種情況下，您存取「儀表板」頁面，查看保護作業是否有任何問題。在「保護事件」區域中，您注意到存在一個「作業已終止」事件，顯示某個 Volume 上存在「保護作業失敗」錯誤。您調查此錯誤以確定可能的原因和潛力的解決方案。
+
+.步驟
+. 在儀表板「未解決的事件和風險」區域的「保護事件」面板中，按一下 *保護作業失敗* 事件。
++
+[TIP]
+====
+事件的連結文字以 `object_name:/object_name - Error Name`的形式編寫，例如 `cluster2_src_svm:/cluster2_src_vol2 - Protection Job Failed`。
+
+====
++
+顯示失敗保護作業的事件詳細資料頁面。
+
+. 查看 *摘要* 區域「原因」欄位中的錯誤訊息，以確定問題並評估潛力的修正行動。
++
+請參閱 link:task_identify_problem_for_failed_protection_job.html["識別問題並針對失敗的保護作業執行修正行動"]。
+
+

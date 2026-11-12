@@ -1,0 +1,40 @@
+---
+permalink: data-protection/task_quiesce_protection_relationship_from_health_volume_details.html 
+sidebar: sidebar 
+keywords: quiesce, protection, relationship, volume, health details page 
+summary: 您可以使保護關係處於靜默狀態，以暫時阻止資料傳輸。當您想要為包含資料庫的 SnapMirror 目的地 Volume 建立 Snapshot 複本，並且想要確保其內容在 Snapshot 複本期間保持穩定時，您可以使關係處於靜默狀態。 
+---
+= 在 Active IQ Unified Manager 的「磁碟區/健康狀況」詳細資料頁面中，將保護關係置於靜默狀態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使保護關係處於靜默狀態，以暫時阻止資料傳輸。當您想要為包含資料庫的 SnapMirror 目的地 Volume 建立 Snapshot 複本，並且想要確保其內容在 Snapshot 複本期間保持穩定時，您可以使關係處於靜默狀態。
+
+.開始之前
+* 您必須擁有應用程式系統管理員或儲存系統管理員角色。
+* 您必須已設定 Workflow Automation。
+
+
+在以下情況下，不會顯示靜止行動：
+
+* 如果 RBAC 設定不允許此行動，例如，如果您只有營運者權限
+* 當 Volume ID 未知時，例如，當您有叢集間關係且尚未發現目的地叢集時
+* 當您尚未將 Workflow Automation 和 Unified Manager 配對時
+
+
+.步驟
+. 在 *Volume / 運作狀況* 詳細資料頁面的 *保護* 標籤中，在拓撲檢視中以滑鼠右鍵按一下您要靜止的保護關係。
+. 從選單中選取 *靜止*。
+. 按一下 *Yes* 繼續。
++
+靜默作業的狀態顯示在「Volume / 健康狀況」詳細資料頁面的頂部，並附有指向作業詳細資料的連結。
+
+. 按一下 *檢視詳細資料* 連結前往 *工作* 詳細資料頁面，以取得其他詳細資料與工作進度。
+. *選用：* 按一下瀏覽器上的返回箭頭，回到 *Volume / 健全狀況* 詳細資料頁面。
++
+當所有工作任務都成功完成時，靜默工作即告完成。
+
+

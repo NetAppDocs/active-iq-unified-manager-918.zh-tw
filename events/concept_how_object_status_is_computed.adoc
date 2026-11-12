@@ -1,0 +1,14 @@
+---
+permalink: events/concept_how_object_status_is_computed.html 
+sidebar: sidebar 
+keywords: object, status, computed 
+summary: 物件狀態由目前處於「新建」或「已確認」狀態的最嚴重事件決定。例如，如果物件狀態為「錯誤」，則該物件的某個事件的嚴重性類別為「錯誤」。當採取修正行動後，事件狀態將變為「已解決」。 
+---
+= Active IQ Unified Manager 如何計算物件狀態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+物件狀態由目前處於「新建」或「已確認」狀態的最嚴重事件決定。例如，如果物件狀態為「錯誤」，則該物件的某個事件的嚴重性類別為「錯誤」。當採取修正行動後，事件狀態將變為「已解決」。

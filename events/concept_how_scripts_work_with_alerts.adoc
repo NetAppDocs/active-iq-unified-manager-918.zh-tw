@@ -1,0 +1,53 @@
+---
+permalink: events/concept_how_scripts_work_with_alerts.html 
+sidebar: sidebar 
+keywords: scripts, work, alerts 
+summary: 您可以將警報與指令碼建立關聯，以便在 Unified Manager 中發生事件並觸發警報時執行該指令碼。您可以使用這些指令碼來解決儲存設備物件的問題，或識別哪些儲存設備物件正在產生事件。 
+---
+= Active IQ Unified Manager 中的指令碼如何與警報協同運作
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以將警報與指令碼建立關聯，以便在 Unified Manager 中發生事件並觸發警報時執行該指令碼。您可以使用這些指令碼來解決儲存設備物件的問題，或識別哪些儲存設備物件正在產生事件。
+
+當 Unified Manager 中某個事件產生警報時，系統會傳送警報郵件給指定的收件者。如果您已將警報與指令碼關聯，則會執行該指令碼。您可以從警報郵件中取得傳遞給指令碼的參數詳細資料。
+
+[NOTE]
+====
+如果您建立了自訂指令碼並將其與特定事件類型的警報建立關聯，則會根據您針對該事件類型的自訂指令碼採取行動，並且預設情況下，*修復* 行動在「管理行動」頁面或 Unified Manager 儀表板上無法使用。
+
+====
+該指令碼使用以下參數執行：
+
+* `-eventID`
+* -`eventName`
+* -`eventSeverity`
+* -`eventSourceID`
+* -`eventSourceName`
+* -`eventSourceType`
+* -`eventState`
+* -`eventArgs`
+
+
+您可以在指令碼中使用這些參數，並收集相關的事件資訊或修改儲存設備物件。
+
+
+
+[[example-for-obtaining-arguments-from-scripts]]
+== 從指令碼中取得參數的範例
+
+[listing]
+----
+`print "$ARGV[0] : $ARGV[1]\n"`
+`print "$ARGV[7] : $ARGV[8]\n"`
+----
+當產生警報時，將執行此指令碼並顯示以下輸出：
+
+[listing]
+----
+-`eventID : 290`
+-`eventSourceID : 4138`
+----

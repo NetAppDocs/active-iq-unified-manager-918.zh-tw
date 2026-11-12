@@ -1,0 +1,56 @@
+---
+permalink: events/reference_snapshot_events.html 
+sidebar: sidebar 
+keywords: snapshot, events, impact area, availability 
+summary: Snapshot 快照技術事件提供有關快照狀態的資訊，使您能夠監控快照是否存在潛力問題。這些事件按影響區域分組，並包含事件名稱、陷阱名稱、影響層級、來源類型和嚴重性。 
+---
+= 了解 Active IQ Unified Manager 中的 Snapshot 快照技術事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Snapshot 快照技術事件提供有關快照狀態的資訊，使您能夠監控快照是否存在潛力問題。這些事件按影響區域分組，並包含事件名稱、陷阱名稱、影響層級、來源類型和嚴重性。
+
+
+
+[[impact-area-availability]]
+== 影響區域：可用度
+
+|===
+| 事件名稱（陷阱名稱） | 影響層級 | 來源類型 | 嚴重程度 
+
+
+ a| 
+Snapshot 快照技術自動刪除已停用（不適用）
+ a| 
+事件
+ a| 
+磁碟區
+ a| 
+資訊
+
+
+
+ a| 
+Snapshot 快照技術自動刪除已啟用（不適用）
+ a| 
+事件
+ a| 
+磁碟區
+ a| 
+資訊
+
+
+
+ a| 
+Snapshot 快照技術自動刪除組態已修改（不適用）
+ a| 
+事件
+ a| 
+磁碟區
+ a| 
+資訊
+
+|===

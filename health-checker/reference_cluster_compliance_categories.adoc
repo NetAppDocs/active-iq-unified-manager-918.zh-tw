@@ -1,0 +1,221 @@
+---
+permalink: health-checker/reference_cluster_compliance_categories.html 
+sidebar: sidebar 
+keywords: cluster compliance, categories 
+summary: 此表說明 Unified Manager 評估的叢集安全性法規遵循參數、NetApp 建議，以及該參數是否會影響叢集是否符合法規的整體判定。 
+---
+= 了解 Active IQ Unified Manager 中的叢集法規遵循類別
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此表說明 Unified Manager 評估的叢集安全性法規遵循參數、NetApp 建議，以及該參數是否會影響叢集是否符合法規的整體判定。
+
+叢集上存在不符合法規的 SVM 會影響叢集的法規遵循值。因此，在某些情況下，您可能需要先修復 SVM 的安全性問題，叢集的安全性才會被視為符合法規。
+
+請注意，並非以下列出的所有參數都會在所有安裝中顯示。例如，如果您沒有對等叢集，或者您已在叢集上停用 AutoSupport，則您將不會在使用者介面頁面中看到「叢集對等」或「AutoSupport HTTPS 傳輸」項目。
+
+[cols="4*"]
+|===
+| 參數 | 說明 | 建議 | 影響叢集法規遵循 
+
+
+ a| 
+全球 FIPS
+ a| 
+指示是否啟用或停用全球 FIPS（聯邦資訊處理標準）140-2 法規遵循模式。啟用 FIPS 時，會停用 TLSv1 和 SSLv3，僅允許使用 TLSv1.1 和 TLSv1.2。
+ a| 
+已啟用
+ a| 
+是的
+
+
+
+ a| 
+Telnet
+ a| 
+指示是否啟用或停用對系統的 Telnet 存取。NetApp 建議使用 Secure Shell (SSH) 進行安全的遠端存取。
+ a| 
+已停用
+ a| 
+是的
+
+
+
+ a| 
+不安全的 SSH 設定
+ a| 
+指示 SSH 是否使用不安全的密碼，例如以 *cbc 開頭的密碼。
+ a| 
+否
+ a| 
+是的
+
+
+
+ a| 
+登入橫幅
+ a| 
+指示是否為存取系統的使用者啟用或停用登入橫幅。
+ a| 
+已啟用
+ a| 
+是的
+
+
+
+ a| 
+叢集對等互連
+ a| 
+指示對等叢集之間的通訊是加密或未加密。若要使此參數符合法規，來源和目的地叢集都必須設定加密。
+ a| 
+加密
+ a| 
+是的
+
+
+
+ a| 
+網路時間協定
+ a| 
+指示叢集是否設定了一個或多個 NTP 伺服器。為了實現備援和最佳服務，NetApp 建議您至少將三個 NTP 伺服器與叢集關聯。
+ a| 
+已設定
+ a| 
+是的
+
+
+
+ a| 
+OCSP
+ a| 
+從 9.14.1 開始，Active IQ Unified Manager 在儲存設備虛擬機器（SVM，以前稱為 Vserver）層級提供線上憑證狀態協定（OCSP）狀態資訊。這表示 OCSP 驗證會套用至與 SVM 建立的所有 SSL/TLS 連線，並確保這些連線中所使用憑證的完整性與有效性。
+ a| 
+已啟用
+ a| 
+否
+
+
+
+ a| 
+遠端稽核日誌
+ a| 
+指示日誌轉送（Syslog）是否加密。
+ a| 
+加密
+ a| 
+是的
+
+
+
+ a| 
+AutoSupport HTTPS 傳輸
+ a| 
+指示是否使用 HTTPS 作為傳送 AutoSupport 訊息至 NetApp 支援的預設傳輸協定。
+ a| 
+已啟用
+ a| 
+是的
+
+
+
+ a| 
+預設管理員使用者
+ a| 
+指示預設管理員使用者（內建）是否已啟用或停用。NetApp 建議鎖定（停用）任何不需要的內建帳戶。
+ a| 
+已停用
+ a| 
+是的
+
+
+
+ a| 
+SAML 使用者
+ a| 
+指出是否已設定 SAML。SAML 可讓您將多因素驗證（MFA）設定為單一登入的登入方法。
+ a| 
+否
+ a| 
+否
+
+
+
+ a| 
+Active Directory 使用者
+ a| 
+指出是否已設定 Active Directory。Active Directory 和 LDAP 是使用者存取叢集的首選驗證機制。
+ a| 
+否
+ a| 
+否
+
+
+
+ a| 
+LDAP 使用者
+ a| 
+指示是否已設定 LDAP。對於管理叢集的使用者而言，Active Directory 和 LDAP 是比本機使用者更首選的驗證機制。
+ a| 
+否
+ a| 
+否
+
+
+
+ a| 
+憑證使用者
+ a| 
+指示是否已設定憑證使用者登入叢集。
+ a| 
+否
+ a| 
+否
+
+
+
+ a| 
+本機使用者
+ a| 
+指示是否已設定本機使用者登入叢集。
+ a| 
+否
+ a| 
+否
+
+
+
+ a| 
+遠端 Shell
+ a| 
+指示是否啟用 RSH。基於安全性考量，應停用 RSH。建議使用 Secure Shell（SSH）進行安全的遠端存取。
+ a| 
+已停用
+ a| 
+是的
+
+
+
+ a| 
+使用中的 MD5
+ a| 
+指示 ONTAP 使用者帳戶是否使用安全性較低的 MD5 雜湊函數。建議將使用 MD5 雜湊的使用者帳戶移轉至更安全的加密雜湊函數，例如 SHA-512。
+ a| 
+否
+ a| 
+是的
+
+
+
+ a| 
+憑證發行者類型
+ a| 
+指示所使用的數位憑證類型。
+ a| 
+CA 簽署
+ a| 
+否
+
+|===

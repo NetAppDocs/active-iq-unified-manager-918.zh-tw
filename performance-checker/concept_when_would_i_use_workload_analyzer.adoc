@@ -1,0 +1,20 @@
+---
+permalink: performance-checker/concept_when_would_i_use_workload_analyzer.html 
+sidebar: sidebar 
+keywords: workload analyzer, use 
+summary: 您通常會使用工作負載分析器來對使用者報告的延遲問題進行疑難排解，更徹底地分析報告的事件或警報，或探索您發現運作異常的工作負載。 
+---
+= 了解何時在 Active IQ Unified Manager 中使用工作負載分析器
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您通常會使用工作負載分析器來對使用者報告的延遲問題進行疑難排解，更徹底地分析報告的事件或警報，或探索您發現運作異常的工作負載。
+
+如果使用者聯絡您反映他們使用的應用程式執行速度非常慢，您可以查看應用程式執行所在工作負載的延遲、處理量和使用率圖表，以確定儲存設備是否為效能問題的原因。您也可以使用容量圖表來查看容量是否不足，因為容量使用率超過 85% 的 ONTAP 系統可能會導致效能問題。這些圖表將幫助您確定問題是出在儲存設備、連網還是其他相關問題。
+
+如果 Unified Manager 產生了效能事件，並且您想要更徹底地審查問題的原因，您可以從「事件詳細資料」頁面產品發表工作負載分析器，方法是按一下 *分析工作負載* 按鈕，以研究工作負載的一些延遲、處理量和容量趨勢。
+
+當您在檢視任何工作負載庫存頁面（Volume、LUN、工作負載、NFS 共用區或 SMB/CIFS 共用區）時，發現某個工作負載的運作似乎異常，您可以按一下「更多」圖示 image:../media/more_icon.gif[""]，然後按一下 *Analyze Workload*，以開啟「Workload Analysis」頁面，進一步檢查該工作負載。

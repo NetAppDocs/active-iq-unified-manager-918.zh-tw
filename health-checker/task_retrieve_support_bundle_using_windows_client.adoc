@@ -1,0 +1,30 @@
+---
+permalink: health-checker/task_retrieve_support_bundle_using_windows_client.html 
+sidebar: sidebar 
+keywords: retrieve, support bundle, windows client 
+summary: 如果您是 Windows 使用者，您可以下載並安裝工具，從 Unified Manager 伺服器擷取支援套裝組合。您可以將支援套裝組合傳送給技術支援，以便對問題進行更詳細的診斷。Filezilla 或 WinSCP 是您可以使用的工具範例。 
+---
+= 使用 Active IQ Unified Manager 中的 Windows 用戶端擷取支援套裝組合
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您是 Windows 使用者，您可以下載並安裝工具，從 Unified Manager 伺服器擷取支援套裝組合。您可以將支援套裝組合傳送給技術支援，以便對問題進行更詳細的診斷。Filezilla 或 WinSCP 是您可以使用的工具範例。
+
+.開始之前
+您必須是維護使用者才能執行此工作。
+
+您必須使用支援 SCP 或 SFTP 的工具。
+
+.步驟
+. 下載並安裝工具以擷取支援套裝組合。
+. 開啟該工具。
+. 透過 SFTP 連線到您的 Unified Manager 管理伺服器。
++
+該工具會顯示 /support 目錄的內容，您可以檢視所有現有的支援套裝組合。
+
+. 選擇要複製的支援套裝組合目的地目錄。
+. 選擇您要複製的支援套裝組合，然後使用該工具將檔案從 Unified Manager 伺服器複製到本機系統。
+

@@ -1,0 +1,23 @@
+---
+permalink: performance-checker/concept_navigate_performance_workflows_in_unified_manager_ui.html 
+sidebar: sidebar 
+keywords: navigating, performance, workflows, unified manager, gui 
+summary: Unified Manager 介面提供了多個頁面，用於收集和顯示效能資訊。您可以使用左側導覽面板在圖形使用者介面（GUI）中導覽至各個頁面，並使用頁面上的標籤和連結來檢視和設定資訊。 
+---
+= 在 Active IQ Unified Manager 圖形使用者介面中瀏覽效能工作流程
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager 介面提供了多個頁面，用於收集和顯示效能資訊。您可以使用左側導覽面板在圖形使用者介面（GUI）中導覽至各個頁面，並使用頁面上的標籤和連結來檢視和設定資訊。
+
+您可以使用以下所有頁面來監控和疑難排解叢集效能資訊：
+
+* 儀表板頁面
+* 儲存設備與網路物件清單頁面
+* 儲存設備物件詳細資訊頁面（包括效能管理器）
+* 組態和設定頁面
+* 事件頁面
+

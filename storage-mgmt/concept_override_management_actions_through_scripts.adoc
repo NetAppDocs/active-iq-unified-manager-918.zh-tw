@@ -1,0 +1,16 @@
+---
+permalink: storage-mgmt/concept_override_management_actions_through_scripts.html 
+sidebar: sidebar 
+keywords: override, management, actions, scripts 
+summary: 您可以建立自訂指令碼並將其與警報關聯，以便針對特定事件採取特定行動，而不選擇「管理行動」頁面或 Unified Manager 儀表板上提供的預設管理行動。 
+---
+= 在 Active IQ Unified Manager 中使用指令碼覆寫管理動作
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以建立自訂指令碼並將其與警報關聯，以便針對特定事件採取特定行動，而不選擇「管理行動」頁面或 Unified Manager 儀表板上提供的預設管理行動。
+
+如果您想要針對特定事件類型採取特定行動，並選擇不將其作為 Unified Manager 提供的管理行動功能的一部分來修正，您可以為該特定行動設定自訂指令碼。然後，您可以將該指令碼與該事件類型的警報建立關聯，並個別處理此類事件。在這種情況下，管理行動頁面或 Unified Manager 儀表板上不會為該特定事件類型產生管理行動。

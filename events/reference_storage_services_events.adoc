@@ -1,0 +1,86 @@
+---
+permalink: events/reference_storage_services_events.html 
+sidebar: sidebar 
+keywords: storage, services, events, impact area, configuration, protection 
+summary: 儲存設備服務事件提供有關儲存設備服務的建立和訂閱資訊，以便您可以監控潛力問題。事件按影響區域分組，包括事件和陷阱名稱、影響層級、來源類型和嚴重性。 
+---
+= 了解 Active IQ Unified Manager 中的儲存設備服務事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+儲存設備服務事件提供有關儲存設備服務的建立和訂閱資訊，以便您可以監控潛力問題。事件按影響區域分組，包括事件和陷阱名稱、影響層級、來源類型和嚴重性。
+
+
+
+[[impact-area-configuration]]
+== 影響區域：組態
+
+|===
+| 事件名稱（陷阱名稱） | 影響層級 | 來源類型 | 嚴重程度 
+
+
+ a| 
+儲存設備服務已建立（不適用）
+ a| 
+事件
+ a| 
+儲存服務
+ a| 
+資訊
+
+
+
+ a| 
+已訂閱儲存服務（不適用）
+ a| 
+事件
+ a| 
+儲存服務
+ a| 
+資訊
+
+
+
+ a| 
+儲存服務已取消訂閱（不適用）
+ a| 
+事件
+ a| 
+儲存服務
+ a| 
+資訊
+
+|===
+
+
+[[impact-area-protection]]
+== 影響區域：保護
+
+|===
+| 事件名稱（陷阱名稱） | 影響層級 | 來源類型 | 嚴重程度 
+
+
+ a| 
+意外刪除託管的 SnapMirror RelationshipocumEvtStorageServiceUnsupportedRelationshipDeletion
+ a| 
+風險
+ a| 
+儲存服務
+ a| 
+警告
+
+
+
+ a| 
+儲存服務成員 Volume 意外刪除（ocumEvtStorageServiceUnexpectedVolumeDeletion）
+ a| 
+事件
+ a| 
+儲存服務
+ a| 
+關鍵
+
+|===

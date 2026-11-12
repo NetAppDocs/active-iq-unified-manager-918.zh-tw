@@ -1,0 +1,16 @@
+---
+permalink: events/concept_what_alerts_are.html 
+sidebar: sidebar 
+keywords: alerts 
+summary: 儘管事件會持續發生，但 Unified Manager 僅在事件符合指定的篩選條件時才會產生警報。您可以選擇要產生警報的事件，例如，當空間超出臨界值或物件離線時。您也可以將警報與觸發警報時執行的指令碼建立關聯。 
+---
+= 了解 Active IQ Unified Manager 中的警示
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+儘管事件會持續發生，但 Unified Manager 僅在事件符合指定的篩選條件時才會產生警報。您可以選擇要產生警報的事件，例如，當空間超過臨界值或物件離線時。您也可以將警報與觸發警報時執行的指令碼關聯起來。
+
+篩選條件包括物件類別、名稱或事件嚴重性。

@@ -1,0 +1,21 @@
+---
+permalink: storage-mgmt/concept_why_you_use_quotas.html 
+sidebar: sidebar 
+keywords: use, quotas 
+summary: 您可以使用配額來限制 FlexVol Volume 中的資源使用量，在資源使用量達到特定層級時提供通知，或追蹤資源使用量。 
+---
+= 了解 Active IQ Unified Manager 中的配額
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用配額來限制 FlexVol Volume 中的資源使用量，在資源使用量達到特定層級時提供通知，或追蹤資源使用量。
+
+您設定配額的原因如下：
+
+* 限制使用者或群組可使用的磁碟空間或檔案數量，或限制 qtree 可容納的數量
+* 用於追蹤使用者、群組或 qtree 使用的磁碟空間大小或檔案數量，而不施加限制
+* 當使用者的磁碟使用量或檔案使用量偏高時，向使用者發出警告
+

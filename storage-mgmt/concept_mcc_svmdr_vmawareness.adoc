@@ -1,0 +1,94 @@
+---
+permalink: storage-mgmt/concept_mcc_svmdr_vmawareness.html 
+sidebar: sidebar 
+keywords: view, virtual, infrastructure, disaster, recovery, setup, datastores, metrocluster configuration 
+summary: 您可以檢視託管在 MetroCluster 組態或儲存設備虛擬機器（儲存設備 VM）災難恢復（SVM DR）設定中的資料儲存區的組態和效能計量。 
+---
+= 使用 Active IQ Unified Manager 檢視災難恢復設定中的虛擬化基礎架構可見度
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以檢視託管在 MetroCluster 組態或儲存設備虛擬機器（儲存設備 VM）災難恢復（SVM DR）設定中的資料儲存區的組態和效能計量。
+
+在 Unified Manager 中，您可以檢視 MetroCluster 組態中作為資料存放區附加至 vCenter Server 的 NAS Volume 或 LUN。託管於 MetroCluster 組態中的資料存放區，會以與標準環境中資料存放區相同的拓撲檢視呈現。
+
+您也可以檢視儲存設備 VM 災難恢復組態中對應到 vCenter 伺服器資料存放區的 NAS Volume 或 LUN。
+
+
+
+[[view-datastores-in-metrocluster-configuration]]
+== 在 MetroCluster 組態中檢視資料存放區
+
+在檢視 MetroCluster 組態中的資料儲存區之前，請注意下列先決條件：
+
+* 在發生切換和切回事件時，HA 配對的主要和次要叢集，以及 vCenter 伺服器的探索應該完成。
+* HA 配對的主叢集與次要叢集，以及 vCenter 伺服器必須由 Unified Manager 代管。
+* 必須在 ONTAP 和 vCenter Server 上完成必要的設定。如需詳細資訊，請參閱 ONTAP 和 vCenter 文件。
++
+https://docs.netapp.com/ontap-9/index.jsp["ONTAP 9 文件中心"]
+
+
+
+請依照下列步驟檢視資料存放區：
+
+. 在 *VMWARE* > *虛擬機器* 頁面上，按一下託管資料存放區的虛擬機器。按一下 *工作負載分析器* 或資料存放區物件連結。在標準情況下，當託管 Volume 或 LUN 的主站台運作正常時，您可以查看主站台的 vServer 叢集詳細資訊。
+. 如果發生災難並隨後切換至次要站台，資料儲存區連結將指向次要叢集中 Volume 或 LUN 的效能計量。這將在下一個叢集與 vServer 探索（擷取）週期完成後反映出來。
+. 成功切回後，資料儲存連結將再次反映主叢集中 Volume 或 LUN 的效能計量。這將在下一次叢集與 vServer 探索週期完成後反映出來。
+
+
+
+
+[[view-datastores-in-storage-vm-disaster-recovery-configuration]]
+== 檢視儲存設備虛擬機器災難恢復組態中的資料存放區
+
+在檢視儲存設備虛擬機器災難恢復組態中的資料存放區之前，請注意下列先決條件：
+
+* 在發生切換和切回事件時，HA 配對的主要和次要叢集，以及 vCenter 伺服器的探索應該完成。
+* 來源與目的地叢集以及儲存設備 VM 對等體都應該由 Unified Manager 代管。
+* 必須在 ONTAP 和 vCenter 伺服器上完成所需的設定。
++
+** 對於 NAS（NFS 和 VMFS）資料存放區，在發生災難時，步驟包括啟動次要儲存設備 VM、驗證資料 LIF 和路由、在 vCenter 伺服器上建立遺失的連線，以及啟動 VM。
++
+要切換回主站台，在主站台開始提供資料之前，應該同步 Volume 之間的資料。
+
+** 對於 SAN （iSCSI 和 FC for VMFS）資料存放區，vCenter Server 會將掛載的 LUN 格式化為 VMFS 格式。發生災難時，步驟包括啟動次要儲存設備虛擬機器，驗證資料 LIF 和路由。如果 iSCSI 目標 IP 與主要 LIF 不同，則需要手動新增。新的 LUN 應作為裝置提供於主機儲存設備介面卡的 iSCSI 介面卡下。之後，應使用新的 LUN 建立新的 VMFS 資料存放區，並將舊的虛擬機器註冊為新名稱。虛擬機器必須處於運作狀態。
++
+如果需要恢復，則應同步 Volume 之間的資料。應使用 LUN 重新建立新的 VMFS 資料存放區，並將舊虛擬機器註冊為新名稱。
+
++
+有關設定的資訊，請參閱 ONTAP 和 vCenter 伺服器文件。
+
++
+https://docs.netapp.com/ontap-9/index.jsp["ONTAP 9 文件中心"]
+
+
+
+
+
+請依照下列步驟檢視資料存放區：
+
+. 在 *VMWARE* > *虛擬機器* 頁面上，按一下託管資料儲存的虛擬機器清單。按一下資料儲存物件連結。在標準情況下，您可以查看主儲存設備虛擬機器中 Volume 和 LUN 的效能資料。
+. 如果發生災難，並隨後切換到次要儲存設備虛擬機器，資料存放區連結將指向次要儲存設備虛擬機器中 Volume 或 LUN 的效能計量。這將在下一輪叢集和 vServer 探索（獲取）週期完成後反映出來。
+. 成功切回後，資料存放區連結將再次反映主儲存設備虛擬機器中 Volume 或 LUN 的效能計量。這將在下一個叢集和 vServer 探索週期完成後反映出來。
+
+
+
+
+[[unsupported-scenarios]]
+== 不支援的情境
+
+* 對於 MetroCluster 組態，附註以下限制：
++
+** 僅會納入處於  `NORMAL` 和  `SWITCHOVER` 狀態的叢集。其他狀態，例如  `PARTIAL_SWITCHOVER, PARTIAL_SWITCHBACK` 和  `NOT_REACHABLE`，均不受支援。
+** 除非啟用自動切換（ASO），否則如果主叢集發生故障，將無法探索次要叢集，且拓撲會繼續指向主叢集中的 Volume 或 LUN。
+
+
+* 對於儲存設備 VM 災難恢復組態，附註以下限制：
++
+** 不支援為 SAN 儲存環境啟用 Site Recovery Manager （SRM） 或 Storage Replication Adapter （SRA） 的組態。
+
+
+

@@ -1,0 +1,52 @@
+---
+permalink: reporting/task_search_for_scheduled_report.html 
+sidebar: sidebar 
+keywords: search, schedule, report 
+summary: 您可以按名稱、檢視名稱、物件類型或收件者搜尋已排程的報告。 
+---
+= 在 Active IQ Unified Manager 中尋找已排程的報告
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以按名稱、檢視名稱、物件類型或收件者搜尋已排程的報告。
+
+. 在左側導覽窗格中，按一下 *儲存管理* > *報告排程*。
+. 使用 *搜尋排程報告* 文字欄位。
++
+[cols="2*"]
+|===
+| 依……尋找報告 | 嘗試…… 
+
+
+ a| 
+排程名稱
+ a| 
+輸入報告排程名稱的一部分。
+
+
+
+ a| 
+檢視名稱
+ a| 
+輸入報告檢視名稱的一部份。預設檢視和自訂檢視將顯示在檢視清單中。
+
+
+
+ a| 
+收件者
+ a| 
+輸入部分電子郵件地址。
+
+
+
+ a| 
+檔案類型
+ a| 
+輸入 "PDF"、"CSV" 或 "XLSX"。
+
+|===
+. 您可以點選欄標題，按該欄（例如排程名稱或格式）對報告進行遞增或遞減排序。
+

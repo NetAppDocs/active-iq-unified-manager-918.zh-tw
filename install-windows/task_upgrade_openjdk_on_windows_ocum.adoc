@@ -1,0 +1,45 @@
+---
+permalink: install-windows/task_upgrade_openjdk_on_windows_ocum.html 
+sidebar: sidebar 
+keywords: openjdk, jre, upgrade 
+summary: 您可以將安裝 Unified Manager 的 Windows 伺服器上的 OpenJDK 升級至較新版本，以取得安全性漏洞的修復程式。 
+---
+= 在 Windows 上升級 OpenJDK 以支援 Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以將安裝 Unified Manager 的 Windows 伺服器上的 OpenJDK 升級至較新版本，以取得安全性漏洞的修復程式。
+
+.開始之前
+您必須擁有安裝 Unified Manager 的系統上的 Windows 系統管理員權限。
+
+您可以在版本系列內更新 OpenJDK 版本。例如，您可以從 OpenJDK 11.0.16 升級到 OpenJDK 11.0.18，但不能直接從 OpenJDK 11 更新到 OpenJDK 12。
+
+.步驟
+. 以 admin 使用者身分登入 Unified Manager 主機。
+. 從 OpenJDK 站台下載適當版本的 OpenJDK（64 位元）至目標系統。
++
+例如，從 link:https://www.oracle.com/java/technologies/javase/jdk17-0-13-later-archive-downloads.html["Oracle Java SE 17 歸檔下載頁面"^] 下載 `jdk-17.0.15_windows-x64_bin.zip`檔案。
+
++
+
+NOTE: 下載該檔案需要 Oracle 帳戶。如果您沒有 Oracle 帳戶，請前往 link:https://signon.oracle.com/signin["Oracle 帳戶登入頁面"] 建立一個。
+
+. 使用 Windows 服務主控台停止下列 Unified Manager 服務：
++
+** NetApp Active IQ Acquisition Service （Ocie-au）
+** NetApp Active IQ 管理伺服器服務（Oncommandsvc）
+
+
+. 展開 `zip`檔案。
+. 將目錄與檔案從產生的 `jdk`目錄（例如， `jdk-11.0.18`複製到安裝 Java 的位置。範例： `C:\Program Files\NetApp\JDK\`
+. 使用 Windows 服務主控台啟動 Unified Manager 服務：
++
+** NetApp Active IQ 管理伺服器服務（Oncommandsvc）
+** NetApp Active IQ Acquisition Service （Ocie-au）
+
+
+

@@ -1,0 +1,24 @@
+---
+permalink: config/task_configure_audit_logs.html 
+sidebar: sidebar 
+keywords: configure, audit logs 
+summary: 您可以使用「稽核日誌」部分中的「設定」按鈕來設定稽核日誌檔案的捲動原則，並啟用稽核日誌的遠端記錄。 
+---
+= 設定 Active IQ Unified Manager 稽核日誌
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用「稽核日誌」部分中的 *設定* 按鈕來設定稽核日誌檔案的輪替原則，並啟用稽核日誌的遠端記錄。
+
+您可以根據您希望在系統中儲存的資料量和頻率，設定 *MAX FILE SIZE* 和 *AUDIT LOG RETENTION DAYS* 的值。*TOTAL AUDIT LOG SIZE* 欄位的值表示系統中存在的稽核日誌資料總量。滾動原則由 *AUDIT LOG RETENTION DAYS* 、 *MAX FILE SIZE* 和 *TOTAL AUDIT LOG SIZE* 欄位的值決定。當稽核日誌備份的大小達到 *TOTAL AUDIT LOG SIZE* 中設定的值時，系統會刪除最先歸檔的檔案。這意味著最舊的檔案將被刪除。但該檔案條目仍保留在資料庫中，並標記為 "`Rollover Delete`"。*AUDIT LOG RETENTION DAYS* 的值表示稽核日誌檔案的保留天數。任何早於此欄位中設定值的檔案將被滾動刪除。
+
+.步驟
+. 按一下 *稽核日誌* > > *設定*。
+. 在 *最大檔案大小*、*稽核日誌總大小* 和 *稽核日誌保留天數* 中輸入數值。
++
+若要啟用遠端記錄，請選擇 *啟用遠端記錄*。
+
+

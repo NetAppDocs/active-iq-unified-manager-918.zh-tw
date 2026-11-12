@@ -1,0 +1,34 @@
+---
+permalink: events/reference_flash_card_events.html 
+sidebar: sidebar 
+keywords: flash, card, events, impact area, availability 
+summary: Flash 卡事件提供有關資料中心節點上已安裝 Flash 卡的狀態資訊，以便您監控潛力問題。事件按影響區域分組，包含事件和陷阱名稱、影響層級、來源類型和嚴重性。 
+---
+= 了解 Active IQ Unified Manager 中的快閃記憶卡事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Flash 卡事件提供有關資料中心節點上已安裝 Flash 卡的狀態資訊，以便您監控潛力問題。事件按影響區域分組，包含事件和陷阱名稱、影響層級、來源類型和嚴重性。
+
+
+
+[[impact-area-availability]]
+== 影響區域：可用度
+
+|===
+| 事件名稱（陷阱名稱） | 影響層級 | 來源類型 | 嚴重程度 
+
+
+ a| 
+Flash 卡離線（ocumEvtFlashCardOffline）
+ a| 
+事件
+ a| 
+節點
+ a| 
+關鍵
+
+|===

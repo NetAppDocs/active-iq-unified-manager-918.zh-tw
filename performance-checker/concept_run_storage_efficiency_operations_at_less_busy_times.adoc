@@ -1,0 +1,20 @@
+---
+permalink: performance-checker/concept_run_storage_efficiency_operations_at_less_busy_times.html 
+sidebar: sidebar 
+keywords: run, storage, efficiency, operations, less, busy, times 
+summary: 您可以修改處理儲存效率作業的原則或排程，使其在受影響的 Volume 工作負載較不繁忙時執行。 
+---
+= 在 Active IQ Unified Manager 中於較不繁忙的時段排程儲存效率作業
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以修改處理儲存效率作業的原則或排程，使其在受影響的 Volume 工作負載較不繁忙時執行。
+
+儲存效率操作會佔用大量叢集 CPU 資源，並對執行這些操作的 Volume 造成嚴重影響。如果受影響的 Volume 在執行儲存效率操作時恰逢高活動期，則其延遲可能會增加並觸發事件。
+
+在「事件詳細資料」頁面上，「系統診斷」區段會依活動的尖峰偏差來顯示 QoS 原則群組中的工作負載，以識別佔用資源過多的工作負載。如果您在表格頂部附近看到顯示 "`儲存效率`"，這表示這些作業正在佔用受害工作負載的資源。藉由修改效率原則或排程，使其在這些工作負載較不忙碌時執行，您就能防止儲存效率作業在叢集上造成爭用。
+
+您可以使用 ONTAP System Manager 來管理效率原則。您可以使用 ONTAP 命令來管理效率原則和排程。

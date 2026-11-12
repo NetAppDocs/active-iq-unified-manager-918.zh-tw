@@ -1,0 +1,34 @@
+---
+permalink: performance-checker/concept_remove_inactive_volumes_and_luns.html 
+sidebar: sidebar 
+keywords: remove, inactive, volumes, luns 
+summary: 當發現彙總可用空間問題時，您可以尋找未使用的 Volume 和 LUN，並將其從彙總中刪除。這有助於緩解磁碟空間不足的問題。 
+---
+= 在 Active IQ Unified Manager 中移除非作用中的磁碟區和 LUN
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當發現彙總可用空間問題時，您可以尋找未使用的 Volume 和 LUN，並將其從彙總中刪除。這有助於緩解磁碟空間不足的問題。
+
+如果彙總上的效能事件是由磁碟空間不足引起的，那麼可以透過幾種方法確定哪些 Volume 和 LUN 不再使用。
+
+識別未使用的 Volume：
+
+* 在「事件詳細資料」頁面上，*受影響物件計數*欄位提供了一個連結，用於顯示受影響 Volume 的清單。
++
+按一下連結以在「效能：所有 Volume」檢視中顯示 Volume。從該處，您可以依 *IOPS* 對受影響的 Volume 進行排序，以查看哪些 Volume 未處於作用中。
+
+
+
+識別未使用的 LUN：
+
+. 在事件詳細資料頁面中，記下發生事件的彙總名稱。
+. 在左側導覽窗格中，按一下 *儲存設備* > *LUN*，然後從檢視功能表中選擇 *效能* > *所有 LUN*。
+. 按一下 *篩選*，從左側下拉選單中選擇 *彙總*，在文字欄位中輸入彙總的名稱，然後按一下 *套用篩選*。
+. 按 *IOPS* 對受影響的 LUN 清單進行排序，以檢視未作用中的 LUN。
+
+
+確定未使用的 Volume 和 LUN 後，您可以使用 ONTAP System Manager 或 ONTAP 命令來刪除這些物件。

@@ -1,0 +1,73 @@
+---
+permalink: data-protection/reference_relationship_last_1_month_transfer_status_view.html 
+sidebar: sidebar 
+keywords: relationship, 1 month, transfer status, view 
+summary: 「關係」頁面上的「最近 1 個月傳輸狀態」檢視會顯示非同步關係的傳輸趨勢與成功或故障狀態。 
+---
+= 在 Active IQ Unified Manager 中顯示過去 1 個月的傳輸狀態檢視
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+「關係：過去 1 個月傳輸狀態」檢視可讓您分析非同步關係中 Volume 和 Storage VM 在一段時間內的傳輸趨勢。此頁面也會顯示傳輸是成功還是故障。
+
+頁面頂部的控制項可讓您執行搜尋以尋找特定物件、建立和套用篩選器以縮小顯示的資料清單、新增/移除/重新排序頁面上的欄，以及將頁面上的資料匯出到 `.csv`、 `.pdf`或 `.xlsx`檔案。自訂的頁面後，您可以將結果儲存為自訂檢視，然後排程定期產生此資料的報告並透過電子郵件傳送。您可以使用 *Filter* 選項僅檢視選定的儲存設備系統，例如僅 Volume 或僅 Storage VM。相同的報告也會顯示在 Storage 頁面中，並且僅針對選定的儲存設備實體。例如，如果您想檢視 Volume 關係，可以從 *Storage* > *Storage VMs* > *Relationship: Last 1 Month Transfer Status* 功能表或從 *Protection* > *Relationships* > *Relationship: Last 1 Month Transfer Status* 功能表存取 Storage VM 的 Relationship: Last 1 Month Transfer Status 報告，並使用 *Filter* 僅檢視 Volume 的資料。
+
+* *來源 Volume*
++
+顯示來源 Volume 名稱。
+
+* *目的地 Volume*
++
+顯示目的地 Volume 名稱。
+
+* *操作類型*
++
+顯示 Volume 傳輸類型。
+
+* *作業結果*
++
+顯示 Volume 傳輸是否成功。
+
+* *傳輸開始時間*
++
+顯示 Volume 傳輸開始時間。
+
+* *傳輸結束時間*
++
+顯示 Volume 傳輸結束時間。
+
+* *傳輸時長*
++
+顯示完成 Volume 傳輸所花費的時間（以小時為單位）。
+
+* *傳輸大小*
++
+顯示已傳輸 Volume 的大小（以 MB 為單位）。
+
+* *來源 SVM*
++
+顯示儲存設備虛擬機器（SVM）名稱。
+
+* *來源叢集*
++
+顯示來源叢集名稱。
+
+* *目的地 SVM*
++
+顯示目的地 SVM 名稱。
+
+* *目的地叢集*
++
+顯示目的地叢集名稱。
+
+
+
+*相關資訊*
+
+* 如需 *關係：所有關係* 檢視的相關資訊，請參閱 link:../data-protection/reference_relationship_all_relationships_view.html["關係：所有關係檢視"]。
+* 如需 *關係：MetroCluster* 檢視的相關資訊，請參閱 link:../storage-mgmt/task_monitor_metrocluster_configurations.html["監控 MetroCluster 組態"]。
+* 如需 *關係：所有關係* 檢視的相關資訊，請參閱 link:../data-protection/reference_relationship_last_1_month_transfer_rate_view.html["關係：過去 1 個月的傳輸率檢視"]。
+

@@ -1,0 +1,16 @@
+---
+permalink: health-checker/reference_security_events.html 
+sidebar: sidebar 
+keywords: security events 
+summary: 安全性事件會根據 NetApp ONTAP 9 安全性強化指南中定義的參數，提供您有關 ONTAP 叢集、儲存設備虛擬機器（SVM）與 Volume 的安全性狀態資訊。這些事件會通知您潛力的問題，以便您評估其嚴重性，並在必要時解決問題。 
+---
+= 在 Active IQ Unified Manager 中檢視安全性事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+安全性事件會根據 _NetApp Security Hardening Guide for ONTAP 9_ 中定義的參數，為您提供有關 ONTAP 叢集、儲存設備虛擬機器 (SVM) 和 Volume 的安全性狀態資訊。這些事件會通知您潛力問題，以便您評估其嚴重性並在必要時修復問題。
+
+安全性事件按來源類型分組，包括事件和設陷名稱、影響層級和嚴重性。這些事件會出現在叢集和儲存設備虛擬機器事件類別中。

@@ -1,0 +1,65 @@
+---
+permalink: config/task_access_maintenance_console.html 
+sidebar: sidebar 
+keywords: access, maintenance console 
+summary: 如果 Unified Manager 使用者介面無法運作，或者您需要執行使用者介面中沒有的功能，您可以存取維護主控台來管理您的 Unified Manager 系統。 
+---
+= 在 Active IQ Unified Manager 中存取維護主控台
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果 Unified Manager 使用者介面無法運作，或者您需要執行使用者介面中沒有的功能，您可以存取維護主控台來管理您的 Unified Manager 系統。
+
+.開始之前
+您必須已安裝並設定 Unified Manager。
+
+閒置 15 分鐘後，維護主控台會將您登出。
+
+[NOTE]
+====
+在 VMware 上安裝時，如果您已經透過 VMware 控制台以維護使用者身分登入，則無法同時使用 Secure Shell 登入。
+
+====
+.步驟
+. 請依照下列步驟存取維護主控台：
++
+[cols="2*"]
+|===
+| 在這個作業系統上…… | 請依照以下步驟操作...... 
+
+
+ a| 
+VMware
+ a| 
+.. 使用 Secure Shell，連線至 Unified Manager 虛擬應用裝置的 IP 位址或完整網域名稱。
+.. 使用您的維護使用者名稱和密碼登入維護主控台。
+
+
+
+
+ a| 
+Linux
+ a| 
+.. 使用 Secure Shell，連線至 Unified Manager 系統的 IP 位址或完整網域名稱。
+.. 使用維護使用者（umadmin）名稱和密碼登入系統。
+.. 輸入命令 `maintenance_console`並按下 Enter 鍵。
+
+
+
+
+ a| 
+Windows
+ a| 
+.. 使用系統管理員憑證登入 Unified Manager 系統。
+.. 以 Windows 系統管理員身分啟動 PowerShell。
+.. 輸入命令 `maintenance_console`並按下 Enter 鍵。
+
+
+|===
++
+顯示 Unified Manager 維護主控台選單。
+
+

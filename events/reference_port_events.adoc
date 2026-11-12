@@ -1,0 +1,130 @@
+---
+permalink: events/reference_port_events.html 
+sidebar: sidebar 
+keywords: port, events, impact area, availability, performance 
+summary: 連接埠事件可提供您有關叢集連接埠的狀態，以便您可以監控連接埠上的變更或問題，例如連接埠是否已關閉。 
+---
+= 了解 Active IQ Unified Manager 中的連接埠事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+連接埠事件可提供您有關叢集連接埠的狀態，以便您可以監控連接埠上的變更或問題，例如連接埠是否已關閉。
+
+
+
+[[impact-area-availability]]
+== 影響區域：可用度
+
+|===
+| 事件名稱（陷阱名稱） | 影響層級 | 來源類型 | 嚴重程度 
+
+
+ a| 
+連接埠狀態已關閉（ocumEvtPortStatusDown）
+ a| 
+事件
+ a| 
+節點
+ a| 
+關鍵
+
+|===
+
+
+[[impact-area-performance]]
+== 影響領域：效能
+
+|===
+| 事件名稱（陷阱名稱） | 影響層級 | 來源類型 | 嚴重程度 
+
+
+ a| 
+網路連接埠 MB/s 臨界閾值已突破（ocumNetworkPortMbpsIncident）
+ a| 
+事件
+ a| 
+連接埠
+ a| 
+關鍵
+
+
+
+ a| 
+網路連接埠 MB/s 警告閾值已突破（ocumNetworkPortMbpsWarning）
+ a| 
+風險
+ a| 
+連接埠
+ a| 
+警告
+
+
+
+ a| 
+FCP 連接埠 MB/s 臨界閾值已突破（ocumFcpPortMbpsIncident）
+ a| 
+事件
+ a| 
+連接埠
+ a| 
+關鍵
+
+
+
+ a| 
+FCP 連接埠 MB/s 警告臨界值已突破（ocumFcpPortMbpsWarning）
+ a| 
+風險
+ a| 
+連接埠
+ a| 
+警告
+
+
+
+ a| 
+網路連接埠利用率已突破臨界閾值（ocumNetworkPortUtilizationIncident）
+ a| 
+事件
+ a| 
+連接埠
+ a| 
+關鍵
+
+
+
+ a| 
+網路連接埠利用率警告閾值已突破（ocumNetworkPortUtilizationWarning）
+ a| 
+風險
+ a| 
+連接埠
+ a| 
+警告
+
+
+
+ a| 
+FCP 埠利用率已突破臨界閾值（ocumFcpPortUtilizationIncident）
+ a| 
+事件
+ a| 
+連接埠
+ a| 
+關鍵
+
+
+
+ a| 
+FCP 埠使用率警告臨界值已違反（ocumFcpPortUtilizationWarning）
+ a| 
+風險
+ a| 
+連接埠
+ a| 
+警告
+
+|===

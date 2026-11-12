@@ -1,0 +1,27 @@
+---
+permalink: health-checker/task_generate_hardware_inventory_report_for_contract_renewal.html 
+sidebar: sidebar 
+keywords: contract, renewal, cluster, inventory report, hardware, generate 
+summary: 產生一份報告，其中包含未連接至 Active IQ 平台的安全的站點的叢集與節點硬體詳細資訊，以進行合約續約。 
+---
+= 在 Active IQ Unified Manager 中產生用於合約續約的硬體清單報告
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以產生一份報告，其中包含叢集和節點資訊的完整清單；例如硬體型號和序號、磁碟類型和數量、已安裝的授權等等。這份報告有助於在未連接至 NetAppActive IQ 平台的安全的站點（「暗」站點）內進行合約續約。
+
+.開始之前
+您必須擁有操作員、應用程式管理員或儲存管理員角色。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存設備* > *節點*。
+. 前往 *健全狀況：所有節點* 檢視或 *效能：所有節點* 檢視。
+. 選擇 *報告* > *** > **硬體庫存報告*。
++
+硬體庫存報告會下載為 .csv 檔案，其中包含截至目前日期的完整資訊。
+
+. 請將此資訊提供給您的 NetApp 支援聯絡人，以便進行合約續約。
+

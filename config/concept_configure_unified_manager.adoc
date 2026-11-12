@@ -1,0 +1,16 @@
+---
+permalink: config/concept_configure_unified_manager.html 
+sidebar: sidebar 
+keywords: configure, active iq unified manager 
+summary: 安裝 Active IQ Unified Manager（原名 OnCommand Unified Manager）後，您必須完成初始設定（也稱為首次體驗精靈）才能存取 Web 使用者介面。然後，您可以執行其他組態任務，例如新增叢集、設定遠端驗證、新增使用者和新增警報。 
+---
+= 了解如何設定 Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+安裝 Active IQ Unified Manager（原名 OnCommand Unified Manager）後，您必須完成初始設定（也稱為首次體驗精靈）才能存取 Web 使用者介面。然後，您可以執行其他組態任務，例如新增叢集、設定遠端驗證、新增使用者和新增警報。
+
+本手冊中所述的某些步驟是完成 Unified Manager 執行個體初始設定所必需的。其他步驟則是建議的組態設定，有助於您在新執行個體上進行設定，或在開始對 ONTAP 系統進行常規監控之前了解這些設定。

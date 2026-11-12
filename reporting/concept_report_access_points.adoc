@@ -1,0 +1,25 @@
+---
+permalink: reporting/concept_report_access_points.html 
+sidebar: sidebar 
+keywords: access, points, generating, reports 
+summary: 您可以在 Unified Manager 中收集有關叢集的資訊，以透過 UI、MySQL 資料庫查詢和 REST API 建立報告。 
+---
+= 探索存取 Active IQ Unified Manager 報告功能的三種方法
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在 Unified Manager 中收集有關叢集的資訊，以透過 UI、MySQL 資料庫查詢和 REST API 建立報告。
+
+這些章節說明透過使用者介面進行 Unified Manager 報告與排程的方法。
+
+您可以透過三種方式存取 Unified Manager 提供的報告功能：
+
+* 直接從使用者介面中的庫存頁面擷取資料。
+* 使用開放資料庫連線（ODBC）和 ODBC 工具存取所有可用物件。
+* 執行 Unified Manager REST API 以傳回您想要審查的資訊。
+
+
+這些章節說明透過使用者介面進行 Unified Manager 報告與排程的方法。

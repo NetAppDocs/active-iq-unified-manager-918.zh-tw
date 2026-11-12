@@ -1,0 +1,95 @@
+---
+permalink: reporting/task_create_report_to_view_capacity.html 
+sidebar: sidebar 
+keywords: create, report, show, aggregate, capacity, table, chart 
+summary: 您可以使用加總總計和群組直條圖格式在 Excel 檔案中建立報告來分析容量。 
+---
+= 在 Active IQ Unified Manager 中建立報告以顯示彙總容量表和圖表
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用加總總計和群組直條圖格式在 Excel 檔案中建立報告來分析容量。
+
+.開始之前
+* 您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+
+請依照下列步驟開啟「健康狀況：所有彙總」檢視，在 Excel 中下載該檢視，建立可用容量圖表，上傳自訂的 Excel 檔案，並排程最終報告。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存設備* > *彙總*。
+. 選擇 *報告* > *下載 Excel*。
++
+image::../media/download_excel_menu.png[一張 UI 快照，展示如何從報告中下載 excel。]
+
++
+根據您的瀏覽器，您可能需要按一下 *確定* 來儲存檔案。
+
+. 如有需要，請點選 *啟用編輯*。
+. 在 Excel 中開啟下載的檔案。
+. 在 `data`工作表之後建立新工作表（image:../media/excel_new_sheet_icon.png[""]），並將其命名為 *Total Data Capacity*。
+. 在新的「總資料容量」工作表中新增以下欄：
++
+.. 總資料容量（GB）
+.. 已投入容量（GB）
+.. 已使用資料容量（GB）
+.. 可用資料容量（GB）
+
+
+. 在每一欄的第一列中，輸入下列公式，確保其參照資料表（data!），並參照所擷取資料的正確欄與列指定元（總資料容量會從 E 欄第 2 列到第 20 列擷取資料）。
++
+.. =SUM(data!E$2:data!E$20)
+.. =SUM(data!F$2:data!F$50)
+.. =SUM(資料!G$2:資料!G$50)
+.. =SUM(data!H$2:data!H$50)
+
+
++
+公式根據目前資料對每個欄位進行加總。
+
+
+
+image::../media/capacitysums.png[一張顯示根據目前資料的總容量的資料表 UI 快照。]
+
+. 在資料表中，選擇 *總資料容量（GB）* 和 *已指派容量（GB）* 欄位。
+. 從 *插入* 選單中選擇 *建議圖表*，然後選擇 *簇狀長條圖*。
+. 以滑鼠右鍵按一下圖表，然後選取 *移動圖表* 將圖表移至 `Total Data Capacity`工作表。
+. 選取圖表後，可以使用 *設計* 和 *格式* 選單來自訂圖表的外觀。
+. 滿意後，儲存修改後的檔案。請勿更改檔案名稱或檔案位置。
++
+image::../media/cluster_column_chart_2.png[一張顯示總資料和已分配容量的圖表的 UI 快照。]
+
+. 在 Unified Manager 中，選擇 *報告* > *上傳 Excel*。
++
+[NOTE]
+====
+請確保您目前所處的檢視與您下載 Excel 檔案時所處的檢視相同。
+
+====
+. 選擇您已修改的 Excel 檔案。
+. 按一下 *開啟*。
+. 按一下 *提交*。
++
+*報告* > *上傳 Excel* 選單項目旁邊會出現一個勾號。
+
++
+image::../media/upload_excel.png[一張使用者介面快照，展示如何將 Excel 檔案上傳到報告中。]
+
+. 點選 *排程報告*。
+. 點擊 *新增排程* 在「報告排程」頁面中新增一列，以便您可以定義新報告的排程特性。
++
+[NOTE]
+====
+為報告選擇 *XLSX* 格式。
+
+====
+. 輸入報告排程的名稱並完成其他報告欄位，然後按一下列末尾的勾號（image:../media/blue_check.gif[""]）。
++
+報告會立即作為測試傳送。之後，報告會產生並依指定的頻率透過電子郵件傳送給列出的收件者。
+
+
+
+根據報告中顯示的結果，您可能需要研究如何最好地利用網路中的可用容量。

@@ -1,0 +1,259 @@
+---
+permalink: api-automation/concept_data_center_apis.html 
+sidebar: sidebar 
+keywords: manage, storage, objects, data center 
+summary: 資料中心類別下的 REST API 可讓您管理資料中心中的儲存設備物件，例如叢集、節點、彙總、儲存設備虛擬機器、Volume、LUN、檔案共用和命名空間。這些 API 可用於查詢物件的組態，其中一些 API 還允許您執行新增、刪除或修改這些物件的操作。 
+---
+= 使用 Active IQ Unified Manager 中的 API 管理資料中心中的儲存設備物件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ `datacenter` 類別下的 REST API 可讓您管理資料中心中的儲存設備物件，例如叢集、節點、彙總、儲存設備虛擬機器、Volume、LUN、檔案共用和命名空間。這些 API 可用於查詢物件的組態，其中一些 API 還允許您執行新增、刪除或修改這些物件的操作。
+
+這些 API 大多是 GET 請求，提供跨叢集集合體，並支援過濾、排序和分頁。執行這些 API 時，它們會從資料庫傳回資料。因此，新建立的物件需要在下一個資料擷取週期中被發現，才能出現在回應中。
+
+如果要查詢特定物件的詳細資訊，則需要輸入該物件的唯一 ID 才能檢視其詳細資訊。例如，如需儲存設備物件的計量和分析資訊，請參閱 link:concept_metrics_apis.html["檢視效能計量"]。
+
+[listing]
+----
+curl -X GET "https://<hostname>/api/datacenter/cluster/clusters/4c6bf721-2e3f-11e9-a3e2-00a0985badbb" -H "accept: application/json" -H "Authorization: Basic <Base64EncodedCredentials>"
+----
+[NOTE]
+====
+您可以在 Swagger API 介面上找到 CURL 命令、範例、請求和 API 回應。您可以根據 Swagger 中指示的特定參數篩選和排序結果。這些 API 可讓您篩選特定儲存設備物件（例如叢集、Volume 或儲存設備虛擬機器）的結果。
+
+====
+
+
+[[apis-for-storage-objects-in-your-data-center]]
+== 您資料中心儲存設備物件的 API
+
+[cols="3*"]
+|===
+| HTTP 動詞 | 路徑 | 說明 
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/cluster/clusters`
+
+`/datacenter/cluster/clusters/\{key}`
+ a| 
+您可以使用此方法檢視資料中心內 ONTAP 叢集的詳細資訊。API 傳回的資訊包括叢集的 IPv4 或 IPv6 位址、節點資訊（例如節點健全狀況、效能容量和高可用性（HA）配對），並指示叢集是否為 All SAN Array。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/cluster/licensing/licenses /datacenter/cluster/licensing/licenses/\{key}`
+ a| 
+傳回資料中心叢集上已安裝授權的詳細資訊。您可以根據所需條件篩選結果。傳回的資訊包括授權金鑰、叢集金鑰、到期日期和授權範圍。您可以輸入授權金鑰來擷取特定授權的詳細資訊。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/cluster/nodes`
+
+`/datacenter/cluster/nodes/\{key}`
+ a| 
+您可以使用此方法檢視資料中心中節點的詳細資訊。您可以檢視有關叢集、節點健全狀況、效能容量以及節點的高可用性（HA）配對的資訊。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/protocols/cifs/shares`
+
+`/datacenter/protocols/cifs/shares/\{key}`
+ a| 
+您可以使用此方法檢視資料中心中 CIFS 共享的詳細資訊。除了叢集、SVM 和 Volume 的詳細資訊外，還會傳回存取控制清單（ACL）的相關資訊。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/protocols/nfs/export-policies`
+
+`/datacenter/protocols/nfs/export-policies/\{key}`
+ a| 
+您可以使用此方法檢視支援的 NFS 服務的匯出原則詳細資料。
+
+您可以查詢叢集或儲存設備虛擬機器的匯出原則，並重複使用匯出原則金鑰來資源配置 NFS 檔案共用。如需在工作負載上指派和重複使用匯出原則的詳細資訊，請參閱 "`資源配置 CIFS 和 NFS 檔案共用`"。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/storage/aggregates`
+
+`/datacenter/storage/aggregates/\{key}`
+ a| 
+您可以使用此方法檢視資料中心中的彙總集合，或查看特定彙總，以便在其上資源配置工作負載或進行監控。系統會傳回叢集和節點詳細資訊、已使用效能容量、可用和已使用空間以及儲存效率等資訊。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/storage/luns`
+
+`/datacenter/storage/luns/\{key}`
+ a| 
+您可以使用此方法檢視整個資料中心中的 LUN 集合。您可以檢視有關 LUN 的資訊，例如叢集和 SVM 詳細資訊、QoS 原則和 igroup。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/storage/qos/policies`
+
+`/datacenter/storage/qos/policies/\{key}`
+ a| 
+您可以使用此方法檢視適用於資料中心中儲存設備物件的所有 QoS 原則的詳細資訊。傳回的資訊包括叢集和 SVM 詳細資訊、固定或具調適能力的原則詳細資訊，以及適用於該原則的物件數量。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/storage/qtrees`
+
+`/datacenter/storage/qtrees/\{key}`
+ a| 
+您可以使用此方法檢視資料中心內所有 FlexVol Volume 或 FlexGroup Volume 的 qtree 詳細資訊。傳回的資訊包括叢集和 SVM 詳細資訊、FlexVol Volume 及匯出原則。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/storage/volumes`
+
+`/datacenter/storage/volumes/{key}`
+ a| 
+您可以使用此方法檢視資料中心中的 Volume 集合。系統會傳回有關 Volume 的資訊，例如 SVM 和叢集詳細資訊、QoS 和匯出原則，以及 Volume 的類型（讀寫、資料保護或負載平衡）。
+
+對於 FlexVol 和 FlexClone Volume，您可以檢視有關個別 Aggregate 的資訊。對於 FlexGroup Volume，查詢會傳回組成該 Volume 的 Aggregate 清單。
+
+
+
+ a| 
+`GET`
+
+`POST`
+
+`DELETE`
+
+`PATCH`
+ a| 
+`/datacenter/protocols/san/igroups`
+
+`/datacenter/protocols/san/igroups/{key}`
+ a| 
+您可以指派有權存取特定 LUN 目標的啟動器群組（igroup）。如果已存在 igroup，您可以直接指派。您也可以建立 igroup 並將其指派給 LUN。
+
+您可以分別使用這些方法來查詢、建立、刪除和修改 igroup。
+
+需附註的要點：
+
+* `POST:` 建立 igroup 時，您可以指定要指派存取的儲存設備 VM。
+* `DELETE:` 您需要提供 igroup 鍵作為輸入參數才能刪除特定的 igroup。如果您已將 igroup 指派給 LUN，則無法刪除該 igroup。
+* `PATCH:` 您需要提供 igroup 鍵作為輸入參數，以修改特定的 igroup。您還必須輸入要更新的屬性及其值。
+
+
+
+
+ a| 
+`GET`
+
+`POST`
+
+`DELETE`
+
+`PATCH`
+ a| 
+`/datacenter/svm/svms`
+
+`/datacenter/svm/svms/\{key}`
+ a| 
+您可以使用這些方法來檢視、建立、刪除和修改儲存虛擬機器（儲存設備 VM）。
+
+* `POST:` 您必須將要建立的儲存設備 VM 物件作為輸入參數輸入。您可以建立自訂儲存設備 VM，然後為其指派所需的屬性。
+* `DELETE:` 您需要提供儲存設備 VM 金鑰才能刪除特定的儲存設備 VM。
+* `PATCH:` 您需要提供儲存設備 VM 金鑰來修改特定的儲存設備 VM。您也需要輸入想要更新的屬性及其值。
+
+
+|===
+
+NOTE: 需附註的要點：
+
+如果您已在環境中啟用基於 SLO 的工作負載配置，則在建立儲存設備虛擬機器時，請確保其支援配置 LUN 及其檔案共用所需的所有協定，例如 CIFS 或 SMB、NFS、FCP 和 iSCSI。如果儲存設備虛擬機器不支援所需的服務，則配置工作流程可能會失敗。建議同時在儲存設備虛擬機器上啟用對應工作負載類型的服務。
+
+如果您已在環境中啟用基於 SLO 的工作負載配置，則無法刪除已配置儲存設備工作負載的儲存設備虛擬機器。刪除已設定 CIFS 或 SMB 伺服器的儲存設備虛擬機器時，此 API 也會刪除 CIFS 或 SMB 伺服器以及本機 Active Directory 組態。但是，CIFS 或 SMB 伺服器名稱仍保留在 Active Directory 組態中，您必須手動從 Active Directory 伺服器中刪除該設定。
+
+
+
+[[apis-for-network-elements-in-your-data-center]]
+== 資料中心網路元素的 API
+
+以下資料中心類別的 API 擷取有關您環境中的連接埠和網路介面的資訊，特別是 FC 連接埠、FC 介面、乙太網路連接埠和 IP 介面。
+
+[cols="3*"]
+|===
+| HTTP 動詞 | 路徑 | 說明 
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/network/ethernet/ports`
+
+`/datacenter/network/ethernet/ports/{key}`
+ a| 
+擷取資料中心環境中所有乙太網路連接埠的資訊。將連接埠金鑰作為輸入參數，您可以檢視該特定連接埠的資訊。擷取的資訊包括叢集詳細資訊、廣播網域、連接埠詳細資訊（例如狀態、速度和類型），以及連接埠是否已啟用。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/network/fc/interfaces`
+
+`/datacenter/network/fc/interfaces/{key}`
+ a| 
+您可以使用此方法檢視資料中心環境中 FC 介面的詳細資訊。以介面金鑰作為輸入參數，您可以檢視該特定介面的資訊。系統會擷取叢集詳細資訊、主節點詳細資訊與主連接埠詳細資訊等資訊。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/network/fc/ports`
+
+`/datacenter/network/fc/ports/{key}`
+ a| 
+擷取資料中心環境中所有節點所使用的 FC 連接埠資訊。透過連接埠鍵作為輸入參數，您可以檢視特定連接埠的資訊。擷取的資訊包括叢集詳細資訊、連接埠執行摘要、支援的協定以及連接埠狀態。
+
+
+
+ a| 
+`GET`
+ a| 
+`/datacenter/network/ip/interfaces`
+
+`/datacenter/network/ip/interfaces/{key}`
+ a| 
+您可以使用此方法檢視資料中心環境中 IP 介面的詳細資訊。以介面金鑰作為輸入參數，您可以檢視該特定介面的資訊。將會擷取叢集詳細資訊、IPspace 詳細資訊、主節點詳細資訊、是否啟用容錯移轉等資訊。
+
+|===

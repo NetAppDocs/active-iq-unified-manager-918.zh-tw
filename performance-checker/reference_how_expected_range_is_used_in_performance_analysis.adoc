@@ -1,0 +1,28 @@
+---
+permalink: performance-checker/reference_how_expected_range_is_used_in_performance_analysis.html 
+sidebar: sidebar 
+keywords: latency, forecast, performance, analysis 
+summary: Unified Manager 使用延遲預測來表示受監控工作負載的典型 I/O 延遲（回應時間）活動。當工作負載的實際延遲超過延遲預測的上限時，它會發出警報，觸發動態效能事件，以便您分析效能問題並採取修正行動來解決它。 
+---
+= 在 Active IQ Unified Manager 中使用延遲預測進行效能分析
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager 使用延遲預測來表示受監控工作負載的典型 I/O 延遲（回應時間）活動。當工作負載的實際延遲超過延遲預測的上限時，它會發出警報，觸發動態效能事件，以便您分析效能問題並採取修正行動來解決它。
+
+延遲預測設定了工作負載的效能基準。隨著時間的推移，Unified Manager 會從過去的效能測量資料中學習，從而預測工作負載的預期效能和活動水準。預期範圍的上限值定義了動態效能臨界值。Unified Manager 使用基準來判斷實際延遲何時高於或低於臨界值，或是超出其預期範圍的界限。實際值與預期值之間的比較會建立工作負載的效能設定檔。
+
+當工作負載的實際延遲會因為叢集元件上的資源爭用而超過動態效能臨界值時，延遲會很高，工作負載的運作速度也會低於預期。共享相同叢集元件的其他工作負載的效能也可能低於預期。
+
+Unified Manager 會分析臨界值跨越事件，並判斷該活動是否屬於效能事件。如果高工作負載活動長時間保持一致（例如數小時）， Unified Manager 會將該活動視為正常，並動態調整延遲預測，以形成新的動態效能臨界值。
+
+某些工作負載的活動可能一直很低，其延遲預測變化速度不大。為了最大限度地減少效能事件分析期間的事件數量， Unified Manager 僅對那些作業和延遲遠高於預期的低活動 Volume 觸發事件。
+
+image::../media/opm_expected_range_jpg.png[Unified Manager 的預期延遲範圍]
+
+在本例中，Volume 的延遲具有延遲預測（灰色部分），最低為每項作業 3.5 毫秒（ms/op），最高為 5.5 ms/op。如果實際延遲（藍色部分）由於網路流量的間歇性激增或叢集元件上的爭用而突然增加至 10 ms/op，則會高於延遲預測，並超過動態效能臨界值。
+
+當網路流量減少或叢集元件不再處於爭用狀態時，延遲會回復到延遲預測範圍內。如果延遲長時間維持在 10 ms/op 或以上，您可能需要採取修正行動來解決事件。

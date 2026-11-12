@@ -1,0 +1,21 @@
+---
+permalink: health-checker/concept_understand_capacity_events_and_thresholds_for_node.html 
+sidebar: sidebar 
+keywords: understand, events, thresholds, node, root, aggregates 
+summary: 您可以使用 Unified Manager 監控節點根 Aggregate。最佳實務做法是在根 Aggregate 中對根 Volume 進行厚資源配置，以防止節點停止運作。 
+---
+= 了解 Active IQ Unified Manager 中節點根目錄彙總的事件和臨界值
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 Unified Manager 監控節點根 Aggregate。最佳實務做法是在根 Aggregate 中對根 Volume 進行厚資源配置，以防止節點停止運作。
+
+預設情況下，不會為根 Aggregate 產生容量和效能事件。此外， Unified Manager 使用的臨界值也不適用於節點根 Aggregate。只有技術支援代表才能修改這些事件的產生設定。當技術支援代表修改設定後，容量臨界值將套用於節點根 Aggregate。
+
+您可以使用 ONTAP System Manager 或 ONTAP CLI 採取適當措施來防止節點停止運作。
+
+
+NOTE: 如果叢集執行 ONTAP 9.14.1 版本或更新版本，則無法使用監控節點根 Aggregate 的功能。

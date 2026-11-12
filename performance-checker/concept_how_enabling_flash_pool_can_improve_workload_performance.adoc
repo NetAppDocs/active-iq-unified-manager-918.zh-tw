@@ -1,0 +1,20 @@
+---
+permalink: performance-checker/concept_how_enabling_flash_pool_can_improve_workload_performance.html 
+sidebar: sidebar 
+keywords: enable, flash pool, storage, aggregate, improve, workload, performance 
+summary: 您可以透過在彙總上啟用 Flash Pool 功能來提升工作負載效能。Flash Pool 是一種同時包含 HDD 和 SSD 的彙總。HDD 用於主儲存設備，而 SSD 則提供高效能的讀取與寫入快取，以大幅增進彙總效能。 
+---
+= 透過在 Active IQ Unified Manager 中啟用儲存設備彙總上的 Flash Pool 來提高工作負載效能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以透過在彙總上啟用 Flash Pool 功能來提升工作負載效能。Flash Pool 是一種同時包含 HDD 和 SSD 的彙總。HDD 用於主儲存設備，而 SSD 則提供高效能的讀取與寫入快取，以大幅增進彙總效能。
+
+在 Unified Manager 中，「事件詳細資料」頁面會顯示爭用彙總的名稱。您可以使用 ONTAP System Manager 或 ONTAP 命令來查看彙總是否啟用了 Flash Pool。如果已安裝 SSD，您可以使用命令列介面來啟用它。如果已安裝 SSD，您可以在彙總上執行下列命令，以查看是否已啟用 Flash Pool： `*cluster::> storage aggregate show -aggregate aggr_name -field hybrid-enabled*`
+
+在此命令中， `_aggr_name_` 是彙總的名稱，例如處於競爭狀態的彙總。
+
+如需有關 Flash Pool 及其使用需求的詳細資訊，請參閱 _Clustered Data ONTAP 實體儲存設備管理指南_。

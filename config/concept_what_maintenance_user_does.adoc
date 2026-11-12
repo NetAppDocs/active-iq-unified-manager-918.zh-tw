@@ -1,0 +1,16 @@
+---
+permalink: config/concept_what_maintenance_user_does.html 
+sidebar: sidebar 
+keywords: what, maintenance, user does, installation, unified manager 
+summary: 維護使用者是在 Red Hat Enterprise Linux 系統上安裝 Unified Manager 時建立的。維護使用者名稱是「umadmin」使用者。維護使用者在 Web UI 中擁有應用程式管理員角色，且該使用者可以建立後續使用者並為其指派角色。 
+---
+= 了解 Active IQ Unified Manager 中的維護使用者
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+維護使用者是在 Red Hat Enterprise Linux 系統上安裝 Unified Manager 時建立的。維護使用者名稱是 "`umadmin`" 使用者。維護使用者在 Web UI 中擁有應用程式系統管理員角色，且該使用者可以建立後續使用者並為其指派角色。
+
+維護使用者（或 umadmin 使用者）也可以存取 Unified Manager 維護主控台。

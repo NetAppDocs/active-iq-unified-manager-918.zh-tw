@@ -1,0 +1,30 @@
+---
+permalink: storage-mgmt/task_rediscover_clusters.html 
+sidebar: sidebar 
+keywords: rediscover clusters, 
+summary: 您可以從叢集設定頁面手動重新探索叢集，以便取得有關叢集健全狀況、監控狀態和效能狀態的最新資訊。 
+---
+= 在 Active IQ Unified Manager 中重新探索叢集
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以從叢集設定頁面手動重新探索叢集，以便取得有關叢集健全狀況、監控狀態和效能狀態的最新資訊。
+
+當您想要更新叢集（例如，當空間不足時增加彙總的大小），並且希望 Unified Manager 探索您所做的變更時，您可以手動重新探索叢集。
+
+當 Unified Manager 與 OnCommand Workflow Automation (WFA) 配對時，配對會觸發重新取得 WFA 快取的資料。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存管理* > *叢集設定*。
+. 在 *叢集設定* 頁面上，按一下 *重新探索*。
++
+Unified Manager 重新探索選定的叢集，並顯示最新的健全狀況和效能狀態。
+
+
+
+*相關資訊*
+
+link:../health-checker/task_view_cluster_list_and_details.html["檢視叢集清單與詳細資料"]

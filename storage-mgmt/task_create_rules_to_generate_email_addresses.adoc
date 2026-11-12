@@ -1,0 +1,40 @@
+---
+permalink: storage-mgmt/task_create_rules_to_generate_email_addresses.html 
+sidebar: sidebar 
+keywords: create, rules, generate, email, addresses 
+summary: 您可以建立規則，根據與叢集、儲存設備虛擬機器（SVM）、Volume、qtree、使用者或使用者群組關聯的使用者配額來指定電子郵件地址。當配額超出限制時，系統會向指定的電子郵件地址發送通知。 
+---
+= 在 Active IQ Unified Manager 中建立規則以產生電子郵件地址
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以建立規則，根據與叢集、儲存設備虛擬機器（SVM）、Volume、qtree、使用者或使用者群組關聯的使用者配額來指定電子郵件地址。當配額超出限制時，系統會向指定的電子郵件地址發送通知。
+
+.開始之前
+* 您必須擁有應用程式系統管理員或儲存系統管理員角色。
+* 您必須已閱讀「產生使用者和群組配額電子郵件地址的規則」頁面上的指南。
+
+
+您必須定義配額電子郵件地址的規則，並以您希望執行的順序輸入這些規則。例如，如果您希望使用電子郵件地址 abc@xyz.com 接收 abc 的配額超限通知，並使用電子郵件地址 dl-$GROUP@$DOMAIN 接收所有其他群組的通知，則規則必須按以下順序列出：
+
+* if ( $USER == 'abc' ) then abc@xyz.com
+* if ( $GROUP == * ) then dl-$GROUP@$DOMAIN
+
+
+如果所有指定的規則條件均未滿足，則使用預設規則：
+
+如果 ( $USER_OR_GROUP == * ) 則 $USER_OR_GROUP@$DOMAIN
+
+.步驟
+. 在左側導覽窗格中，按一下 *一般* > *配額電子郵件規則*。
+. 根據您的條件輸入規則。
+. 按一下 *驗證* 以驗證規則的語法。
++
+如果規則語法錯誤，則會顯示錯誤訊息。您必須修正語法，然後再次按一下 *驗證*。
+
+. 按一下 *Save* 。
+. 確認您建立的電子郵件地址顯示在儲存設備 *VM / 運作狀況* 詳細資料頁面的 *使用者和群組配額* 標籤中。
+

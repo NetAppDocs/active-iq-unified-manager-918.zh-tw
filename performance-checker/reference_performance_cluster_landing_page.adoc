@@ -1,0 +1,28 @@
+---
+permalink: performance-checker/reference_performance_cluster_landing_page.html 
+sidebar: sidebar 
+keywords: performance, cluster, landing page 
+summary: 效能叢集登陸頁面顯示所選叢集的高階效能狀態。此頁面可讓您存取所選叢集上儲存設備物件的每個效能計數器的完整詳細資訊。 
+---
+= 查看 Active IQ Unified Manager 中的效能叢集登陸頁面
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+效能叢集登陸頁面顯示所選叢集的高階效能狀態。此頁面可讓您存取所選叢集上儲存設備物件的每個效能計數器的完整詳細資訊。
+
+效能叢集登陸頁面包含四個索引標籤，將叢集詳細資訊分隔成四個資訊區域：
+
+* 總結頁面
++
+** 叢集事件窗格
+** MB/s 和 IOPS 效能圖表
+** 代管物件窗格
+
+
+* 表現最佳者頁面
+* 探索頁面
+* 資訊頁
+

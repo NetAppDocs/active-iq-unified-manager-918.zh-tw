@@ -1,0 +1,22 @@
+---
+permalink: health-checker/concept_what_group_is.html 
+sidebar: sidebar 
+keywords: group 
+summary: 群組是異質儲存設備物件（叢集、SVM 或 Volume）的動態集合。您可以在 Unified Manager 中建立群組，以便輕鬆管理一組儲存設備物件。群組中的成員可能會發生變化，具體取決於 Unified Manager 在特定時間點監控的儲存設備物件。 
+---
+= 了解 Active IQ Unified Manager 中的群組
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+群組是異質儲存設備物件（叢集、SVM 或 Volume）的動態集合。您可以在 Unified Manager 中建立群組，以便輕鬆管理一組儲存設備物件。群組中的成員可能會發生變化，具體取決於 Unified Manager 在特定時間點監控的儲存設備物件。
+
+* 每個群組都有一個唯一的名稱。
+* 您必須為每個群組設定至少一個群組規則。
+* 您可以將一個群組與多個群組規則建立關聯。
+* 每個群組可以包含多種類型的儲存設備物件，例如叢集、SVM 或 Volume。
+* 儲存物件會根據群組規則的建立時間或 Unified Manager 完成監控週期的時間動態新增至群組。
+* 您可以同時對群組中的所有儲存設備物件執行操作，例如設定 Volume 的臨界值。
+

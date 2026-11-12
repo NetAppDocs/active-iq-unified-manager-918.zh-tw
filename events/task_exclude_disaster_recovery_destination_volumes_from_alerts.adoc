@@ -1,0 +1,40 @@
+---
+permalink: events/task_exclude_disaster_recovery_destination_volumes_from_alerts.html 
+sidebar: sidebar 
+keywords: exclude, disaster, recovery, destination, volumes, generate, alerts 
+summary: 設定 Volume 警報時，您可以在「警報」對話方塊中指定字串來識別 Volume 或 Volume 群組。但是，如果您已為 SVM 設定了災難恢復，則來源和目的地 Volume 的名稱相同，因此您將收到兩個 Volume 的警報。 
+---
+= 將災難恢復目的地 Volume 從 Active IQ Unified Manager 的警報產生中排除
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+設定 Volume 警報時，您可以在「警報」對話方塊中指定字串來識別 Volume 或 Volume 群組。但是，如果您已為 SVM 設定了災難恢復，則來源和目的地 Volume 的名稱相同，因此您將收到兩個 Volume 的警報。
+
+.開始之前
+您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+您可以透過排除具有目的地 SVM 名稱的 Volume 來停用災難恢復目的地 Volume 的警報。這是因為 Volume 事件的識別碼包含 SVM 名稱和 Volume 名稱，格式為「<svm_name>:/<volume_name>」。
+
+下列範例顯示如何為主 SVM「vs1」上的 Volume「vol1」建立警報，但排除在 SVM「vs1-dr」上同名 Volume 產生警報。
+
+在「新增警報」對話方塊中執行以下步驟：
+
+.步驟
+. 按一下 *名稱* 並輸入警報的名稱和執行摘要。
+. 按一下 *資源*，然後選取 *包含* 索引標籤。
++
+.. 從下拉清單中選擇 *Volume*，然後在 *名稱包含* 欄位中輸入 *`vol1`*，以顯示名稱包含 "vol1" 的 Volume。
+.. 從 *可用資源* 區域選取 *+<<All Volumes whose name contains 'vol1'>>+*，並將其移至 *已選取資源* 區域。
+
+
+. 選取 *排除* 索引標籤，選取 *Volume*，在 *名稱包含* 欄位中輸入 *`vs1-dr`*，然後按一下 *新增*。
++
+這會排除為 SVM "vs1-dr" 上的 Volume "vol1" 產生警報。
+
+. 按一下 *Events* ，然後選取要套用至 Volume 或多個 Volume 的事件。
+. 按一下 *動作* ，然後在 *警示這些使用者* 欄位中選取將收到警示電子郵件的使用者名稱。
+. 在此頁面上設定發出 SNMP 陷阱和執行指令碼的任何其他選項，然後按一下 *儲存*。
+

@@ -1,0 +1,25 @@
+---
+permalink: performance-checker/task_select_performance_thresholds_in_zoom_view.html 
+sidebar: sidebar 
+keywords: select, performance, thresholds, counter, charts, zoom, view 
+summary: 在計數器圖表縮放檢視中套用臨界值，可提供效能臨界值事件發生情形的詳細檢視。這讓您可以套用或移除臨界值，並立即檢視結果，有助於判斷下一步是否應進行疑難排解。 
+---
+= 在 Active IQ Unified Manager 的計數器圖表縮放檢視中選擇效能臨界值
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在計數器圖表縮放檢視中套用臨界值，可提供效能臨界值事件發生情形的詳細檢視。這讓您可以套用或移除臨界值，並立即檢視結果，有助於判斷下一步是否應進行疑難排解。
+
+在計數器圖表縮放檢視中選擇臨界值，即可檢視有關效能臨界值事件的精確資料。您可以套用計數器圖表縮放檢視 *原則* 區域下顯示的任何臨界值。
+
+在計數器圖表縮放檢視中，一次只能對物件套用一個原則。
+
+.步驟
+. 選取或取消選取與原則相關聯的 image:../media/eye_icon.gif["眼睛圖示"]。
++
+選取的臨界值會套用至計數器圖表縮放檢視。關鍵臨界值會顯示為紅線；警告臨界值會顯示為黃線。
+
+

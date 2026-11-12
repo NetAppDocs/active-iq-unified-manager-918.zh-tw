@@ -1,0 +1,113 @@
+---
+permalink: api-automation/concept_manage_fileshares_api.html 
+sidebar: sidebar 
+keywords: manage, file, share 
+summary: 您可以使用 /storage-provider/file-shares API 檢視、新增、修改和刪除資料中心環境中的 CIFS 和 NFS 檔案共享 Volume。 
+---
+= 使用 Active IQ Unified Manager 中的 API 管理檔案共享
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 `/storage-provider/file-shares` API 檢視、新增、修改和刪除資料中心環境中的 CIFS 和 NFS 檔案共享 Volume。
+
+在配置檔案共享 Volume 之前，請確保已建立 SVM 並已配置受支援的協定。如果在配置過程中指派了效能服務層級（PSL）或儲存效率原則（SEP），則應在建立檔案共享之前建立 PSL 或 SEP。
+
+
+
+[[view-file-shares]]
+== 檢視檔案共享
+
+您可以使用下列方法檢視 Unified Manager 環境中可用的檔案共享 Volume。當您在 Active IQ Unified Manager 上將 ONTAP 叢集新增為資料來源後，這些叢集的儲存設備工作負載會自動新增至您的 Unified Manager 執行個體中。此 API 會擷取自動和手動新增至 Unified Manager 執行個體中的檔案共享。您可以使用檔案共享金鑰執行此 API 來檢視特定檔案共享的詳細資訊。
+
+[cols="3*"]
+|===
+| 類別 | HTTP 動詞 | 路徑 
+
+
+ a| 
+儲存設備供應商
+ a| 
+取得
+ a| 
+`/storage-provider/file-shares`
+
+`/storage-provider/file-shares/\{key}`
+
+|===
+
+
+[[add-file-shares]]
+== 新增檔案共享
+
+您可以使用以下方法在 SVM 中新增 CIFS 和 NFS 檔案共享。您必須輸入要建立的檔案共享的詳細資訊作為輸入參數。此 API 不能用於新增 FlexGroup Volume。
+
+[cols="3*"]
+|===
+| 類別 | HTTP 動詞 | 路徑 
+
+
+ a| 
+儲存設備供應商
+ a| 
+POST
+ a| 
+`/storage-provider/file-shares`
+
+|===
+[NOTE]
+====
+根據是否提供了存取控制清單（ACL）參數或匯出原則參數，系統將建立 CIFS 共享或 NFS 檔案共享。如果您未提供 ACL 參數值，則不會建立 CIFS 共享，而是預設建立 NFS 共享，並提供所有人存取。
+
+====
+*建立資料保護 Volume*：將檔案共享新增至 SVM 時，預設掛載的 Volume 類型為 `rw`（讀寫）。若要建立資料保護 （DP） Volume，請將 `dp`指定為 `type`參數的值。
+
+
+
+[[delete-file-shares]]
+== 刪除檔案共享
+
+您可以使用以下方法刪除特定的檔案共享。您需要輸入檔案共享金鑰作為輸入參數才能刪除特定的檔案共享。
+
+[cols="3*"]
+|===
+| 類別 | HTTP 動詞 | 路徑 
+
+
+ a| 
+儲存設備供應商
+ a| 
+刪除
+ a| 
+`/storage-provider/file-shares/\{key}`
+
+|===
+
+
+[[modify-file-shares]]
+== 修改檔案共享
+
+您可以使用以下方法修改檔案共享並更新其屬性。
+
+您需要提供檔案共享金鑰才能修改特定的檔案共享。此外，您還需要輸入要更新的屬性及其值。
+
+[NOTE]
+====
+請注意，單一呼叫此 API 只能更新一個屬性。如需更新多個屬性，則需要多次執行此 API。
+
+====
+[cols="3*"]
+|===
+| 類別 | HTTP 動詞 | 路徑 
+
+
+ a| 
+儲存設備供應商
+ a| 
+PATCH
+ a| 
+`/storage-provider/file-shares/\{key}`
+
+|===

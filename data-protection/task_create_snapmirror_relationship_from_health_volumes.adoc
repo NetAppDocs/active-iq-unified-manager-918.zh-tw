@@ -1,0 +1,65 @@
+---
+permalink: data-protection/task_create_snapmirror_relationship_from_health_volumes.html 
+sidebar: sidebar 
+keywords: create, snapmirror, protection, relationship, health, volumes view 
+summary: 使用「健全狀況」頁面上的「所有 Volume」檢視，一次為同一個儲存設備 VM 上的 Volume 建立多個 SnapMirror 保護關係。 
+---
+= 從 Active IQ Unified Manager 的「健康狀況：所有磁碟區」檢視建立 SnapMirror 關係
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用「運行狀況：所有 Volume」檢視，您可以透過選取相同儲存設備 VM 上的多個 Volume，一次建立多個 SnapMirror 保護關係。
+
+.開始之前
+* 您必須擁有應用程式系統管理員或儲存系統管理員角色。
+* 您必須已設定 Workflow Automation。
+
+
+在以下情況下，*保護* 功能表不會顯示：
+
+* 如果 RBAC 設定不允許此行動：例如，如果您只有營運者權限
+* 當 Volume ID 未知時：例如，當您有叢集間關係且目的地叢集尚未被發現時
+
+
+.步驟
+. 在 *健康狀況：所有 Volume* 檢視中，選擇要保護的 Volume。
++
+或者，若要在同一個 SVM 上建立多個保護關係，請在「健全狀況：所有 Volume」檢視中選取一個或多個 Volume，然後按一下工具列上的 *保護* > *SnapMirror*。
+
++
+系統會顯示「設定保護」對話方塊。
+
+. 按一下 *SnapMirror* 以檢視 *SnapMirror* 索引標籤，並設定目的地資訊。
+. 視需要點選 *進階* 設定空間保證，然後點選 *套用*。
+. 完成 *SnapMirror* 索引標籤中的 *目的地資訊* 區域和 *關係設定* 區域。
+. 點選 *套用*。
++
+您將返回「健康狀況：所有 Volume」檢視。
+
+. 按一下 *執行狀況：所有 Volume 檢視* 頂端的保護組態作業連結。
++
+如果您只建立一個保護關係，則會顯示「作業詳細資料」頁面；但是，如果您建立多個保護關係，則會顯示與保護操作相關的所有作業的清單。
+
+. 執行下列其中一項作業：
++
+** 如果您只有一個作業，請按一下 *重新整理* 以更新與保護組態作業相關聯的工作清單和工作詳細資料，並判斷作業何時完成。
+** 如果您有多個工作：
++
+... 在工作清單中點選一項工作。
+... 按一下 *Refresh* 可更新與保護組態工作相關聯的工作清單和工作詳細資料，並確認工作何時完成。
+... 使用 *返回* 按鈕返回篩選清單並檢視其他工作。
+
+
+
+
+
+
+根據您在組態期間指定的目的地 SVM 或在進階設定中啟用的選項，產生的 SnapMirror 關係可能是幾種可能的變化之一：
+
+* 如果您指定的目的地 SVM 所執行的 ONTAP 版本與來源 Volume 相同或較新，則預設結果為基於區塊複寫的 SnapMirror 關係。
+* 如果您指定的目的地 SVM 執行的 ONTAP 版本與來源 Volume 相同或更新，但您在進階設定中啟用了版本彈性複寫，則結果會建立具有版本彈性複寫的 SnapMirror 關係。
+* 如果您指定的目的地 SVM 執行的 ONTAP 版本早於來源 Volume，且該較早版本支援版本彈性複寫，則會自動產生具備版本彈性複寫的 SnapMirror 關係。
+

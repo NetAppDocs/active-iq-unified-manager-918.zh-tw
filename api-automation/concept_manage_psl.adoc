@@ -1,0 +1,119 @@
+---
+permalink: api-automation/concept_manage_psl.html 
+sidebar: sidebar 
+keywords: manage, performance, service, level 
+summary: 您可以使用 Active IQ Unified Manager 上的儲存設備供應商 API 來檢視、建立、修改和刪除效能服務層級。 
+---
+= 使用 Active IQ Unified Manager 中的 API 管理效能服務層級
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 Active IQ Unified Manager 上的儲存設備供應商 API 來檢視、建立、修改和刪除效能服務層級。
+
+
+
+[[view-performance-service-levels]]
+== 檢視效能服務層級
+
+您可以使用下列方法檢視效能服務層級，並將其指派給儲存設備工作負載。此 API 會列出所有系統定義和使用者建立的效能服務層級，並擷取所有效能服務層級的屬性。如果要查詢特定的效能服務層級，則需要輸入該效能服務層級的唯一 ID 以擷取其詳細資訊。
+
+[cols="3*"]
+|===
+| 類別 | HTTP 動詞 | 路徑 
+
+
+ a| 
+儲存設備供應商
+ a| 
+取得
+ a| 
+`/storage-provider/performance-service-levels`
+
+`/storage-provider/performance-service-levels/\{key}`
+
+|===
+
+
+[[add-performance-service-levels]]
+== 新增效能服務層級
+
+如果系統定義的效能服務層級無法滿足儲存設備工作負載所需的服務層級目標（SLO），您可以使用下列方法建立自訂效能服務層級並指派給儲存設備工作負載。請輸入要建立的效能服務層級的詳細資訊。對於 IOPS 屬性，請確保輸入有效的取值範圍。
+
+[cols="3*"]
+|===
+| 類別 | HTTP 動詞 | 路徑 
+
+
+ a| 
+儲存設備供應商
+ a| 
+POST
+ a| 
+`/storage-provider/performance-service-levels`
+
+|===
+
+
+[[delete-performance-service-levels]]
+== 刪除效能服務層級
+
+您可以使用下列方法刪除特定的 Performance Service Level。如果 Performance Service Level 已指派給工作負載，或是唯一可用的 Performance Service Level，則無法將其刪除。您需要提供 Performance Service Level 的唯一 ID 作為輸入參數，以刪除特定的 Performance Service Level。
+
+[cols="3*"]
+|===
+| 類別 | HTTP 動詞 | 路徑 
+
+
+ a| 
+儲存設備供應商
+ a| 
+刪除
+ a| 
+`/storage-provider/performance-service-levels/\{key}`
+
+|===
+
+
+[[modify-performance-service-levels]]
+== 修改效能服務層級
+
+您可以使用下列方法修改效能服務等級並更新其屬性。您無法修改系統定義或已指派給工作負載的效能服務等級。您需要提供唯一 ID 來修改特定的效能服務等級。您還必須輸入要更新的 IOPS 屬性，以及有效值。
+
+[cols="3*"]
+|===
+| 類別 | HTTP 動詞 | 路徑 
+
+
+ a| 
+儲存設備供應商
+ a| 
+PATCH
+ a| 
+`/storage-provider/performance-service-levels/\{key}`
+
+|===
+
+
+[[view-aggregate-capabilities-based-on-performance-service-levels]]
+== 檢視基於效能服務等級的彙總功能
+
+您可以使用下列方法查詢基於效能服務等級的彙總功能。此 API 傳回資料中心中可用彙總的清單，並指出這些彙總可支援的效能服務等級功能。在 Volume 上資源配置工作負載時，您可以檢視彙總支援特定效能服務等級的功能，並根據該功能資源配置工作負載。只有在使用 API 資源配置工作負載時，才能指定彙總。此功能在 Unified Manager Web UI 中無法使用。
+
+[cols="3*"]
+|===
+| 類別 | HTTP 動詞 | 路徑 
+
+
+ a| 
+儲存設備供應商
+ a| 
+取得
+ a| 
+`/storage-provider/aggregate-capabilities`
+
+`/storage-provider/aggregate-capabilities/\{key}`
+
+|===

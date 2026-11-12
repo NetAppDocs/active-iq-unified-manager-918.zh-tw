@@ -1,0 +1,14 @@
+---
+permalink: reporting/concept_customize_svm_reports.html 
+sidebar: sidebar 
+keywords: customize, storage, vm reports 
+summary: 您可以建立儲存設備 VM 報告來分析 Volume 資訊，並檢視整體健全狀況和儲存可用度。例如，您可以建立報告來顯示達到最大 Volume 數的 SVM，並分析已停止的 SVM。 
+---
+= 在 Active IQ Unified Manager 中自訂儲存設備 VM 報告
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以建立儲存設備 VM 報告來分析 Volume 資訊，並檢視整體健全狀況和儲存可用度。例如，您可以建立報告來顯示達到最大 Volume 數的 SVM，並分析已停止的 SVM。

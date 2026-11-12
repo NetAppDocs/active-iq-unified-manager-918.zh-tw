@@ -1,0 +1,62 @@
+---
+permalink: config/task_change_um_host_name_on_rhel.html 
+sidebar: sidebar 
+keywords: change, unified manager, host name, linux systems 
+summary: 在某些情況下，您可能需要變更已安裝 Unified Manager 的 Red Hat Enterprise Linux 機器主機名稱。例如，當您列出 Linux 機器時，您可能希望重新命名主機，以便依類型、工作群組或受監控的叢集群組更輕鬆地識別 Unified Manager 伺服器。 
+---
+= 在 Linux 系統上變更 Active IQ Unified Manager 主機名稱
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在某些情況下，您可能需要變更已安裝 Unified Manager 的 Red Hat Enterprise Linux 機器主機名稱。例如，當您列出 Linux 機器時，您可能希望重新命名主機，以便依類型、工作群組或受監控的叢集群組更輕鬆地識別 Unified Manager 伺服器。
+
+.開始之前
+您必須擁有安裝 Unified Manager 的 Linux 系統的 root 使用者存取權。
+
+您可以使用主機名稱（或主機 IP 位址）存取 Unified Manager web UI。如果您在部署期間為網路設定了靜態 IP 位址，則您應該已經為網路主機指定了名稱。如果您使用 DHCP 設定網路，則主機名稱應取自 DNS 伺服器。
+
+無論主機名稱是如何指派的，如果您變更了主機名稱並打算使用新主機名稱存取 Unified Manager Web UI，則必須產生新的安全性憑證。
+
+如果您使用伺服器的 IP 位址而不是主機名稱存取 Web UI，則變更主機名稱後無需產生新憑證。但是，最佳實務做法是更新憑證，使憑證中的主機名稱與實際主機名稱相符。新憑證需要重新啟動 Linux 機器後才能生效。
+
+如果在 Unified Manager 中變更主機名稱，您必須在 OnCommand Workflow Automation (WFA) 中手動更新主機名稱。主機名稱不會在 WFA 中自動更新。
+
+.步驟
+. 以 root 使用者身分登入要修改的 Unified Manager 系統。
+. 輸入以下命令停止 Unified Manager 軟體及其關聯的 MySQL 軟體：
++
+`systemctl stop ocieau ocie mysqld`
+
+. 使用 Linux `hostnamectl` 命令更改主機名稱：
++
+`hostnamectl set-hostname new_FQDN`
+
++
+`hostnamectl set-hostname nuhost.corp.widget.com`
+
+. 重新產生伺服器的 HTTPS 憑證：
++
+`/opt/netapp/essentials/bin/cert.sh create`
+
+. 重新啟動網路服務：
++
+`systemctl restart NetworkManager.service`
+
+. 服務重新啟動後，驗證新的主機名稱是否能夠 ping 通自身：
++
+`ping new_hostname`
+
++
+`ping nuhost`
+
++
+此命令應傳回與先前為原始主機名稱設定相同的 IP 位址。
+
+. 完成並驗證主機名稱變更後，請輸入下列命令重新啟動 Unified Manager：
++
+`systemctl start mysqld ocie ocieau`
+
+

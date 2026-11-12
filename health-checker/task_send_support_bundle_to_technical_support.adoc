@@ -1,0 +1,27 @@
+---
+permalink: health-checker/task_send_support_bundle_to_technical_support.html 
+sidebar: sidebar 
+keywords: support bundle, technical support 
+summary: 當問題需要比 AutoSupport 訊息所提供更詳細的診斷與疑難排解資訊時，您可以將支援套裝組合傳送給技術支援。 
+---
+= 從 Active IQ Unified Manager 傳送支援套裝組合給技術支援
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當問題需要比 AutoSupport 訊息所提供更詳細的診斷與疑難排解資訊時，您可以將支援套裝組合傳送給技術支援。
+
+.開始之前
+您必須能夠存取支援套裝組合，才能將其傳送給技術支援。
+
+您必須擁有透過技術支援網站產生的案例編號。
+
+.步驟
+. 登入 NetApp 支援網站。
+. 上傳檔案。
++
+https://kb.netapp.com/Advice_and_Troubleshooting/Miscellaneous/How_to_upload_a_file_to_NetApp["如何上傳檔案到 NetApp"]
+
+

@@ -1,0 +1,30 @@
+---
+permalink: performance-checker/concept_event_investigation_navigation.html 
+sidebar: sidebar 
+keywords: event, investigation, navigation 
+summary: Unified Manager 事件詳情頁面可讓您深入了解任何效能事件。這在調查效能事件、進行疑難排解以及微調系統效能時非常有用。 
+---
+= 調查 Active IQ Unified Manager 中的效能事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager 事件詳情頁面可讓您深入了解任何效能事件。這在調查效能事件、進行疑難排解以及微調系統效能時非常有用。
+
+視效能事件的類型而定，您可能會看到兩種事件詳細資料頁面之一：
+
+* 使用者定義與系統定義的臨界值原則事件的事件詳細資料頁面
+* 動態臨界值原則事件的事件詳情頁面
+
+
+這是事件調查導覽的一個範例。
+
+. 在左側導覽窗格中，按一下 *事件管理*。
+. 從「檢視」功能表中，按一下 *作用中效能事件*。
+. 點選您要調查的事件名稱，即可顯示事件詳細資料頁面。
+. 檢視事件的執行摘要並審查建議的行動（若有），以檢視更多可能有助於您解決問題的事件詳細資訊。您可以按一下 *分析工作負載* 按鈕來顯示詳細的效能圖表，以協助進一步分析問題。
+
+
+image::../media/event_flow.png[顯示事件調查導覽的使用者介面快照。]

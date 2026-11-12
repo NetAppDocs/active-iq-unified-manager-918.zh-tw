@@ -1,0 +1,81 @@
+---
+permalink: storage-mgmt/concept_all_workloads.html 
+sidebar: sidebar 
+keywords: view, workloads, add, provision, storage, filter, analyze, performance, capacity, criteria 
+summary: 「所有工作負載」檢視顯示資料中心叢集上所有可用工作負載的清單。 
+---
+= 在 Active IQ Unified Manager 中檢視工作負載
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您將叢集新增至 Unified Manager 時，每個叢集上的儲存設備工作負載都會自動探索並顯示在「工作負載」頁面上。
+
+Unified Manager 僅在儲存設備工作負載開始執行 I/O 操作後才開始分析工作負載以提供建議（建議的 PSL）。
+
+FlexGroup Volume 及其組成部分被排除在外。
+
+
+
+[[workloads-overview]]
+== 工作負載總覽
+
+工作負載總覽頁面顯示資料中心中的工作負載總覽以及資料中心的空間和效能總覽。
+
+* *工作負載總覽* 面板：顯示工作負載總數以及已分配和未分配 PSL 的工作負載數量。此外，也會顯示每個 PSL 對應的工作負載數量明細。點擊計數即可進入 *所有工作負載* 檢視，其中顯示了已篩選的工作負載。您也可以檢視不符合系統建議的工作負載數量，並透過點擊 *分配系統建議的 PSL* 按鈕，為這些工作負載指派系統建議的 PSL。
+* *資料中心總覽*面板：顯示資料中心的可用與已使用空間（TiB）以及效能（IOPS）。此外，也顯示每個 PSL 下所有工作負載的可用與已使用空間（TiB）以及效能（IOPS）的細分情況。
+
+
+
+
+[[all-workloads-view]]
+== 所有工作負載檢視
+
+*儲存設備 > 工作負載 > 所有工作負載* 頁面列出與 Unified Manager 代管的 ONTAP 叢集相關聯的儲存設備工作負載。
+
+對於新發現且尚未進行任何 I/O 作業的儲存設備工作負載，其狀態為 "`Waiting for I/O`"。在儲存設備工作負載開始進行 I/O 作業後， Unified Manager 將開始分析，且工作負載狀態會變更為 "`Learning……`"。分析完成後（自 I/O 作業開始起 24 小時內），將顯示儲存設備工作負載的建議 PSL。
+
+此頁面還可讓您為儲存設備工作負載指派儲存效率原則（SEP）和效能服務層級（PSL）。您可以執行多項任務：
+
+* 新增或資源配置儲存設備工作負載
+* 檢視和篩選工作負載清單
+* 將 PSL 指派給儲存設備工作負載
+* 評估系統建議的 PSL 並將其分配給工作負載
+* 將 SEP 指派給儲存設備工作負載
+
+
+
+
+[[adding-or-provisioning-storage-workloads]]
+=== 新增或資源配置儲存設備工作負載
+
+您可以將儲存設備工作負載新增或資源配置至支援的 LUN（支援 iSCSI 和 FCP 協定）、NFS 檔案共用和 SMB 共用。
+
+.步驟
+. 點選 *儲存設備 > 工作負載 > 所有工作負載 > 建立*。
+. 建立工作負載。如需詳細資訊，請參閱link:../storage-mgmt/concept_provision_and_manage_workloads.html["資源配置與管理工作負載"]。
+
+
+
+
+[[viewing-and-filtering-workloads]]
+=== 檢視與篩選工作負載
+
+在「所有工作負載」畫面上，您可以檢視資料中心中的所有工作負載，或根據其 PSL 或名稱搜尋特定的儲存設備工作負載。您可以使用篩選圖示輸入特定的搜尋條件。您可以按不同的篩選條件進行搜尋，例如按主機叢集或儲存設備虛擬機器。*Capacity Total* 選項可按工作負載的總容量（以 MB 為單位）進行篩選。但是，在這種情況下，傳回的工作負載數量可能會有所不同，因為總容量是以位元組層級進行比較的。
+
+對於每個工作負載，都會顯示主機叢集和儲存設備虛擬機器等資訊，以及指派的 PSL 和 SEP。
+
+此頁面也可讓您檢視工作負載的效能詳細資料。您可以按一下 *Choose / Order Columns* 按鈕並選擇要檢視的特定欄，來檢視有關工作負載的 IOPS 、容量與延遲的詳細資訊。「效能檢視」欄會顯示工作負載的平均與峰值 IOPS ，您可以按一下工作負載分析器圖示來檢視詳細的 IOPS 分析。
+
+
+
+[[analyzing-performance-and-capacity-criteria-for-a-workload]]
+=== 分析工作負載的效能和容量標準
+
+*IOPS 分析*彈出視窗中的*分析工作負載*按鈕會將您帶到「工作負載分析」頁面，您可以在該頁面選擇時間範圍並檢視所選工作負載的延遲、處理量和容量趨勢。如需工作負載分析器的詳細資訊，請參閱 link:..//performance-checker/concept_troubleshooting_workloads_using_workload_analyzer.html["使用工作負載分析器對工作負載進行疑難排解"]。
+
+您可以按一下 *效能檢視* 欄中的長條圖圖示來檢視工作負載的效能資訊，以協助進行疑難排解。若要在「工作負載分析」頁面上檢視效能和容量圖表以分析物件，請按一下 *分析工作負載* 按鈕。
+
+如需詳細資訊，請參閱 link:../performance-checker/reference_what_data_does_workload_analyzer_display.html["工作負載分析器顯示哪些資料"]。

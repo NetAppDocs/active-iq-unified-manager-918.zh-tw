@@ -1,0 +1,40 @@
+---
+permalink: data-protection/task_view_volume_protection_relationships.html 
+sidebar: sidebar 
+keywords: view, volume, protection relationships 
+summary: 檢視 Volume SnapMirror 和 SnapVault 關係的狀態，包括傳輸和延遲狀態、來源和目的地，以及排程詳細資料。 
+---
+= 在 Active IQ Unified Manager 中查看 Volume 保護關係
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+從「關係：所有關係」檢視和「Volume 關係」頁面中，您可以檢視現有 Volume SnapMirror 和 SnapVault 關係的狀態。您也可以檢查保護關係的詳細資訊，包括傳輸和延遲狀態、來源和目的地詳細資訊、排程和原則資訊等。
+
+.開始之前
+您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+您也可以從此頁面啟動關係命令。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存設備* > *Volume*。
+. 從「檢視」功能表中，選擇 *關係* > *所有關係*。
++
+顯示「關係：所有關係」檢視。
+
+. 請選擇以下方式之一檢視 Volume 保護詳情：
++
+** 若要檢視所有 Volume 關係的目前資訊，請停留在預設的 *所有關係* 頁面。
+** 若要檢視一段時間內的 Volume 傳輸趨勢詳細資訊，請在「檢視」功能表中，選取「關係：最近 1 個月傳輸狀態」檢視。
+** 若要檢視每日 Volume 轉移活動的詳細資訊，請在「檢視」選單中選擇「關係：最近 1 個月的轉移率」檢視。
+
+
++
+[NOTE]
+====
+Volume 傳輸檢視僅顯示非同步關係中 Volume 的資訊 - 不顯示同步關係中的 Volume。
+
+====
+

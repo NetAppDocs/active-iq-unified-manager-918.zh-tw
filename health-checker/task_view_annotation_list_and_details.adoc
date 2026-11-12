@@ -1,0 +1,19 @@
+---
+permalink: health-checker/task_view_annotation_list_and_details.html 
+sidebar: sidebar 
+keywords: view, annotation list, details 
+summary: 您可以檢視與叢集、Volume 和儲存設備虛擬機器（SVM）動態關聯的註解清單。您也可以檢視詳細資料，例如註解的執行摘要、建立者、建立日期、值、規則以及關聯的物件。 
+---
+= 在 Active IQ Unified Manager 中檢視註釋清單和詳細資料
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以檢視與叢集、Volume 和儲存設備虛擬機器（SVM）動態關聯的註解清單。您也可以檢視詳細資料，例如註解的執行摘要、建立者、建立日期、值、規則以及關聯的物件。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存設備管理* > *註解*。
+. 在 *註釋* 標籤中，按一下註釋名稱以檢視相關詳細資訊。
+

@@ -1,0 +1,27 @@
+---
+permalink: health-checker/task_configure_global_qtree_health_threshold_values.html 
+sidebar: sidebar 
+keywords: configure, global, qtree, health, threshold values 
+summary: 您可以為所有 qtree 設定全域健全狀況臨界值，以追蹤任何臨界值超出情況。系統會在健全狀況臨界值超出時產生相應的事件，您可以根據這些事件採取預防措施。您可以根據適用於所有受監控 qtree 的臨界值最佳實務做法設定來設定全域值。 
+---
+= 在 Active IQ Unified Manager 中設定全域 qtree 健全狀況臨界值
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以為所有 qtree 設定全域健全狀況臨界值，以追蹤任何臨界值超出情況。系統會在健全狀況臨界值超出時產生相應的事件，您可以根據這些事件採取預防措施。您可以根據適用於所有受監控 qtree 的臨界值最佳實務做法設定來設定全域值。
+
+.開始之前
+您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+臨界值選項具有預設值以提供更佳的監控，不過，您可以變更這些值以符合您的環境需求。
+
+只有在 qtree 上設定了 Qtree 配額或預設配額時，才會為該 qtree 產生事件。如果使用者配額或群組配額中定義的空間超過臨界值，則不會產生事件。
+
+.步驟
+. 在左側導覽窗格中，按一下 *事件臨界值* > *qtree*。
+. 設定適當的容量臨界值。
+. 按一下 *Save* 。
+

@@ -1,0 +1,14 @@
+---
+permalink: reporting/concept_customize_volume_relationship_reports.html 
+sidebar: sidebar 
+keywords: customize, volume, relationship, reports 
+summary: Volume 關係清單報告使您能夠分析叢集中的儲存設備清單詳細資訊，了解 Volume 所需的保護程度，並根據故障來源、模式和排程篩選 Volume 詳細資訊。 
+---
+= 在 Active IQ Unified Manager 中自訂 Volume 關係報告
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Volume 關係清單報告使您能夠分析叢集中的儲存設備清單詳細資訊，了解 Volume 所需的保護程度，並根據故障來源、模式和排程篩選 Volume 詳細資訊。

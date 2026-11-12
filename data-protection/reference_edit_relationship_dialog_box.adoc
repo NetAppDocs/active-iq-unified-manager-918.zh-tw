@@ -1,0 +1,73 @@
+---
+permalink: data-protection/reference_edit_relationship_dialog_box.html 
+sidebar: sidebar 
+keywords: edit, relationship, dialog box 
+summary: 您可以編輯現有的保護關係，以變更最大傳輸率、保護原則或保護排程。 
+---
+= 在 Active IQ Unified Manager 中編輯保護關係
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以編輯現有的保護關係，以變更最大傳輸率、保護原則或保護排程。
+
+
+
+[[destination-information]]
+== 目的地資訊
+
+* *目的地叢集*
++
+所選目的地叢集的名稱。
+
+* *目的地 SVM*
++
+所選 SVM 的名稱
+
+* *關係設定*
++
+可讓您指定保護關係所使用的最大傳輸率、SnapMirror 原則及排程：
+
++
+** 最高傳輸率
++
+指定叢集間透過網路傳輸基礎資料的最大速率。選取此項目後，網路頻寬將限制為您指定的值。您可以輸入一個數值，然後選擇每秒千位元組（KBps）、每秒百萬位元組（MBps）、每秒十億位元組（GB/s）或每秒兆位元組（TBps）。您指定的最大傳輸率必須大於 1 KBps 且小於 4 TBps。如果您選擇不使用最大傳輸率，則關係間的基礎傳輸不受限制。如果主要叢集和次要叢集相同，則此設定將被停用。
+
+** SnapMirror 原則
++
+指定關係的 ONTAP SnapMirror 原則。預設值為 DPDefault。
+
+** 建立原則
++
+啟動「建立 SnapMirror 原則」對話方塊，可讓您建立及使用新的 SnapMirror 原則。
+
+** SnapMirror 排程
++
+指定關係的 ONTAP SnapMirror 原則。可用排程包括：無、5 分鐘、8 小時、每日、每小時和每週。預設值為「無」，表示沒有排程與該關係相關聯。除非關係屬於儲存設備服務，否則沒有排程的關係沒有延遲狀態值。
+
+** 建立排程
++
+啟動「建立排程」對話方塊，讓您建立新的 SnapMirror 排程。
+
+
+
+
+
+
+
+[[command-buttons]]
+== 命令按鈕
+
+命令按鈕可讓您執行下列任務：
+
+* *取消*
++
+放棄選取項目並關閉「設定保護」對話方塊。
+
+* *提交*
++
+套用您的選擇並關閉「編輯關係」對話方塊。
+
+

@@ -1,0 +1,179 @@
+---
+permalink: api-automation/concept_ontap_troubleshooting_workflow.html 
+sidebar: sidebar 
+keywords: troubleshoot, ontap, volumes, gateway, api 
+summary: 閘道 API 充當閘道，以呼叫 ONTAP API 來查詢有關您的 ONTAP 儲存設備物件的資訊，並採取補救措施來解決所回報的問題。 
+---
+= 使用 Active IQ Unified Manager 閘道 API 對 ONTAP 磁碟區進行故障排除
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+閘道 API 充當閘道，以呼叫 ONTAP API 來查詢有關您的 ONTAP 儲存設備物件的資訊，並採取補救措施來解決所回報的問題。
+
+本工作流程採用一個範例使用案例，其中當 ONTAP Volume 幾乎達到其容量時會引發事件。此工作流程也示範如何透過呼叫 Active IQ Unified Manager 和 ONTAP REST API 的組合來解決此問題。
+
+[NOTE]
+====
+在執行工作流程步驟之前，請確保以下事項：
+
+* 您已感知閘道 API 及其使用方式。如需詳細資訊，請參閱 link:concept_gateway_apis.html["透過 Proxy 存取 ONTAP API"]。
+* 您已感知 ONTAP REST API 的用法。如需使用 ONTAP REST API 的相關資訊，請參閱 https://docs.netapp.com/us-en/ontap-automation/index.html["ONTAP 自動化文件"]。
+* 您是應用程式管理員。
+* 您要執行 REST API 操作的叢集受 ONTAP 9.5 或更新版本支援，並且該叢集已透過 HTTPS 新增至 Unified Manager。
+
+
+====
+下圖說明疑難排解 ONTAP Volume 容量使用問題的工作流程中的每個步驟。
+
+image::../media/api_gateway_ontap_workflow.gif[一張圖表，展示 Unified Manager 和 ONTAP API 疑難排解 Volume 容量警示的步驟。]
+
+此工作流程涵蓋了 Unified Manager 和 ONTAP REST API 的呼叫點。
+
+. 請注意通知 Volume 容量使用率的事件中的 Volume 名稱。
+. 透過將 Volume 名稱作為名稱參數的值，執行下列 Unified Manager API 來查詢 Volume。
++
+[cols="3*"]
+|===
+| 類別 | HTTP 動詞 | 路徑 
+
+
+ a| 
+資料中心
+ a| 
+取得
+ a| 
+`/datacenter/storage/volumes`
+
+|===
+. 從輸出擷取叢集 UUID 和 Volume UUID。
+. 在 Unified Manager Web UI 中，導覽至 *一般* > *功能設定* > *API 閘道*，以確認 API 閘道功能是否已啟用。除非已啟用，否則您無法呼叫閘道類別下的 API。如果該功能已停用，請將其啟用。
+. 使用叢集 UUID 透過 API 閘道執行 ONTAP API /`storage/volumes/{uuid}`。當 Volume UUID 作為 API 參數傳遞時，查詢會傳回 Volume 詳細資料。
++
+若要透過 API 閘道執行 ONTAP API，Unified Manager 憑證會在內部傳遞以進行驗證，您無需為個別叢集存取執行額外的驗證步驟。
+
++
+[cols="3*"]
+|===
+| 類別 | HTTP 動詞 | 路徑 
+
+
+ a| 
+Unified Manager：閘道
+
+ONTAP：儲存設備
+ a| 
+取得
+ a| 
+閘道 API： `/gateways/\{uuid}/\{path}`
+
+ONTAP API： `/storage/volumes/\{uuid}`
+
+|===
++
+[NOTE]
+====
+在 /gateways/\{uuid}/\{path} 中，\{uuid} 的值必須替換為要執行 REST 作業的叢集 UUID。\{path} 必須替換為 ONTAP REST URL /storage/volumes/\{uuid}。
+
+====
++
+附加的 URL 為： `/gateways/\{cluster_uuid}/storage/volumes/\{volume_uuid}`
+
++
+執行 GET 操作後，產生的 URL 為： `GEThttps://<hostname\>/api/gateways/<cluster_UUID\>/storage/volumes/\{volume_uuid\}`
+
++
+*cURL 命令範例*
+
++
+[listing]
+----
+curl -X GET "https://<hostname>/api/gateways/1cd8a442-86d1-11e0-ae1c-9876567890123/storage/volumes/028baa66-41bd-11e9-81d5-00a0986138f7"
+-H "accept: application/hal+json" -H "Authorization: Basic <Base64EncodedCredentials>"
+----
+. 根據輸出結果，確定大小、使用情況以及需要採取的補救措施。在此工作流程中，採取的補救措施是調整 Volume 大小。
+. 使用叢集 UUID，並透過 API 閘道執行以下 ONTAP API 來調整 Volume 大小。如需有關閘道和 ONTAP API 輸入參數的資訊，請參閱步驟 5。
++
+[cols="3*"]
+|===
+| 類別 | HTTP 動詞 | 路徑 
+
+
+ a| 
+Unified Manager：閘道
+
+ONTAP：儲存設備
+ a| 
+PATCH
+ a| 
+閘道 API： `/gateways/\{uuid}/\{path}`
+
+ONTAP API： `/storage/volumes/\{uuid}`
+
+|===
++
+[NOTE]
+====
+除了叢集 UUID 和 Volume UUID 之外，您還必須輸入用於調整 Volume 大小的 size 參數值。請確保 _以位元組為單位_ 輸入該值。例如，如果要將 Volume 的大小從 100 GB 增加到 120 GB，請在查詢結尾輸入 size 參數的值： `-d {\"size\": 128849018880}"`
+
+====
++
+*cURL 命令範例*
+
++
+[listing]
+----
+curl -X PATCH "https://<hostname>/api/gateways/1cd8a442-86d1-11e0-ae1c-9876567890123/storage/volumes/028baa66-41bd-11e9-81d5-00a0986138f7" -H
+    "accept: application/hal+json" -H "Authorization: Basic <Base64EncodedCredentials>" -d
+    {\"size\": 128849018880}"
+----
++
+JSON 輸出傳回一個作業 UUID。
+
+. 使用作業 UUID 驗證作業是否成功執行。使用叢集 UUID 和作業 UUID 透過 API 閘道執行下列 ONTAP API。如需有關閘道和 ONTAP API 輸入參數的資訊，請參閱步驟 5。
++
+[cols="3*"]
+|===
+| 類別 | HTTP 動詞 | 路徑 
+
+
+ a| 
+Unified Manager：閘道
+
+ONTAP：叢集
+ a| 
+取得
+ a| 
+閘道 API： `/gateways/\{uuid}/\{path}`
+
+ONTAP API： `/cluster/jobs/\{uuid}`
+
+|===
++
+傳回的 HTTP 代碼與 ONTAP REST API HTTP 狀態碼相同。
+
+. 執行以下 ONTAP API 查詢調整大小後的 Volume 的詳細資訊。有關閘道和 ONTAP API 的輸入參數的資訊，請參閱步驟 5。
++
+[cols="3*"]
+|===
+| 類別 | HTTP 動詞 | 路徑 
+
+
+ a| 
+Unified Manager：閘道
+
+ONTAP：儲存設備
+ a| 
+取得
+ a| 
+閘道 API： `/gateways/\{uuid}/\{path}`
+
+ONTAP API： `/storage/volumes/\{uuid}`
+
+|===
++
+輸出結果顯示 Volume 大小增加至 120 GB。
+
+

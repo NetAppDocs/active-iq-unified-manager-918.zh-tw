@@ -1,0 +1,45 @@
+---
+permalink: performance-checker/task_log_in_to_gui.html 
+sidebar: sidebar 
+keywords: log in, ui, unified manager 
+summary: 您可以使用支援的 Web 瀏覽器登入 Unified Manager UI。 
+---
+= 登入 Active IQ Unified Manager 使用者介面
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用支援的 Web 瀏覽器登入 Unified Manager UI。
+
+.開始之前
+* 網頁瀏覽器必須符合最低要求。
++
+請參閱 http://mysupport.netapp.com/matrix["mysupport.netapp.com/matrix"]的互通性矩陣，以取得支援的瀏覽器版本完整清單。
+
+* 您必須擁有 Unified Manager 伺服器的 IP 位址或 URL。
+
+
+如果您 1 小時內沒有任何活動，系統將自動登出您的工作階段。此時間範圍可在 *一般* > *功能設定* 下進行設定。
+
+.步驟
+. 在網頁瀏覽器中輸入 URL，其中 URL 是 Unified Manager 伺服器的 IP 位址或完整網域（FQDN）：
++
+** 對於 IPv4： `+https://URL/+`
+** 對於 IPv6： `https://[URL]/`
+
+
+
+
+如果伺服器使用自簽章數位憑證，瀏覽器可能會顯示警告，指出該憑證不受信任。您可以選擇確認風險並繼續存取，或安裝由憑證授權單位（CA）簽署的數位憑證以進行伺服器驗證。。在登入畫面上，輸入您的使用者名稱和密碼。
+
+如果 Unified Manager 使用者介面的登入受到 SAML 驗證保護，您將在身分供應商（IdP）登入頁面而不是 Unified Manager 登入頁面中輸入您的憑證。
+
+儀表板頁面已顯示。
+
+[NOTE]
+====
+如果 Unified Manager 伺服器尚未初始化，新的瀏覽器視窗將顯示首次使用精靈。您必須輸入初始電子郵件收件者（電子郵件警示將傳送至該收件者）、處理電子郵件通訊的 SMTP 伺服器，以及是否啟用 AutoSupport 以將您的 Unified Manager 安裝相關資訊傳送至技術支援。完成此資訊後，Unified Manager 使用者介面隨即出現。
+
+====

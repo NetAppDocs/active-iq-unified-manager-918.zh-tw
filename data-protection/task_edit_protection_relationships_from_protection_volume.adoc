@@ -1,0 +1,31 @@
+---
+permalink: data-protection/task_edit_protection_relationships_from_protection_volume.html 
+sidebar: sidebar 
+keywords: edit, protection, relationships, volume, relationships, page 
+summary: 您可以編輯現有的保護關係，以變更最大傳輸率、保護原則或保護排程。您可能會編輯關係來降低傳輸所使用的頻寬，或因資料頻繁變更而提高排程傳輸的頻率。 
+---
+= 在 Active IQ Unified Manager 的「磁碟區關係」頁面中編輯保護關係
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以編輯現有的保護關係，以變更最大傳輸率、保護原則或保護排程。您可能會編輯關係來降低傳輸所使用的頻寬，或因資料頻繁變更而提高排程傳輸的頻率。
+
+.開始之前
+您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+所選的 Volume 必須是保護關係目的地。當選取來源 Volume、負載共用 Volume，或是非 SnapMirror 或 SnapVault 關係目的地的 Volume 時，您無法編輯關係。
+
+.步驟
+. 在 *Volume 關係* 頁面中，在 Volume 清單中選取同一個 SVM 中您想要編輯關係設定的一個或多個 Volume，然後從工具列中選取 *編輯*。
++
+隨即顯示「編輯關係」對話方塊。
+
+. 在 *編輯關係* 對話方塊中，視需要編輯最大傳輸率、保護原則或保護排程。
+. 點選 *套用*。
++
+變更會套用至選取的關係。
+
+

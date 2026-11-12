@@ -1,0 +1,29 @@
+---
+permalink: config/task_access_maintenance_console_using_vsphere.html 
+sidebar: sidebar 
+keywords: access, maintenance, console, using, vsphere, vm console 
+summary: 如果 Unified Manager 使用者介面無法運作，或者您需要執行使用者介面中無法使用的功能，您可以存取維護主控台來重新設定您的虛擬應用裝置。 
+---
+= 在 Active IQ Unified Manager 中使用 vSphere VM 主控台存取維護主控台
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果 Unified Manager 使用者介面無法運作，或者您需要執行使用者介面中無法使用的功能，您可以存取維護主控台來重新設定您的虛擬應用裝置。
+
+.開始之前
+* 您必須是維護使用者。
+* 必須先啟動虛擬應用裝置才能存取維護主控台。
+
+
+.步驟
+. 在 vSphere 用戶端中，找到 Unified Manager 虛擬應用裝置。
+. 按一下 *Console* 索引標籤。
+. 點選控制台視窗內部進行登入。
+. 使用您的使用者名稱和密碼登入維護主控台。
++
+閒置 15 分鐘後，維護主控台會將您登出。
+
+

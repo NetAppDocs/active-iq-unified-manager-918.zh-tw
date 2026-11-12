@@ -1,0 +1,36 @@
+---
+permalink: performance-checker/task_view_performance_charts_to_compare_volumes_or_luns_in_qos_policy.html 
+sidebar: sidebar 
+keywords: view, performance, charts, compare, volumes, luns, same, qos, policy, group 
+summary: 您可以檢視同一 QoS 原則群組中的 Volume 和 LUN，然後在單一 IOPS、MB/s 或 IOPS/TB 圖表上比較效能，以識別任何問題。 
+---
+= 在 Active IQ Unified Manager 中比較同一 QoS 原則群組內的 Volume 或 LUN
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以檢視同一 QoS 原則群組中的 Volume 和 LUN，然後在單一 IOPS、MB/s 或 IOPS/TB 圖表上比較效能，以識別任何問題。
+
+以下顯示比較相同 QoS 原則群組中 Volume 效能的步驟。檢視 LUN 此資訊的步驟類似。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存設備* > *Volume*。
++
+預設會顯示「健康狀況：所有 Volume」檢視。
+
+. 在「檢視」功能表中，選擇 *效能：QoS 原則群組中的 Volume*。
+. 點擊您要審查的 Volume 名稱。
++
+顯示 Volume 的效能總管頁面。
+
+. 在「檢視與比較」選單中，選擇 *同一 QoS 原則群組中的 Volume*。
++
+下表列出共享相同 QoS 原則的其他 Volume。
+
+. 按一下 *新增* 按鈕，將這些 Volume 新增到圖表中，以便您可以比較圖表中所有選定 Volume 的 IOPS、MB/s、IOPS/TB 和其他效能計數器。
++
+您可以變更時間範圍，以檢視除預設的 72 小時之外的其他時間間隔內的效能。
+
+

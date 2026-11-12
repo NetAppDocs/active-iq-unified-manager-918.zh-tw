@@ -1,0 +1,175 @@
+---
+permalink: install-linux/task_selinux_requirements_for_mounting_opt_netapp.html 
+sidebar: sidebar 
+keywords: unified manager, selinux requirements, mounting, nfs, cifs, share 
+summary: 如果您規劃在 NAS 或 SAN 裝置上裝載 /opt/netapp 或 /opt/netapp/data，並且啟用了 SELinux，則需要感知下列注意事項。 
+---
+= 在 Active IQ Unified Manager 中為 NFS 和 CIFS 共用設定 SELinux
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您規劃將 `/opt/netapp` 或  `/opt/netapp/data`裝載到 NAS 或 SAN 裝置上，並且啟用了 SELinux，則需要感知一些注意事項。
+
+如果您規劃從根檔案系統以外的任何位置裝載 `/opt/netapp` 或 `/opt/netapp/data`，而且您的環境中啟用了 SELinux，則應為裝載的目錄設定正確的內容。針對您環境中的適用情境，請依照下列步驟設定並確認正確的 SELinux 內容。
+
+
+
+[[configure-the-selinux-context-when-optnetappdata-is-mounted]]
+== 設定 `/opt/netapp/data`裝載時的 SELinux 上下文
+
+如果您已在系統中裝載  `/opt/netapp/data`，並且 SELinux 設定為  `Enforcing`，請確保  `/opt/netapp/data` 的 SELinux 上下文類型設定為  `mysqld_db_t`，這是資料庫檔案位置的預設上下文元素。
+
+. 執行此命令以檢查上下文：
++
+`ls -dZ /opt/netapp/data`
+
++
+範例輸出：
+
++
+[listing]
+----
+drwxr-xr-x. mysql root unconfined_u:object_r:default_t:s0 /opt/netapp/data
+----
++
+
+NOTE: 在此輸出中，上下文為 `default_t`。您應該將此上下文變更為 `mysqld_db_t`。
+
+. 請依照這些步驟，根據您的裝載方式設定上下文 `/opt/netapp/data`。
++
+.. 執行下列命令將上下文設定為 `mysqld_db_t`：
+`semanage fcontext -a -t mysqld_db_t "/opt/netapp/data"
+`restorecon -R -v /opt/netapp/data`
+.. 如果您已在 `/etc/fstab`中設定了 `/opt/netapp/data`，則應編輯 `/etc/fstab`檔案。針對 `/opt/netapp/data/`裝載選項，請依下列方式新增 MySQL 標籤：
++
+`context=system_u:object_r:mysqld_db_t:s0`
+
+.. 卸載並重新掛載 `/opt/netapp/data/`以啟用上下文。
+.. 如果您有直接的 NFS 裝載，請執行下列命令將內容設定為 `mysqld_db_t`：
++
+`mount <nfsshare>:/<mountpoint> /opt/netapp/data -o context=system_u:object_r:mysqld_db_t:s0`
+
+
+
+. 驗證上下文是否設定正確：
+
+
+`ls -dZ /opt/netapp/data/`
+
+範例輸出：
+
+[listing]
+----
+drwxr-xr-x. mysql root unconfined_u:object_r:mysqld_db_t:s0 /opt/netapp/data/
+----
+
+
+[[configure-the-selinux-context-when-optnetapp-is-mounted-and-optnetappdata-is-also-mounted-separately]]
+== 當  `/opt/netapp` 裝載，且  `/opt/netapp/data/` 也單獨裝載時，設定 SELinux 上下文
+
+在這種情況下，首先，您應該為  `/opt/netapp/data/` 設定上下文，如上一節所述。為  `/opt/netapp/data/` 設定正確的上下文後，請確保父目錄  `/opt/netapp` 未將 SELinux 上下文設定為  `file_t`。
+
+.步驟
+. 執行此命令以檢查上下文：
++
+`ls -dZ /opt/netapp`
+
++
+範例輸出：
+
++
+[listing]
+----
+drwxr-xr-x. mysql root unconfined_u:object_r:file_t:s0 /opt/netapp
+----
++
+在此輸出中，應變更的內容為 `file_t`。下列命令會將內容設定為 `usr_t`。您可以根據安全性需求，將內容設定為 `file_t`以外的任何值。
+
+. 根據您的裝載方式，執行這些步驟來設定上下文 `/opt/netapp`。
++
+.. 執行下列命令以設定內容：
+
+
+
+
+[listing]
+----
+semanage fcontext -a -t usr_t "/opt/netapp"
+restorecon -v /opt/netapp
+----
+. 如果您已在 `/etc/fstab`中設定 `/opt/netapp`，則應編輯 `/etc/fstab`檔案。對於 `/opt/netapp`裝載選項，請新增 MySQL 標籤，如下所示：
++
+`context=system_u:object_r:usr_t:s0`
+
+. 卸載，然後重新裝載 `/opt/netapp`以啟用上下文。
+. 如果您有直接的 NFS 裝載，請執行下列命令來設定上下文：
++
+`mount <nfsshare>:/<mountpoint> /opt/netapp -o context=system_u:object_r:usr_t:s0`
+
++
+.. 驗證上下文是否設定正確：
++
+`ls -dZ /opt/netapp`
+
++
+範例輸出
+
+
+
+
+
+[listing]
+----
+drwxr-xr-x. mysql root unconfined_u:object_r:usr_t:s0 /opt/netapp
+----
+
+
+[[configure-the-selinux-context-when-optnetapp-is-mounted-and-optnetappdata-is-not-mounted-separately]]
+== 當 `/opt/netapp` 裝載且 `/opt/netapp/data/` 未單獨裝載時，設定 SELinux 上下文
+
+如果您已在系統中裝載  `/opt/netapp`，並且 SELinux 設定為  `Enforcing`，請確保  `/opt/netapp` 的 SELinux 上下文類型設定為  `mysqld_db_t`，這是資料庫檔案位置的預設上下文元素。
+
+.步驟
+. 執行此命令以檢查上下文：
++
+`ls -dZ /opt/netapp`
+
++
+範例輸出：
+
++
+[listing]
+----
+drwxr-xr-x. mysql root unconfined_u:object_r:default_t:s0 /opt/netapp
+----
++
+
+NOTE: 在此輸出中，上下文為 `default_t`。您應該將此上下文變更為 `mysqld_db_t`。
+
+. 根據您裝載 `/opt/netapp`的方式，執行以下步驟來設定上下文。
++
+.. 執行下列命令以將上下文設定為 `mysqld_db_t`：
+`semanage fcontext -a -t mysqld_db_t "/opt/netapp"
+`restorecon -R -v /opt/netapp`
+.. 如果您已在 `/etc/fstab`中設定 `/opt/netapp`，請編輯 `/etc/fstab`檔案。對於 `/opt/netapp/`裝載選項，請新增 MySQL 標籤，如下所示：
+`context=system_u:object_r:mysqld_db_t:s0`
+.. 卸載，然後重新裝載 `/opt/netapp/`以啟用上下文。
+.. 如果您有直接的 NFS 裝載，請執行下列命令將上下文設定為 `mysqld_db_t`：
+`mount <nfsshare>:/<mountpoint> /opt/netapp -o context=system_u:object_r:mysqld_db_t:s0`
+
+
+. 驗證上下文是否設定正確：
+
+
+`ls -dZ /opt/netapp/`
+
+範例輸出：
+
+[listing]
+----
+drwxr-xr-x. mysql root unconfined_u:object_r:mysqld_db_t:s0 /opt/netapp/
+----
+'''

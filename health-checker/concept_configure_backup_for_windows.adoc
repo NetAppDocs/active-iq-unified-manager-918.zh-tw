@@ -1,0 +1,157 @@
+---
+permalink: health-checker/concept_configure_backup_for_windows.html 
+sidebar: sidebar 
+keywords: backup, restore, windows, netapp, snapshot copy, copies, configure, backup 
+summary: Active IQ Unified Manager 支援在 Windows 作業系統上，藉助使用 iSCSI 協定的 LUN，使用 NetApp Snapshot 快照技術進行備份與恢復。 
+---
+= 在 Active IQ Unified Manager 中設定 Windows 上的備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Active IQ Unified Manager 支援在 Windows 作業系統上，藉助使用 iSCSI 協定的 LUN，使用 NetApp Snapshot 快照技術進行備份與恢復。
+
+在所有 Unified Manager 服務運作期間，可以執行基於 Snapshot 快照技術的備份。由於備份會對整個資料庫施加全域讀取鎖定以防止任何並行寫入，因此會擷取資料庫的一致狀態作為 Snapshot 快照技術的一部分。若要讓安裝在 Windows 作業系統上的 Unified Manager 系統能夠使用 NetApp Snapshot 快照技術執行備份與恢復，您應該先使用維護主控台將 Unified Manager 備份設定為基於 Snapshot 快照技術。
+
+在設定 Unified Manager 建立 Snapshot 複本之前，您應執行下列組態任務。
+
+* 設定 ONTAP 叢集
+* 設定 Windows 主機
+
+
+
+
+[[configure-a-backup-location-for-active-iq-unified-manager-on-windows]]
+== 在 Windows 上為 Active IQ Unified Manager 設定備份位置
+
+在 Windows 上備份 Unified Manager 後，您應該設定用於儲存 Snapshot 複本的 Volume。
+
+.開始之前
+叢集、儲存 VM 和 Volume 必須符合下列要求：
+
+* 叢集需求：
++
+** 必須安裝 ONTAP 9.3 或更高版本
+** 它在地理位置上應該靠近 Unified Manager 伺服器
+** 它由 Unified Manager 監控
+
+
+* Storage VM 要求：
++
+** ONTAP 叢集上的 iSCSI 連線
+** 必須為已設定的機器啟用 iSCSI 協定
+** 您應該為備份組態準備專用的 Volume 和 LUN。所選 Volume 應該只包含一個 LUN，不應包含其他任何內容。
+** LUN 的大小應至少是 9.9 Active IQ Unified Manager 中預期處理的資料大小的兩倍。
++
+這也會對 Volume 設定相同的大小要求。
+
+** 請確保已選擇所有讀取/寫入存取
+** 請確保在匯出原則中將超級使用者存取權限設定為「`any`」
+
+
+* Volume 和 LUN 要求：
++
+** Volume 至少應該是 Unified Manager MySQL 資料目錄大小的兩倍。
+** 安全樣式必須設定為 Windows
+** 必須停用本機 Snapshot 快照技術原則
+** 應啟用 Volume 自動調整規模
+** 效能服務層級應設定為具有高 IOPS 和低延遲的原則，例如 "`Extreme`"
+
+
+
+
+
+
+[[configure-an-ontap-cluster-for-backup-and-restore-in-active-iq-unified-manager]]
+== 在 Active IQ Unified Manager 中設定 ONTAP 叢集以進行備份與恢復
+
+在 Windows 系統上使用 Snapshot 複本備份與還原 Active IQ Unified Manager 之前，您需要在 ONTAP 叢集上執行一些預先設定步驟。
+
+您可以使用命令提示字元或 System Manager 使用者介面來設定 ONTAP 叢集。ONTAP 叢集的組態涉及設定資料 LIF，使其可作為 iSCSI LIF 指派給儲存設備 VM。下一步是使用 System Manager 使用者介面設定啟用 iSCSI 的儲存設備 VM。您需要為此儲存設備 VM 設定靜態網路路由，以控制 LIF 如何使用網路進行傳出流量。
+
+[NOTE]
+====
+您應該擁有專用 Volume 和 LUN 以進行備份組態。所選的 Volume 應僅包含一個 LUN。LUN 的大小應至少為 Active IQ Unified Manager 預期處理之資料大小的兩倍。
+
+====
+您需要執行以下組態：
+
+.步驟
+. 設定啟用 iSCSI 的儲存設備 VM，或使用具有相同組態的現有儲存設備 VM。
+. 為已設定的儲存設備 VM 設定網路路由。
+. 設定一個容量合適的 Volume，並在其中設定單一 LUN，確保該 Volume 僅專用於此 LUN。
++
+
+NOTE: 如果 LUN 是在 System Manager 中建立的，取消對應 LUN 可能會刪除 igroup，導致還原失敗。為避免這種情況，請確保在建立 LUN 時明確建立，並且在取消對應 LUN 時不會被刪除。
+
+. 在儲存設備 VM 中設定啟動器群組。
+. 設定 PortSet。
+. 將 igroup 與 PortSet 整合。
+. 將 LUN 對應到 igroup。
+
+
+
+
+[[configure-a-windows-host-machine-in-active-iq-unified-manager]]
+== 在 Active IQ Unified Manager 中設定 Windows 主機
+
+在您可以使用 NetApp Snapshot 快照技術來備份與恢復 Active IQ Unified Manager 之前，您需要設定 Windows 主機。若要在 Windows 主機上啟動 Microsoft iSCSI 啟動器，請在搜尋列中鍵入 "`iscsi`"，然後按一下 *iSCSI 啟動器*。
+
+.開始之前
+您應該清除主機上任何先前的組態。
+
+如果您嘗試在全新安裝的 Windows 系統上啟動 iSCSI 啟動器，系統會提示您進行確認，確認後將顯示「iSCSI 屬性」對話方塊。如果是已安裝的 Windows 系統，「iSCSI 屬性」對話方塊會顯示一個目標，該目標可能處於非作用中狀態或正在嘗試連線。因此，您需要確保已移除 Windows 主機上的所有先前組態。
+
+.步驟
+. 清除主機上所有先前的組態。
+. 探索目標入口網。
+. 連線至目標入口網。
+. 使用多重路徑連線至目標入口。
+. 發現這兩個 LIF。
+. 探索已在 Windows 電腦中設定為裝置的 LUN。
+. 在 Windows 中將發現的 LUN 設定為新的 Volume 磁碟機。
+
+
+
+
+[[specify-the-destination-location-for-snapshot-copies-on-windows-in-active-iq-unified-manager]]
+== 在 Active IQ Unified Manager 中指定 Windows 上 Snapshot 快照技術副本的目的地位置
+
+您應該在已設定的 ONTAP 叢集中的某個 Volume 上設定 Active IQ Unified Manager Snapshot 複本的目的地位置。您應該使用維護主控台來定義該位置。
+
+* 您必須擁有安裝 Active IQ Unified Manager 的 Windows 主機的系統管理員權限。
+* 您必須擁有授權的使用者 ID 和密碼才能登入 Unified Manager 伺服器的維護控制台。
+* 您必須擁有叢集管理 IP 位址、儲存設備 VM 名稱、Volume 名稱、LUN 名稱以及儲存系統使用者名稱和密碼。
+* 您必須已將 Volume 作為網路磁碟機裝載至 Active IQ Unified Manager 主機，且您必須擁有裝載磁碟機。
+
+
+.步驟
+. 使用 PowerShell，連線至 Active IQ Unified Manager 系統的 IP 位址或完整網域名稱。
+. 使用維護使用者（umadmin）名稱和密碼登入系統。
+. 輸入命令 `maintenance_console`並按下 Enter 鍵。
+. 在維護主控台 *主選單* 中，輸入 *備份還原* 選項的編號。
+. 請輸入 *設定 NetApp Snapshot 快照技術備份* 的編號。
+. 輸入要設定 iSCSI 的編號。
+. 檢閱您需要提供的資訊，然後輸入 *輸入備份組態詳細資料* 的編號。
+. 若要確定 Snapshot 快照技術將寫入的 Volume，請輸入叢集管理介面的 IP 位址、儲存設備 VM 的名稱、Volume 的名稱、LUN 名稱、儲存系統使用者名稱和密碼，以及裝載磁碟機。
+. 核實此資訊並輸入 `y`。
++
+此系統執行以下任務：
+
++
+** 儲存虛擬機器已驗證
+** Volume 已驗證
+** 裝載磁碟機並驗證其狀態
+** LUN 的存在與狀態
+** 網路磁碟機存在
+** 已驗證掛載 Volume 上是否存在推薦空間（大於 MySQL 資料目錄大小的兩倍）
+** Volume 中專用 LUN 對應的 LUN 路徑
+** igroup 名稱
+** 網路磁碟機裝載所在 Volume 的 GUID
+** 用於與 ONTAP 通訊的 iSCSI 啟動器
+
+
+. 退出維護控制台並產品發表 Active IQ Unified Manager 介面，以建立 Snapshot 複本的排程。
+

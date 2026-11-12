@@ -1,0 +1,16 @@
+---
+permalink: performance-checker/concept_refine_object_inventory_performance_page_content.html 
+sidebar: sidebar 
+keywords: refining, performance, inventory, page, contents 
+summary: 效能物件的清單頁面包含一些工具，可協助您精簡物件清單資料內容，讓您能夠快速輕鬆地找到特定資料。 
+---
+= 在 Active IQ Unified Manager 中最佳化效能清單頁面內容
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+效能物件的清單頁面包含一些工具，可協助您精簡物件清單資料內容，讓您能夠快速輕鬆地找到特定資料。
+
+效能物件清單頁面包含的資訊可能非常龐大，通常跨越多個頁面。這種全面的資料非常適合監控、追蹤和改善效能；然而，尋找特定資料需要工具，以協助您快速找到所需資料。因此，效能物件清單頁面包含搜尋、排序和篩選功能。此外，搜尋和篩選可以協同運作，進一步縮小您的結果範圍。

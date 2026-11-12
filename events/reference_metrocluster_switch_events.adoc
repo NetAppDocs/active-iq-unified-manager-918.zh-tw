@@ -1,0 +1,83 @@
+---
+permalink: events/reference_metrocluster_switch_events.html 
+sidebar: sidebar 
+keywords: metrocluster, switch, events, impact area, availability 
+summary: MetroCluster 交換器事件提供有關 MetroCluster 交換器狀態的資訊，以便您可以監控潛力問題。事件按影響區域分組，包括事件和陷阱名稱、影響層級、來源類型和嚴重性。 
+---
+= 了解 Active IQ Unified Manager 中的 MetroCluster 交換器事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+MetroCluster 交換器事件（針對 FC 上的 MetroCluster 組態）可提供有關 MetroCluster 交換器狀態的資訊，以便您監控潛力問題。事件按影響區域分組，包含事件和陷阱名稱、影響層級、來源類型和嚴重性。
+
+
+
+[[impact-area-availability]]
+== 影響區域：可用度
+
+|===
+| 事件名稱（陷阱名稱） | 影響層級 | 來源類型 | 嚴重程度 
+
+
+ a| 
+交換器溫度異常（ocumEvtSwitchTemperatureAbnormal）
+ a| 
+事件
+ a| 
+MetroCluster 交換器
+ a| 
+關鍵
+
+
+
+ a| 
+交換器無法連線（ocumEvtSwitchUnreachable）
+ a| 
+事件
+ a| 
+MetroCluster 交換器
+ a| 
+關鍵
+
+
+
+ a| 
+交換器風扇故障（ocumEvtSwitchFansOneOrMoreFailed）
+ a| 
+事件
+ a| 
+MetroCluster 交換器
+ a| 
+關鍵
+
+
+
+ a| 
+交換器電源故障（ocumEvtSwitchPowerSuppliesOneOrMoreFailed）
+ a| 
+事件
+ a| 
+MetroCluster 交換器
+ a| 
+關鍵
+
+
+
+ a| 
+交換器溫度感知器故障（ocumEvtSwitchTemperatureSensorFailed）
+
+[NOTE]
+====
+此事件僅適用於 Cisco 交換器。
+
+==== a| 
+事件
+ a| 
+MetroCluster 交換器
+ a| 
+關鍵
+
+|===

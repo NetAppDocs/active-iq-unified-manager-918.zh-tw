@@ -1,0 +1,26 @@
+---
+permalink: config/concept_what_functionality_maintenance_console_provides.html 
+sidebar: sidebar 
+keywords: functionality, maintenance, console 
+summary: Unified Manager 維護主控台可讓您維護 Unified Manager 系統上的設定，並進行任何必要的變更，以防止問題發生。 
+---
+= 了解 Active IQ Unified Manager 中的維護主控台
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager 維護主控台可讓您維護 Unified Manager 系統上的設定，並進行任何必要的變更，以防止問題發生。
+
+根據您安裝 Unified Manager 的作業系統，維護主控台提供下列功能：
+
+* 疑難排解虛擬應用裝置的任何問題，尤其是在 Unified Manager Web 介面無法使用時
+* 升級至較新版本的 Unified Manager
+* 產生支援包以發送給技術支援
+* 設定網路設定
+* 變更維護使用者密碼
+* 連線至外部資料供應商以傳送效能統計資料
+* 變更內部效能資料收集
+* 從先前備份的版本還原 Unified Manager 資料庫和組態設定。
+

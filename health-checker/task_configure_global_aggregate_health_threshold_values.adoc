@@ -1,0 +1,38 @@
+---
+permalink: health-checker/task_configure_global_aggregate_health_threshold_values.html 
+sidebar: sidebar 
+keywords: configure, global, aggregate, health, threshold values 
+summary: 您可以為所有彙總設定全域健全狀況臨界值，以追蹤任何超出臨界值的情況。系統會在超出臨界值時產生適當的事件，您可以根據這些事件採取預防措施。您可以根據適用於所有受監控彙總的臨界值最佳實務做法設定來設定全域值。 
+---
+= 在 Active IQ Unified Manager 中設定全域彙總健全狀況臨界值
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以為所有彙總設定全域健全狀況臨界值，以追蹤任何超出臨界值的情況。系統會在超出臨界值時產生適當的事件，您可以根據這些事件採取預防措施。您可以根據適用於所有受監控彙總的臨界值最佳實務做法設定來設定全域值。
+
+.開始之前
+您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+當您全域設定選項時，物件的預設值會被修改。但是，如果預設值已在物件層級變更，則全域值不會被修改。
+
+臨界值選項具有預設值以提供更佳的監控，不過，您可以變更這些值以符合您的環境需求。
+
+當在位於彙總的 Volume 上啟用 Autogrow 時，彙總容量臨界值將根據 Autogrow 設定的最大 Volume 大小來判斷是否超出，而不是根據原始 Volume 大小來判斷。
+
+[NOTE]
+====
+健全狀況臨界值不適用於節點的根 Aggregate。
+
+====
+.步驟
+. 在左側導覽窗格中，按一下 *事件臨界值* > *彙總*。
+. 設定容量、成長和 Snapshot 複本的適當臨界值。
+. 按一下 *Save* 。
+
+
+*相關資訊*
+
+link:../config/task_add_users.html["新增使用者"]

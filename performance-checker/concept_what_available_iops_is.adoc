@@ -1,0 +1,34 @@
+---
+permalink: performance-checker/concept_what_available_iops_is.html 
+sidebar: sidebar 
+keywords: available, iops, total iops, aggregate iops, volume iops 
+summary: 可用 IOPS 計數器指示在資源達到其上限之前，還可以新增至節點或彙總的剩餘 IOPS 數量。節點可提供的總 IOPS 取決於節點的實體特性，例如 CPU 數量、CPU 速度和 RAM 容量。彙總可提供的總 IOPS 取決於磁碟的實體屬性，例如 SATA、SAS 或 SSD 磁碟。 
+---
+= 了解 Active IQ Unified Manager 中的可用 IOPS
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+可用 IOPS 計數器會指出在資源達到其限制之前，可新增至節點或彙總的剩餘 IOPS 數量。
+
+節點可提供的總 IOPS 取決於節點的實體特性，例如 CPU 數量、CPU 速度和 RAM 容量。彙總可提供的總 IOPS 取決於磁碟的實體特性，例如 SATA、SAS 或 SSD 磁碟。
+
+彙總中所有 Volume 的總 IOPS 可能與彙總的總 IOPS 不符。這在下列知識庫文章中有所討論：KB link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Infrastructure_Management/Active_IQ_Unified_Manager/Why_does_the_sum_of_all_volume_IOPs_in_an_aggregate_not_match_the_aggregate_IOPs%3F["為什麼彙總中所有 Volume IOPs 的總和與彙總 IOPs 不符？"]
+
+效能容量空閒計數器顯示資源的可用百分比，而可用 IOPS 計數器則顯示達到最大效能容量之前可以新增至資源的確切 IOPS（工作負載）數量。
+
+例如，如果您使用一對 FAS2520 和 FAS8060 儲存設備系統，30% 的效能容量可用值表示您有一些剩餘的效能容量。但是，該值無法提供可見度，讓您了解還能在這些節點上部署多少工作負載。可用 IOPS 計數器可能顯示 FAS8060 上有 500 個可用 IOPS，而 FAS2520 上只有 100 個可用 IOPS。
+
+下圖顯示節點的延遲與 IOPS 曲線範例。
+
+image::../media/available_iops.gif[一張顯示節點的延遲與 IOPS 曲線範例的 UI 快照。]
+
+資源可提供的最大 IOPS 數量，是當效能容量使用計數器為 100%（最佳點）時的 IOPS 數量。運作點指出節點目前以 100K IOPS 運作，延遲為 1.0 ms/op。根據從節點擷取的統計資料，Unified Manager 判斷該節點的最大 IOPS 為 160K，這表示有 60K 的可用 IOPS。因此，您可以新增更多工作負載至此節點，讓您的系統使用更具效率。
+
+[NOTE]
+====
+當資源上的使用者活動極少時，可用 IOPS 值是基於每個 CPU 核心約 4,500 IOPS 的通用工作負載計算得出的。這是因為 Unified Manager 缺乏準確估算所服務工作負載特性的資料。
+
+====

@@ -1,0 +1,16 @@
+---
+permalink: reference_release_notes.html 
+sidebar: sidebar 
+keywords: release notes, active iq unified manager 
+summary: 提供 Active IQ Unified Manager 9.18 的新功能、限制和已知問題的總結。 
+---
+= Active IQ Unified Manager 發行說明
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+提供 Active IQ Unified Manager 9.18 的新功能、限制和已知問題的總結。
+
+如需詳細資訊，請參閱 https://library.netapp.com/ecm/ecm_download_file/ECMLP3362664["Active IQ Unified Manager 發行說明"]。

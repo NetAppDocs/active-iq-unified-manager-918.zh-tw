@@ -1,0 +1,36 @@
+---
+permalink: reporting/task_create_report_to_view_svms_reaching_maximum_volume_limit.html 
+sidebar: sidebar 
+keywords: create, report, view, storage VMs, volume, limit 
+summary: 您可以建立報告來尋找達到最大 Volume 限制的 SVM。 
+---
+= 建立一份報告，以檢視 Active IQ Unified Manager 中達到最大 Volume 限制的儲存設備虛擬機器
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以建立報告來尋找達到最大 Volume 限制的 SVM。
+
+.開始之前
+* 您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+
+請依照下列步驟建立自訂檢視，顯示達到最大 Volume 限制的儲存設備虛擬機，然後排定為該檢視產生報告。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存設備* > *儲存虛擬機器*。
+. 選取 *顯示/隱藏* 可移除報告中不需要的任何欄。
+. 將 "`Volume 數量`" 和 "`最大允許 Volume 數`" 欄拖曳到 "`Storage VM`" 欄附近。
+. 按一下 "`最大允許 Volume 數`" 欄的頂部，依最高的 Volume 數量對結果進行排序。
+. 將檢視儲存為能夠反映檢視顯示內容的特定名稱，例如 "`SVM 達到最大 Volume`"，然後按一下核取記號（image:../media/blue_check.gif[""]）。
+. 在庫存頁面上點選 *排程報告* 按鈕。
+. 按一下 *新增排程* 以在 *報告排程* 頁面新增一列，以便您可以定義新報告的排程特性。
+. 輸入報告排程的名稱並完成其他報告欄位，然後按一下列末尾的勾號（image:../media/blue_check.gif[""]）。
++
+報告會立即作為測試傳送。之後，報告會產生並依指定的頻率透過電子郵件傳送給列出的收件者。
+
+
+
+根據報告中顯示的結果，您可能需要平衡指派給儲存設備虛擬機器的 Volume，或者，如果可能的話，使用 ONTAP System Manager 來變更允許的最大 Volume。

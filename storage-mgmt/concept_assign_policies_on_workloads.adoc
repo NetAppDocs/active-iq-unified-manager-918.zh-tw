@@ -1,0 +1,70 @@
+---
+permalink: storage-mgmt/concept_assign_policies_on_workloads.html 
+sidebar: sidebar 
+keywords: assign, policies, workloads, single, multiple, storage, system-recommended, psls 
+summary: 您可以從「所有工作負載」頁面使用不同的導覽選項，為儲存設備工作負載指派儲存效率原則（SEP）和效能服務層級（PSL）。 
+---
+= 在 Active IQ Unified Manager 中為工作負載指派原則
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以從「所有工作負載」頁面使用不同的導覽選項，為儲存設備工作負載指派儲存效率原則（SEP）和效能服務層級（PSL）。
+
+
+
+[[assign-policies-to-a-single-workload]]
+== 將原則指派給單一工作負載
+
+您可以將 PSL 或 SEP 或兩者都指派給單一工作負載。請依照以下步驟操作：
+
+. 選擇工作負載。
+. 按一下列旁邊的編輯圖示，然後按一下 *編輯*。
++
+*已指派的效能服務層級*和*儲存效率原則*欄位已啟用。
+
+. 選擇所需的 PSL 或 SEP，或兩者都選。
+. 點擊勾選圖示以套用變更。
+
+
+[NOTE]
+====
+您也可以選擇工作負載，然後按一下 *更多行動* 以指派原則。
+
+====
+
+
+[[assign-policies-to-multiple-storage-workloads]]
+== 將原則指派給多個儲存設備工作負載
+
+您可以將 PSL 或 SEP 同時指派給多個儲存設備工作負載。請依照以下步驟操作：
+
+. 選取要指派原則的工作負載核取方塊，或選取資料中心內的所有工作負載。
+. 點選 *更多行動*。
+. 若要指派 PSL，請選擇 *指派效能服務層級*。若要指派 SEP，請選擇 *指派儲存效率原則*。此時會顯示快顯視窗，供您選擇原則。
+. 選擇合適的原則，然後按一下 *套用*。系統將顯示已指派原則的工作負載數量。同時，系統也會列出未指派原則的工作負載及其原因。
++
+[NOTE]
+====
+大量套用原則到工作負載可能需要一些時間，具體取決於所選工作負載的數量。您可以按一下 *Run in background* 按鈕，並在背景執行作業的同時繼續執行其他工作。大量指派完成後，您可以檢視完成狀態。如果您要對多個工作負載套用 PSL，則在前一個大量指派作業執行時，您無法觸發另一個要求。
+
+====
+
+
+
+
+[[assign-system-recommended-psls-to-workloads]]
+== 將系統建議的 PSL 指派給工作負載
+
+您可以將系統建議的 PSL 指派給資料中心中尚未指派 PSL 或已指派的 PSL 與系統建議不符的儲存設備工作負載。若要使用此功能，請按一下 *指派系統建議的 PSL* 按鈕。您無需選擇特定的工作負載。
+
+此建議由系統內部分析決定，對於 IOPS 和其他參數與任何可用 PSL 定義不符的工作負載，則會跳過此建議。具有 `Waiting for I/O` 和「學習」狀態的儲存設備工作負載也會被排除在外。
+
+[NOTE]
+====
+Unified Manager 會在工作負載名稱中尋找特定關鍵字，以置換系統分析結果，並為工作負載建議不同的 PSL。當工作負載名稱中含有字母「`ora`」時，系統會建議使用 **Extreme Performance** PSL。當工作負載名稱中含有字母「`vm`」時，系統會建議使用 **Performance** PSL。
+
+====
+另請參閱知識庫（KB）文章 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Infrastructure_Management/Active_IQ_Unified_Manager/Performance_Service_Level'_is_not_adaptive_to_a_highly_variable_workload["ActiveIQ Unified Manager 的「指派系統建議的效能服務層級」對高度可變的工作負載不具調適能力"]

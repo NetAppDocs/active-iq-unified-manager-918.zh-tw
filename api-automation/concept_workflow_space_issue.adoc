@@ -1,0 +1,74 @@
+---
+permalink: api-automation/concept_workflow_space_issue.html 
+sidebar: sidebar 
+keywords: determine, space, issue, aggregate 
+summary: 您可以使用 Active IQ Unified Manager 中的資料中心 API 來監控 Volume 中的空間可用度和使用率。您可以確定 Volume 中的空間問題，並識別過度使用或未充分利用的儲存資源。 
+---
+= 使用 Active IQ Unified Manager API 判斷集合體中的空間問題
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 Active IQ Unified Manager 中的資料中心 API 來監控 Volume 中的空間可用度和使用率。您可以確定 Volume 中的空間問題，並識別過度使用或未充分利用的儲存資源。
+
+針對彙總的資料中心 API 可擷取可用空間、已使用空間和空間節省效率設定的相關資訊。您也可以根據指定的屬性篩選擷取的資訊。
+
+判斷彙總中是否缺乏空間的一種方法，是驗證環境中是否有啟用自動調整規模模式的 Volume。然後，您應該識別哪些 Volume 的使用率過高，並執行任何修正行動。
+
+以下流程圖說明擷取已啟用自動調整規模模式的 Volume 資訊的流程：
+
+image::../media/space_utilization.gif[用於識別叢集聚合中過度使用的啟用自動調整大小模式 Volume 的流程圖]
+
+此流程假設叢集已在 ONTAP 中建立，並已新增至 Unified Manager。
+
+. 取得叢集金鑰，除非您已知該值：
++
+[cols="3*"]
+|===
+| 類別 | HTTP 動詞 | 路徑 
+
+
+ a| 
+資料中心
+ a| 
+取得
+ a| 
+`/datacenter/cluster/clusters`
+
+|===
+. 使用叢集鍵作為篩選參數，查詢該叢集上的彙總。
++
+[cols="3*"]
+|===
+| 類別 | HTTP 動詞 | 路徑 
+
+
+ a| 
+資料中心
+ a| 
+取得
+ a| 
+`/datacenter/storage/aggregates`
+
+|===
+. 從回應中，分析彙總的空間使用情況，並判斷哪些彙總有空間問題。針對每個有空間問題的彙總，從相同的 JSON 輸出中取得彙總鍵。
+. 使用每個彙總鍵，篩選出所有 autosize.mode 參數值為 `grow.`的 Volume
++
+[cols="3*"]
+|===
+| 類別 | HTTP 動詞 | 路徑 
+
+
+ a| 
+資料中心
+ a| 
+取得
+ a| 
+`/datacenter/storage/volumes`
+
+|===
+. 分析哪些 Volume 被過度使用。
+. 執行任何必要的修正行動，例如將 Volume 移至其他彙總，以解決 Volume 中的空間問題。您可以透過 ONTAP 或 Unified Manager Web UI 執行這些行動。
+

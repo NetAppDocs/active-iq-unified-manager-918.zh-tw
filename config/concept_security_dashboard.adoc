@@ -1,0 +1,53 @@
+---
+permalink: config/concept_security_dashboard.html 
+sidebar: sidebar 
+keywords: security compliance settings, security feature settings, ONTAP hardening guide, AutoSupport settings, authentication settings 
+summary: 您可以在 Unified Manager 上啟用或停用法規遵循監控的安全性參數。 
+---
+= 在 Active IQ Unified Manager 中啟用和停用安全性設定以符合法規遵循
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+透過使用「功能設定」頁面的 *安全性儀表板* 面板上的 *自訂* 按鈕，您可以啟用或停用 Unified Manager 上的法規遵循監控安全性參數。
+
+本頁面啟用或停用的設定會治理 Unified Manager 上叢集和儲存 VM 的整體法規遵循狀態。根據選擇，對應的欄位會顯示在叢集清單頁面的 *安全性：所有叢集* 檢視和儲存 VM 清單頁面的 *安全性：所有儲存 VM* 檢視中。
+
+[NOTE]
+====
+只有具有系統管理員角色的使用者才能編輯這些設定。
+
+====
+系統會根據 link:https://www.netapp.com/pdf.html?item=/media/10674-tr4569pdf.pdf["NetApp ONTAP 9 安全加固指南"] 中定義的建議，評估您的 ONTAP 叢集、儲存設備虛擬機器和磁碟區的安全性準則。儀表板上的「安全性」面板和「安全性」頁面會顯示叢集、儲存設備虛擬機器和磁碟區的預設安全性法規遵循狀態。系統也會產生安全性事件，並對發生安全性違規的叢集和儲存設備虛擬機器啟用管理動作。
+
+
+
+[[customize-security-settings]]
+== 自訂安全性設定
+
+若要根據您的 ONTAP 環境自訂法規遵循監控設定，請依照下列步驟操作：
+
+.步驟
+. 按一下 *一般 > 功能設定 > 安全性儀表板 > 自訂*。此時會顯示 *自訂安全性儀表板設定* 快顯視窗。
++
+[NOTE]
+====
+您啟用或停用的安全性法規遵循參數會直接影響「叢集」和「儲存 VM」畫面上的預設安全性檢視、報告和排程報告。如果您在修改安全性參數之前已從這些畫面上傳過 Excel 報告，則下載的 Excel 報告可能有錯誤。
+
+====
+. 若要啟用或停用 ONTAP 叢集的自訂設定，請在 *叢集* 下選取所需的一般設定。如需自訂叢集法規遵循選項的相關資訊，請參閱 link:../health-checker/reference_cluster_compliance_categories.html["叢集法規遵循類別"]。
+. 若要啟用或停用儲存設備虛擬機器的自訂設定，請在 *Storage VM* 下選取所需的一般設定。如需自訂儲存設備虛擬機器法規遵循選項的相關資訊，請參閱 link:../health-checker/reference_svm_compliance_categories.html["儲存虛擬機器法規遵循類別"]。
+
+
+
+
+[[customize-autosupport-and-authentication-settings]]
+== 自訂 AutoSupport 和驗證設定
+
+在 *AutoSupport 設定* 區段中，您可以指定是否要使用 HTTPS 傳輸從 ONTAP 傳送 AutoSupport 訊息。
+
+從 *驗證設定* 區段中，您可以啟用 Unified Manager 警報，以便為預設的 ONTAP 系統管理員使用者發出警報。
+
+'''

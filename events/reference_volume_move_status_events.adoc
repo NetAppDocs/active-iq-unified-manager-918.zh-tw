@@ -1,0 +1,67 @@
+---
+permalink: events/reference_volume_move_status_events.html 
+sidebar: sidebar 
+keywords: volume, move, status, events, impact area, capacity 
+summary: Volume 遷移狀態事件會告知您 Volume 遷移的狀態，以便您監控潛力問題。事件按影響區域分組，包含事件和陷阱名稱、影響層級、來源類型和嚴重性。 
+---
+= 了解 Active IQ Unified Manager 中的 Volume 移動狀態事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Volume 遷移狀態事件會告知您 Volume 遷移的狀態，以便您監控潛力問題。事件按影響區域分組，包含事件和陷阱名稱、影響層級、來源類型和嚴重性。
+
+
+
+[[impact-area-capacity]]
+== 影響區域：容量
+
+|===
+| 事件名稱（陷阱名稱） | 影響層級 | 來源類型 | 嚴重程度 
+
+
+ a| 
+Volume 搬移狀態：進行中（不適用）
+ a| 
+事件
+ a| 
+磁碟區
+ a| 
+資訊
+
+
+
+ a| 
+Volume 移動狀態 - 失敗（ocumEvtVolumeMoveFailed）
+ a| 
+風險
+ a| 
+磁碟區
+ a| 
+錯誤
+
+
+
+ a| 
+Volume 遷移狀態：已完成（不適用）
+ a| 
+事件
+ a| 
+磁碟區
+ a| 
+資訊
+
+
+
+ a| 
+Volume 搬移 - 延遲切換（ocumEvtVolumeMoveCutoverDeferred）
+ a| 
+風險
+ a| 
+磁碟區
+ a| 
+警告
+
+|===

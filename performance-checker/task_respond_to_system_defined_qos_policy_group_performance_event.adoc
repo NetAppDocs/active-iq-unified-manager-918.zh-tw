@@ -1,0 +1,53 @@
+---
+permalink: performance-checker/task_respond_to_system_defined_qos_policy_group_performance_event.html 
+sidebar: sidebar 
+keywords: qos, policy, group, performance, events 
+summary: 當工作負載處理量（IOPS、IOPS/TB 或 MBps）超過定義的 ONTAP QoS 原則設定，且工作負載延遲受到影響時，Unified Manager 會產生 QoS 原則警告事件。這些系統定義的事件提供了在大量工作負載受到延遲影響之前，修正潛力效能問題的商機。 
+---
+= 在 Active IQ Unified Manager 中回應 QoS 原則群組效能事件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當工作負載處理量（IOPS、IOPS/TB 或 MBps）超過定義的 ONTAP QoS 原則設定，且工作負載延遲受到影響時，Unified Manager 會產生 QoS 原則警告事件。這些系統定義的事件提供了在大量工作負載受到延遲影響之前，修正潛力效能問題的商機。
+
+.開始之前
+* 您必須擁有操作員、應用程式管理員或儲存管理員角色。
+* 必須有新的、已確認的或已過時的效能事件。
+
+
+Unified Manager 會在上一小時的每個效能收集週期內，當工作負載處理量超過定義的 QoS 原則設定時，產生 QoS 原則違規警告事件。工作負載處理量可能在每個收集週期內僅在短時間內超過 QoS 臨界值，但 Unified Manager 圖表上僅顯示該收集週期內的「平均」處理量。因此，即使工作負載的處理量可能並未超過圖表中顯示的原則臨界值，您仍可能會收到 QoS 事件。
+
+您可以使用 System Manager 或 ONTAP 指令來管理原則群組，包括下列任務：
+
+* 為工作負載建立新的原則群組
+* 在原則群組中新增或移除工作負載
+* 在原則群組之間移動工作負載
+* 更改原則群組的處理量限制
+* 將工作負載移至不同的彙總或節點
+
+
+.步驟
+. 顯示 *事件詳細資料* 頁面以檢視事件的資訊。
+. 請檢閱 *描述* ，其中說明導致事件的臨界值違規。
++
+例如，訊息 "`vol1_NFS1 上的 IOPS 值為 1,352 IOPS 已觸發警告事件，以識別工作負載的潛力效能問題`" 表示 Volume vol1_NFS1 上發生了 QoS Max IOPS 事件。
+
+. 審查 *事件資訊* 區段，以了解更多關於事件發生時間及事件已作用中多久的詳細資訊。
++
+此外，對於共享 QoS 原則處理量的 Volume 或 LUN，您可以查看消耗最多 IOPS 或 MBps 的前三個工作負載名稱。
+
+. 在 *系統診斷* 部分，審查兩個圖表：一個顯示總平均 IOPS 或 MBps（取決於事件），另一個顯示延遲。這樣排列後，您可以了解當工作負載接近 QoS 最大限制時，哪些叢集元件對延遲的影響最大。
++
+對於共享的 QoS 原則事件，處理量圖表中會顯示前三個工作負載。如果超過三個工作負載共享該 QoS 原則，則額外的工作負載會合併至 "`Other workloads`" 類別。此外，延遲圖表會顯示所有屬於該 QoS 原則之工作負載的平均延遲。
+
++
+請注意，對於具調適能力的 QoS 原則事件，IOPS 和 MBps 圖表顯示的 IOPS 或 MBps 值是 ONTAP 根據 Volume 的大小從分配的 IOPS/TB 臨界值原則轉換而來的。
+
+. 在 *建議操作* 部分，審查建議並確定應執行哪些操作以避免工作負載延遲增加。
++
+如果需要，請按一下 *說明* 按鈕來檢視更多詳細資訊，以了解您可以執行哪些建議動作來嘗試解決效能事件。
+
+

@@ -1,0 +1,37 @@
+---
+permalink: storage-mgmt/task_edit_clusters.html 
+sidebar: sidebar 
+keywords: edit, clusters 
+summary: 您可以使用「編輯叢集」對話方塊修改現有叢集的設定，例如主機名稱或 IP 位址、使用者名稱、密碼和連接埠。 
+---
+= 在 Active IQ Unified Manager 中編輯叢集設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用「編輯叢集」對話方塊修改現有叢集的設定，例如主機名稱或 IP 位址、使用者名稱、密碼和連接埠。
+
+.開始之前
+您必須擁有應用程式管理員角色或儲存設備管理員角色。
+
+[NOTE]
+====
+從 Unified Manager 9.7 開始，叢集只能使用 HTTPS 新增。
+
+====
+.步驟
+. 在左側導覽窗格中，按一下 *儲存管理* > *叢集設定*。
+. 在 *叢集設定* 頁面上，選取您要編輯的叢集，然後按一下 *編輯*。
+. 在 *Edit Cluster* 對話方塊中，視需要修改值。+ 如果您已修改新增至 Unified Manager 的叢集詳細資料，則可根據 ONTAP 版本，檢視雙向 TLS 通訊的憑證詳細資料。如需有關 ONTAP 版本的詳細資訊，請參閱 link:../storage-mgmt/task_add_clusters.html["用於相互 TLS 通訊的憑證"]。+ 您可以按一下 *Certificate Details* 來檢視憑證詳細資料。如果憑證已過期，請按一下 *Regenerate* 按鈕以納入新憑證。
+. 按一下 *提交*。
+. 在「授權主機」對話方塊中，按一下 *檢視憑證* 以檢視有關叢集的憑證資訊。
+. 點選 *Yes* 。
+
+
+*相關資訊*
+
+link:../config/task_add_users.html["新增使用者"]
+
+link:../health-checker/task_view_cluster_list_and_details.html["檢視叢集清單與詳細資料"]

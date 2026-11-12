@@ -1,0 +1,59 @@
+---
+permalink: performance-checker/concept_understand_um_recommendations_to_tier_data_to_cloud.html 
+sidebar: sidebar 
+keywords: understand, unified manager, recommendations, tier, data, cloud 
+summary: 效能頁面上的「所有 Volume」檢視會顯示非作用中（冷）資料大小，並識別出分層至 FabricPool 雲端層將帶來優點的 Volume。 
+---
+= 查看 Active IQ Unified Manager 關於將資料分層至雲端的建議
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+「效能：所有 Volume」檢視會顯示與儲存在 Volume 上的非作用中（冷）使用者資料大小相關的資訊。在某些情況下，Unified Manager 會識別出某些 Volume，若將非作用中資料分層至啟用 FabricPool 的彙總的雲端層（雲端供應商或 StorageGRID），這些 Volume 將可獲得優點。
+
+[NOTE]
+====
+FabricPool 是在 ONTAP 9.2 中導入，因此如果您使用的是 9.2 之前的 ONTAP 軟體版本，Unified Manager 將資料分層的建議需要升級您的 ONTAP 軟體。此外， `*auto*` 分層原則是在 ONTAP 9.4 中導入，而  `*all*` 分層原則是在 ONTAP 9.6 中導入，因此如果建議是使用自動分層原則，您必須升級至 ONTAP 9.4 或更高版本。
+
+====
+「效能：所有 Volume」檢視中的下列三個欄位提供有關您是否能透過將非作用中資料移至雲端分層，來改善儲存系統的磁碟使用率並節省效能分層空間的資訊。
+
+* *分層原則*
++
+分層原則決定 Volume 上的資料是保留在效能分層，還是將部分資料從效能分層移至雲端分層。
+
++
+此欄位中的值指示 Volume 上設定的分層原則，即使該 Volume 目前未位於 FabricPool 彙總中。分層原則僅在 Volume 位於 FabricPool 彙總時生效。
+
+* *冷資料*
++
+冷資料顯示儲存在 Volume 上非作用中（冷）的使用者資料大小。
+
++
+只有在使用 ONTAP 9.4 或更新版本軟體時，此處才會顯示該值，因為這需要部署 Volume 的彙總將 `*inactive data reporting parameter*`設定為 `*enabled*`，並且已達到最小冷卻天數臨界值（適用於使用 `*snapshot-only*`或 `*auto*`分層原則的 Volume）。否則該值會列為 "`N/A`"。
+
+* *雲端建議*
++
+在擷取到足夠有關 Volume 上資料活動的資訊後， Unified Manager 可能會判斷無需採取任何行動，或者您可以透過將非作用中資料分層至雲端分層，來節省效能分層上的空間。
+
+
+
+[NOTE]
+====
+「冷資料」欄位每 15 分鐘更新一次，而「雲端建議」欄位在對 Volume 執行冷資料分析時每 7 天更新一次。因此，兩個欄位中的確切冷資料量可能有所不同。「雲端建議」欄位會顯示執行分析的日期。
+
+====
+啟用「非作用中資料報告」時，「冷資料」欄位會顯示非作用中資料的確切數量。若無非作用中資料報告功能，Unified Manager 會使用效能統計資料來判斷 Volume 上的資料是否為非作用中。在這種情況下，「冷資料」欄位不會顯示非作用中資料的數量，但當您將游標停留在 *分層* 一詞上以檢視雲端建議時，就會顯示該數量。
+
+您將看到的雲端建議如下：
+
+* *學習中*。目前收集的資料不足以提出建議。
+* *分層*。分析已確定 Volume 包含非作用中（冷）資料，您應該設定 Volume 以將該資料移至雲端分層。在某些情況下，這可能需要您先將 Volume 移至啟用 FabricPool 的彙總。在 Volume 已位於 FabricPool 彙總的其他情況下，您只需變更分層原則即可。
+* *無行動*。Volume 幾乎沒有非作用中資料、Volume 已在 FabricPool 彙總上設定為 "`auto`" 分層原則，或是 Volume 為資料保護 Volume。當 Volume 離線或在 MetroCluster 組態中使用時，也會顯示此值。
+
+
+若要移動 Volume，或變更 Volume 分層原則或彙總非作用中資料報告設定，請使用 ONTAP System Manager、ONTAP CLI 命令，或這些工具的組合。
+
+如果您以應用程式管理員或儲存管理員角色登入 Unified Manager，當您將游標停留在 *分層* 一詞上時，雲端建議中會提供 *設定 Volume* 連結。按一下此按鈕可在 System Manager 中開啟 Volume 頁面，以進行建議的變更。

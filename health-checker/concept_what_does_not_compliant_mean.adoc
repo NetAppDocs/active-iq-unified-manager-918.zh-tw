@@ -1,0 +1,23 @@
+---
+permalink: health-checker/concept_what_does_not_compliant_mean.html 
+sidebar: sidebar 
+keywords: not compliant, compliant 
+summary: 當根據 ONTAP 9 的 NetApp 安全性強化指南中定義的建議所評估的任何安全性準則未獲滿足時，叢集和儲存設備虛擬機器（SVM）將被視為不符合法規。此外，當任何 SVM 被標記為不符合法規時，叢集也會被視為不符合法規。 
+---
+= 了解 Active IQ Unified Manager 中的叢集和 SVM 法規遵循狀態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當叢集和儲存設備虛擬機器（SVM）未能滿足根據《NetApp ONTAP 9 安全強化指南》中定義的建議所評估的任何安全性標準時，即被視為不符合法規。此外，當任何 SVM 被標記為不符合法規時，叢集也會被視為不符合法規。
+
+安全性卡中的狀態圖示在法規遵循方面具有以下含義：
+
+* image:../media/sev_normal_um60.png["正常的綠色勾號圖示"] - 此參數已依建議設定。
+* image:../media/sev_warning_um60.png["警告圖示"] - 此參數未依建議設定。
+* image:../media/sev_information_um60.gif["資訊圖示"] - 叢集上未啟用該功能，或是未依建議設定參數，但此參數不影響物件的法規遵循。
+
+
+請注意，Volume 加密狀態與叢集或 SVM 是否被視為符合法規無關。

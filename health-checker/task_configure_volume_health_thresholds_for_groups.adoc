@@ -1,0 +1,30 @@
+---
+permalink: health-checker/task_configure_volume_health_thresholds_for_groups.html 
+sidebar: sidebar 
+keywords: configure, volume, health, thresholds, groups 
+summary: 您可以設定群組層級的 Volume 健全狀況臨界值，包括容量、Snapshot 複本、qtree 配額、成長和 inode。 
+---
+= 在 Active IQ Unified Manager 中設定群組的 Volume 健全狀況臨界值
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以設定群組層級的 Volume 健全狀況臨界值，包括容量、Snapshot 複本、qtree 配額、成長和 inode。
+
+.開始之前
+您必須擁有應用程式系統管理員或儲存系統管理員角色。
+
+群組行動的 Volume 健全狀況臨界值類型僅套用於群組的 Volume。
+
+.步驟
+. 在左側導覽窗格中，按一下 *儲存管理* > *群組*。
+. 在 *群組行動* 標籤中，按一下 *新增*。
+. 請輸入群組行動的名稱和執行摘要。
+. 從 *群組* 下拉方塊中，選擇要為其設定群組行動的群組。
+. 選擇 *行動類型* 作為 Volume 健全狀況臨界值。
+. 選擇要設定臨界值的類別。
+. 請輸入健全狀況臨界值的所需值。
+. 點擊 *Add* 。
+

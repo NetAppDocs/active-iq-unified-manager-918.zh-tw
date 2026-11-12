@@ -1,0 +1,18 @@
+---
+permalink: install-windows/concept_overview_of_installation_sequence_um.html 
+sidebar: sidebar 
+keywords: overview, installation, sequence 
+summary: 安裝工作流程描述您在使用 Unified Manager 之前必須執行的任務。 
+---
+= 了解 Active IQ Unified Manager 的安裝順序
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+安裝工作流程描述您在使用 Unified Manager 之前必須執行的任務。
+
+以下各節將介紹下方工作流程中所示的每個項目。
+
+image::../media/overall_um_install_flow.png[一張展示 Unified Manager 安裝、初始設定和管理設定工作流程的圖表]

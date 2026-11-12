@@ -1,0 +1,38 @@
+---
+permalink: performance-checker/task_expand_counter_charts_pane.html 
+sidebar: sidebar 
+keywords: expand, counter, charts, pane 
+summary: 您可以擴充「計數器圖表」窗格，使圖表更大更易讀。 
+---
+= 在 Active IQ Unified Manager 中展開「計數器圖表」窗格
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以擴充「計數器圖表」窗格，使圖表更大更易讀。
+
+定義好比較物件和計數器的時間範圍後，即可檢視更大的計數器圖表窗格。您可以使用 Performance Explorer 視窗中間的 *<* 按鈕擴充該窗格。
+
+.步驟
+. 擴充或縮小 *計數器圖表* 窗格。
+
+
+|===
+| 若要…… | 這樣做…… 
+
+
+ a| 
+擴充「計數器圖表」窗格以適應頁面寬度
+ a| 
+點擊 *<* 按鈕
+
+
+
+ a| 
+將「計數器圖表」窗格縮小到頁面右半部
+ a| 
+按一下 *>* 按鈕
+
+|===

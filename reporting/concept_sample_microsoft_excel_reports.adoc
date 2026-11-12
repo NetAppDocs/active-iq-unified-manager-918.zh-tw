@@ -1,0 +1,22 @@
+---
+permalink: reporting/concept_sample_microsoft_excel_reports.html 
+sidebar: sidebar 
+keywords: sample, microsoft, excel, reports 
+summary: 這些 Microsoft Excel 報告範例旨在介紹使用 Excel 進階功能可用的報告選項。 
+---
+= 了解 Active IQ Unified Manager 中的 Microsoft Excel 報告範例
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+這些 Microsoft Excel 報告範例旨在介紹使用 Excel 進階功能可用的報告選項。
+
+Excel 的進階功能可以建立廣泛的報告陣列，以滿足您的特定需求。如需如何使用 Excel 的完整資訊，請參閱產品文件。
+
+[NOTE]
+====
+您必須擁有應用程式管理員或儲存管理員角色才能管理報告。
+
+====
